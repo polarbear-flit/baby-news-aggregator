@@ -1,0 +1,58 @@
+[
+  {
+    "date": "2026-03-29T00:25:31.837001+09:00",
+    "article_count": 50,
+    "keyword_freq": {
+      "mobility": 14,
+      "skincare": 13,
+      "car_safety": 8,
+      "general": 5,
+      "feeding": 5,
+      "diaper": 5
+    }
+  },
+  {
+    "date": "2026-03-29T00:20:00.628579+09:00",
+    "article_count": 7,
+    "keyword_freq": {
+      "baby": 7,
+      "car seat": 2,
+      "feeding": 1,
+      "infant": 1,
+      "safety": 1
+    }
+  },
+  {
+    "date": "2026-03-29T00:15:43.218944+09:00",
+    "article_count": 7,
+    "keyword_freq": {
+      "baby": 7,
+      "car seat": 2,
+      "feeding": 1,
+      "safety": 1,
+      "infant": 1
+    }
+  },
+  {
+    "date": "2026-03-29T00:11:46.405505+09:00",
+    "article_count": 7,
+    "keyword_freq": {
+      "baby": 7,
+      "car seat": 2,
+      "feeding": 1,
+      "infant": 1,
+      "safety": 1
+    }
+  },
+  {
+    "date": "2026-03-29T00:07:55.028939+09:00",
+    "article_count": 7,
+    "keyword_freq": {
+      "baby": 7,
+      "car seat": 2,
+      "feeding": 1,
+      "infant": 1,
+      "safety": 1
+    }
+  }
+]
