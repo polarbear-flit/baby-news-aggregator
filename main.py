@@ -3,7 +3,7 @@ from src.analyzer import analyze
 from src.renderer import render
 import json
 import os
-import sys
+import requests
 from datetime import datetime, timezone, timedelta
 
 from src.config import HISTORY_PATH, OUTPUT_PATH, TREND_WINDOW_DAYS
@@ -52,6 +52,68 @@ def save_history(history: list[dict], keyword_freq: dict, article_count: int) ->
     print(f"[OK] history保存: {len(updated)}件")
 
 
+def send_telegram(analysis: dict, articles: list[dict]) -> None:
+    """Telegramにサマリを送信"""
+    token = os.environ.get("BABY_NEWS_BOT_TOKEN")
+    chat_id = os.environ.get("BABY_NEWS_CHAT_ID")
+    if not token or not chat_id:
+        print("[SKIP] Telegram: 環境変数未設定")
+        return
+
+    jst = timezone(timedelta(hours=9))
+    today = datetime.now(jst).strftime("%Y/%m/%d")
+
+    # カテゴリ別件数
+    cat_labels = {
+        "feeding": "🍼 授乳",
+        "mobility": "👶 ベビーカー",
+        "car_safety": "🚗 チャイルドシート",
+        "diaper": "🧸 おむつ",
+        "wipes": "💧 おしりふき",
+        "skincare": "🌿 スキンケア",
+        "general": "📰 一般",
+    }
+    cat_lines = " / ".join(
+        f"{cat_labels.get(k, k)}: {v}件"
+        for k, v in sorted(analysis["category_freq"].items(), key=lambda x: -x[1])
+        if v > 0
+    )
+
+    # ハイライト記事（上位3件）
+    hot = analysis.get("hot_articles", articles[:3])
+    highlights = "\n".join(f"・{a['title'][:50]}" for a in hot[:3])
+
+    # トレンドキーワード
+    trending = analysis.get("trending_keywords", [])
+    trend_text = "、".join(t["keyword"] for t in trending[:3]) if trending else "なし"
+
+    # リコール件数
+    recall_count = sum(
+        1 for a in articles
+        if any(k in ["recall", "リコール"] for k in a.get("matched_keywords", []))
+    )
+    recall_line = f"⚠️ リコール関連: {recall_count}件\n" if recall_count > 0 else ""
+
+    message = f"""📰 ベビー用品ニュース {today}
+━━━━━━━━━━━━━
+【今日のハイライト】
+{highlights}
+
+📊 カテゴリ別
+{cat_lines}
+
+📈 急上昇: {trend_text}
+{recall_line}合計 {len(articles)} 件収集
+━━━━━━━━━━━━━"""
+
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    resp = requests.post(url, json={"chat_id": chat_id, "text": message}, timeout=10)
+    if resp.ok:
+        print("[OK] Telegram送信完了")
+    else:
+        print(f"[WARN] Telegram送信失敗: {resp.status_code}")
+
+
 def main() -> None:
     print("=== Baby News Aggregator 起動 ===")
 
@@ -81,7 +143,10 @@ def main() -> None:
         f.write(html)
     print(f"[OK] 出力: {OUTPUT_PATH}")
 
-    # 6. 履歴保存
+    # 6. Telegram通知
+    send_telegram(analysis, articles)
+
+    # 7. 履歴保存
     save_history(history, analysis["keyword_freq"], len(articles))
 
     print("=== 完了 ===")
