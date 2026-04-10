@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-04-11T07:42:32.717278+09:00",
+    "article_count": 50,
+    "keyword_freq": {
+      "general": 32,
+      "mobility": 4,
+      "car_safety": 4,
+      "skincare": 4,
+      "diaper": 3,
+      "feeding": 3
+    }
+  },
+  {
     "date": "2026-04-10T07:49:27.604050+09:00",
     "article_count": 50,
     "keyword_freq": {
