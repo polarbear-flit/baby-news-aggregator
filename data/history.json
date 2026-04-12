@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-13T07:41:44.666222+09:00",
+    "article_count": 7,
+    "keyword_freq": {
+      "baby": 7,
+      "car seat": 2,
+      "feeding": 1,
+      "safety": 1,
+      "infant": 1
+    }
+  },
+  {
     "date": "2026-04-12T07:37:53.308385+09:00",
     "article_count": 50,
     "keyword_freq": {
