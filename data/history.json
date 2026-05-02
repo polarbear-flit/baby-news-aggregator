@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-05-03T07:50:49.637798+09:00",
+    "article_count": 50,
+    "keyword_freq": {
+      "general": 29,
+      "mobility": 9,
+      "feeding": 4,
+      "car_safety": 4,
+      "diaper": 2,
+      "skincare": 2
+    }
+  },
+  {
     "date": "2026-05-02T07:54:04.554257+09:00",
     "article_count": 50,
     "keyword_freq": {
@@ -344,18 +356,6 @@
       "skincare": 4,
       "feeding": 3,
       "diaper": 1
-    }
-  },
-  {
-    "date": "2026-04-03T07:37:52.571202+09:00",
-    "article_count": 50,
-    "keyword_freq": {
-      "general": 25,
-      "mobility": 9,
-      "skincare": 5,
-      "car_safety": 4,
-      "diaper": 4,
-      "feeding": 3
     }
   }
 ]
