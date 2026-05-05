@@ -13,7 +13,8 @@ import json
 import os
 
 DEFAULT_MODEL = "claude-haiku-4-5-20251001"
-MAX_CANDIDATES = 30  # AIに渡す最大記事数（コスト管理）
+MAX_CANDIDATES = 20  # AIに渡す最大記事数（コスト管理 + 出力トークン上限内に収める）
+MAX_OUTPUT_TOKENS = 8000  # 20件×~200tokens の出力に余裕を持たせる
 
 RANK_TOOL = {
     "name": "rank_baby_news",
@@ -51,13 +52,13 @@ RANK_TOOL = {
                         },
                         "why_matters_jp": {
                             "type": "string",
-                            "minLength": 10,
+                            "minLength": 5,
                             "description": "なぜ商品担当に重要か。80文字以内・日本語・結論ファースト",
                         },
                         "action_hint_jp": {
                             "type": "string",
-                            "minLength": 10,
-                            "description": "今日取るべき次アクション。10〜60文字・日本語・動詞始まり。空文字や「特になし」は禁止",
+                            "minLength": 5,
+                            "description": "今日取るべき次アクション。10〜60文字・日本語・動詞始まり",
                         },
                     },
                     "required": [
@@ -78,34 +79,30 @@ def _build_prompt(compact: list[dict]) -> str:
     today = datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d")
     return f"""あなたは日本のベビー用品EC事業のカテゴリマネージャー向けニュース編集者です。
 本日は {today}（JST）です。
-以下の{len(compact)}件の記事を、商品担当が読む価値で評価してください。
+以下の{len(compact)}件の記事を1件ずつ評価し、rank_baby_news ツールの items 配列に **必ず{len(compact)}件すべて** 含めて返してください。
 
 【評価方針（重要度順）】
 1. 国内のリコール・事故・安全（消費者庁・NITE・PSC・ST規格）は最優先
 2. 主要日本ブランド（ピジョン/コンビ/アップリカ/カトージ/リッチェル/ユニチャーム/花王）の新商品・価格改定・販路変化
 3. 主要日本小売（西松屋/赤ちゃん本舗/アカチャンホンポ/トイザらス/イオン/ニトリ/Amazon/楽天）の動向
 4. 市場規模・消費者行動・EC/D2C変化
-5. 海外（CPSC等）リコールは「日本にも輸入されているブランド」の場合のみ価値あり
-6. 「おすすめランキング」「選び方ガイド」「育児コラム」「芸能人話題」は noise として弾く
+5. 海外CPSCリコールは日本に輸入されるブランドの場合のみ価値あり
+6. 「おすすめランキング」「選び方ガイド」「育児コラム」「芸能人話題」は is_relevant=false で noise 軸
 
-【鮮度ルール（厳守）】
-- published が本日から30日以上前の記事は value_score を 30 以下に抑える
-- published が90日以上前の記事は基本 noise 扱い（is_relevant=false）
-- ただし「現在進行中の重大リコール継続案件」は例外として残してよい
+【鮮度ルール】
+- published が本日から30日以上前の記事は value_score を 30 以下
+- 90日以上前は is_relevant=false で構わない
 
-【出力ルール】
-- value_score は厳しめに（70以上は意思決定に直結する内容のみ）
-- why_matters_jp は「事業/商品判断にどう効くか」を結論ファーストで1文。一般的な感想は禁止
-- action_hint_jp は **必ず10文字以上で記入**。動詞始まりで具体的に
-  良い例: 「対象SKUの取扱有無を在庫確認」「PSC表示要件を商品ページで確認」「競合品との比較表を作成」
-  悪い例: 「特になし」「確認」「" "」「null」← これらは禁止
-- ノイズと判断した記事は is_relevant=false にして noise 軸に分類（その場合も why と action はダミーでよいので10文字以上で書く）
-- 記事の article_id は入力の id をそのまま返す
+【各項目の出力ルール】
+- article_id: 入力の id をそのまま文字列で返す
+- value_score: 0-100。70以上は意思決定に直結する内容のみ
+- why_matters_jp: 事業/商品判断にどう効くかを1文（80文字以内）
+- action_hint_jp: 商品担当が今日取るべき動作を動詞始まりで（10〜60文字）
+  例: 「対象SKUの在庫を確認」「PSC表示要件を商品ページで確認」「競合品と比較表を作成」
+- ノイズ記事も items に含めて is_relevant=false にする。why と action は短くて構わない（5文字以上）
 
 【記事リスト】
 {json.dumps(compact, ensure_ascii=False, indent=2)}
-
-すべての記事について rank_baby_news ツールで結果を返してください。
 """
 
 
@@ -152,11 +149,19 @@ def ai_rank_articles(articles: list[dict]) -> list[dict]:
         model = os.environ.get("ANTHROPIC_MODEL", DEFAULT_MODEL)
         resp = client.messages.create(
             model=model,
-            max_tokens=4000,
+            max_tokens=MAX_OUTPUT_TOKENS,
             tools=[RANK_TOOL],
             tool_choice={"type": "tool", "name": "rank_baby_news"},
             messages=[{"role": "user", "content": _build_prompt(compact)}],
         )
+        # デバッグ: 使用トークン数とstop_reasonを記録
+        usage = getattr(resp, "usage", None)
+        stop_reason = getattr(resp, "stop_reason", "?")
+        if usage:
+            print(
+                f"[DEBUG] AI usage: in={usage.input_tokens} out={usage.output_tokens} "
+                f"stop_reason={stop_reason}"
+            )
     except Exception as e:
         print(f"[WARN] AI ranker API失敗: {e} → ルールスコアのまま使用")
         return articles
@@ -170,6 +175,12 @@ def ai_rank_articles(articles: list[dict]) -> list[dict]:
         return articles
 
     items = tool_use.input.get("items", [])
+    if not items:
+        # デバッグ: 空items時はinputの全キーをログに残す
+        print(
+            f"[WARN] AI ranker: items 空。tool_use.input keys={list(tool_use.input.keys())} "
+            f"raw={str(tool_use.input)[:500]}"
+        )
     ai_by_id = {str(item.get("article_id")): item for item in items}
 
     enriched: list[dict] = []
