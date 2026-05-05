@@ -74,10 +74,11 @@ def _contains_any(text: str, words: list[str]) -> bool:
 
 
 def score_articles(articles: list[dict]) -> list[dict]:
-    """ソース信頼度 + 安全/規制 + 主要企業 + 鮮度 でスコア付け。
+    """ソース信頼度 + 言語 + 安全/規制 + 主要企業 + 鮮度 でスコア付け。
 
-    AIリランカー（Step 4）を後段に置く前提なので、ここでは候補を粗く
-    並べ替えるだけに留め、評価軸の細分化はしない。
+    日本のEC事業向けBotなので日本語記事を優先する。
+    安全・規制ボーナスは抑えめにして、英語の海外リコールが上位を占めないようにする。
+    AIリランカー（Step 4）を後段に置く前提で、ここでは粗い並べ替えに留める。
     """
     now = datetime.now(timezone.utc)
     scored = []
@@ -88,17 +89,21 @@ def score_articles(articles: list[dict]) -> list[dict]:
         # 1) ソース信頼度
         score = SOURCE_WEIGHTS.get(source_type, 5)
 
-        # 2) 安全・規制シグナル（最重要）
-        if _contains_any(text, SAFETY_TERMS):
-            score += 50
-        if _contains_any(text, REGULATION_TERMS):
-            score += 35
+        # 2) 言語ボーナス（日本のECカテゴリ担当向けなので日本語優先）
+        if a.get("language") == "ja":
+            score += 20
 
-        # 3) 主要企業・小売エンティティ
+        # 3) 安全・規制シグナル（重要だが、過剰に上位化しないよう抑えめ）
+        if _contains_any(text, SAFETY_TERMS):
+            score += 25
+        if _contains_any(text, REGULATION_TERMS):
+            score += 20
+
+        # 4) 主要企業・小売エンティティ
         if _contains_any(text, KEY_ENTITIES):
             score += 15
 
-        # 4) 鮮度（日付不明は減点して最新扱いさせない）
+        # 5) 鮮度（日付不明は減点して最新扱いさせない）
         published_dt = a.get("published_dt")
         if published_dt:
             try:
