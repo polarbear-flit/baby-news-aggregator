@@ -1,16 +1,17 @@
 import re
-
-import feedparser
 from datetime import datetime, timezone
 
+import feedparser
+import requests
+
 from src.config import (
-    RSS_FEEDS, KEYWORDS, MAX_ARTICLES_PER_FEED,
-    MAX_ARTICLES_DISPLAY, FETCH_TIMEOUT_SEC, USER_AGENT,
+    RSS_FEEDS, KEYWORDS, NOISE_TERMS, CRITICAL_OVERRIDE,
+    MAX_ARTICLES_PER_FEED, FETCH_TIMEOUT_SEC, USER_AGENT,
 )
 
 
-def _parse_dt(entry) -> datetime:
-    """feedparserのtime.struct_timeをdatetimeに変換"""
+def _parse_dt(entry) -> datetime | None:
+    """feedparserのtime.struct_timeをdatetimeに変換。取れなければNone。"""
     for field in ("published_parsed", "updated_parsed"):
         t = getattr(entry, field, None)
         if t:
@@ -18,30 +19,34 @@ def _parse_dt(entry) -> datetime:
                 return datetime(*t[:6], tzinfo=timezone.utc)
             except Exception:
                 pass
-    return datetime.now(timezone.utc)
+    return None
 
 
 def fetch_feed(feed_config: dict) -> list[dict]:
-    """1フィードを取得してArticleリストを返す"""
-    articles = []
+    """1フィードを取得してArticleリストを返す。timeoutを実効化。"""
+    articles: list[dict] = []
     try:
-        fp = feedparser.parse(
+        resp = requests.get(
             feed_config["url"],
-            request_headers={"User-Agent": USER_AGENT},
+            headers={"User-Agent": USER_AGENT},
+            timeout=FETCH_TIMEOUT_SEC,
         )
+        resp.raise_for_status()
+        fp = feedparser.parse(resp.content)
+
         for entry in fp.entries[:MAX_ARTICLES_PER_FEED]:
             published_dt = _parse_dt(entry)
             summary = getattr(entry, "summary", "") or ""
-            # HTMLタグを簡易除去
             summary = re.sub(r"<[^>]+>", "", summary).strip()
 
             articles.append({
                 "title": getattr(entry, "title", ""),
                 "url": getattr(entry, "link", ""),
                 "summary": summary[:400],
-                "published": published_dt.isoformat(),
+                "published": published_dt.isoformat() if published_dt else "",
                 "published_dt": published_dt,
                 "source_name": feed_config["name"],
+                "source_type": feed_config.get("source_type", "google_news"),
                 "category": feed_config["category"],
                 "language": feed_config["language"],
                 "matched_keywords": [],
@@ -67,6 +72,14 @@ def filter_by_keywords(articles: list[dict]) -> list[dict]:
     return result
 
 
+def is_noise(article: dict) -> bool:
+    """SEO/コラム系のノイズ記事を判定。CRITICAL_OVERRIDE該当なら救う。"""
+    text = (article.get("title", "") + " " + article.get("summary", "")).lower()
+    if any(t.lower() in text for t in CRITICAL_OVERRIDE):
+        return False
+    return any(t.lower() in text for t in NOISE_TERMS)
+
+
 def deduplicate(articles: list[dict]) -> list[dict]:
     """URLとタイトル前方一致で重複除去"""
     seen_urls: set[str] = set()
@@ -84,21 +97,23 @@ def deduplicate(articles: list[dict]) -> list[dict]:
 
 
 def fetch_all_feeds() -> list[dict]:
-    """全フィード取得 → フィルタ → 重複除去 → 日時降順 → 最大50件"""
+    """全フィード取得 → キーワードフィルタ → ノイズ除外 → 重複除去（スコア順並べ替えはanalyzerで実施）"""
     all_articles: list[dict] = []
     for feed_config in RSS_FEEDS:
         articles = fetch_feed(feed_config)
-        # Google News RSSはURLにキーワードが含まれているのでフィルタ不要
-        # それ以外はキーワードフィルタを適用
         if "news.google.com" in feed_config["url"]:
+            # Google Newsは検索クエリ自体がフィルタなのでキーワード照合は省略するが、
+            # ノイズ除外とスコアリングは他ソースと同様に通す。
             for a in articles:
                 a["matched_keywords"] = [feed_config["category"]]
-            filtered = articles
+            kw_filtered = articles
         else:
-            filtered = filter_by_keywords(articles)
+            kw_filtered = filter_by_keywords(articles)
+        filtered = [a for a in kw_filtered if not is_noise(a)]
         all_articles.extend(filtered)
-        print(f"[OK] {feed_config['name']}: {len(filtered)} 件 (取得: {len(articles)} 件)")
+        print(
+            f"[OK] {feed_config['name']}: {len(filtered)} 件採用 "
+            f"(取得: {len(articles)} / キーワード後: {len(kw_filtered)})"
+        )
 
-    deduped = deduplicate(all_articles)
-    deduped.sort(key=lambda a: a["published_dt"], reverse=True)
-    return deduped[:MAX_ARTICLES_DISPLAY]
+    return deduplicate(all_articles)

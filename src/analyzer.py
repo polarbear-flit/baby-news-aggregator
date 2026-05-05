@@ -1,7 +1,10 @@
 from collections import Counter
 from datetime import datetime, timezone, timedelta
 
-from src.config import KEYWORDS, TREND_WINDOW_DAYS
+from src.config import (
+    KEYWORDS, TREND_WINDOW_DAYS,
+    SOURCE_WEIGHTS, KEY_ENTITIES, SAFETY_TERMS, REGULATION_TERMS,
+)
 
 
 CATEGORY_LABEL = {
@@ -26,7 +29,6 @@ def count_keyword_freq(articles: list[dict]) -> Counter:
 def count_category_freq(articles: list[dict]) -> Counter:
     freq: Counter = Counter()
     for a in articles:
-        # カテゴリはsource_configのものではなく、マッチしたキーワードから判定
         matched_cats: set[str] = set()
         text = (a["title"] + " " + a["summary"]).lower()
         for cat, kw_list in KEYWORDS.items():
@@ -40,7 +42,6 @@ def count_category_freq(articles: list[dict]) -> Counter:
 
 def calc_trending_keywords(current_freq: Counter, history: list[dict]) -> list[dict]:
     """過去履歴と比較して増加率上位5件を返す"""
-    # 過去TREND_WINDOW_DAYS日のfreqを集計
     past_freq: Counter = Counter()
     cutoff = datetime.now(timezone.utc) - timedelta(days=TREND_WINDOW_DAYS)
     for record in history:
@@ -68,26 +69,52 @@ def calc_trending_keywords(current_freq: Counter, history: list[dict]) -> list[d
     return trending[:5]
 
 
+def _contains_any(text: str, words: list[str]) -> bool:
+    return any(w.lower() in text for w in words)
+
+
 def score_articles(articles: list[dict]) -> list[dict]:
-    """キーワード数・リコール含有・新しさでスコア付け"""
+    """ソース信頼度 + 安全/規制 + 主要企業 + 鮮度 でスコア付け。
+
+    AIリランカー（Step 4）を後段に置く前提なので、ここでは候補を粗く
+    並べ替えるだけに留め、評価軸の細分化はしない。
+    """
     now = datetime.now(timezone.utc)
     scored = []
     for a in articles:
-        score = len(a["matched_keywords"])
-        text = (a["title"] + " " + a["summary"]).lower()
-        if "recall" in text or "リコール" in text:
-            score += 5
-        if "safety" in text or "安全" in text:
-            score += 2
-        try:
-            age_hours = (now - a["published_dt"]).total_seconds() / 3600
-            if age_hours < 24:
-                score += 3
-            elif age_hours < 72:
-                score += 1
-        except Exception:
-            pass
-        scored.append({**a, "score": score})
+        text = (a.get("title", "") + " " + a.get("summary", "")).lower()
+        source_type = a.get("source_type", "google_news")
+
+        # 1) ソース信頼度
+        score = SOURCE_WEIGHTS.get(source_type, 5)
+
+        # 2) 安全・規制シグナル（最重要）
+        if _contains_any(text, SAFETY_TERMS):
+            score += 50
+        if _contains_any(text, REGULATION_TERMS):
+            score += 35
+
+        # 3) 主要企業・小売エンティティ
+        if _contains_any(text, KEY_ENTITIES):
+            score += 15
+
+        # 4) 鮮度（日付不明は減点して最新扱いさせない）
+        published_dt = a.get("published_dt")
+        if published_dt:
+            try:
+                age_hours = (now - published_dt).total_seconds() / 3600
+                if age_hours <= 24:
+                    score += 10
+                elif age_hours <= 72:
+                    score += 5
+                elif age_hours > 14 * 24:
+                    score -= 20
+            except Exception:
+                score -= 10
+        else:
+            score -= 15
+
+        scored.append({**a, "score": max(0, score)})
 
     scored.sort(key=lambda x: x["score"], reverse=True)
     return scored
@@ -129,18 +156,15 @@ def generate_overall_insights(
 ) -> list[str]:
     insights = []
 
-    # 最多カテゴリ
     if category_freq:
         top_cat, top_cnt = category_freq.most_common(1)[0]
         label = CATEGORY_LABEL.get(top_cat, top_cat)
         insights.append(f"最も注目度が高いカテゴリは {label}（{top_cnt}件）です。")
 
-    # トレンドキーワード
     if trending:
         kw_names = "、".join(t["keyword"] for t in trending[:3])
         insights.append(f"急上昇キーワード: {kw_names}。前期比での増加が目立ちます。")
 
-    # リコール数
     recall_count = sum(
         1 for a in hot_articles
         if "recall" in a["title"].lower() or "リコール" in a["title"]
@@ -148,32 +172,38 @@ def generate_overall_insights(
     if recall_count > 0:
         insights.append(f"リコール関連記事が{recall_count}件。安全・品質リスクへの注意が必要です。")
 
-    # 記事総数
     insights.append(f"今回収集した記事は合計{len(hot_articles)}件です。")
 
     return insights
 
 
 def analyze(articles: list[dict], history: list[dict]) -> dict:
-    """全分析を実行してAnalysisResult dictを返す"""
-    keyword_freq = count_keyword_freq(articles)
-    category_freq = count_category_freq(articles)
+    """全分析を実行してAnalysisResult dictを返す。
+
+    返り値:
+        - hot_articles: スコア降順で全件（上位N件はTelegram/HTMLで切り出して使う）
+        - trending: 急上昇キーワード上位5件
+        - keyword_freq / category_freq: HTMLグラフ用
+        - その他HTMLレンダリング用フィールド
+    """
+    scored = score_articles(articles)
+    keyword_freq = count_keyword_freq(scored)
+    category_freq = count_category_freq(scored)
     trending = calc_trending_keywords(keyword_freq, history)
-    hot_articles = score_articles(articles)
 
     category_insights = {
-        cat: generate_category_insight(cat, articles, category_freq)
+        cat: generate_category_insight(cat, scored, category_freq)
         for cat in KEYWORDS
     }
-    overall_insights = generate_overall_insights(category_freq, trending, articles)
+    overall_insights = generate_overall_insights(category_freq, trending, scored)
 
     return {
         "keyword_freq": dict(keyword_freq.most_common(20)),
         "category_freq": dict(category_freq),
         "trending": trending,
-        "hot_articles": hot_articles[:10],
+        "hot_articles": scored,  # 全件スコア済み・降順。呼び出し側でslice
         "category_insights": category_insights,
         "overall_insights": overall_insights,
         "category_label": CATEGORY_LABEL,
-        "cat_keywords": KEYWORDS,  # テンプレートのフィルター判定に使用
+        "cat_keywords": KEYWORDS,
     }
