@@ -1,5 +1,5 @@
 RSS_FEEDS = [
-    # Google News 日本語（キーワード検索RSS）
+    # === Google News 日本語（カテゴリ横断） ===
     {"name": "GNews: ベビー用品全般", "url": "https://news.google.com/rss/search?q=ベビー用品&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "google_news"},
     {"name": "GNews: 哺乳瓶・授乳", "url": "https://news.google.com/rss/search?q=哺乳瓶+授乳+ミルク&hl=ja&gl=JP&ceid=JP:ja", "category": "feeding", "language": "ja", "source_type": "google_news"},
     {"name": "GNews: ベビーカー・チャイルドシート", "url": "https://news.google.com/rss/search?q=ベビーカー+チャイルドシート&hl=ja&gl=JP&ceid=JP:ja", "category": "mobility", "language": "ja", "source_type": "google_news"},
@@ -7,14 +7,22 @@ RSS_FEEDS = [
     {"name": "GNews: ベビースキンケア", "url": "https://news.google.com/rss/search?q=赤ちゃん+スキンケア+保湿&hl=ja&gl=JP&ceid=JP:ja", "category": "skincare", "language": "ja", "source_type": "google_news"},
     {"name": "GNews: ベビー用品リコール", "url": "https://news.google.com/rss/search?q=ベビー+リコール+安全+乳幼児&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "google_news"},
     {"name": "GNews: 育児市場トレンド", "url": "https://news.google.com/rss/search?q=育児+市場+新製品+子育て&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "google_news"},
-    # Google News 英語
-    {"name": "GNews: baby products market", "url": "https://news.google.com/rss/search?q=baby+products+market+trend&hl=en&gl=US&ceid=US:en", "category": "general", "language": "en", "source_type": "google_news"},
-    {"name": "GNews: stroller car seat", "url": "https://news.google.com/rss/search?q=stroller+car+seat+infant&hl=en&gl=US&ceid=US:en", "category": "car_safety", "language": "en", "source_type": "google_news"},
-    {"name": "GNews: diaper wipes recall", "url": "https://news.google.com/rss/search?q=diaper+baby+wipes+recall+safety&hl=en&gl=US&ceid=US:en", "category": "diaper", "language": "en", "source_type": "google_news"},
-    {"name": "GNews: baby skincare formula", "url": "https://news.google.com/rss/search?q=baby+skincare+formula+infant+lotion&hl=en&gl=US&ceid=US:en", "category": "skincare", "language": "en", "source_type": "google_news"},
-    # Baby Gaga（動作確認済み）
-    {"name": "Baby Gaga", "url": "https://www.babygaga.com/feed/", "category": "general", "language": "en", "source_type": "seo_media"},
-    # PR TIMES rss20.xml は全分野の混入が多いため除外。必要になったらキーワードページを別ロジックで追加する。
+
+    # === Google News 日本語（事業視点で追加）===
+    {"name": "GNews: 主要ブランド新商品", "url": "https://news.google.com/rss/search?q=ピジョン+OR+コンビ+OR+アップリカ+OR+カトージ+OR+リッチェル+新商品&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "google_news"},
+    {"name": "GNews: 主要小売・EC", "url": "https://news.google.com/rss/search?q=西松屋+OR+赤ちゃん本舗+OR+アカチャンホンポ+ベビー&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "google_news"},
+    {"name": "GNews: 育児市場・EC動向", "url": "https://news.google.com/rss/search?q=ベビー用品+市場+OR+EC+OR+売上+OR+シェア&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "google_news"},
+    {"name": "GNews: 規制・PSC・安全", "url": "https://news.google.com/rss/search?q=乳幼児+OR+ベビー+PSC+OR+規制+OR+消費者庁+OR+NITE&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "google_news"},
+
+    # === Google News 英語（輸入品リコール監視のみ・絞る）===
+    {"name": "GNews: stroller car seat (海外リコール)", "url": "https://news.google.com/rss/search?q=stroller+car+seat+recall&hl=en&gl=US&ceid=US:en", "category": "car_safety", "language": "en", "source_type": "google_news"},
+    {"name": "GNews: diaper wipes recall (海外リコール)", "url": "https://news.google.com/rss/search?q=diaper+baby+wipes+recall+safety&hl=en&gl=US&ceid=US:en", "category": "diaper", "language": "en", "source_type": "google_news"},
+
+    # 削除済み:
+    # - Baby Gaga (英語SEOメディア。日本のEC事業判断にほぼ無関係)
+    # - GNews: baby products market (英語の市場ニュースは下位互換)
+    # - GNews: baby skincare formula (英語スキンケアPRはノイズが多い)
+    # - PR TIMES rss20.xml (全分野混入)
 ]
 
 KEYWORDS = {
