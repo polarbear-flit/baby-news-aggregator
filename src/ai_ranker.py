@@ -51,11 +51,13 @@ RANK_TOOL = {
                         },
                         "why_matters_jp": {
                             "type": "string",
+                            "minLength": 10,
                             "description": "なぜ商品担当に重要か。80文字以内・日本語・結論ファースト",
                         },
                         "action_hint_jp": {
                             "type": "string",
-                            "description": "今日取るべき次アクション。60文字以内・日本語・動詞始まり",
+                            "minLength": 10,
+                            "description": "今日取るべき次アクション。10〜60文字・日本語・動詞始まり。空文字や「特になし」は禁止",
                         },
                     },
                     "required": [
@@ -71,7 +73,11 @@ RANK_TOOL = {
 
 
 def _build_prompt(compact: list[dict]) -> str:
+    from datetime import datetime, timezone, timedelta
+
+    today = datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d")
     return f"""あなたは日本のベビー用品EC事業のカテゴリマネージャー向けニュース編集者です。
+本日は {today}（JST）です。
 以下の{len(compact)}件の記事を、商品担当が読む価値で評価してください。
 
 【評価方針（重要度順）】
@@ -82,10 +88,18 @@ def _build_prompt(compact: list[dict]) -> str:
 5. 海外（CPSC等）リコールは「日本にも輸入されているブランド」の場合のみ価値あり
 6. 「おすすめランキング」「選び方ガイド」「育児コラム」「芸能人話題」は noise として弾く
 
+【鮮度ルール（厳守）】
+- published が本日から30日以上前の記事は value_score を 30 以下に抑える
+- published が90日以上前の記事は基本 noise 扱い（is_relevant=false）
+- ただし「現在進行中の重大リコール継続案件」は例外として残してよい
+
 【出力ルール】
-- value_score は厳しめに付ける（70以上は意思決定に直結する内容のみ）
-- why_matters_jp は「事業/商品判断にどう効くか」を1文で。一般的な感想は禁止
-- action_hint_jp は具体的な動詞で始める（例: 「対象SKUの取扱有無を確認」「PSC表示要件を確認」）
+- value_score は厳しめに（70以上は意思決定に直結する内容のみ）
+- why_matters_jp は「事業/商品判断にどう効くか」を結論ファーストで1文。一般的な感想は禁止
+- action_hint_jp は **必ず10文字以上で記入**。動詞始まりで具体的に
+  良い例: 「対象SKUの取扱有無を在庫確認」「PSC表示要件を商品ページで確認」「競合品との比較表を作成」
+  悪い例: 「特になし」「確認」「" "」「null」← これらは禁止
+- ノイズと判断した記事は is_relevant=false にして noise 軸に分類（その場合も why と action はダミーでよいので10文字以上で書く）
 - 記事の article_id は入力の id をそのまま返す
 
 【記事リスト】
@@ -126,6 +140,8 @@ def ai_rank_articles(articles: list[dict]) -> list[dict]:
             "summary": (a.get("summary") or "")[:200],
             "source": a.get("source_name", ""),
             "lang": a.get("language", "ja"),
+            # AIに鮮度判断させるため日付（YYYY-MM-DD）を渡す
+            "published": (a.get("published") or "")[:10] or "unknown",
             "rule_score": a.get("score", 0),
         }
         for i, a in enumerate(candidates)

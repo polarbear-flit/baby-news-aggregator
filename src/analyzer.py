@@ -103,7 +103,7 @@ def score_articles(articles: list[dict]) -> list[dict]:
         if _contains_any(text, KEY_ENTITIES):
             score += 15
 
-        # 5) 鮮度（日付不明は減点して最新扱いさせない）
+        # 5) 鮮度（古い記事は強めに減点。2024年など過去の記事を上位に出さない）
         published_dt = a.get("published_dt")
         if published_dt:
             try:
@@ -112,12 +112,16 @@ def score_articles(articles: list[dict]) -> list[dict]:
                     score += 10
                 elif age_hours <= 72:
                     score += 5
-                elif age_hours > 14 * 24:
-                    score -= 20
+                elif age_hours <= 7 * 24:
+                    score += 0
+                elif age_hours <= 30 * 24:
+                    score -= 15
+                else:
+                    score -= 50  # 30日超は強く減点
             except Exception:
-                score -= 10
+                score -= 25
         else:
-            score -= 15
+            score -= 25  # 日付不明は最新扱いさせない
 
         scored.append({**a, "score": max(0, score)})
 
