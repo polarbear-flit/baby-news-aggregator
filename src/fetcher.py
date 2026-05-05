@@ -6,6 +6,7 @@ import requests
 
 from src.config import (
     RSS_FEEDS, KEYWORDS, NOISE_TERMS, CRITICAL_OVERRIDE,
+    PAST_YEAR_TITLE_PATTERNS,
     MAX_ARTICLES_PER_FEED, FETCH_TIMEOUT_SEC, USER_AGENT,
 )
 
@@ -92,6 +93,20 @@ def is_too_old(article: dict) -> bool:
     return published_dt < cutoff
 
 
+def is_old_topic_title(article: dict) -> bool:
+    """タイトルに過去年シグナル（2024年/昨年/去年等）が含まれていれば古い記事と判定。
+
+    Google News RSSは古い記事を再インデックスするとpubDateを更新するため、
+    本文（タイトル）から過去年を検出する必要がある。
+    CRITICAL_OVERRIDE該当（リコール等）は古い年でも残す（重大継続案件のため）。
+    """
+    title = article.get("title", "")
+    title_lower = title.lower()
+    if any(t.lower() in title_lower for t in CRITICAL_OVERRIDE):
+        return False
+    return any(p in title for p in PAST_YEAR_TITLE_PATTERNS)
+
+
 def deduplicate(articles: list[dict]) -> list[dict]:
     """URLとタイトル前方一致で重複除去"""
     seen_urls: set[str] = set()
@@ -121,7 +136,10 @@ def fetch_all_feeds() -> list[dict]:
             kw_filtered = articles
         else:
             kw_filtered = filter_by_keywords(articles)
-        filtered = [a for a in kw_filtered if not is_noise(a) and not is_too_old(a)]
+        filtered = [
+            a for a in kw_filtered
+            if not is_noise(a) and not is_too_old(a) and not is_old_topic_title(a)
+        ]
         all_articles.extend(filtered)
         print(
             f"[OK] {feed_config['name']}: {len(filtered)} 件採用 "

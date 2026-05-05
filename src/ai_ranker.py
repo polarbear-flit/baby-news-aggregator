@@ -92,6 +92,11 @@ def _build_prompt(compact: list[dict]) -> str:
 【鮮度ルール】
 - published が本日から30日以上前の記事は value_score を 30 以下
 - 90日以上前は is_relevant=false で構わない
+- ⚠️ 重要: Google News RSSは古い記事を再インデックスするとpubDateを最新日に更新するため、
+  published 日付だけを信用しない。タイトル・要約の本文から過去年を検出すること:
+  - タイトル/要約に「2024年」「2025年」「昨年」「去年」「一昨年」等の過去年言及があれば
+    is_relevant=false にする（current eventsの比較記事を除く）
+  - 「○○年版」「20XX年X月X日に発表」など、明確に過去年が記事の主題になっている場合も is_relevant=false
 
 【各項目の出力ルール】
 - article_id: 入力の id をそのまま文字列で返す
