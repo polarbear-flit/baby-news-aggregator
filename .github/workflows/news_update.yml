@@ -26,6 +26,7 @@ jobs:
           TZ: Asia/Tokyo
           BABY_NEWS_BOT_TOKEN: ${{ secrets.BABY_NEWS_BOT_TOKEN }}
           BABY_NEWS_CHAT_ID: ${{ secrets.BABY_NEWS_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Commit and push
         run: |
