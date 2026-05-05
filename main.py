@@ -5,6 +5,7 @@ from datetime import datetime, timezone, timedelta
 
 import requests
 
+from src.ai_ranker import ai_rank_articles
 from src.analyzer import analyze
 from src.config import (
     DEFAULT_REPORT_URL, HISTORY_PATH, MAX_ARTICLES_DISPLAY,
@@ -112,12 +113,32 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
         highlight_lines = []
         for i, a in enumerate(hot, start=1):
             link = _article_link(a)
-            source = _esc(a.get("source_name", ""))
-            score = a.get("score", "")
-            highlight_lines.append(f"{i}. {link}\n   <i>{source}</i> · score {score}")
+            why = a.get("why_matters_jp", "")
+            axis = a.get("ai_value_axis", "")
+            score = a.get("ai_value_score", a.get("score", ""))
+            if why:
+                label = _esc(axis or a.get("source_name", ""))
+                highlight_lines.append(
+                    f"{i}. {link}\n"
+                    f"   <i>{label}</i> · score {score} — {_esc(why)[:90]}"
+                )
+            else:
+                source = _esc(a.get("source_name", ""))
+                highlight_lines.append(f"{i}. {link}\n   <i>{source}</i> · score {score}")
         highlights = "\n".join(highlight_lines)
     else:
         highlights = "該当なし"
+
+    # AIが生成した「今日のアクション」（上位3件）
+    action_lines = []
+    for a in hot[:3]:
+        hint = a.get("action_hint_jp", "")
+        if hint:
+            action_lines.append(f"・{_esc(hint)[:60]}")
+    action_section = (
+        "<b>今日のアクション</b>\n" + "\n".join(action_lines) + "\n\n"
+        if action_lines else ""
+    )
 
     trending = analysis.get("trending", [])
     trend_text = "、".join(_esc(t["keyword"]) for t in trending[:3]) if trending else "なし"
@@ -136,6 +157,7 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
         f"━━━━━━━━━━━━━\n"
         f"<b>今日のハイライト</b>\n"
         f"{highlights}\n\n"
+        f"{action_section}"
         f"<b>カテゴリ別</b>\n"
         f"{cat_lines}\n\n"
         f"<b>急上昇</b>: {trend_text}{recall_line}\n\n"
@@ -181,8 +203,18 @@ def main() -> None:
     print("分析・スコアリング中...")
     analysis = analyze(articles, history)
 
-    # スコア順上位N件を表示・通知に使う
-    display_articles = analysis["hot_articles"][:MAX_ARTICLES_DISPLAY]
+    # AIリランカー: ルールスコア上位30件をClaude APIで再評価。
+    # API未設定/失敗時はフォールバックでルールスコアのまま使う。
+    print("AI評価中...")
+    rule_top = analysis["hot_articles"][:30]
+    rule_rest = analysis["hot_articles"][30:MAX_ARTICLES_DISPLAY]
+    ai_evaluated = ai_rank_articles(rule_top)
+
+    # 表示用 = AI評価済み + ルールスコア順の残り
+    display_articles = ai_evaluated + rule_rest
+
+    # send_telegram の hot_articles 参照を AI評価済みに差し替え
+    analysis["hot_articles"] = ai_evaluated
 
     print("HTML生成中...")
     html_str = render(display_articles, analysis)
