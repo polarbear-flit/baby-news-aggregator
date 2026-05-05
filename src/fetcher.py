@@ -1,5 +1,5 @@
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import feedparser
 import requests
@@ -8,6 +8,9 @@ from src.config import (
     RSS_FEEDS, KEYWORDS, NOISE_TERMS, CRITICAL_OVERRIDE,
     MAX_ARTICLES_PER_FEED, FETCH_TIMEOUT_SEC, USER_AGENT,
 )
+
+# 古すぎる記事は完全除外（日次Botに数年前のニュースは不要）
+MAX_ARTICLE_AGE_DAYS = 90
 
 
 def _parse_dt(entry) -> datetime | None:
@@ -80,6 +83,15 @@ def is_noise(article: dict) -> bool:
     return any(t.lower() in text for t in NOISE_TERMS)
 
 
+def is_too_old(article: dict) -> bool:
+    """MAX_ARTICLE_AGE_DAYS より古い記事を除外。日付不明は許容（analyzerで減点）。"""
+    published_dt = article.get("published_dt")
+    if published_dt is None:
+        return False
+    cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_ARTICLE_AGE_DAYS)
+    return published_dt < cutoff
+
+
 def deduplicate(articles: list[dict]) -> list[dict]:
     """URLとタイトル前方一致で重複除去"""
     seen_urls: set[str] = set()
@@ -109,7 +121,7 @@ def fetch_all_feeds() -> list[dict]:
             kw_filtered = articles
         else:
             kw_filtered = filter_by_keywords(articles)
-        filtered = [a for a in kw_filtered if not is_noise(a)]
+        filtered = [a for a in kw_filtered if not is_noise(a) and not is_too_old(a)]
         all_articles.extend(filtered)
         print(
             f"[OK] {feed_config['name']}: {len(filtered)} 件採用 "

@@ -132,8 +132,9 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
     # AIが生成した「今日のアクション」（上位3件）
     action_lines = []
     for a in hot[:3]:
-        hint = a.get("action_hint_jp", "")
-        if hint:
+        hint = (a.get("action_hint_jp") or "").strip()
+        # 空白・"特になし"等の無効値は除外
+        if hint and hint.lower() not in ("特になし", "なし", "n/a", "none", "null"):
             action_lines.append(f"・{_esc(hint)[:60]}")
     action_section = (
         "<b>今日のアクション</b>\n" + "\n".join(action_lines) + "\n\n"
