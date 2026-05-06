@@ -57,22 +57,35 @@ def save_history(history: list[dict], keyword_freq: dict, article_count: int) ->
     print(f"[OK] history保存: {len(updated)}件")
 
 
+# 軸別の上限。リコール（safety）は「本当に重要なもの1件」だけにし、
+# 規制（regulation）も1件まで。それ以外は最大2件まで。
+DEFAULT_AXIS_CAPS: dict[str, int] = {
+    "safety": 1,
+    "regulation": 1,
+}
+
+
 def diversify_top(
     articles: list[dict],
     top_n: int = 5,
     max_per_axis: int = 2,
+    axis_caps: dict[str, int] | None = None,
 ) -> list[dict]:
-    """上位 top_n 件で同じ value_axis（または source_type）が max_per_axis を超えないよう多様化。
+    """上位 top_n 件で軸の偏りを抑える多様化。
 
-    全部 safety/recall になるのを防ぎ、商品担当向けに「安全 + 競合 + 小売 + 市場」の
-    バランスのとれた上位ハイライトにする。
-    並び順は score 降順を維持しつつ、同軸の3件目以降は後ろに繰り下げる。
+    - axis_caps で軸ごとの上限を指定（safety=1 など）
+    - 指定がない軸は max_per_axis (デフォルト2) を上限とする
+    - 並び順は score 降順を維持しつつ、軸キャップを超えた記事は後ろに繰り下げる
 
-    例: 入力 [s1, s2, s3, s4, s5, p1, p2, m1] (s=safety) で max_per_axis=2 なら
-        出力 [s1, s2, p1, p2, m1, s3, s4, s5]
+    例: max_per_axis=2 / axis_caps={"safety": 1} で
+        入力 [s1, s2, s3, p1, p2, m1] (s=safety) →
+        出力 [s1, p1, p2, m1, s2, s3]
     """
     if not articles:
         return articles
+
+    if axis_caps is None:
+        axis_caps = DEFAULT_AXIS_CAPS
 
     selected: list[dict] = []
     deferred: list[dict] = []
@@ -82,14 +95,14 @@ def diversify_top(
         if len(selected) >= top_n:
             deferred.append(a)
             continue
-        # 多様性キー: AI評価の value_axis 優先、無ければ source_type
         axis = (
             a.get("ai_value_axis")
             or a.get("source_type")
             or a.get("category")
             or "unknown"
         )
-        if axis_count.get(axis, 0) >= max_per_axis:
+        cap = axis_caps.get(axis, max_per_axis)
+        if axis_count.get(axis, 0) >= cap:
             deferred.append(a)
             continue
         selected.append(a)

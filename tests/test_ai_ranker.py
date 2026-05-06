@@ -102,6 +102,26 @@ class TestDiversifyTop(unittest.TestCase):
         result = diversify_top(articles, top_n=5, max_per_axis=2)
         self.assertEqual([a["title"] for a in result], ["a", "b", "c", "d", "e"])
 
+    def test_safety_axis_capped_at_one(self):
+        """デフォルトでは safety/regulation は最大1件まで（リコール一色防止）"""
+        from main import diversify_top
+        articles = [
+            {"title": f"safety_{i}", "ai_value_score": 95 - i, "ai_value_axis": "safety"}
+            for i in range(3)
+        ] + [
+            {"title": f"reg_{i}", "ai_value_score": 80 - i, "ai_value_axis": "regulation"}
+            for i in range(2)
+        ] + [
+            {"title": "launch_1", "ai_value_score": 70, "ai_value_axis": "product_launch"},
+            {"title": "retail_1", "ai_value_score": 65, "ai_value_axis": "retail"},
+            {"title": "market_1", "ai_value_score": 60, "ai_value_axis": "market"},
+        ]
+        result = diversify_top(articles, top_n=5)
+        top5_axes = [a["ai_value_axis"] for a in result[:5]]
+        # safety と regulation はそれぞれ最大1件
+        self.assertEqual(top5_axes.count("safety"), 1, f"top5={top5_axes}")
+        self.assertEqual(top5_axes.count("regulation"), 1, f"top5={top5_axes}")
+
 
 if __name__ == "__main__":
     unittest.main()
