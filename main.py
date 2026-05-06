@@ -153,6 +153,11 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
     )
     recall_line = f"\n⚠️ リコール・回収関連: {recall_count}件" if recall_count else ""
 
+    # AI実行ステータス（未実行の場合はTelegram末尾に明示）
+    ai_status = ""
+    if not analysis.get("ai_used", True):
+        ai_status = "\n⚠️ AI評価未実行（API障害orキー未設定）。ルールスコアのみで並んでいます"
+
     message = (
         f"📰 <b>ベビー用品ニュース</b> {today}\n"
         f"━━━━━━━━━━━━━\n"
@@ -162,7 +167,7 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
         f"<b>カテゴリ別</b>\n"
         f"{cat_lines}\n\n"
         f"<b>急上昇</b>: {trend_text}{recall_line}\n\n"
-        f"合計 {len(articles)} 件\n"
+        f"合計 {len(articles)} 件{ai_status}\n"
         f"━━━━━━━━━━━━━\n"
         f'<a href="{_esc_attr(report_url)}">日次レポートを開く</a>'
     )
@@ -204,18 +209,21 @@ def main() -> None:
     print("分析・スコアリング中...")
     analysis = analyze(articles, history)
 
-    # AIリランカー: ルールスコア上位30件をClaude APIで再評価。
+    # AIリランカー: ルールスコア上位 MAX_CANDIDATES (=30) 件を Claude API で再評価。
+    # MAX_CANDIDATES と rule_top の件数を揃えて、未評価で意図せず落ちる記事を防ぐ。
     # API未設定/失敗時はフォールバックでルールスコアのまま使う。
+    from src.ai_ranker import MAX_CANDIDATES
     print("AI評価中...")
-    rule_top = analysis["hot_articles"][:30]
-    rule_rest = analysis["hot_articles"][30:MAX_ARTICLES_DISPLAY]
-    ai_evaluated = ai_rank_articles(rule_top)
+    rule_top = analysis["hot_articles"][:MAX_CANDIDATES]
+    rule_rest = analysis["hot_articles"][MAX_CANDIDATES:MAX_ARTICLES_DISPLAY]
+    ai_evaluated, ai_used = ai_rank_articles(rule_top)
 
     # 表示用 = AI評価済み + ルールスコア順の残り
     display_articles = ai_evaluated + rule_rest
 
-    # send_telegram の hot_articles 参照を AI評価済みに差し替え
+    # send_telegram で参照されるフィールドを差し替え
     analysis["hot_articles"] = ai_evaluated
+    analysis["ai_used"] = ai_used
 
     print("HTML生成中...")
     html_str = render(display_articles, analysis)
