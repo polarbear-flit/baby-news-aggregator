@@ -1,9 +1,17 @@
+"""記事スコアリング・トレンド検出・カテゴリ分類。
+
+スコア式:
+  source_weight + lang_bonus + safety + regulation + key_entity + freshness - soft_noise
+ただし CRITICAL_OVERRIDE 該当の記事は SOFT_NOISE 減点を相殺する。
+"""
 from collections import Counter
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
 
 from src.config import (
     KEYWORDS, TREND_WINDOW_DAYS,
-    SOURCE_WEIGHTS, KEY_ENTITIES, SAFETY_TERMS, REGULATION_TERMS,
+    SOURCE_WEIGHTS, KEY_ENTITIES,
+    SAFETY_TERMS, REGULATION_TERMS,
+    SOFT_NOISE_TERMS, CRITICAL_OVERRIDE,
 )
 
 
@@ -41,7 +49,7 @@ def count_category_freq(articles: list[dict]) -> Counter:
 
 
 def calc_trending_keywords(current_freq: Counter, history: list[dict]) -> list[dict]:
-    """過去履歴と比較して増加率上位5件を返す"""
+    """過去履歴と比較して増加率上位5件を返す。"""
     past_freq: Counter = Counter()
     cutoff = datetime.now(timezone.utc) - timedelta(days=TREND_WINDOW_DAYS)
     for record in history:
@@ -74,13 +82,9 @@ def _contains_any(text: str, words: list[str]) -> bool:
 
 
 def score_articles(articles: list[dict]) -> list[dict]:
-    """ソース信頼度 + 言語 + 安全/規制 + 主要企業 + 鮮度 でスコア付け。
-
-    日本のEC事業向けBotなので日本語記事を優先する。
-    安全・規制ボーナスは抑えめにして、英語の海外リコールが上位を占めないようにする。
-    AIリランカー（Step 4）を後段に置く前提で、ここでは粗い並べ替えに留める。
-    """
+    """ソース信頼度 + 言語 + 安全/規制 + 主要企業 + 鮮度 + ソフトノイズ減点でスコア付け。"""
     now = datetime.now(timezone.utc)
+    critical_lower = [c.lower() for c in CRITICAL_OVERRIDE]
     scored = []
     for a in articles:
         text = (a.get("title", "") + " " + a.get("summary", "")).lower()
@@ -93,7 +97,7 @@ def score_articles(articles: list[dict]) -> list[dict]:
         if a.get("language") == "ja":
             score += 20
 
-        # 3) 安全・規制シグナル（重要だが、過剰に上位化しないよう抑えめ）
+        # 3) 安全・規制シグナル
         if _contains_any(text, SAFETY_TERMS):
             score += 25
         if _contains_any(text, REGULATION_TERMS):
@@ -103,7 +107,12 @@ def score_articles(articles: list[dict]) -> list[dict]:
         if _contains_any(text, KEY_ENTITIES):
             score += 15
 
-        # 5) 鮮度（古い記事は強めに減点。2024年など過去の記事を上位に出さない）
+        # 5) ソフトノイズ減点（CRITICAL_OVERRIDE該当なら相殺）
+        if _contains_any(text, SOFT_NOISE_TERMS):
+            if not _contains_any(text, critical_lower):
+                score -= 20
+
+        # 6) 鮮度
         published_dt = a.get("published_dt")
         if published_dt:
             try:
@@ -117,11 +126,11 @@ def score_articles(articles: list[dict]) -> list[dict]:
                 elif age_hours <= 30 * 24:
                     score -= 15
                 else:
-                    score -= 50  # 30日超は強く減点
+                    score -= 50
             except Exception:
                 score -= 25
         else:
-            score -= 25  # 日付不明は最新扱いさせない
+            score -= 25
 
         scored.append({**a, "score": max(0, score)})
 
@@ -130,7 +139,7 @@ def score_articles(articles: list[dict]) -> list[dict]:
 
 
 def generate_category_insight(category: str, articles: list[dict], freq: Counter) -> str:
-    """カテゴリ別の示唆テキストを生成"""
+    """カテゴリ別の示唆テキストを生成。"""
     count = freq.get(category, 0)
     label = CATEGORY_LABEL.get(category, category)
     recall_count = sum(
@@ -187,14 +196,7 @@ def generate_overall_insights(
 
 
 def analyze(articles: list[dict], history: list[dict]) -> dict:
-    """全分析を実行してAnalysisResult dictを返す。
-
-    返り値:
-        - hot_articles: スコア降順で全件（上位N件はTelegram/HTMLで切り出して使う）
-        - trending: 急上昇キーワード上位5件
-        - keyword_freq / category_freq: HTMLグラフ用
-        - その他HTMLレンダリング用フィールド
-    """
+    """全分析を実行して AnalysisResult dict を返す。"""
     scored = score_articles(articles)
     keyword_freq = count_keyword_freq(scored)
     category_freq = count_category_freq(scored)
@@ -210,7 +212,7 @@ def analyze(articles: list[dict], history: list[dict]) -> dict:
         "keyword_freq": dict(keyword_freq.most_common(20)),
         "category_freq": dict(category_freq),
         "trending": trending,
-        "hot_articles": scored,  # 全件スコア済み・降順。呼び出し側でslice
+        "hot_articles": scored,  # 全件スコア済み・降順。呼び出し側で slice
         "category_insights": category_insights,
         "overall_insights": overall_insights,
         "category_label": CATEGORY_LABEL,

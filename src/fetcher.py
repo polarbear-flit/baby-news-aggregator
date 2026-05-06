@@ -1,19 +1,65 @@
+"""フィード取得・正規化・ノイズ除外・重複除去。
+
+設計方針:
+- fetch_type で取得方法をディスパッチ（rss / html_caa_recall 等）。
+- HARD_NOISE は完全除外、SOFT_NOISE はスコアリング側で減点（ここでは除外しない）。
+- 重複除去は normalize_title + rapidfuzz の類似度ベース（rapidfuzz未インストール時は完全一致フォールバック）。
+"""
 import re
 from datetime import datetime, timedelta, timezone
+from typing import Optional
 
 import feedparser
 import requests
 
+try:
+    from rapidfuzz import fuzz  # type: ignore
+    HAS_RAPIDFUZZ = True
+except ImportError:  # pragma: no cover
+    HAS_RAPIDFUZZ = False
+
+try:
+    from bs4 import BeautifulSoup  # type: ignore
+    HAS_BS4 = True
+except ImportError:  # pragma: no cover
+    HAS_BS4 = False
+
 from src.config import (
-    RSS_FEEDS, KEYWORDS, NOISE_TERMS, CRITICAL_OVERRIDE,
+    RSS_FEEDS, KEYWORDS, HARD_NOISE_TERMS, CRITICAL_OVERRIDE,
+    PAST_YEAR_TITLE_PATTERNS,
     MAX_ARTICLES_PER_FEED, FETCH_TIMEOUT_SEC, USER_AGENT,
 )
 
 # 古すぎる記事は完全除外（日次Botに数年前のニュースは不要）
 MAX_ARTICLE_AGE_DAYS = 90
+# 重複判定の類似度しきい値（0-100）。88以上を重複扱いにする。
+DEDUP_SIMILARITY_THRESHOLD = 88
 
 
-def _parse_dt(entry) -> datetime | None:
+def normalize_title(title: str) -> str:
+    """重複検出用のタイトル正規化。
+
+    画像N/M, 写真N/M、末尾の媒体名（| ブランド | - メディア）、括弧内、
+    句読点、空白を除去して比較しやすくする。
+    """
+    if not title:
+        return ""
+    s = title
+    # 画像N/M, 写真N/M を除去
+    s = re.sub(r"画像\s*\d+\s*[/／]\s*\d+", "", s)
+    s = re.sub(r"写真\s*\d+\s*[/／]\s*\d+", "", s)
+    # 末尾の媒体名（| メディア / - メディア など）を除去
+    s = re.sub(r"\s*[|｜\-－‐]\s*[^|｜\-－‐]+$", "", s)
+    # 括弧内文字列を除去
+    s = re.sub(r"[【\[\(（][^】\]\)）]*[】\]\)）]", "", s)
+    # 句読点・記号を除去
+    s = re.sub(r"[、。!！?？\"'‘’“”「」『』]", "", s)
+    # 空白を完全除去
+    s = re.sub(r"\s+", "", s)
+    return s.lower()
+
+
+def _parse_dt(entry) -> Optional[datetime]:
     """feedparserのtime.struct_timeをdatetimeに変換。取れなければNone。"""
     for field in ("published_parsed", "updated_parsed"):
         t = getattr(entry, field, None)
@@ -25,8 +71,8 @@ def _parse_dt(entry) -> datetime | None:
     return None
 
 
-def fetch_feed(feed_config: dict) -> list[dict]:
-    """1フィードを取得してArticleリストを返す。timeoutを実効化。"""
+def _fetch_rss(feed_config: dict) -> list[dict]:
+    """RSS/Atom フィードを取得して Article リストを返す。"""
     articles: list[dict] = []
     try:
         resp = requests.get(
@@ -59,8 +105,123 @@ def fetch_feed(feed_config: dict) -> list[dict]:
     return articles
 
 
+def _fetch_html_caa_recall(feed_config: dict) -> list[dict]:
+    """消費者庁リコール「こども向け」をHTMLスクレイピング。
+
+    URL形式: https://www.recall.caa.go.jp/result/index.php?screenkbn=05
+    各リコール行に詳細リンク `/result/detail.php?rcl=ID&...` がある前提。
+    日付（YYYY/MM/DD）はrow全体から正規表現で抽出する。
+    """
+    if not HAS_BS4:
+        print(f"[SKIP] {feed_config['name']}: beautifulsoup4 未インストール")
+        return []
+
+    BASE = "https://www.recall.caa.go.jp"
+    articles: list[dict] = []
+    try:
+        resp = requests.get(
+            feed_config["url"],
+            headers={"User-Agent": USER_AGENT},
+            timeout=FETCH_TIMEOUT_SEC,
+        )
+        resp.raise_for_status()
+        resp.encoding = resp.apparent_encoding or "utf-8"
+        soup = BeautifulSoup(resp.text, "html.parser")
+
+        seen_ids: set[str] = set()
+        # 詳細リンクを起点に各リコール項目を抽出
+        for link in soup.select('a[href*="/result/detail.php"]'):
+            href = link.get("href", "")
+            rcl_match = re.search(r"rcl=(\d+)", href)
+            if not rcl_match:
+                continue
+            rcl_id = rcl_match.group(1)
+            if rcl_id in seen_ids:
+                continue
+            seen_ids.add(rcl_id)
+
+            # URL正規化
+            if href.startswith("/"):
+                full_url = BASE + href
+            elif href.startswith("http"):
+                full_url = href
+            else:
+                full_url = BASE + "/result/" + href
+
+            link_text = link.get_text(" ", strip=True)
+            if not link_text:
+                continue
+
+            # 周辺セルから日付（YYYY/MM/DD）を抽出
+            row = link.find_parent("tr") or link.find_parent("li") or link.parent
+            published_dt: Optional[datetime] = None
+            published_str = ""
+            if row is not None:
+                row_text = row.get_text(" ", strip=True)
+                date_match = re.search(r"(\d{4})[/\-](\d{1,2})[/\-](\d{1,2})", row_text)
+                if date_match:
+                    try:
+                        published_dt = datetime(
+                            int(date_match.group(1)),
+                            int(date_match.group(2)),
+                            int(date_match.group(3)),
+                            tzinfo=timezone.utc,
+                        )
+                        published_str = published_dt.strftime("%Y-%m-%d")
+                    except Exception:
+                        pass
+
+            articles.append({
+                "title": "[消費者庁リコール] " + link_text[:180],
+                "url": full_url,
+                "summary": "消費者庁リコール（こども向け）公式情報",
+                "published": published_str,
+                "published_dt": published_dt,
+                "source_name": feed_config["name"],
+                "source_type": feed_config.get("source_type", "official_recall"),
+                "category": feed_config["category"],
+                "language": feed_config["language"],
+                "matched_keywords": ["リコール"],
+            })
+
+            if len(articles) >= MAX_ARTICLES_PER_FEED:
+                break
+
+        return articles
+    except Exception as e:
+        print(f"[SKIP] {feed_config['name']}: {e}")
+        return []
+
+
+def _fetch_html_meti(feed_config: dict) -> list[dict]:
+    """経産省 製品安全 - 未実装スタブ。今後 PSC マーク・法令改正等を取得予定。"""
+    print(f"[SKIP] {feed_config['name']}: html_meti は未実装スタブ")
+    return []
+
+
+def _fetch_html_nite(feed_config: dict) -> list[dict]:
+    """NITE 製品事故・リコール - 未実装スタブ。SAFE-Lite等のスクレイピング検討。"""
+    print(f"[SKIP] {feed_config['name']}: html_nite は未実装スタブ")
+    return []
+
+
+FETCH_DISPATCH = {
+    "rss": _fetch_rss,
+    "html_caa_recall": _fetch_html_caa_recall,
+    "html_meti": _fetch_html_meti,
+    "html_nite": _fetch_html_nite,
+}
+
+
+def fetch_feed(feed_config: dict) -> list[dict]:
+    """fetch_type に応じて取得関数をディスパッチ。"""
+    fetch_type = feed_config.get("fetch_type", "rss")
+    fetcher = FETCH_DISPATCH.get(fetch_type, _fetch_rss)
+    return fetcher(feed_config)
+
+
 def filter_by_keywords(articles: list[dict]) -> list[dict]:
-    """キーワードにマッチした記事のみ返す。matched_keywordsも付与"""
+    """キーワードにマッチした記事のみ返す。matched_keywordsも付与。"""
     result = []
     for article in articles:
         text = (article["title"] + " " + article["summary"]).lower()
@@ -75,12 +236,16 @@ def filter_by_keywords(articles: list[dict]) -> list[dict]:
     return result
 
 
-def is_noise(article: dict) -> bool:
-    """SEO/コラム系のノイズ記事を判定。CRITICAL_OVERRIDE該当なら救う。"""
+def is_hard_noise(article: dict) -> bool:
+    """HARD_NOISE_TERMS該当の記事を完全除外判定。CRITICAL_OVERRIDE該当なら救う。
+
+    企業名は CRITICAL_OVERRIDE に含めていないため、「西松屋 + 選び方ガイド」のような
+    企業名+SEOコラム記事は除外される。
+    """
     text = (article.get("title", "") + " " + article.get("summary", "")).lower()
     if any(t.lower() in text for t in CRITICAL_OVERRIDE):
         return False
-    return any(t.lower() in text for t in NOISE_TERMS)
+    return any(t.lower() in text for t in HARD_NOISE_TERMS)
 
 
 def is_too_old(article: dict) -> bool:
@@ -92,40 +257,92 @@ def is_too_old(article: dict) -> bool:
     return published_dt < cutoff
 
 
+def is_old_topic_title(article: dict) -> bool:
+    """タイトルに過去年シグナル（2024年/昨年/去年等）が含まれていれば古い記事と判定。
+
+    Google News RSSは古い記事を再インデックスするとpubDateを更新するため、
+    本文（タイトル）から過去年を検出する必要がある。
+    CRITICAL_OVERRIDE該当（リコール等）は古い年でも残す（重大継続案件のため）。
+    """
+    title = article.get("title", "")
+    title_lower = title.lower()
+    if any(t.lower() in title_lower for t in CRITICAL_OVERRIDE):
+        return False
+    return any(p in title for p in PAST_YEAR_TITLE_PATTERNS)
+
+
 def deduplicate(articles: list[dict]) -> list[dict]:
-    """URLとタイトル前方一致で重複除去"""
+    """URL一致 + タイトル正規化+類似度（rapidfuzzあれば）で重複除去。
+
+    画像1/34 と 画像3/34 のようなギャラリー記事は、normalize_title で
+    「画像N/M」が除去されるため、同一タイトル扱いで重複排除される。
+    """
     seen_urls: set[str] = set()
-    seen_titles: set[str] = set()
-    result = []
+    kept: list[tuple[str, dict]] = []
+
     for a in articles:
-        norm_url = a["url"].rstrip("/").lower()
-        norm_title = a["title"][:40].lower()
-        if norm_url in seen_urls or norm_title in seen_titles:
+        norm_url = (a.get("url") or "").rstrip("/").lower()
+        if norm_url and norm_url in seen_urls:
             continue
-        seen_urls.add(norm_url)
-        seen_titles.add(norm_title)
-        result.append(a)
-    return result
+        if norm_url:
+            seen_urls.add(norm_url)
+
+        norm_title = normalize_title(a.get("title", ""))
+        if not norm_title:
+            kept.append((norm_title, a))
+            continue
+
+        is_dup = False
+        if HAS_RAPIDFUZZ:
+            for prev_norm, _ in kept:
+                if not prev_norm:
+                    continue
+                if fuzz.ratio(norm_title, prev_norm) >= DEDUP_SIMILARITY_THRESHOLD:
+                    is_dup = True
+                    break
+        else:
+            # フォールバック: 完全一致のみ
+            if any(prev_norm == norm_title for prev_norm, _ in kept):
+                is_dup = True
+
+        if not is_dup:
+            kept.append((norm_title, a))
+
+    return [a for _, a in kept]
 
 
 def fetch_all_feeds() -> list[dict]:
-    """全フィード取得 → キーワードフィルタ → ノイズ除外 → 重複除去（スコア順並べ替えはanalyzerで実施）"""
+    """全フィード取得 → キーワードフィルタ → ノイズ・古さ除外 → 重複除去。"""
     all_articles: list[dict] = []
     for feed_config in RSS_FEEDS:
         articles = fetch_feed(feed_config)
-        if "news.google.com" in feed_config["url"]:
-            # Google Newsは検索クエリ自体がフィルタなのでキーワード照合は省略するが、
-            # ノイズ除外とスコアリングは他ソースと同様に通す。
+
+        # キーワードフィルタ:
+        # - Google Newsは検索クエリ自体がフィルタなのでカテゴリ語を擬似マッチさせる
+        # - 公的ソース（fetch_type != "rss"）は既にmatched_keywords付き、または対象が明確なのでスキップ
+        url = feed_config.get("url", "")
+        fetch_type = feed_config.get("fetch_type", "rss")
+        if fetch_type != "rss":
+            kw_filtered = articles
+        elif "news.google.com" in url:
             for a in articles:
                 a["matched_keywords"] = [feed_config["category"]]
             kw_filtered = articles
         else:
             kw_filtered = filter_by_keywords(articles)
-        filtered = [a for a in kw_filtered if not is_noise(a) and not is_too_old(a)]
+
+        filtered = [
+            a for a in kw_filtered
+            if not is_hard_noise(a)
+            and not is_too_old(a)
+            and not is_old_topic_title(a)
+        ]
         all_articles.extend(filtered)
         print(
             f"[OK] {feed_config['name']}: {len(filtered)} 件採用 "
-            f"(取得: {len(articles)} / キーワード後: {len(kw_filtered)})"
+            f"(取得: {len(articles)} / フィルタ後: {len(kw_filtered)})"
         )
 
-    return deduplicate(all_articles)
+    deduped = deduplicate(all_articles)
+    print(f"[OK] 重複除去後: {len(deduped)} 件")
+    return deduped

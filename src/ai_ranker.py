@@ -7,18 +7,21 @@ Mia（日本のベビー用品EC事業のカテゴリマネージャー）視点
 - ANTHROPIC_API_KEY 未設定時は skip して入力をそのまま返す（Botは止めない）
 - API失敗時も skip して入力を返す（フォールバックでルールスコアのまま動作）
 - AI が is_relevant=False と判定した記事は除外
-- 1日1回・~30件評価で月数百円以内に収まるようHaiku 4.5を既定モデルに採用
+- 1日1回・~30件評価で月数百円以内に収まるよう Haiku 4.5 を既定モデルに採用
+- ai_used フラグを返り値で返し、Telegram通知で「AI未実行」を明示できるようにする
 """
 import json
 import os
 
 DEFAULT_MODEL = "claude-haiku-4-5-20251001"
-MAX_CANDIDATES = 20  # AIに渡す最大記事数（コスト管理 + 出力トークン上限内に収める）
-MAX_OUTPUT_TOKENS = 8000  # 20件×~200tokens の出力に余裕を持たせる
+MAX_CANDIDATES = 30  # main.py の rule_top と揃える
+MAX_OUTPUT_TOKENS = 12000  # 30件×~250tokens の出力に余裕を持たせる
 
 RANK_TOOL = {
     "name": "rank_baby_news",
     "description": "Rank baby product news for a Japanese EC category manager.",
+    # 厳格スキーマ検証: required と enum を厳密に守らせる
+    "strict": True,
     "input_schema": {
         "type": "object",
         "properties": {
@@ -87,11 +90,18 @@ def _build_prompt(compact: list[dict]) -> str:
 3. 主要日本小売（西松屋/赤ちゃん本舗/アカチャンホンポ/トイザらス/イオン/ニトリ/Amazon/楽天）の動向
 4. 市場規模・消費者行動・EC/D2C変化
 5. 海外CPSCリコールは日本に輸入されるブランドの場合のみ価値あり
-6. 「おすすめランキング」「選び方ガイド」「育児コラム」「芸能人話題」は is_relevant=false で noise 軸
+6. 「おすすめランキング」「選び方ガイド」「育児コラム」「芸能人話題」「画像・写真ギャラリー」「閉店・開店」は is_relevant=false
 
 【鮮度ルール】
 - published が本日から30日以上前の記事は value_score を 30 以下
 - 90日以上前は is_relevant=false で構わない
+- ⚠️ Google News RSSは古い記事を再インデックスするとpubDateを更新するため、published 日付だけを信用しない:
+  - タイトル/要約に「2024年」「2025年」「昨年」「去年」等の過去年言及があれば is_relevant=false
+  - 「○○年版」「20XX年X月X日に発表」など過去年が記事の主題になっている場合も is_relevant=false
+
+【無関係記事の除外】
+- 東京ばな奈・セブンイレブン・バーガーキング等のベビー用品と無関係な商品は is_relevant=false
+- ベビー用品文脈がない地域ニュース（閉店・開店・地域フェア）は is_relevant=false
 
 【各項目の出力ルール】
 - article_id: 入力の id をそのまま文字列で返す
@@ -106,28 +116,30 @@ def _build_prompt(compact: list[dict]) -> str:
 """
 
 
-def ai_rank_articles(articles: list[dict]) -> list[dict]:
-    """ルールスコア上位の記事をAIで再評価し、上位を value_score 降順で返す。
+def ai_rank_articles(articles: list[dict]) -> tuple[list[dict], bool]:
+    """ルールスコア上位の記事をAIで再評価し、value_score 降順で返す。
 
     Args:
         articles: ルールスコア降順の記事リスト
     Returns:
-        AI評価で is_relevant=True だった記事を value_score 降順で返す。
-        AI失敗時は入力をそのまま返す（フォールバック）。
+        (enriched_articles, ai_used)
+        - enriched_articles: AI評価で is_relevant=True だった記事を value_score 降順で返す。
+          AI失敗時は入力をそのまま返す（フォールバック）。
+        - ai_used: AIが実際に有効な評価を返したかどうか
     """
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         print("[SKIP] AI ranker: ANTHROPIC_API_KEY 未設定 → ルールスコアのまま使用")
-        return articles
+        return articles, False
 
     if not articles:
-        return articles
+        return articles, False
 
     try:
         from anthropic import Anthropic
     except ImportError:
         print("[SKIP] AI ranker: anthropic パッケージ未インストール → ルールスコアのまま使用")
-        return articles
+        return articles, False
 
     candidates = articles[:MAX_CANDIDATES]
     compact = [
@@ -135,9 +147,11 @@ def ai_rank_articles(articles: list[dict]) -> list[dict]:
             "id": str(i),
             "title": (a.get("title") or "")[:150],
             "summary": (a.get("summary") or "")[:200],
-            "source": a.get("source_name", ""),
-            "lang": a.get("language", "ja"),
-            # AIに鮮度判断させるため日付（YYYY-MM-DD）を渡す
+            "source_name": a.get("source_name", ""),
+            "source_type": a.get("source_type", ""),
+            "url": (a.get("url") or "")[:120],
+            "language": a.get("language", "ja"),
+            "matched_keywords": (a.get("matched_keywords") or [])[:8],
             "published": (a.get("published") or "")[:10] or "unknown",
             "rule_score": a.get("score", 0),
         }
@@ -154,7 +168,6 @@ def ai_rank_articles(articles: list[dict]) -> list[dict]:
             tool_choice={"type": "tool", "name": "rank_baby_news"},
             messages=[{"role": "user", "content": _build_prompt(compact)}],
         )
-        # デバッグ: 使用トークン数とstop_reasonを記録
         usage = getattr(resp, "usage", None)
         stop_reason = getattr(resp, "stop_reason", "?")
         if usage:
@@ -164,7 +177,7 @@ def ai_rank_articles(articles: list[dict]) -> list[dict]:
             )
     except Exception as e:
         print(f"[WARN] AI ranker API失敗: {e} → ルールスコアのまま使用")
-        return articles
+        return articles, False
 
     tool_use = next(
         (b for b in resp.content if getattr(b, "type", None) == "tool_use"),
@@ -172,15 +185,16 @@ def ai_rank_articles(articles: list[dict]) -> list[dict]:
     )
     if tool_use is None:
         print("[WARN] AI ranker: tool_use 出力なし → ルールスコアのまま使用")
-        return articles
+        return articles, False
 
     items = tool_use.input.get("items", [])
     if not items:
-        # デバッグ: 空items時はinputの全キーをログに残す
         print(
             f"[WARN] AI ranker: items 空。tool_use.input keys={list(tool_use.input.keys())} "
             f"raw={str(tool_use.input)[:500]}"
         )
+        return articles, False
+
     ai_by_id = {str(item.get("article_id")): item for item in items}
 
     enriched: list[dict] = []
@@ -209,4 +223,4 @@ def ai_rank_articles(articles: list[dict]) -> list[dict]:
         f"[OK] AI ranker: {len(items)}件評価 / "
         f"{len(enriched)}件採用 / {dropped}件をノイズ除外"
     )
-    return enriched
+    return enriched, True
