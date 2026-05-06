@@ -68,5 +68,40 @@ class TestAIRankerFallback(unittest.TestCase):
             self.fail(f"ai_rank_articles が例外を投げた: {e}")
 
 
+class TestDiversifyTop(unittest.TestCase):
+    """diversify_top で上位 top_n 件の value_axis が偏らないことを確認。"""
+
+    def test_safety_dominated_input_diversifies(self):
+        """全件 safety の入力に他軸が混ざっていれば上位は多様化される"""
+        from main import diversify_top
+        articles = [
+            {"title": f"safety_{i}", "ai_value_score": 90 - i, "ai_value_axis": "safety"}
+            for i in range(5)
+        ] + [
+            {"title": "launch_1", "ai_value_score": 70, "ai_value_axis": "product_launch"},
+            {"title": "retail_1", "ai_value_score": 65, "ai_value_axis": "retail"},
+            {"title": "market_1", "ai_value_score": 60, "ai_value_axis": "market"},
+        ]
+        result = diversify_top(articles, top_n=5, max_per_axis=2)
+        top5_axes = [a["ai_value_axis"] for a in result[:5]]
+        # safety は最大2件まで
+        self.assertLessEqual(top5_axes.count("safety"), 2, f"top5={top5_axes}")
+        # 結果は元の長さを保持
+        self.assertEqual(len(result), len(articles))
+
+    def test_no_change_when_already_diverse(self):
+        """もともと多様なら順序変更なし"""
+        from main import diversify_top
+        articles = [
+            {"title": "a", "ai_value_score": 90, "ai_value_axis": "safety"},
+            {"title": "b", "ai_value_score": 85, "ai_value_axis": "product_launch"},
+            {"title": "c", "ai_value_score": 80, "ai_value_axis": "retail"},
+            {"title": "d", "ai_value_score": 75, "ai_value_axis": "market"},
+            {"title": "e", "ai_value_score": 70, "ai_value_axis": "competitor"},
+        ]
+        result = diversify_top(articles, top_n=5, max_per_axis=2)
+        self.assertEqual([a["title"] for a in result], ["a", "b", "c", "d", "e"])
+
+
 if __name__ == "__main__":
     unittest.main()

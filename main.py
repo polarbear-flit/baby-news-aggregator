@@ -57,6 +57,51 @@ def save_history(history: list[dict], keyword_freq: dict, article_count: int) ->
     print(f"[OK] history保存: {len(updated)}件")
 
 
+def diversify_top(
+    articles: list[dict],
+    top_n: int = 5,
+    max_per_axis: int = 2,
+) -> list[dict]:
+    """上位 top_n 件で同じ value_axis（または source_type）が max_per_axis を超えないよう多様化。
+
+    全部 safety/recall になるのを防ぎ、商品担当向けに「安全 + 競合 + 小売 + 市場」の
+    バランスのとれた上位ハイライトにする。
+    並び順は score 降順を維持しつつ、同軸の3件目以降は後ろに繰り下げる。
+
+    例: 入力 [s1, s2, s3, s4, s5, p1, p2, m1] (s=safety) で max_per_axis=2 なら
+        出力 [s1, s2, p1, p2, m1, s3, s4, s5]
+    """
+    if not articles:
+        return articles
+
+    selected: list[dict] = []
+    deferred: list[dict] = []
+    axis_count: dict[str, int] = {}
+
+    for a in articles:
+        if len(selected) >= top_n:
+            deferred.append(a)
+            continue
+        # 多様性キー: AI評価の value_axis 優先、無ければ source_type
+        axis = (
+            a.get("ai_value_axis")
+            or a.get("source_type")
+            or a.get("category")
+            or "unknown"
+        )
+        if axis_count.get(axis, 0) >= max_per_axis:
+            deferred.append(a)
+            continue
+        selected.append(a)
+        axis_count[axis] = axis_count.get(axis, 0) + 1
+
+    # top_n 未満なら制約緩和して埋める
+    while len(selected) < top_n and deferred:
+        selected.append(deferred.pop(0))
+
+    return selected + deferred
+
+
 def _esc(value: str) -> str:
     """Telegram HTML parse_mode用の本文エスケープ。"""
     return html.escape(str(value or ""), quote=False)
@@ -217,6 +262,9 @@ def main() -> None:
     rule_top = analysis["hot_articles"][:MAX_CANDIDATES]
     rule_rest = analysis["hot_articles"][MAX_CANDIDATES:MAX_ARTICLES_DISPLAY]
     ai_evaluated, ai_used = ai_rank_articles(rule_top)
+
+    # 多様性フィルター: 上位5件で safety/recall 一色を避ける
+    ai_evaluated = diversify_top(ai_evaluated, top_n=5, max_per_axis=2)
 
     # 表示用 = AI評価済み + ルールスコア順の残り
     display_articles = ai_evaluated + rule_rest

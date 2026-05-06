@@ -111,7 +111,11 @@ def _fetch_html_caa_recall(feed_config: dict) -> list[dict]:
     URL形式: https://www.recall.caa.go.jp/result/index.php?screenkbn=05
     各リコール行に詳細リンク `/result/detail.php?rcl=ID&...` がある前提。
     日付（YYYY/MM/DD）はrow全体から正規表現で抽出する。
+
+    注意: こども向けリコールは食品（離乳食以外の菓子・ハム等）も含むため、
+    取得件数を絞ってリコール一色になるのを防ぐ。
     """
+    MAX_CAA_ITEMS = 5  # リコール一色を防ぐため最新5件のみ
     if not HAS_BS4:
         print(f"[SKIP] {feed_config['name']}: beautifulsoup4 未インストール")
         return []
@@ -184,7 +188,7 @@ def _fetch_html_caa_recall(feed_config: dict) -> list[dict]:
                 "matched_keywords": ["リコール"],
             })
 
-            if len(articles) >= MAX_ARTICLES_PER_FEED:
+            if len(articles) >= MAX_CAA_ITEMS:
                 break
 
         return articles
