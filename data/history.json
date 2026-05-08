@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-05-08T14:23:21.758779+09:00",
+    "article_count": 50,
+    "keyword_freq": {
+      "general": 48,
+      "car_safety": 18,
+      "mobility": 17,
+      "skincare": 6,
+      "feeding": 5,
+      "diaper": 4,
+      "リコール": 2
+    }
+  },
+  {
     "date": "2026-05-08T08:03:25.405784+09:00",
     "article_count": 50,
     "keyword_freq": {
