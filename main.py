@@ -289,18 +289,23 @@ def main() -> None:
 
     # safety/regulation はメインハイライトから除外し、別セクションに切り出す。
     # 「リコールが入るとノイズが大きい。重要なもの1-2件だけ別出し」というユーザー要望への対応。
+    # ただし score<80 の中位 safety/regulation も HTMLレポート/履歴には残すため、
+    # display_articles の末尾に追加する（main_highlightにだけ出さない）。
     SAFETY_AXES = {"safety", "regulation"}
-    SAFETY_MIN_SCORE = 80  # 本当に重要なものだけ（score 80以上）
+    SAFETY_MIN_SCORE = 80  # 別出しに昇格する基準（本当に重要なもの）
 
-    safety_articles = sorted(
-        [
-            a for a in ai_evaluated
-            if a.get("ai_value_axis") in SAFETY_AXES
-            and a.get("ai_value_score", 0) >= SAFETY_MIN_SCORE
-        ],
+    all_safety_ai = sorted(
+        [a for a in ai_evaluated if a.get("ai_value_axis") in SAFETY_AXES],
         key=lambda x: x.get("ai_value_score", 0),
         reverse=True,
-    )[:2]  # 最大2件
+    )
+    safety_articles = [
+        a for a in all_safety_ai
+        if a.get("ai_value_score", 0) >= SAFETY_MIN_SCORE
+    ][:2]  # 別出しに使うのは score >= 80 の上位2件のみ
+    # 別出しに入らなかった safety/regulation（score<80 や 3件目以降）
+    _safety_ids = {id(a) for a in safety_articles}
+    remaining_safety = [a for a in all_safety_ai if id(a) not in _safety_ids]
 
     main_articles = [
         a for a in ai_evaluated
@@ -310,8 +315,9 @@ def main() -> None:
     # メインハイライトは多様化（safety無いので axis_caps は不要）
     main_articles = diversify_top(main_articles, top_n=5, max_per_axis=2, axis_caps={})
 
-    # 表示用 = メイン + 安全 + ルールスコア順の残り
-    display_articles = main_articles + safety_articles + rule_rest
+    # 表示用 = メインハイライト + 別出し安全 + 残りの安全 + AI評価圏外
+    # remaining_safety を入れることで HTML/history に中位 safety/regulation も残る
+    display_articles = main_articles + safety_articles + remaining_safety + rule_rest
 
     # send_telegram で参照されるフィールドを差し替え
     analysis["hot_articles"] = main_articles

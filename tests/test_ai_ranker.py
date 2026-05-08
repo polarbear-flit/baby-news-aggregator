@@ -138,6 +138,23 @@ class TestDiversifyTop(unittest.TestCase):
 class TestSafetySectionSeparation(unittest.TestCase):
     """safety/regulation 軸の記事を main から切り出すロジック"""
 
+    def _split_safety(self, ai_evaluated, min_score=80, max_safety=2):
+        """main.py のロジックを抽出した参照実装（テスト用）。
+
+        Returns: (main_articles, safety_articles, remaining_safety)
+        """
+        SAFETY_AXES = {"safety", "regulation"}
+        all_safety = sorted(
+            [a for a in ai_evaluated if a.get("ai_value_axis") in SAFETY_AXES],
+            key=lambda x: x.get("ai_value_score", 0),
+            reverse=True,
+        )
+        safety = [a for a in all_safety if a.get("ai_value_score", 0) >= min_score][:max_safety]
+        safety_ids = {id(a) for a in safety}
+        remaining = [a for a in all_safety if id(a) not in safety_ids]
+        main = [a for a in ai_evaluated if a.get("ai_value_axis") not in SAFETY_AXES]
+        return main, safety, remaining
+
     def test_safety_articles_separated(self):
         """safety/regulation で score>=80 のみ別出しに、他は main に残る"""
         ai_evaluated = [
@@ -147,29 +164,77 @@ class TestSafetySectionSeparation(unittest.TestCase):
             {"title": "launch_1", "ai_value_score": 75, "ai_value_axis": "product_launch"},
             {"title": "market_1", "ai_value_score": 65, "ai_value_axis": "market"},
         ]
-        SAFETY_AXES = {"safety", "regulation"}
-        SAFETY_MIN_SCORE = 80
+        main, safety, _ = self._split_safety(ai_evaluated)
 
-        safety = sorted(
-            [
-                a for a in ai_evaluated
-                if a.get("ai_value_axis") in SAFETY_AXES
-                and a.get("ai_value_score", 0) >= SAFETY_MIN_SCORE
-            ],
-            key=lambda x: x.get("ai_value_score", 0),
-            reverse=True,
-        )[:2]
-        main = [a for a in ai_evaluated if a.get("ai_value_axis") not in SAFETY_AXES]
-
-        # safety: score>=80 なものだけ、最大2件、score降順
         self.assertEqual(len(safety), 2)
         self.assertEqual(safety[0]["title"], "safety_high")
         self.assertEqual(safety[1]["title"], "reg_high")
 
-        # main: safety/regulation 以外
         self.assertEqual(len(main), 2)
         self.assertNotIn("safety", [a["ai_value_axis"] for a in main])
         self.assertNotIn("regulation", [a["ai_value_axis"] for a in main])
+
+    def test_low_score_safety_kept_in_remaining(self):
+        """score<80 の safety/regulation は別出しから外れるが remaining_safety に残る。
+
+        Codex指摘: 中位 safety 記事が display_articles から消える問題への対策。
+        HTMLレポート/historyに残すため、別出しに入らなかった分は remaining_safety で
+        確実に display_articles に含まれるようにする。
+        """
+        ai_evaluated = [
+            {"title": "safety_high", "ai_value_score": 90, "ai_value_axis": "safety"},
+            {"title": "safety_mid", "ai_value_score": 70, "ai_value_axis": "safety"},
+            {"title": "reg_low", "ai_value_score": 60, "ai_value_axis": "regulation"},
+            {"title": "launch_1", "ai_value_score": 75, "ai_value_axis": "product_launch"},
+        ]
+        main, safety, remaining = self._split_safety(ai_evaluated)
+
+        # 別出しは score>=80 の1件のみ
+        self.assertEqual(len(safety), 1)
+        self.assertEqual(safety[0]["title"], "safety_high")
+
+        # 中位 safety/regulation 2件は remaining に入る
+        remaining_titles = [a["title"] for a in remaining]
+        self.assertIn("safety_mid", remaining_titles)
+        self.assertIn("reg_low", remaining_titles)
+        self.assertEqual(len(remaining), 2)
+
+    def test_safety_articles_not_lost_when_third_or_more(self):
+        """score>=80 でも3件目以降は別出しに入らないが remaining に残る"""
+        ai_evaluated = [
+            {"title": "safety_1", "ai_value_score": 95, "ai_value_axis": "safety"},
+            {"title": "safety_2", "ai_value_score": 90, "ai_value_axis": "safety"},
+            {"title": "safety_3", "ai_value_score": 85, "ai_value_axis": "safety"},
+            {"title": "safety_4", "ai_value_score": 82, "ai_value_axis": "safety"},
+        ]
+        _, safety, remaining = self._split_safety(ai_evaluated)
+        self.assertEqual(len(safety), 2)
+        self.assertEqual([a["title"] for a in safety], ["safety_1", "safety_2"])
+        self.assertEqual([a["title"] for a in remaining], ["safety_3", "safety_4"])
+
+    def test_display_articles_includes_all_evaluated(self):
+        """display_articles 構築で AI評価済みの全件が消えないことを確認"""
+        from main import diversify_top
+        ai_evaluated = [
+            {"title": "launch_1", "ai_value_score": 90, "ai_value_axis": "product_launch"},
+            {"title": "safety_high", "ai_value_score": 88, "ai_value_axis": "safety"},
+            {"title": "safety_mid", "ai_value_score": 70, "ai_value_axis": "safety"},
+            {"title": "reg_low", "ai_value_score": 55, "ai_value_axis": "regulation"},
+            {"title": "retail_1", "ai_value_score": 75, "ai_value_axis": "retail"},
+        ]
+        rule_rest = [{"title": "rule_rest_1", "score": 30}]
+
+        main, safety, remaining = self._split_safety(ai_evaluated)
+        main = diversify_top(main, top_n=5, max_per_axis=2, axis_caps={})
+        display = main + safety + remaining + rule_rest
+
+        # 全AI評価記事が display に存在
+        evaluated_titles = {a["title"] for a in ai_evaluated}
+        display_titles = {a["title"] for a in display}
+        for t in evaluated_titles:
+            self.assertIn(t, display_titles, f"{t} が display_articles から消えている")
+        # rule_rest も含まれる
+        self.assertIn("rule_rest_1", display_titles)
 
 
 if __name__ == "__main__":
