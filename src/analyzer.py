@@ -172,6 +172,12 @@ def generate_overall_insights(
     trending: list[dict],
     hot_articles: list[dict],
 ) -> list[str]:
+    """エグゼクティブサマリー用のテキスト箇条書き。
+
+    数値だけの「リコール関連記事がN件」のような根拠不明な要約は出さない。
+    リコール案件は別セクション（HTMLの「注目リコール・安全情報」）で
+    具体記事リンク付きで表示するため、ここでは触れない。
+    """
     insights = []
 
     if category_freq:
@@ -182,13 +188,6 @@ def generate_overall_insights(
     if trending:
         kw_names = "、".join(t["keyword"] for t in trending[:3])
         insights.append(f"急上昇キーワード: {kw_names}。前期比での増加が目立ちます。")
-
-    recall_count = sum(
-        1 for a in hot_articles
-        if "recall" in a["title"].lower() or "リコール" in a["title"]
-    )
-    if recall_count > 0:
-        insights.append(f"リコール関連記事が{recall_count}件。安全・品質リスクへの注意が必要です。")
 
     insights.append(f"今回収集した記事は合計{len(hot_articles)}件です。")
 

@@ -302,17 +302,22 @@ def is_too_old(article: dict) -> bool:
 
 
 def is_old_topic_title(article: dict) -> bool:
-    """タイトルに過去年シグナル（2024年/昨年/去年等）が含まれていれば古い記事と判定。
+    """タイトル/要約冒頭に過去年シグナル（2018年〜2025年/昨年/去年等）が含まれていれば
+    古い記事と判定。
 
     Google News RSSは古い記事を再インデックスするとpubDateを更新するため、
-    本文（タイトル）から過去年を検出する必要がある。
+    本文（タイトル+要約の冒頭150文字）から過去年を検出する必要がある。
+    例: ユニ・チャームの2018年おむつ戦略記事が2026年扱いで配信されるケース。
+
     CRITICAL_OVERRIDE該当（リコール等）は古い年でも残す（重大継続案件のため）。
     """
     title = article.get("title", "")
-    title_lower = title.lower()
-    if any(t.lower() in title_lower for t in CRITICAL_OVERRIDE):
+    summary = article.get("summary", "")[:150]  # 本文冒頭のみ（年月撮影等の末尾誤検出を避ける）
+    text_check = title + " " + summary
+    text_lower = text_check.lower()
+    if any(t.lower() in text_lower for t in CRITICAL_OVERRIDE):
         return False
-    return any(p in title for p in PAST_YEAR_TITLE_PATTERNS)
+    return any(p in text_check for p in PAST_YEAR_TITLE_PATTERNS)
 
 
 def deduplicate(articles: list[dict]) -> list[dict]:

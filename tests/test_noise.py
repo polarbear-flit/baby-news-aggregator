@@ -94,5 +94,63 @@ class TestFilterByKeywords(unittest.TestCase):
         self.assertIn("哺乳瓶", result[0]["matched_keywords"])
 
 
+class TestOldYearDetection(unittest.TestCase):
+    """過去年検出（2018年〜2025年）のテスト。
+
+    ユーザー報告: 「ユニ・チャームのおむつ戦略、なんて2018年の記事。
+    なのにhtml上では2026年にされていて、記事のリンクに飛ぶと古いものだとわかる」
+    """
+
+    def test_2018_in_title_detected(self):
+        """タイトルに「2018年」が含まれていれば古い記事と判定される"""
+        from src.fetcher import is_old_topic_title
+        article = {
+            "title": "ユニ・チャーム、2018年のおむつ戦略を発表",
+            "summary": "",
+        }
+        self.assertTrue(is_old_topic_title(article))
+
+    def test_2018_in_summary_detected(self):
+        """要約冒頭に「2018年」が含まれていれば古い記事と判定される"""
+        from src.fetcher import is_old_topic_title
+        article = {
+            "title": "ユニ・チャームのおむつ戦略",
+            "summary": "2018年に発表された同社の中期計画では、海外展開を...",
+        }
+        self.assertTrue(is_old_topic_title(article))
+
+    def test_2019_to_2023_all_detected(self):
+        """2019年〜2023年すべて古い記事として検出される"""
+        from src.fetcher import is_old_topic_title
+        for year in ["2019", "2020", "2021", "2022", "2023"]:
+            article = {
+                "title": f"ベビー用品市場の{year}年の動向",
+                "summary": "",
+            }
+            self.assertTrue(
+                is_old_topic_title(article),
+                f"{year}年が古い記事として検出されない",
+            )
+
+    def test_2026_not_detected_as_old(self):
+        """現在年（2026年）は古い記事として検出されない"""
+        from src.fetcher import is_old_topic_title
+        article = {
+            "title": "ベビー用品市場の2026年最新動向",
+            "summary": "",
+        }
+        self.assertFalse(is_old_topic_title(article))
+
+    def test_recall_overrides_old_year(self):
+        """リコール継続案件は古い年でもCRITICAL_OVERRIDEで救済される"""
+        from src.fetcher import is_old_topic_title
+        article = {
+            "title": "2018年に開始したリコールが現在も継続中",
+            "summary": "",
+        }
+        # CRITICAL_OVERRIDE のリコール語があるので古い年でも残す
+        self.assertFalse(is_old_topic_title(article))
+
+
 if __name__ == "__main__":
     unittest.main()
