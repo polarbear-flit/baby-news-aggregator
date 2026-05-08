@@ -105,6 +105,31 @@ def _fetch_rss(feed_config: dict) -> list[dict]:
     return articles
 
 
+# 消費者庁こども向けはベビー食品以外（菓子・サラミ・塩昆布等）も多く含むため、
+# ベビー用品EC事業に関連するキーワードでフィルタする。
+CAA_BABY_RELEVANT_KEYWORDS = [
+    # ベビー用品・育児カテゴリ
+    "ベビー", "赤ちゃん", "乳幼児", "新生児", "幼児", "乳児",
+    "おむつ", "オムツ", "紙おむつ", "おしりふき",
+    "ミルク", "哺乳瓶", "哺乳びん", "授乳", "母乳",
+    "離乳食", "ベビーフード", "幼児食",
+    "ベビーカー", "チャイルドシート", "カーシート",
+    "抱っこひも", "抱っこ紐", "スリング", "ベビーキャリア",
+    "ベビーベッド", "バウンサー", "ハイチェア",
+    "ベビー服", "ベビー肌着", "スタイ", "よだれかけ",
+    # 玩具系（こども安全に直結）
+    "おもちゃ", "玩具", "知育", "ぬいぐるみ",
+    # スキンケア
+    "ベビーソープ", "ベビーローション", "ベビーオイル",
+]
+
+
+def _is_baby_relevant(text: str) -> bool:
+    """文字列がベビー用品EC事業に関連するキーワードを含むか判定。"""
+    text_lower = (text or "").lower()
+    return any(kw.lower() in text_lower for kw in CAA_BABY_RELEVANT_KEYWORDS)
+
+
 def _fetch_html_caa_recall(feed_config: dict) -> list[dict]:
     """消費者庁リコール「こども向け」をHTMLスクレイピング。
 
@@ -112,16 +137,17 @@ def _fetch_html_caa_recall(feed_config: dict) -> list[dict]:
     各リコール行に詳細リンク `/result/detail.php?rcl=ID&...` がある前提。
     日付（YYYY/MM/DD）はrow全体から正規表現で抽出する。
 
-    注意: こども向けリコールは食品（離乳食以外の菓子・ハム等）も含むため、
-    取得件数を絞ってリコール一色になるのを防ぐ。
+    注意: こども向けリコールは食品（菓子・ハム等）も多く含むため、
+    ベビー用品関連キーワード（ミルク・哺乳瓶・玩具・ベビー等）にマッチするものだけ採用する。
     """
-    MAX_CAA_ITEMS = 5  # リコール一色を防ぐため最新5件のみ
+    MAX_CAA_ITEMS = 5  # 念のため上限を設定（実際のフィルタは関連性で絞る）
     if not HAS_BS4:
         print(f"[SKIP] {feed_config['name']}: beautifulsoup4 未インストール")
         return []
 
     BASE = "https://www.recall.caa.go.jp"
     articles: list[dict] = []
+    skipped_irrelevant = 0
     try:
         resp = requests.get(
             feed_config["url"],
@@ -154,6 +180,15 @@ def _fetch_html_caa_recall(feed_config: dict) -> list[dict]:
 
             link_text = link.get_text(" ", strip=True)
             if not link_text:
+                continue
+
+            # ベビー用品EC事業に関連するもののみ採用（食品・菓子・サラミ等は除外）
+            row_for_check = link.find_parent("tr") or link.find_parent("li") or link.parent
+            row_text_full = (
+                row_for_check.get_text(" ", strip=True) if row_for_check else link_text
+            )
+            if not _is_baby_relevant(row_text_full):
+                skipped_irrelevant += 1
                 continue
 
             # 周辺セルから日付（YYYY/MM/DD）を抽出
@@ -191,6 +226,11 @@ def _fetch_html_caa_recall(feed_config: dict) -> list[dict]:
             if len(articles) >= MAX_CAA_ITEMS:
                 break
 
+        if skipped_irrelevant:
+            print(
+                f"[INFO] {feed_config['name']}: ベビー用品関連 {len(articles)} 件採用 / "
+                f"{skipped_irrelevant} 件は食品等のため除外"
+            )
         return articles
     except Exception as e:
         print(f"[SKIP] {feed_config['name']}: {e}")
