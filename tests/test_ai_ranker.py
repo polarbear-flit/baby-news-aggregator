@@ -122,6 +122,55 @@ class TestDiversifyTop(unittest.TestCase):
         self.assertEqual(top5_axes.count("safety"), 1, f"top5={top5_axes}")
         self.assertEqual(top5_axes.count("regulation"), 1, f"top5={top5_axes}")
 
+    def test_diversify_with_empty_axis_caps(self):
+        """axis_caps={} を渡すと軸別キャップは無効化され max_per_axis のみ適用"""
+        from main import diversify_top
+        articles = [
+            {"title": f"safety_{i}", "ai_value_score": 95 - i, "ai_value_axis": "safety"}
+            for i in range(3)
+        ]
+        # axis_caps={} なら max_per_axis=2 がそのまま適用される
+        result = diversify_top(articles, top_n=5, max_per_axis=2, axis_caps={})
+        top_axes = [a["ai_value_axis"] for a in result[:2]]
+        self.assertEqual(top_axes.count("safety"), 2)
+
+
+class TestSafetySectionSeparation(unittest.TestCase):
+    """safety/regulation 軸の記事を main から切り出すロジック"""
+
+    def test_safety_articles_separated(self):
+        """safety/regulation で score>=80 のみ別出しに、他は main に残る"""
+        ai_evaluated = [
+            {"title": "safety_high", "ai_value_score": 90, "ai_value_axis": "safety"},
+            {"title": "safety_low", "ai_value_score": 70, "ai_value_axis": "safety"},
+            {"title": "reg_high", "ai_value_score": 85, "ai_value_axis": "regulation"},
+            {"title": "launch_1", "ai_value_score": 75, "ai_value_axis": "product_launch"},
+            {"title": "market_1", "ai_value_score": 65, "ai_value_axis": "market"},
+        ]
+        SAFETY_AXES = {"safety", "regulation"}
+        SAFETY_MIN_SCORE = 80
+
+        safety = sorted(
+            [
+                a for a in ai_evaluated
+                if a.get("ai_value_axis") in SAFETY_AXES
+                and a.get("ai_value_score", 0) >= SAFETY_MIN_SCORE
+            ],
+            key=lambda x: x.get("ai_value_score", 0),
+            reverse=True,
+        )[:2]
+        main = [a for a in ai_evaluated if a.get("ai_value_axis") not in SAFETY_AXES]
+
+        # safety: score>=80 なものだけ、最大2件、score降順
+        self.assertEqual(len(safety), 2)
+        self.assertEqual(safety[0]["title"], "safety_high")
+        self.assertEqual(safety[1]["title"], "reg_high")
+
+        # main: safety/regulation 以外
+        self.assertEqual(len(main), 2)
+        self.assertNotIn("safety", [a["ai_value_axis"] for a in main])
+        self.assertNotIn("regulation", [a["ai_value_axis"] for a in main])
+
 
 if __name__ == "__main__":
     unittest.main()

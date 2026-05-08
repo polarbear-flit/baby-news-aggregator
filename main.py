@@ -167,31 +167,41 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
     ) or "なし"
 
     hot = analysis.get("hot_articles", articles)[:5]
+    safety_articles = analysis.get("safety_articles", [])[:2]
+
+    def _format_article_line(idx: int, a: dict, with_axis: bool = True) -> str:
+        link = _article_link(a)
+        why = a.get("why_matters_jp", "")
+        axis = a.get("ai_value_axis", "")
+        score = a.get("ai_value_score", a.get("score", ""))
+        if why:
+            label = _esc(axis or a.get("source_name", "")) if with_axis else _esc(a.get("source_name", ""))
+            return f"{idx}. {link}\n   <i>{label}</i> · score {score} — {_esc(why)[:90]}"
+        source = _esc(a.get("source_name", ""))
+        return f"{idx}. {link}\n   <i>{source}</i> · score {score}"
+
     if hot:
-        highlight_lines = []
-        for i, a in enumerate(hot, start=1):
-            link = _article_link(a)
-            why = a.get("why_matters_jp", "")
-            axis = a.get("ai_value_axis", "")
-            score = a.get("ai_value_score", a.get("score", ""))
-            if why:
-                label = _esc(axis or a.get("source_name", ""))
-                highlight_lines.append(
-                    f"{i}. {link}\n"
-                    f"   <i>{label}</i> · score {score} — {_esc(why)[:90]}"
-                )
-            else:
-                source = _esc(a.get("source_name", ""))
-                highlight_lines.append(f"{i}. {link}\n   <i>{source}</i> · score {score}")
-        highlights = "\n".join(highlight_lines)
+        highlights = "\n".join(_format_article_line(i, a) for i, a in enumerate(hot, start=1))
     else:
         highlights = "該当なし"
 
-    # AIが生成した「今日のアクション」（上位3件）
+    # 注目リコール・安全情報（独立セクション）
+    safety_section = ""
+    if safety_articles:
+        safety_lines = "\n".join(
+            _format_article_line(i, a) for i, a in enumerate(safety_articles, start=1)
+        )
+        safety_section = (
+            f"<b>⚠️ 注目リコール・安全情報</b>\n{safety_lines}\n\n"
+        )
+
+    # 「今日のアクション」: 安全1件 + ハイライト2件 から最大3件
     action_lines = []
-    for a in hot[:3]:
+    candidates_for_action = (safety_articles[:1] + list(hot))[:5]
+    for a in candidates_for_action:
+        if len(action_lines) >= 3:
+            break
         hint = (a.get("action_hint_jp") or "").strip()
-        # 空白・"特になし"等の無効値は除外
         if hint and hint.lower() not in ("特になし", "なし", "n/a", "none", "null"):
             action_lines.append(f"・{_esc(hint)[:60]}")
     action_section = (
@@ -221,6 +231,7 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
         f"━━━━━━━━━━━━━\n"
         f"<b>今日のハイライト</b>\n"
         f"{highlights}\n\n"
+        f"{safety_section}"
         f"{action_section}"
         f"<b>カテゴリ別</b>\n"
         f"{cat_lines}\n\n"
@@ -276,14 +287,35 @@ def main() -> None:
     rule_rest = analysis["hot_articles"][MAX_CANDIDATES:MAX_ARTICLES_DISPLAY]
     ai_evaluated, ai_used = ai_rank_articles(rule_top)
 
-    # 多様性フィルター: 上位5件で safety/recall 一色を避ける
-    ai_evaluated = diversify_top(ai_evaluated, top_n=5, max_per_axis=2)
+    # safety/regulation はメインハイライトから除外し、別セクションに切り出す。
+    # 「リコールが入るとノイズが大きい。重要なもの1-2件だけ別出し」というユーザー要望への対応。
+    SAFETY_AXES = {"safety", "regulation"}
+    SAFETY_MIN_SCORE = 80  # 本当に重要なものだけ（score 80以上）
 
-    # 表示用 = AI評価済み + ルールスコア順の残り
-    display_articles = ai_evaluated + rule_rest
+    safety_articles = sorted(
+        [
+            a for a in ai_evaluated
+            if a.get("ai_value_axis") in SAFETY_AXES
+            and a.get("ai_value_score", 0) >= SAFETY_MIN_SCORE
+        ],
+        key=lambda x: x.get("ai_value_score", 0),
+        reverse=True,
+    )[:2]  # 最大2件
+
+    main_articles = [
+        a for a in ai_evaluated
+        if a.get("ai_value_axis") not in SAFETY_AXES
+    ]
+
+    # メインハイライトは多様化（safety無いので axis_caps は不要）
+    main_articles = diversify_top(main_articles, top_n=5, max_per_axis=2, axis_caps={})
+
+    # 表示用 = メイン + 安全 + ルールスコア順の残り
+    display_articles = main_articles + safety_articles + rule_rest
 
     # send_telegram で参照されるフィールドを差し替え
-    analysis["hot_articles"] = ai_evaluated
+    analysis["hot_articles"] = main_articles
+    analysis["safety_articles"] = safety_articles
     analysis["ai_used"] = ai_used
 
     print("HTML生成中...")
