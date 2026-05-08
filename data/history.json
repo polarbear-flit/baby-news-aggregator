@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-05-09T08:00:08.548791+09:00",
+    "article_count": 50,
+    "keyword_freq": {
+      "general": 47,
+      "mobility": 20,
+      "car_safety": 18,
+      "feeding": 6,
+      "skincare": 6,
+      "diaper": 4,
+      "リコール": 2
+    }
+  },
+  {
     "date": "2026-05-08T14:38:31.607413+09:00",
     "article_count": 50,
     "keyword_freq": {
@@ -485,18 +498,6 @@
       "car_safety": 4,
       "diaper": 3,
       "feeding": 3
-    }
-  },
-  {
-    "date": "2026-04-09T07:48:30.654845+09:00",
-    "article_count": 50,
-    "keyword_freq": {
-      "general": 30,
-      "car_safety": 7,
-      "mobility": 5,
-      "skincare": 4,
-      "feeding": 3,
-      "diaper": 1
     }
   }
 ]
