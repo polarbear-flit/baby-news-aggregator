@@ -74,6 +74,23 @@ class TestDeduplicate(unittest.TestCase):
         result = deduplicate(articles)
         self.assertEqual(len(result), 2)
 
+    def test_duplicate_group_id_assigned(self):
+        """dedup後の各記事に duplicate_group_id が付与される"""
+        articles = [
+            {"title": "ピジョン哺乳瓶リコール", "url": "https://a.example.com/1"},
+            {"title": "コンビベビーカー新発売", "url": "https://b.example.com/2"},
+        ]
+        result = deduplicate(articles)
+        for a in result:
+            self.assertIn("duplicate_group_id", a)
+            self.assertTrue(a["duplicate_group_id"])  # 空文字列でない
+
+    def test_same_normalized_title_same_group_id(self):
+        """正規化後タイトルが同じなら group_id も同じ（cross-day トラッキング）"""
+        from src.fetcher import normalize_title, _make_group_id
+        nt = normalize_title("ピジョン新製品 画像1/34")
+        self.assertEqual(_make_group_id(nt), _make_group_id(nt))
+
 
 if __name__ == "__main__":
     unittest.main()

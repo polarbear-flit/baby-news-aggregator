@@ -11,7 +11,8 @@ from src.config import (
     DEFAULT_REPORT_URL, HISTORY_PATH, MAX_ARTICLES_DISPLAY,
     OUTPUT_PATH, TREND_WINDOW_DAYS,
 )
-from src.fetcher import fetch_all_feeds
+from src.fetcher import fetch_all_feeds, verify_links_batch
+from src.quality_rubric import apply_rubric_to_all
 from src.renderer import render
 
 
@@ -134,6 +135,42 @@ def _article_link(article: dict, max_len: int = 70) -> str:
     return f'<a href="{_esc_attr(url)}">{title}</a>'
 
 
+def format_high_block(a: dict) -> str:
+    """importance=High 用のフルブロック。Rubricのフォーマット準拠。
+
+    【High】タイトル
+      Source: 媒体名
+      URL: ...
+      Fact: 事実要約
+      Why it matters: 事業への意味
+      Action hint: 次アクション
+    """
+    title_link = _article_link(a, max_len=80)
+    source = _esc(a.get("source_name", ""))
+    url = a.get("url", "")
+    url_disp = f'<a href="{_esc_attr(url)}">記事を開く</a>' if url else "—"
+    fact = _esc(a.get("fact_summary", ""))[:140]
+    why = _esc(a.get("why_it_matters") or a.get("why_matters_jp") or "")[:140]
+    hint = _esc(a.get("action_hint_jp", ""))[:80]
+
+    lines = [f"<b>【High】</b> {title_link}", f"  Source: {source}", f"  URL: {url_disp}"]
+    if fact:
+        lines.append(f"  Fact: {fact}")
+    if why:
+        lines.append(f"  Why it matters: {why}")
+    if hint:
+        lines.append(f"  Action hint: {hint}")
+    return "\n".join(lines)
+
+
+def format_medium_line(idx: int, a: dict) -> str:
+    """importance=Medium 用の1行表示。"""
+    title_link = _article_link(a, max_len=70)
+    source = _esc(a.get("source_name", ""))
+    score = a.get("ai_value_score", a.get("score", ""))
+    return f"{idx}. <b>【Medium】</b> {title_link}\n   <i>{source}</i> · score {score}"
+
+
 def send_telegram(analysis: dict, articles: list[dict]) -> None:
     """Telegramにサマリを送信。
 
@@ -168,28 +205,29 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
 
     hot = analysis.get("hot_articles", articles)[:5]
 
-    def _format_article_line(idx: int, a: dict) -> str:
-        link = _article_link(a)
-        why = a.get("why_matters_jp", "")
-        axis = a.get("ai_value_axis", "")
-        score = a.get("ai_value_score", a.get("score", ""))
-        if why:
-            label = _esc(axis or a.get("source_name", ""))
-            return f"{idx}. {link}\n   <i>{label}</i> · score {score} — {_esc(why)[:90]}"
-        source = _esc(a.get("source_name", ""))
-        return f"{idx}. {link}\n   <i>{source}</i> · score {score}"
-
     if hot:
-        highlights = "\n".join(_format_article_line(i, a) for i, a in enumerate(hot, start=1))
+        # importance: High はフルブロック、Medium は1行、Low は配信から除外
+        blocks = []
+        med_idx = 1
+        for a in hot:
+            imp = a.get("importance", "Medium")
+            if imp == "Low":
+                continue  # Lowはチャットに出さない
+            if imp == "High":
+                blocks.append(format_high_block(a))
+            else:  # Medium
+                blocks.append(format_medium_line(med_idx, a))
+                med_idx += 1
+        highlights = "\n\n".join(blocks) if blocks else "該当なし（High/Medium無し）"
     else:
         highlights = "該当なし"
 
-    # ⚠️ Telegramチャットにはリコール/安全情報を出さない方針（ユーザー要望）。
-    # safety_articles は HTMLレポートに独立セクションとして残す（renderer/template側）。
+    # ⚠️ リコール/安全情報は Telegramチャットに出さない（ユーザー要望）。
+    # safety_articles は HTMLレポートに独立セクションで表示する。
 
-    # 「今日のアクション」: ハイライト上位から最大3件
+    # 「今日のアクション」: ハイライト上位から最大3件（High優先）
     action_lines = []
-    for a in hot[:5]:
+    for a in sorted(hot, key=lambda x: 0 if x.get("importance") == "High" else 1):
         if len(action_lines) >= 3:
             break
         hint = (a.get("action_hint_jp") or "").strip()
@@ -299,6 +337,23 @@ def main() -> None:
     # 表示用 = メインハイライト + 別出し安全 + 残りの安全 + AI評価圏外
     # remaining_safety を入れることで HTML/history に中位 safety/regulation も残る
     display_articles = main_articles + safety_articles + remaining_safety + rule_rest
+
+    # Quality Rubric 適用: source_quality / business_relevance / actionability /
+    # importance / fact_summary / business_implication / why_it_matters を付与
+    print("Quality Rubric 適用中...")
+    display_articles = apply_rubric_to_all(display_articles)
+    safety_articles = apply_rubric_to_all(safety_articles)
+    main_articles = apply_rubric_to_all(main_articles)
+
+    # 配信前リンク検証: Telegramで露出する上位7件のみ（全件検証はコスト高）
+    print("リンク検証中（上位7件）...")
+    verify_targets = main_articles[:5] + safety_articles[:2]
+    verify_links_batch(verify_targets, max_count=7)
+
+    # link_status=failed は importance=Low に強制（Rubricルール）
+    for a in verify_targets:
+        if a.get("link_status") == "failed":
+            a["importance"] = "Low"
 
     # send_telegram で参照されるフィールドを差し替え
     analysis["hot_articles"] = main_articles

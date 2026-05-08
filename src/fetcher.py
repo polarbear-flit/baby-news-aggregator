@@ -4,7 +4,9 @@
 - fetch_type で取得方法をディスパッチ（rss / html_caa_recall 等）。
 - HARD_NOISE は完全除外、SOFT_NOISE はスコアリング側で減点（ここでは除外しない）。
 - 重複除去は normalize_title + rapidfuzz の類似度ベース（rapidfuzz未インストール時は完全一致フォールバック）。
+- 配信前のリンク検証は verify_link()（最小限のHEAD/GETチェック）。
 """
+import hashlib
 import re
 from datetime import datetime, timedelta, timezone
 from typing import Optional
@@ -320,11 +322,24 @@ def is_old_topic_title(article: dict) -> bool:
     return any(p in text_check for p in PAST_YEAR_TITLE_PATTERNS)
 
 
+def _make_group_id(normalized_title: str) -> str:
+    """タイトル正規化結果から決定的な duplicate_group_id を生成。
+
+    同じ記事が翌日も配信されたら同じ group_id になる（cross-day トラッキング用）。
+    空タイトルの場合は空文字列を返す。
+    """
+    if not normalized_title:
+        return ""
+    return hashlib.md5(normalized_title.encode("utf-8")).hexdigest()[:10]
+
+
 def deduplicate(articles: list[dict]) -> list[dict]:
     """URL一致 + タイトル正規化+類似度（rapidfuzzあれば）で重複除去。
 
     画像1/34 と 画像3/34 のようなギャラリー記事は、normalize_title で
     「画像N/M」が除去されるため、同一タイトル扱いで重複排除される。
+
+    各記事には duplicate_group_id（正規化タイトルのMD5先頭10桁）を付与する。
     """
     seen_urls: set[str] = set()
     kept: list[tuple[str, dict]] = []
@@ -338,6 +353,7 @@ def deduplicate(articles: list[dict]) -> list[dict]:
 
         norm_title = normalize_title(a.get("title", ""))
         if not norm_title:
+            a["duplicate_group_id"] = ""
             kept.append((norm_title, a))
             continue
 
@@ -355,9 +371,55 @@ def deduplicate(articles: list[dict]) -> list[dict]:
                 is_dup = True
 
         if not is_dup:
+            a["duplicate_group_id"] = _make_group_id(norm_title)
             kept.append((norm_title, a))
 
     return [a for _, a in kept]
+
+
+def verify_link(url: str, timeout: int = 5) -> str:
+    """URLが最低限アクセス可能か検証。
+
+    Returns:
+        "ok": HTTP 2xx/3xx で応答
+        "failed": 4xx/5xx / 接続失敗 / タイムアウト
+        "skipped": URLが空 / 検証スキップ
+
+    Google News の redirect URLは HEAD を 405 で返すことがあるため、
+    HEAD失敗時は GET (stream=True で本文を取らない) でリトライ。
+    """
+    if not url:
+        return "skipped"
+    headers = {"User-Agent": USER_AGENT}
+    try:
+        resp = requests.head(url, allow_redirects=True, timeout=timeout, headers=headers)
+        if resp.status_code < 400:
+            return "ok"
+    except Exception:
+        pass
+    # HEADが弾かれた場合のフォールバック: GET (stream=True でボディを引かない)
+    try:
+        with requests.get(
+            url, allow_redirects=True, timeout=timeout, headers=headers, stream=True
+        ) as resp:
+            if resp.status_code < 400:
+                return "ok"
+            return "failed"
+    except Exception:
+        return "failed"
+
+
+def verify_links_batch(articles: list[dict], max_count: int = 7) -> list[dict]:
+    """記事リストの先頭 max_count 件のURLを検証し、各記事に link_status を付与。
+
+    全件検証はコストが高い（5秒×N件）ため、配信に使う上位だけ検証する想定。
+    """
+    for i, a in enumerate(articles):
+        if i >= max_count:
+            a.setdefault("link_status", "skipped")
+            continue
+        a["link_status"] = verify_link(a.get("url", ""))
+    return articles
 
 
 def fetch_all_feeds() -> list[dict]:
