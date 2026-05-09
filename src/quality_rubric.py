@@ -32,10 +32,11 @@ VALUE_AXIS_RELEVANCE_MAP: dict[str, int] = {
     "noise":           1,
 }
 
-# importance しきい値
-HIGH_COMBINED_MIN = 4.0
+# importance しきい値（旧 4.0/3.0 では Google News (source_q=2) が High に届きにくく
+# 全件 Low になる問題があったため、業界焦点ソース追加と同時に緩和）
+HIGH_COMBINED_MIN = 3.5
 HIGH_RELEVANCE_MIN = 4
-MEDIUM_COMBINED_MIN = 3.0
+MEDIUM_COMBINED_MIN = 2.5
 
 
 def derive_source_quality_score(article: dict) -> int:
@@ -111,10 +112,15 @@ def apply_rubric(article: dict) -> dict:
     action = derive_actionability_score(article)
     importance = compute_importance(source_q, relevance, action, article)
 
-    fact = (article.get("summary") or "").strip()
-    fact = " ".join(fact.split())[:200]
-    if not fact:
-        fact = (article.get("title") or "")[:200]
+    # fact_summary: AI生成 (ai_fact_summary) を優先、なければ RSS summary、最後にタイトル
+    ai_fact = (article.get("ai_fact_summary") or "").strip()
+    if ai_fact:
+        fact = " ".join(ai_fact.split())[:200]
+    else:
+        fact = (article.get("summary") or "").strip()
+        fact = " ".join(fact.split())[:200]
+        if not fact:
+            fact = (article.get("title") or "")[:200]
 
     why = (article.get("why_matters_jp") or "").strip()
 

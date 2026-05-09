@@ -32,9 +32,14 @@ class TestAIRankerStrict(unittest.TestCase):
         item_props = RANK_TOOL["input_schema"]["properties"]["items"]["items"]["properties"]
         for field in [
             "article_id", "is_relevant", "value_score",
-            "value_axis", "why_matters_jp", "action_hint_jp",
+            "value_axis", "fact_summary_jp", "why_matters_jp", "action_hint_jp",
         ]:
             self.assertIn(field, item_props)
+
+    def test_fact_summary_in_required(self):
+        """fact_summary_jp が required に入っていること（薄いRSSサマリの代替）"""
+        required = RANK_TOOL["input_schema"]["properties"]["items"]["items"]["required"]
+        self.assertIn("fact_summary_jp", required)
 
 
 class TestAIRankerFallback(unittest.TestCase):

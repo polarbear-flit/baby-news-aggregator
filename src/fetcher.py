@@ -60,9 +60,41 @@ def _parse_dt(entry) -> Optional[datetime]:
     return None
 
 
+def _extract_site_domain(query_url: str) -> Optional[str]:
+    """Google News RSS の URL から site:domain を抽出。なければ None。"""
+    m = re.search(r"site:([\w.\-]+)", query_url)
+    return m.group(1).lower() if m else None
+
+
+def _article_url_matches_site(article_url: str, site_domain: str) -> bool:
+    """記事URLが site:domain と一致するかチェック。
+
+    Google News は redirect URL (news.google.com/articles/...) を返すため、
+    URLからの判定は不完全。article内に <source> 要素や原URLが含まれていれば理想。
+    実用的には:
+    - Google News redirect URL の場合: True 扱い（後段の Codex リスク受容、軽量化）
+    - 直接URLの場合: ホスト名を含むか確認
+    """
+    if not article_url:
+        return True  # 判定不能の場合は許容
+    url_lower = article_url.lower()
+    if "news.google.com" in url_lower:
+        # redirect URL — 内容を保証できないが site: クエリを信頼する
+        # （括弧で OR を囲んでいる前提）
+        return True
+    return site_domain in url_lower
+
+
 def _fetch_rss(feed_config: dict) -> list[dict]:
-    """RSS/Atom フィードを取得して Article リストを返す。"""
+    """RSS/Atom フィードを取得して Article リストを返す。
+
+    site: スコープのフィードで非該当ドメインの記事が混入した場合、
+    source_type を google_news に格下げする（Codex指摘の二重防御）。
+    """
     articles: list[dict] = []
+    expected_site = _extract_site_domain(feed_config.get("url", ""))
+    base_source_type = feed_config.get("source_type", "google_news")
+
     try:
         resp = requests.get(
             feed_config["url"],
@@ -76,15 +108,22 @@ def _fetch_rss(feed_config: dict) -> list[dict]:
             published_dt = _parse_dt(entry)
             summary = getattr(entry, "summary", "") or ""
             summary = re.sub(r"<[^>]+>", "", summary).strip()
+            article_url = getattr(entry, "link", "")
+
+            # site: スコープのフィードで非該当ドメイン記事は source_type を格下げ
+            source_type = base_source_type
+            if expected_site and base_source_type != "google_news":
+                if not _article_url_matches_site(article_url, expected_site):
+                    source_type = "google_news"
 
             articles.append({
                 "title": getattr(entry, "title", ""),
-                "url": getattr(entry, "link", ""),
+                "url": article_url,
                 "summary": summary[:400],
                 "published": published_dt.isoformat() if published_dt else "",
                 "published_dt": published_dt,
                 "source_name": feed_config["name"],
-                "source_type": feed_config.get("source_type", "google_news"),
+                "source_type": source_type,
                 "category": feed_config["category"],
                 "language": feed_config["language"],
                 "matched_keywords": [],
