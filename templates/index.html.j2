@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baby News Aggregator</title>
+  <title>Baby News Aggregator — 業界動向</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
@@ -13,14 +13,19 @@
     .filter-btn.active { background-color: #6366f1; color: #fff; }
     .article-item { transition: opacity 0.2s; }
     .article-item.hidden { display: none; }
+    .badge-high { background: #dc2626; color: #fff; }
+    .badge-medium { background: #f59e0b; color: #fff; }
+    .badge-low { background: #9ca3af; color: #fff; }
+    .imp-badge { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-right: 6px; }
+    .axis-badge { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 0.7rem; background: #ede9fe; color: #6d28d9; margin-right: 6px; }
+    .rubric-mini { display: inline-block; font-size: 0.68rem; color: #6b7280; margin-left: 6px; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen">
 
-  <!-- ヘッダー -->
   <header class="bg-indigo-600 text-white py-6 shadow">
     <div class="max-w-6xl mx-auto px-4">
-      <h1 class="text-2xl font-bold">👶 Baby News Aggregator</h1>
+      <h1 class="text-2xl font-bold">📰 ベビー用品 業界動向</h1>
       <p class="text-indigo-200 text-sm mt-1">生成日時: {{ generated_at }}</p>
     </div>
   </header>
@@ -40,46 +45,12 @@
       </div>
     </section>
 
-    {% if analysis.safety_articles %}
-    <!-- 注目リコール・安全情報（具体記事リンク付き、サマリの根拠が明確になる） -->
-    <section>
-      <h2 class="text-xl font-semibold mb-3 border-b pb-2 text-red-700">⚠️ 注目リコール・安全情報</h2>
-      <div class="space-y-3">
-        {% for a in analysis.safety_articles %}
-        <div class="bg-red-50 border border-red-200 rounded-xl shadow card-hover p-4">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="{{ a.url }}" target="_blank" rel="noopener"
-                 class="font-semibold text-red-800 hover:underline line-clamp-2 leading-snug">
-                {{ a.title }}
-              </a>
-              {% if a.why_matters_jp %}
-              <p class="text-sm text-gray-700 mt-1">{{ a.why_matters_jp }}</p>
-              {% endif %}
-              {% if a.action_hint_jp %}
-              <p class="text-xs text-red-700 mt-1">▸ {{ a.action_hint_jp }}</p>
-              {% endif %}
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-500">
-                <span>{{ a.source_name }}</span>
-                {% if a.published %}<span>·</span><span>{{ a.published[:10] }}</span>{% endif %}
-                {% if a.ai_value_score %}<span>·</span><span class="font-bold">score {{ a.ai_value_score }}</span>{% endif %}
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
-    {% endif %}
-
     <!-- グラフセクション -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- キーワード頻度棒グラフ -->
       <div class="bg-white rounded-xl shadow p-5">
         <h3 class="font-semibold mb-4 text-gray-700">🔑 キーワード頻度 TOP20</h3>
         <canvas id="keywordChart" height="260"></canvas>
       </div>
-      <!-- カテゴリ別ドーナツグラフ -->
       <div class="bg-white rounded-xl shadow p-5">
         <h3 class="font-semibold mb-4 text-gray-700">🗂 カテゴリ別記事数</h3>
         <canvas id="categoryChart" height="260"></canvas>
@@ -120,7 +91,6 @@
     <section>
       <h2 class="text-xl font-semibold mb-3 border-b pb-2">📰 ニュース一覧（{{ articles | length }}件）</h2>
 
-      <!-- カテゴリフィルターボタン -->
       <div class="flex flex-wrap gap-2 mb-5" id="filterBtns">
         <button class="filter-btn active px-3 py-1 rounded-full border text-sm" data-cat="all">すべて</button>
         {% for cat, label in analysis.category_label.items() %}
@@ -128,7 +98,6 @@
         {% endfor %}
       </div>
 
-      <!-- 記事リスト -->
       <div class="space-y-3" id="articleList">
         {% for article in articles %}
         {%- set ns = namespace(cats=[]) -%}
@@ -142,12 +111,32 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="{{ ns.cats | join(' ') }}">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
+              {% if article.importance %}
+                {% if article.importance == "High" %}
+                <span class="imp-badge badge-high">High</span>
+                {% elif article.importance == "Medium" %}
+                <span class="imp-badge badge-medium">Medium</span>
+                {% else %}
+                <span class="imp-badge badge-low">Low</span>
+                {% endif %}
+              {% endif %}
+              {% if article.ai_value_axis %}
+              <span class="axis-badge">{{ article.ai_value_axis }}</span>
+              {% endif %}
               <a href="{{ article.url }}" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
                 {{ article.title }}
               </a>
-              {% if article.summary %}
+              {% if article.fact_summary %}
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> {{ article.fact_summary }}</p>
+              {% elif article.summary %}
               <p class="text-gray-500 text-sm mt-1 line-clamp-2">{{ article.summary }}</p>
+              {% endif %}
+              {% if article.why_it_matters or article.business_implication %}
+              <p class="text-indigo-700 text-sm mt-1"><span class="font-semibold">Why it matters:</span> {{ article.why_it_matters or article.business_implication }}</p>
+              {% endif %}
+              {% if article.action_hint_jp %}
+              <p class="text-emerald-700 text-sm mt-1"><span class="font-semibold">Action:</span> ▸ {{ article.action_hint_jp }}</p>
               {% endif %}
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
                 <span>{{ article.source_name }}</span>
@@ -155,11 +144,14 @@
                 <span>{{ article.published[:10] }}</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">{{ "🇯🇵" if article.language == "ja" else "🇺🇸" }}</span>
+                {% if article.source_quality_score is defined %}
+                <span class="rubric-mini">SQ:{{ article.source_quality_score }}/BR:{{ article.business_relevance_score }}/A:{{ article.actionability_score }}</span>
+                {% endif %}
+                {% if article.link_status == "failed" %}
+                <span class="text-red-600 font-bold">⚠ link failed</span>
+                {% endif %}
               </div>
             </div>
-            {% if article.score is defined and article.score >= 5 %}
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            {% endif %}
           </div>
           {% if article.matched_keywords %}
           <div class="mt-2">
@@ -178,11 +170,10 @@
   </main>
 
   <footer class="text-center text-xs text-gray-400 py-6">
-    Baby News Aggregator — 自動生成レポート {{ generated_at }}
+    Baby News Aggregator — 業界動向版 · {{ generated_at }}
   </footer>
 
   <script>
-    // キーワード頻度棒グラフ
     const kwData = {{ analysis.keyword_freq | tojson }};
     const kwLabels = Object.keys(kwData);
     const kwValues = Object.values(kwData);
@@ -207,7 +198,6 @@
       }
     });
 
-    // カテゴリ別ドーナツグラフ
     const catData = {{ analysis.category_freq | tojson }};
     const catLabels = Object.keys(catData);
     const catValues = Object.values(catData);
@@ -230,7 +220,6 @@
       }
     });
 
-    // カテゴリフィルター
     const filterBtns = document.querySelectorAll('.filter-btn');
     const articleItems = document.querySelectorAll('.article-item');
 

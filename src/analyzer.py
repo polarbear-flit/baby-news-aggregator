@@ -1,16 +1,17 @@
-"""記事スコアリング・トレンド検出・カテゴリ分類。
+"""記事スコアリング・トレンド検出・カテゴリ分類 — 業界動向特化版。
 
 スコア式:
-  source_weight + lang_bonus + safety + regulation + key_entity + freshness - soft_noise
-ただし CRITICAL_OVERRIDE 該当の記事は SOFT_NOISE 減点を相殺する。
+  source_weight + lang_bonus + key_entity + industry_signal + freshness - soft_noise
+
+旧版にあった「安全 (+25) / 規制 (+20)」のボーナスは撤廃。
+業界動向（新商品・市場・売上等）のシグナルを代わりに加点する。
 """
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 
 from src.config import (
     KEYWORDS, TREND_WINDOW_DAYS,
-    SOURCE_WEIGHTS, KEY_ENTITIES,
-    SAFETY_TERMS, REGULATION_TERMS,
+    SOURCE_WEIGHTS, KEY_ENTITIES, INDUSTRY_TERMS,
     SOFT_NOISE_TERMS, CRITICAL_OVERRIDE,
 )
 
@@ -82,7 +83,10 @@ def _contains_any(text: str, words: list[str]) -> bool:
 
 
 def score_articles(articles: list[dict]) -> list[dict]:
-    """ソース信頼度 + 言語 + 安全/規制 + 主要企業 + 鮮度 + ソフトノイズ減点でスコア付け。"""
+    """ソース信頼度 + 言語 + 主要企業 + 業界シグナル + 鮮度 + ソフトノイズ減点でスコア付け。
+
+    安全/規制ボーナスは廃止。業界動向（新商品・市場・売上等）を代わりに加点。
+    """
     now = datetime.now(timezone.utc)
     critical_lower = [c.lower() for c in CRITICAL_OVERRIDE]
     scored = []
@@ -97,19 +101,17 @@ def score_articles(articles: list[dict]) -> list[dict]:
         if a.get("language") == "ja":
             score += 20
 
-        # 3) 安全・規制シグナル
-        if _contains_any(text, SAFETY_TERMS):
+        # 3) 業界動向シグナル（新商品・市場・売上・出店・PB等）
+        if _contains_any(text, INDUSTRY_TERMS):
             score += 25
-        if _contains_any(text, REGULATION_TERMS):
-            score += 20
 
         # 4) 主要企業・小売エンティティ
         if _contains_any(text, KEY_ENTITIES):
             score += 15
 
-        # 5) ソフトノイズ減点（CRITICAL_OVERRIDE該当なら相殺）
+        # 5) ソフトノイズ減点（CRITICAL_OVERRIDE 該当なら相殺。空のため実質無効化）
         if _contains_any(text, SOFT_NOISE_TERMS):
-            if not _contains_any(text, critical_lower):
+            if not (critical_lower and _contains_any(text, critical_lower)):
                 score -= 20
 
         # 6) 鮮度
@@ -139,17 +141,10 @@ def score_articles(articles: list[dict]) -> list[dict]:
 
 
 def generate_category_insight(category: str, articles: list[dict], freq: Counter) -> str:
-    """カテゴリ別の示唆テキストを生成。"""
+    """カテゴリ別の示唆テキスト。リコール言及を撤廃し、業界動向に焦点。"""
     count = freq.get(category, 0)
     label = CATEGORY_LABEL.get(category, category)
-    recall_count = sum(
-        1 for a in articles
-        if ("recall" in a["title"].lower() or "リコール" in a["title"])
-        and category in _detect_categories(a)
-    )
-    if recall_count > 0:
-        return f"{label}: {count}件の記事中{recall_count}件がリコール関連。安全動向の要確認。"
-    elif count >= 5:
+    if count >= 5:
         return f"{label}: {count}件と活発。市場トレンドを把握するチャンス。"
     elif count >= 2:
         return f"{label}: {count}件を収集。引き続き動向を追う。"
@@ -157,27 +152,12 @@ def generate_category_insight(category: str, articles: list[dict], freq: Counter
         return f"{label}: 今期は{count}件。比較的静穏。"
 
 
-def _detect_categories(article: dict) -> set[str]:
-    text = (article["title"] + " " + article["summary"]).lower()
-    cats = set()
-    for cat, kw_list in KEYWORDS.items():
-        for kw in kw_list:
-            if kw.lower() in text:
-                cats.add(cat)
-    return cats
-
-
 def generate_overall_insights(
     category_freq: Counter,
     trending: list[dict],
     hot_articles: list[dict],
 ) -> list[str]:
-    """エグゼクティブサマリー用のテキスト箇条書き。
-
-    数値だけの「リコール関連記事がN件」のような根拠不明な要約は出さない。
-    リコール案件は別セクション（HTMLの「注目リコール・安全情報」）で
-    具体記事リンク付きで表示するため、ここでは触れない。
-    """
+    """エグゼクティブサマリー。リコール件数言及は撤廃、業界動向中心。"""
     insights = []
 
     if category_freq:
@@ -211,7 +191,7 @@ def analyze(articles: list[dict], history: list[dict]) -> dict:
         "keyword_freq": dict(keyword_freq.most_common(20)),
         "category_freq": dict(category_freq),
         "trending": trending,
-        "hot_articles": scored,  # 全件スコア済み・降順。呼び出し側で slice
+        "hot_articles": scored,
         "category_insights": category_insights,
         "overall_insights": overall_insights,
         "category_label": CATEGORY_LABEL,
