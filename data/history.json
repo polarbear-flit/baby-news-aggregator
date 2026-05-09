@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-05-09T20:10:46.758284+09:00",
+    "article_count": 50,
+    "keyword_freq": {
+      "general": 59,
+      "mobility": 20,
+      "feeding": 14,
+      "diaper": 5,
+      "skincare": 3
+    }
+  },
+  {
     "date": "2026-05-09T18:32:47.391580+09:00",
     "article_count": 50,
     "keyword_freq": {

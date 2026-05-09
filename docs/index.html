@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baby News Aggregator</title>
+  <title>Baby News Aggregator — 業界動向</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
@@ -13,15 +13,20 @@
     .filter-btn.active { background-color: #6366f1; color: #fff; }
     .article-item { transition: opacity 0.2s; }
     .article-item.hidden { display: none; }
+    .badge-high { background: #dc2626; color: #fff; }
+    .badge-medium { background: #f59e0b; color: #fff; }
+    .badge-low { background: #9ca3af; color: #fff; }
+    .imp-badge { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-right: 6px; }
+    .axis-badge { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: 0.7rem; background: #ede9fe; color: #6d28d9; margin-right: 6px; }
+    .rubric-mini { display: inline-block; font-size: 0.68rem; color: #6b7280; margin-left: 6px; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen">
 
-  <!-- ヘッダー -->
   <header class="bg-indigo-600 text-white py-6 shadow">
     <div class="max-w-6xl mx-auto px-4">
-      <h1 class="text-2xl font-bold">👶 Baby News Aggregator</h1>
-      <p class="text-indigo-200 text-sm mt-1">生成日時: 2026年05月09日 18:32 JST</p>
+      <h1 class="text-2xl font-bold">📰 ベビー用品 業界動向</h1>
+      <p class="text-indigo-200 text-sm mt-1">生成日時: 2026年05月09日 20:10 JST</p>
     </div>
   </header>
 
@@ -34,32 +39,28 @@
         
         <div class="flex items-start gap-2">
           <span class="text-indigo-500 mt-0.5">▸</span>
-          <p>最も注目度が高いカテゴリは 📰 一般（86件）です。</p>
+          <p>最も注目度が高いカテゴリは 📰 一般（61件）です。</p>
         </div>
         
         <div class="flex items-start gap-2">
           <span class="text-indigo-500 mt-0.5">▸</span>
-          <p>急上昇キーワード: リコール、mobility、car_safety。前期比での増加が目立ちます。</p>
+          <p>急上昇キーワード: feeding、mobility、general。前期比での増加が目立ちます。</p>
         </div>
         
         <div class="flex items-start gap-2">
           <span class="text-indigo-500 mt-0.5">▸</span>
-          <p>今回収集した記事は合計105件です。</p>
+          <p>今回収集した記事は合計101件です。</p>
         </div>
         
       </div>
     </section>
 
-    
-
     <!-- グラフセクション -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- キーワード頻度棒グラフ -->
       <div class="bg-white rounded-xl shadow p-5">
         <h3 class="font-semibold mb-4 text-gray-700">🔑 キーワード頻度 TOP20</h3>
         <canvas id="keywordChart" height="260"></canvas>
       </div>
-      <!-- カテゴリ別ドーナツグラフ -->
       <div class="bg-white rounded-xl shadow p-5">
         <h3 class="font-semibold mb-4 text-gray-700">🗂 カテゴリ別記事数</h3>
         <canvas id="categoryChart" height="260"></canvas>
@@ -72,32 +73,32 @@
       <div class="flex flex-wrap gap-3">
         
         <div class="bg-indigo-50 border border-indigo-200 rounded-lg px-4 py-2 text-sm">
-          <span class="font-bold text-indigo-700">リコール</span>
-          <span class="ml-2 text-gray-500">2件</span>
+          <span class="font-bold text-indigo-700">feeding</span>
+          <span class="ml-2 text-gray-500">14件</span>
           
         </div>
         
         <div class="bg-indigo-50 border border-indigo-200 rounded-lg px-4 py-2 text-sm">
           <span class="font-bold text-indigo-700">mobility</span>
-          <span class="ml-2 text-gray-500">19件</span>
-          
-        </div>
-        
-        <div class="bg-indigo-50 border border-indigo-200 rounded-lg px-4 py-2 text-sm">
-          <span class="font-bold text-indigo-700">car_safety</span>
-          <span class="ml-2 text-gray-500">17件</span>
+          <span class="ml-2 text-gray-500">20件</span>
           
         </div>
         
         <div class="bg-indigo-50 border border-indigo-200 rounded-lg px-4 py-2 text-sm">
           <span class="font-bold text-indigo-700">general</span>
-          <span class="ml-2 text-gray-500">52件</span>
+          <span class="ml-2 text-gray-500">59件</span>
+          
+        </div>
+        
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg px-4 py-2 text-sm">
+          <span class="font-bold text-indigo-700">diaper</span>
+          <span class="ml-2 text-gray-500">5件</span>
           
         </div>
         
         <div class="bg-indigo-50 border border-indigo-200 rounded-lg px-4 py-2 text-sm">
           <span class="font-bold text-indigo-700">skincare</span>
-          <span class="ml-2 text-gray-500">6件</span>
+          <span class="ml-2 text-gray-500">3件</span>
           
         </div>
         
@@ -110,7 +111,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         
         <div class="bg-white rounded-xl shadow card-hover p-4">
-          <p class="text-sm text-gray-700 leading-relaxed">🍼 授乳・哺乳瓶: 13件の記事中2件がリコール関連。安全動向の要確認。</p>
+          <p class="text-sm text-gray-700 leading-relaxed">🍼 授乳・哺乳瓶: 19件と活発。市場トレンドを把握するチャンス。</p>
         </div>
         
         <div class="bg-white rounded-xl shadow card-hover p-4">
@@ -118,11 +119,11 @@
         </div>
         
         <div class="bg-white rounded-xl shadow card-hover p-4">
-          <p class="text-sm text-gray-700 leading-relaxed">🚗 チャイルドシート: 21件の記事中15件がリコール関連。安全動向の要確認。</p>
+          <p class="text-sm text-gray-700 leading-relaxed">🚗 チャイルドシート: 8件と活発。市場トレンドを把握するチャンス。</p>
         </div>
         
         <div class="bg-white rounded-xl shadow card-hover p-4">
-          <p class="text-sm text-gray-700 leading-relaxed">🧸 おむつ: 5件と活発。市場トレンドを把握するチャンス。</p>
+          <p class="text-sm text-gray-700 leading-relaxed">🧸 おむつ: 11件と活発。市場トレンドを把握するチャンス。</p>
         </div>
         
         <div class="bg-white rounded-xl shadow card-hover p-4">
@@ -130,11 +131,11 @@
         </div>
         
         <div class="bg-white rounded-xl shadow card-hover p-4">
-          <p class="text-sm text-gray-700 leading-relaxed">🌿 スキンケア: 5件と活発。市場トレンドを把握するチャンス。</p>
+          <p class="text-sm text-gray-700 leading-relaxed">🌿 スキンケア: 2件を収集。引き続き動向を追う。</p>
         </div>
         
         <div class="bg-white rounded-xl shadow card-hover p-4">
-          <p class="text-sm text-gray-700 leading-relaxed">📰 一般: 86件の記事中20件がリコール関連。安全動向の要確認。</p>
+          <p class="text-sm text-gray-700 leading-relaxed">📰 一般: 61件と活発。市場トレンドを把握するチャンス。</p>
         </div>
         
       </div>
@@ -144,7 +145,6 @@
     <section>
       <h2 class="text-xl font-semibold mb-3 border-b pb-2">📰 ニュース一覧（50件）</h2>
 
-      <!-- カテゴリフィルターボタン -->
       <div class="flex flex-wrap gap-2 mb-5" id="filterBtns">
         <button class="filter-btn active px-3 py-1 rounded-full border text-sm" data-cat="all">すべて</button>
         
@@ -164,89 +164,37 @@
         
       </div>
 
-      <!-- 記事リスト -->
       <div class="space-y-3" id="articleList">
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="general">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://www.recall.caa.go.jp/result/detail.php?rcl=00000035222&screenkbn=05" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                [消費者庁リコール] Zebra Japan「玩具（打楽器）」 - 返金／回収
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">消費者庁リコール（こども向け）公式情報</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>消費者庁リコール（こども向け）</span>
-                <span>·</span>
-                <span>2026-04-30</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">リコール</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="general">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://www.recall.caa.go.jp/result/detail.php?rcl=00000035161&screenkbn=05" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                [消費者庁リコール] めぶき会「いちごミルクジャム内容量145g、いちごミルクジャム内容量25g」（いちごの里ファーム、ECサイトで販売） - 返金／回収
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">消費者庁リコール（こども向け）公式情報</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>消費者庁リコール（こども向け）</span>
-                <span>·</span>
-                <span>2026-04-16</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">リコール</span>
-            
-          </div>
-          
-        </div>
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1vUmhsVlg0aDBiZTJ0SE4tTnI4V2RZZnhScVR4Q0JzdkFXZ2l3SE9EMFFoSXE2YlgzU2F5RmYxZ25KUng2dUZ4UXVSdG93UnVxbUdQWHQxOExpYTkxM0c2VzNyLU1ndnRaclBRbW5uYURaRG9sLW90YzQySkU0dVU?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                乳幼児向けおもちゃ、事故防止へ初の安全規制 輸入品にも適合マークの表示を義務化（産経新聞） - Yahoo!ニュース
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE1PdmYyZjFqekVVNDRSSWY1ZUNsSUVfcjlwaHVSZU9CME9RNmR4TnB6WjhOTkxKdFpGSkYtNWNYRXJFS3BiMmNkNU9fM3lmWUZNd0hjWEJ4cTJ3bXVCWXphbUpUVFo3SE9sd3h3dmpGSG1CMXNlV3c?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                【2026年最新・ベビー用品 定点調査】ベビーカー「サイベックス」、抱っこひも「アップリカ」が急伸、ブランドシェアに地殻変動 - Mantan Web
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">乳幼児向けおもちゃ、事故防止へ初の安全規制 輸入品にも適合マークの表示を義務化（産経新聞）&nbsp;&nbsp;Yahoo!ニュース</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 【2026年最新・ベビー用品 定点調査】ベビーカー「サイベックス」、抱っこひも「アップリカ」が急伸、ブランドシェアに地殻変動&nbsp;&nbsp;Mantan Web</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 規制・PSC・安全</span>
+                <span>GNews: ベビー用品全般</span>
                 <span>·</span>
-                <span>2026-04-27</span>
+                <span>2026-05-08</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:4/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -259,24 +207,72 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE5GMGNUQkh1ZklEamM5cjNHdEpZdzR6TVlhcm9HOUxsdVBDNkc5QW5EZFA0b3dXZkdteVNialFrek1lZHd2X3hwbDg0RjJNaWpwbjUtcDhWOWp2b3Ro?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                バースデイオンラインストアから、ムーミンデザインの新作ベビーアイテムが登場！ - ムーミン公式サイト | Moomin Official Website
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1uX3B5MlFTTWhKdVpZYlY0dGNKWmZDUjFFTnRBVTB2OTE0YUZiVWJfbWJNT212OTR3bkZ4cnJHZWxYVHFzRnE5eXB2TVdUMjE4X21iMU13cG1ia3oyT2VwUktpNmF6RnFhWVE?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                【数量限定！】赤ちゃんのころから親子でも楽しめる大人気しかけ絵本『もっともっと たべるのだあれ？』のサイン本、5月13日（水）「絵本ナビ」サイト内にて発売決定！ - PR TIMES
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">バースデイオンラインストアから、ムーミンデザインの新作ベビーアイテムが登場！&nbsp;&nbsp;ムーミン公式サイト | Moomin Official Website</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 【数量限定！】赤ちゃんのころから親子でも楽しめる大人気しかけ絵本『もっともっと たべるのだあれ？』のサイン本、5月13日（水）「絵本ナビ」サイト内にて発売決定！&nbsp;&nbsp;PR TIMES</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー用品全般</span>
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-08</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:3/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1XZ3dJWExKMFpaUE5VVlZaNEhlS2lsaTlZNG5za28xZWd2Z0VGbG85c3ZzWWV6dVpwOHkyT1FQWnVoaUdrSXBfbDUwenNBVC1DZmVBOXQwTjdIMmI2ZlhFcmRoTDM0RWpTX3c?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                友利新（ともりあらた）が社長を務める株式会社メディスキンが新商品を発売。 - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 友利新（ともりあらた）が社長を務める株式会社メディスキンが新商品を発売。&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
                 <span>·</span>
                 <span>2026-05-07</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -289,24 +285,33 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE16dnlsX0c0VzVTUzhiVGd5c0dDQVdHdkVGeG1qT1lfR1ZVM1BENHZBMDl1UzV4QjNNTDlhU3ZQcUtiV2FyX1BCNXFHM0d4ZmlWZnQ4U3gzSXhIRXZ0X3hsQms3djkzc2dXcEE?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                【2026年最新・ベビー用品 定点調査】ベビーカー「サイベックス」、抱っこひも「アップリカ」が急伸、ブランドシェアに地殻変動 - PR TIMES
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9CemUtRFltdzRYcXk0LUU0WjFaeVBYRmc2ZWRXYy1oMElNTHhSWlhkQmJfMnpieU4yVDl4ZGhkYjQwX1p5dV9hUlhHZHBXNUZvVGlyOG1CVGh1MzJrWS16dFpQbHRZRGdrU2M1b1hzREpkMjBXcjlyZkVQemxOaTg?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                「誰かにあげたい」「譲ってほしい」を繋ぐ 学用品や子供用品をシェアリング 物価高騰のなか人気 市役所に親子連れの列 - Yahoo!ニュース
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">【2026年最新・ベビー用品 定点調査】ベビーカー「サイベックス」、抱っこひも「アップリカ」が急伸、ブランドシェアに地殻変動&nbsp;&nbsp;PR TIMES</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 「誰かにあげたい」「譲ってほしい」を繋ぐ 学用品や子供用品をシェアリング 物価高騰のなか人気 市役所に親子連れの列&nbsp;&nbsp;Yahoo!ニュース</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー用品全般</span>
+                <span>GNews: 育児市場・EC動向</span>
                 <span>·</span>
-                <span>2026-05-08</span>
+                <span>2026-05-09</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -319,59 +324,38 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiY0FVX3lxTFBLZmVlVHgxTU5halFvanRUZXR5VEtCNzNSeWg5dUVKUGRnYmk2VFZTNzdFZ0ZkbzBFWHl6b3VLZy1VaHJuNVZmdkJsVDNqMkZ6a2ROYXdUU0hxd0RnUTEtVlVjWQ?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                “出産間近”藤田ニコル、ベビー用品を約100点爆買い “夫と共有”抱っこひも4本や一目惚れベッドなど紹介 - 山陽新聞
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1LSkF5VGhVLTktVjFPeHdwdE56Tnl2OEllMG81cFI2aGNpUjhzUXBaRUVzNnhGZzRuYk55a2xLME9SeVRUa3MyOXBsOS01NjhvNC1pakNBdU50RXZvenN3NFV5YVI1VWJlakE?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                腰ベルトやバッグベルトに装着できる！ハンズフリーで使える充電式の「小型ボックスファン」を新発売 - PR TIMES
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">“出産間近”藤田ニコル、ベビー用品を約100点爆買い “夫と共有”抱っこひも4本や一目惚れベッドなど紹介&nbsp;&nbsp;山陽新聞</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 腰ベルトやバッグベルトに装着できる！ハンズフリーで使える充電式の「小型ボックスファン」を新発売&nbsp;&nbsp;PR TIMES</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー用品全般</span>
-                <span>·</span>
-                <span>2026-05-08</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMijANBVV95cUxORjlOVktvY2dZWkVtdDJ0NlExQ1gteHNLbWNxRlliSlBHMzd0M3FNVkdCdUQ1WXJ2NXhSMGNTSC1yakJheGR5ZUtzSy0xemlLR1lDS1Z0Vkx5V0NxMVdxM1Fqd2FZcDRDY3VoNzNRd1NEeHctSjVqOFJhbUdpaFNCVk1HWm9lcGRpNWE3bjhEcHN5SHZfMXJBOHhjYmxFN1pxS1Y2bXVJZ0cwVXlOekpVZ211SG1MQmw3MFVBbzBTMjFVa1F5Y3pCbzJkVEkwck0wM2tPeUNPdmZ6V3k1QmVYQ21UZmh6TENUQlF4UWhIclU3WkxkYjF5RE4wMWk2TFN2dFpwRFA0OXBDRnRndFBkU0lKM0NWYkVlNUZPWXd1YWdIY3hHWEkwQkZZeFJTT2x4YUJGVEpCMUlzWnRhU0J6eXBZcjdBeHpCTDQ2V2ZWMW1VUm12dlV3R2h2ZzRzMk1SRHdXakE1QXAzcHRGUkQxeUlBeGNyM3NFMGhxWHZrS2RlQkRIaUhFSkFCLXc?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                Graco rotating infant car seat sold at Walmart, Amazon and Target recalled over structural issues - MSN
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">Graco rotating infant car seat sold at Walmart, Amazon and Target recalled over structural issues&nbsp;&nbsp;MSN</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: stroller car seat (海外リコール)</span>
+                <span>GNews: PR TIMES ベビー用品</span>
                 <span>·</span>
                 <span>2026-05-07</span>
                 <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇺🇸</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
             
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">car_safety</span>
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
             
           </div>
           
@@ -379,89 +363,194 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1FdTBhNm5qblcxZHhiX1RyMUdxeldYaGtxTFF0eG5jZUFBTGxKUlZGcGRHNlBMZHp1andWdmVIRjhQeEU2MzlJU002Q2RJNFJnQWdsRGF6aFNNUFdpX2c?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                「おさがり会」大盛況 ママら笑顔で交流、子ども服や絵本ずらり 沖縄・浦添市 - 沖縄タイムス社
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9CUWdJdUlGdGppa1pIb3VubzR0S3BhREZRY2Q0VkQwanhaZllMRXBWVW9SNEwxam4zdkg0UEZNbEJZWWI2N0V3QUFuYURDX1pXU1A2THRPQjFEQl93bkVWTDRaQVo5VV9PYXc?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                「SmartAngel 水あそびパンツM、L、ビッグ 3サイズ」発売！ - PR TIMES
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">「おさがり会」大盛況 ママら笑顔で交流、子ども服や絵本ずらり 沖縄・浦添市&nbsp;&nbsp;沖縄タイムス社</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 「SmartAngel 水あそびパンツM、L、ビッグ 3サイズ」発売！&nbsp;&nbsp;PR TIMES</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー用品全般</span>
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-06</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:3/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9HTTQwdVJtV21MSWRoYzJ6UTNkM3NEMTBMajF4WTBCRXJtVzNMbDBxSzFob1lvU2JmMnVoc2h6My1scEN1b2pSSlhEQzZ6NjJsdlgwMVlZRzJWX1dBdnFRWkNNeVFLWl9jR3c?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                累計販売4億本突破！「Afternoon Tea」監修シリーズ初のボトル缶＆新作ペットボトル登場 茶葉たっぷり「黒糖ロイヤルミルクティー」とルイボスファン再販希望No.1「白桃香るルイボスティー」発売 - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 累計販売4億本突破！「Afternoon Tea」監修シリーズ初のボトル缶＆新作ペットボトル登場 茶葉たっぷり「黒糖ロイヤルミルクティー」とルイボスファン再販希望No.1「白桃香るルイボスティー」発売&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: 哺乳瓶・授乳</span>
+                <span>·</span>
+                <span>2026-05-07</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">feeding</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxOM0JXQW5IaGNucVdyX1pTSzZLUDVEaGRJYVpaX2lxV2swQmNyNWo1Ml9IMmFVVlBrTUtJZDladEtpeDVmeG96ODRGSC1mdkpBdDV1VW9pV2ljN3JXb0lZRVBrb1AtNllIelhZb2c5d2hpUGdaMkhEVl9fZjNnOFdXVW1qcTlkakFE?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                【実食】スタバ新作ごろっとイチゴミルクが突然の先行販売をスタート！気になる中身をマニアが徹底解説！ - Yahoo!ニュース
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 【実食】スタバ新作ごろっとイチゴミルクが突然の先行販売をスタート！気になる中身をマニアが徹底解説！&nbsp;&nbsp;Yahoo!ニュース</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: 哺乳瓶・授乳</span>
                 <span>·</span>
                 <span>2026-05-08</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
             
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">feeding</span>
             
           </div>
           
         </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTFAxMlRoby1oRXc0R3NJNF9mWERjd2dtUl9RNXZhS0hXaHBNenhZV0ZXQ2xzNjVHZWJncXJMZWQ5UjRSRnYwcVBjNG5IbmtCZDh6MVd6YS1RZkNNckJ1SEdBYTBTRjkzWjJSZHlVQg?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                「ゲノム編集ベビー」規制法案を閣議決定 政府、拘禁刑など罰則も - 日本経済新聞
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE5GYjdLTEFWdnVCZ0FxTENEdkZvWXZmREhXT3RLMkp6dEVMb1pQNTNTTjh5YzFmWDhGMUxNTTJCWk9vQWZ2OWNDY1hhWWtzYU5JQnFRcTdNNTVIQlRkVGlYZEdRNTlXYTFWWFJKOHZDeW83Vjhx0gGIAUFVX3lxTE01MzMyUWFxRUVwQW1vMDJDWUZDOVFFeTNTMlJHRGw3d3R0cWF3R25nbFJYTGltREFLN3lVZ2RCZmI1QmVHaHIwSGJyM3oxRk8wdGFfRHBFVTNUZDFMZVJ0YTZDWWVKbFJkcjQ5OFJCV29RWWRldTZTNkQyWEtOb1NaUmU2a043RkY?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                スタバ新作は「イチゴ」のミルクとフラペチーノ2種！　5月11日発売　「ohora」とのコラボネイルも同日登場 - イザ！
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">「ゲノム編集ベビー」規制法案を閣議決定 政府、拘禁刑など罰則も&nbsp;&nbsp;日本経済新聞</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> スタバ新作は「イチゴ」のミルクとフラペチーノ2種！ 5月11日発売 「ohora」とのコラボネイルも同日登場&nbsp;&nbsp;イザ！</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 規制・PSC・安全</span>
+                <span>GNews: 哺乳瓶・授乳</span>
                 <span>·</span>
-                <span>2026-04-10</span>
+                <span>2026-05-08</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
             
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">feeding</span>
             
           </div>
           
         </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTFBSVndvMzhySTJEbEYydk84SkV5eFlCZXF4TEZnWkJMTC02aHowTGpxUjF3Y3B0amMtLVN3ZWk3Z1g0cEVQTms1MFdrV2V6Vlczb3ZSOWRIMElPZ1l5RU5LRW8zX1lQLXNOWFViSHU4UVFiS0RqNFE?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ゲノム編集ベビーを規制 子宮への移植に罰則新設 法案、閣議決定 - 産経ニュース
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxPeF9WVV9xaTFQcDNjR21DZ0FzMEVqRDNWYS1td3l2eXFYQV8yZldnLU5oYTdBdlBqeXpoRlRoY2NWaHNIV1pSR2loR05lUEctM1lYc1Btck5MVGJLUjg2SUdFdzQ3QjNITGVRc2xpTmRwU0ZLNlpDR1ZvTkFMN2Zid1dSM2IwQ0UxTDhVb0lGcmV4ZHPSAZgBQVVfeXFMUEN3Mm9MU0lhNmRFeE1iVGYxRklDTG9MTHlJLVR0YWxNYmdkTUJVTEVkc2RNVkxUSTlLbkZzYW9LcUs0b1pfRzc0S0JnTXVNeVdVc0pmT1RNOUxpN1lDX2EzZVRnQ1l3TmhCZmxGZ3FZalZ5OXYtc2lUcGpCdFU5OE1NS3ZrTk9saGFtX0UxdjktUHBpdnhMeVo?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                【2026年5月発売】スターバックス新作「ごろっと イチゴ ミルク」「イチゴ チョコレート フラペチーノ」ohoraコラボネイルもオンラインに登場 - えん食べ [グルメニュース]
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ゲノム編集ベビーを規制 子宮への移植に罰則新設 法案、閣議決定&nbsp;&nbsp;産経ニュース</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 【2026年5月発売】スターバックス新作「ごろっと イチゴ ミルク」「イチゴ チョコレート フラペチーノ」ohoraコラボネイルもオンラインに登場&nbsp;&nbsp;えん食べ [グルメニュース]</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 規制・PSC・安全</span>
+                <span>GNews: 哺乳瓶・授乳</span>
                 <span>·</span>
-                <span>2026-04-10</span>
+                <span>2026-05-08</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
             
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">feeding</span>
             
           </div>
           
@@ -469,204 +558,33 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE93WmpaQTZlelV5Wkl2UW5ORUVvbHN0dUt6ekJ4RnhNV1dxb01nOTJCc0VkeEhBdThzcW84OV9NUGpsTU1hWjBEZFNycWo4dUo3dkUtR3Rn?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                「ゲノム編集ベビー」規制 法案提出 子宮への移植に罰則 - 岐阜新聞デジタル
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNc3NZT0poZ0VmZ1FOTnBVYkJoOE9JWWpOT1EyUGw3alBGSF9rRXBldHBCekdoaUpwbjNUclFZOW1oTDAwWEFzMnl5UHA4ZkNDMllzUWlaeU9oam5jNVZ2MWxfcGFSQldBMWtwVXU1Z29vckRaYlNnTVhPTUFaYjhFQXY4SDZIdTV4?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                【MATE.BIKE】純正チャイルドシートカバーを発売！ - Mantan Web
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">「ゲノム編集ベビー」規制 法案提出 子宮への移植に罰則&nbsp;&nbsp;岐阜新聞デジタル</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 【MATE.BIKE】純正チャイルドシートカバーを発売！&nbsp;&nbsp;Mantan Web</p>
               
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 規制・PSC・安全</span>
-                <span>·</span>
-                <span>2026-04-11</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE9DZFlqblhqZldPVnFMUnN3aGtCZ1lzZkpxXzdWMTc3Yko4WWxlZkhsQVd1dXN4Ulp4UjdkTkRQR1lldjZMdUJhbVhwTjc5OE11WkFwdTJrUHl1cXBkSUt5RURuUk0?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                「ゲノム編集ベビー」禁止へ、政府が規制法案を閣議決定…体の特徴・能力など親が「特性」持たせる恐れ - 読売新聞
-              </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">「ゲノム編集ベビー」禁止へ、政府が規制法案を閣議決定…体の特徴・能力など親が「特性」持たせる恐れ&nbsp;&nbsp;読売新聞</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 規制・PSC・安全</span>
-                <span>·</span>
-                <span>2026-04-10</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE14RjlabXh5dVNud2NVTS04MGZzZnVqY0dsam4xbzZaM2N2RllIaWc4TXIwX0xCV25iRlV5YWhGNTN2SVlOQnpSaDdFT1ViZjE3YlN2S0MwOA?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ゲノム編集ベビー規制 法案閣議決定 子宮移植に罰則新設｜社会｜全国のニュース - 北國新聞
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ゲノム編集ベビー規制 法案閣議決定 子宮移植に罰則新設｜社会｜全国のニュース&nbsp;&nbsp;北國新聞</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 規制・PSC・安全</span>
-                <span>·</span>
-                <span>2026-04-10</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9JQ0Q0ak9ybXJoeTA0V3Frdkd2VDhobG5yVmIwaTdjZF9ERVFlcl9famw0ZlRIZWQ0cm4xN0NhcWhBSDZOaEhNblgtRnM2NVVhRHl5bVZpeGpEMlNlMUE?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                政府、ゲノム編集ベビーを規制 子宮への移植に罰則新設 | 全国のニュース - 福井新聞社
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">政府、ゲノム編集ベビーを規制 子宮への移植に罰則新設 | 全国のニュース&nbsp;&nbsp;福井新聞社</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 規制・PSC・安全</span>
-                <span>·</span>
-                <span>2026-04-10</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQd3huRXFvblpuT0RjR2hzdjdKREdldmdBQTI4UmJGSzhDTV8zYlZxM2hPVDVVejJZZHpsQzdUekIzekF6eEJMQmdsVVpHTmlpMXE3NXdSem54X3BvZTdjZ1JleC0yd1pQdS1mTjFlUmZZSHp3TVBoWlZQZndubVJCWjBhSEFKcm5ycktMODhn?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                政府、ゲノム編集ベビーを規制 子宮への移植に罰則新設 (共同通信) - Yahoo!ニュース
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">政府、ゲノム編集ベビーを規制 子宮への移植に罰則新設 (共同通信)&nbsp;&nbsp;Yahoo!ニュース</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 規制・PSC・安全</span>
-                <span>·</span>
-                <span>2026-04-10</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE1DWkZYZkFTUmZqaklUTkpfbWlZcDBXMkd4RkJKbnBOc1lwcXFlOEN6aHdndDl4TkozRWo3MjByTDlkUFpVSlZGQ01qak5KYW1x?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ベビー用品を展開する「Combi」のミニチュアチャームが再登場！ベビーマグや哺乳瓶など人気の定番アイテムをミニチュア化！ - 電撃ホビーウェブ
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ベビー用品を展開する「Combi」のミニチュアチャームが再登場！ベビーマグや哺乳瓶など人気の定番アイテムをミニチュア化！&nbsp;&nbsp;電撃ホビーウェブ</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー用品全般</span>
-                <span>·</span>
-                <span>2026-04-12</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE4wSjItVnN3a21NS2gwa1BMSGVqMzk4X2RhRWVXNnl0dU94NmQzV3JUaVRtY0k3bzlkaWZMelB0MkxkUFJSR0xPYzU0SVJYSEFmR2ZNRnZyVzFOUzJRdkxRMEp5U1RCNTZVQjU4YjNsQWZLS3ZDczNVZXpqVlZTU3c?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                「ベビーカーの暑さ対策の悩みを解決」西松屋〈超冷感マルチシート〉1318円「蒸れにくい立体メッシュでQ-MAX0.4以上の超冷感」 - Yahoo!ニュース
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">「ベビーカーの暑さ対策の悩みを解決」西松屋〈超冷感マルチシート〉1318円「蒸れにくい立体メッシュでQ-MAX0.4以上の超冷感」&nbsp;&nbsp;Yahoo!ニュース</p>
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
                 <span>GNews: ベビーカー・チャイルドシート</span>
                 <span>·</span>
-                <span>2026-04-20</span>
+                <span>2026-05-08</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -676,32 +594,41 @@
           </div>
           
         </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE9LeGVJUnpCdERUa0JxZGxsbzkxZ21zUUplRmo3WThjVmNBb2JMMlhORTFqYnJfeXNoWm5fYjJTTWpJaXdUbDJKa0lENEpEbUhoaXFmZzJQQzgyR0k1M19OLWR1ZG8tUQ?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ユニ・チャームのおむつ戦略 元気な高齢者向けで独走 - 東洋経済オンライン
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZnBMc0dENUtETkhMUUNWeVk1LUNWR3p0em5QcGNuek9mRlM0cG9nRDRQemhCWGFidjFpelMtU1BCN2dJd2VGNjVjYlNkQ3JIdXpLM2ZEM0dnUC1JTWRzQjllT1NhUkFxTktseGFtSUpGTXZUbEs1VDBmYXdCcXRHbndLN0FDRXhT?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                【モンテール】5月新商品「クリームと食べるとろ生カステラ」実食 たっぷりミルククリームとカステラ（南森エレナ） - エキスパート - Yahoo!ニュース
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ユニ・チャームのおむつ戦略 元気な高齢者向けで独走&nbsp;&nbsp;東洋経済オンライン</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 【モンテール】5月新商品「クリームと食べるとろ生カステラ」実食 たっぷりミルククリームとカステラ（南森エレナ） - エキスパート&nbsp;&nbsp;Yahoo!ニュース</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 哺乳瓶・おむつメーカー</span>
+                <span>GNews: 哺乳瓶・授乳</span>
                 <span>·</span>
-                <span>2026-04-14</span>
+                <span>2026-05-04</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
             
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">feeding</span>
             
           </div>
           
@@ -709,54 +636,33 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1wTTI4bjRjVEc2V0FXMjF2b3JyVFNIZ1dZcXhZT05NRU5WdXY1U1BhRGs3elRXSG45aDlTZTR0ZkJ3R3ZKbzBrbGZEckVIdW5fM2YzdHJ6aDhlalA5TVdFd0JtbTA0bzZLRFlMUjdZN29aZFlMQ3FkOTVSVnZxTFE?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                SNS「アップリカのベビーカーは貧乏と笑われた」投稿が話題！「マウンティングくだらない」「私も使ってたけど」反響多数だけど“高価=いいもの”とは限らない!? マウント言動の背景とは（ファイナンシャルフィールド） - Yahoo!ニュース
-              </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">SNS「アップリカのベビーカーは貧乏と笑われた」投稿が話題！「マウンティングくだらない」「私も使ってたけど」反響多数だけど“高価=いいもの”とは限らない!? マウント言動の背景とは（ファイナンシャルフィールド）&nbsp;&nbsp;Yahoo!ニュース</p>
+                
+                <span class="imp-badge badge-low">Low</span>
+                
               
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビーカー・カーシートメーカー</span>
-                <span>·</span>
-                <span>2026-04-24</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
+              
               <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBvZVhyLU5heE94cEFRelQ0UWwxZkx2SXc1YVItc2prYUI1amNBUVF1WW9wY29jM1RQenVWdmlPS3hVYXU4TDFiODctYjI2ckJUanN0XzFBN2s0Z1dIMGlpdzdHUWswckFrZEE?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
                 ほ乳びん洗浄の“不”に寄り添った新商品 「＼広口ほ乳びんのための／取り替えができる 回転式ほ乳びん洗い」が4月24日（金）よりアカチャンホンポにて販売開始！ | 株式会社 赤ちゃん本舗のプレスリリース - PR TIMES
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ほ乳びん洗浄の“不”に寄り添った新商品 「＼広口ほ乳びんのための／取り替えができる 回転式ほ乳びん洗い」が4月24日（金）よりアカチャンホンポにて販売開始！ | 株式会社 赤ちゃん本舗のプレスリリース&nbsp;&nbsp;PR TIMES</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ほ乳びん洗浄の“不”に寄り添った新商品 「＼広口ほ乳びんのための／取り替えができる 回転式ほ乳びん洗い」が4月24日（金）よりアカチャンホンポにて販売開始！ | 株式会社 赤ちゃん本舗のプレスリリース&nbsp;&nbsp;PR TIMES</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー小売動向</span>
+                <span>GNews: ベビー専門小売動向</span>
                 <span>·</span>
                 <span>2026-04-23</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -769,24 +675,33 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE44djFLR1JpYzJrc05vQWdFNjRCYUYwVi0yeE9HU0tVR19uOGZuXzJURTBfb09vTEZ4UjR6VXlnQk50ZGNqN2FMdU5BZ2hCanBqWHcwN1VZNExlMU9RMGtr?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ベビー用品の西松屋､ヒット商品連発の舞台裏 大手電機のリストラ技術者が新風を吹き込んだ - 東洋経済オンライン
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE5NVzhyYkh2Mk9yN3loYzJWUmNmQlhGT3NDdGl5Ymk5NXlxWW41NHRVRWxvb1pnaC1hbFNoTkgxeHo5STZ3dDNQTXhZM1hPZXlpM1Mxbw?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ベイシア／「Beisia Town 矢板店」4／24リニューアル、西松屋など新規4店舗導入 - 流通ニュース
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ベビー用品の西松屋､ヒット商品連発の舞台裏 大手電機のリストラ技術者が新風を吹き込んだ&nbsp;&nbsp;東洋経済オンライン</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ベイシア／「Beisia Town 矢板店」4／24リニューアル、西松屋など新規4店舗導入&nbsp;&nbsp;流通ニュース</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー小売動向</span>
+                <span>GNews: ベビー専門小売動向</span>
                 <span>·</span>
-                <span>2026-04-14</span>
+                <span>2026-04-22</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -799,24 +714,33 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFBPblNJMzFKMkRtVDQ1TzJRYlRXUnVqUDB4Q1RRbm9wNUt0Y19UeWJna3B6R1VXc1NwaTVMdDdScHFuZHhHVUhHV0dKSzVBSE50dlowZzI3eU9jbUs5ck1R?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                【アカチャンホンポ×ディズニー】これは可愛すぎ注意…ディズニーベビー＆キッズ新作アイテムが登場！【4/23まで】 - ぴあエンタメ情報
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFAyTy1TbXRrdS13cU1sUHlPRkJ3TFpvUk84RUZJVkhmV0pCTGtUZmZic1NFaUFaVUdCU2RhNXdkamxNUzl3cHpGbnNnamdqd2hWY1FZVWNuN3hqaC05M1FBUlZyT0JNZ3p0cEE?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                大人気の「ドラクエベビー＆キッズ」新商品がトイザらスに登場！夏を一緒に楽しめるアイテムを、4月16日（木）より販売開始！ - PR TIMES
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">【アカチャンホンポ×ディズニー】これは可愛すぎ注意…ディズニーベビー＆キッズ新作アイテムが登場！【4/23まで】&nbsp;&nbsp;ぴあエンタメ情報</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 大人気の「ドラクエベビー＆キッズ」新商品がトイザらスに登場！夏を一緒に楽しめるアイテムを、4月16日（木）より販売開始！&nbsp;&nbsp;PR TIMES</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー小売動向</span>
+                <span>GNews: 育児市場・EC動向</span>
                 <span>·</span>
-                <span>2026-04-15</span>
+                <span>2026-04-10</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -829,54 +753,33 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPkFVX3lxTE9ENnpZeEJMb2d1V3cybW5jcnN2cjRXTk5zZjd5ZHI0UUQ4NGRwandEYWFBVTJhU1BWRVJnX2RR?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                カトージの2人乗りベビーカーのおすすめ人気ランキング【2026年5月】 - マイベスト
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE5GMGNUQkh1ZklEamM5cjNHdEpZdzR6TVlhcm9HOUxsdVBDNkc5QW5EZFA0b3dXZkdteVNialFrek1lZHd2X3hwbDg0RjJNaWpwbjUtcDhWOWp2b3Ro?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                バースデイオンラインストアから、ムーミンデザインの新作ベビーアイテムが登場！ - ムーミン公式サイト | Moomin Official Website
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">カトージの2人乗りベビーカーのおすすめ人気ランキング【2026年5月】&nbsp;&nbsp;マイベスト</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> バースデイオンラインストアから、ムーミンデザインの新作ベビーアイテムが登場！&nbsp;&nbsp;ムーミン公式サイト | Moomin Official Website</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビーカー・カーシートメーカー</span>
+                <span>GNews: ベビー専門小売動向</span>
                 <span>·</span>
-                <span>2026-05-03</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiQkFVX3lxTE9URGY2YndwY2NyV2NrV19NM3EyMndnWjduZy05cVc1OHc5RGtDbDdrbXd5STMxODZBZGVaWFZ2Vy1yZw?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                「子供PSCマーク」をチェックして子どもの事故を防ぐ！3歳未満向けおもちゃ＆乳幼児用ベッド、これから購入するなら「安全の印」確認を - HugKum
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">「子供PSCマーク」をチェックして子どもの事故を防ぐ！3歳未満向けおもちゃ＆乳幼児用ベッド、これから購入するなら「安全の印」確認を&nbsp;&nbsp;HugKum</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 規制・PSC・安全</span>
-                <span>·</span>
-                <span>2026-03-23</span>
+                <span>2026-05-07</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:3/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -889,209 +792,116 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBsS0xqLXc5cjRzbUViT0NMUmpnSWp0NjlEOW5ScHRlWFdsbTBVQXZpQmEyQlpjamVRSHNYdUVmYVpvc2dlMWNPWXZWWkJ3UkNqTDBfMnpVX3pmb05xak84WFhqVzRELUM3cUE?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ママ・パパの想い出がたくさんつまった哺乳器(※1)を次の世代につなぐ ピジョン×赤ちゃん本舗で回収した哺乳器が累計本数5万本を突破 - PR TIMES
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE84VENPMVRCYWdLQzcxTzRRc1R0OTR3Sy05ajUzdVdvVE5WQ2xyamlIQUxfTHloZWptRmNGRnoxcG92LVB2czZSUXFCLXhWa0ZFMGljbG1mV09HLVBnY0N5eUJDVW54R08yb0E?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ゴリラの顔が足裏を刺激？！SNSで話題の『ゴリラシリーズ』から初のフットウェアアイテム見た目にもインパクト大の「ゴリラの裸足（はだし）」発売 | 株式会社ドウシシャのプレスリリース - PR TIMES
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ママ・パパの想い出がたくさんつまった哺乳器(※1)を次の世代につなぐ ピジョン×赤ちゃん本舗で回収した哺乳器が累計本数5万本を突破&nbsp;&nbsp;PR TIMES</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ゴリラの顔が足裏を刺激？！SNSで話題の『ゴリラシリーズ』から初のフットウェアアイテム見た目にもインパクト大の「ゴリラの裸足（はだし）」発売 | 株式会社ドウシシャのプレスリリース&nbsp;&nbsp;PR TIMES</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 哺乳瓶・おむつメーカー</span>
-                <span>·</span>
-                <span>2026-02-26</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWlRGOEJFLWhqUlNTUE11UGxfVThzMXg3bEVLUEtQZEYxY01adFdURktIU0xscU83RGJSdHVTR3p2VGpONklKQ19WbmVKaENseWRnTk9fZnRWbU1sVldBajZzVEdoTXg5a2Zxcmd1dklyczBaREpBcXdFX0F2VmFvei1taEpUN1RMUUhBUTdNMG53dkw3WTdyMUkxWlhubTk1ejQtcGV6amRFVHdrQkZzTkEzeHc0NnVpZ1NZ0gHDAUFVX3lxTE10bGJ6SHNsZXRyZ3pGbm1JUU1JclBhT0FHeExObzlXV2M2YTFETThLQmEtZFB3cXJKeEdmM2lud2xscG16VlB5R0RaSTNYVDluZ2JXaHpIWlpPQTlZT3hvUndQRVVQZVlRX2V3QkxycGNwSzFaZTNFdmJJOU9qZ3MyRzJXaS0xMDNSUkdoc3VLT3hER1NncmxNOFhzWFkyQ3hSekhOdUw5emZJWk12dEVWMjQ0XzBPQUdtZDhaT3dpNmtraw?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                Graco recalls popular car seat. Here's how to get a free replacement product - NBC10 Philadelphia
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">Graco recalls popular car seat. Here's how to get a free replacement product&nbsp;&nbsp;NBC10 Philadelphia</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: stroller car seat (海外リコール)</span>
-                <span>·</span>
-                <span>2026-04-15</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇺🇸</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">car_safety</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxNa3BNaDdCT21pWjV0Tzhhbk1TSmF5SW1TcVZWaEhHZWtVZUkyc3Q5UWdZMDF3Y05kSHlhLWpVWW45LTZrQWdBbUgxUHlYMk9VSS1ERDF4Z0xyOWZyOW5UZ25hdlVtMzc3OXlja05DaVZNZXh1TGZITjBSdXVUc0l0U2E5b2FlS3FRZ3htSUFzVHFrbkpEQ0FQTmEzT0YyU051dFRyckJ4WkZlTFZCYWlSaWMxOHlqOTRDcDUyWXN3M1VONmNBenFKbVJGM0NmNzc3ZXc?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                Baby Product Recalls Parents Should Know About in 2026 - Consumer Reports
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">Baby Product Recalls Parents Should Know About in 2026&nbsp;&nbsp;Consumer Reports</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: stroller car seat (海外リコール)</span>
-                <span>·</span>
-                <span>2026-04-28</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇺🇸</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">car_safety</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQcHJiWW5SdlcwOW04Rk9VNEFxYmhVa3paQmFRWEU2MnVYaVpXYm5NQ3JwRE02OVBReWpVTUdUUmhzMm9hQk42aUs0YzNrU01fMm1xV3F6WjI1ME9uYTlBaGowbTdCOXF5bTRNb3hqWmNxeWJsMEJYR0pJM0c3aG01YnYtTGxCeEZYVmFjWVhORDNCR2dIRlJobndISkpFUkMxdnAzT0M0UzBRMVBadGfSAbMBQVVfeXFMTUd6ZGIwUFBOdjRuWWhSY21UNnpNSkNiUEJrVjZfZGxVQjA5WW9JemNaRGdzMDA4VUJwZi1ZTGswakRuMDEzQ212N1F6SWM2SElRb1EzT003b1Y2MC1CX3ZDVXZQSXJ3WVlHaFZDQzZ2NFR4YVN0Wm9xS2FyWUdHemVYd3hyTTE2WldHX045OF9YX3hvYnc3a1hseUM3enRvRnZVdUJOYnQ0QXd6TmQzRTRGaXM?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                Car seats sold at Target, Walmart recalled over structural issue - FOX 8 News
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">Car seats sold at Target, Walmart recalled over structural issue&nbsp;&nbsp;FOX 8 News</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: stroller car seat (海外リコール)</span>
-                <span>·</span>
-                <span>2026-04-11</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇺🇸</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">car_safety</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNRGdDODRoU19LZXI2SzhxNnhZbEJtNDNEYTlNV1F0Uy1Kb3JwM1NncjRBbnB6bTFYYlFMWDJSbjlrdm93aHlJeHVVd0JKcHYyNDZndDFqWGxJRTBOajdVMWhubzhVbm1iQzNKS3lxVFJfemVnM254blJJQ19NYVRjVWo5NjA4Tm1SUjIwcjNJbXlNdUJyS1IyYnlRQjh6eWM?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                Graco Recalls Popular Car Seat Due to 'Structural Issue' - People.com
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">Graco Recalls Popular Car Seat Due to 'Structural Issue'&nbsp;&nbsp;People.com</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: stroller car seat (海外リコール)</span>
-                <span>·</span>
-                <span>2026-04-13</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇺🇸</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">car_safety</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQQ0ZrR2NFVjVVNDN3VE83TExfYjdmU2h2RkFla1B4MHEtVFJVZWR2NXFWT2hUVElJb0g3RUxNcWtlX2hUVTVQR0dIMkkyaFVfZ0kwTVFkb3pPSmh2dVRWZk9fRDNDalUxZDRtTWRzVzdrWVhCQURBQ3g4ZGVvNm9zbER2UDQ4d2ZjZUpiWm5UY2hZcHRvRUh1Wl9YamRxWWkwX0lDVmV6RlY?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                Graco SnugRide Turn & Slide Car Seats Recalled Due to Crash Safety Issue - Consumer Reports
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">Graco SnugRide Turn & Slide Car Seats Recalled Due to Crash Safety Issue&nbsp;&nbsp;Consumer Reports</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: stroller car seat (海外リコール)</span>
-                <span>·</span>
-                <span>2026-04-15</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇺🇸</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">car_safety</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxQSnp0QkEwWjNFOFJpY2hneU00dW1QWklFelFXM0xGTDFCejV3aVlHNmExaUNDOTdoVjEyX0xiS0xtNE4wMllDR3h5Ul9LSDhCWE8zMUdybkdwVFF1UTQzbTB1cEladFdLU3JHVkx5VVdNOHVKLU9QWkxWdGo2M3dKbVpoUDVsdHBFaUY0eG9JZlcyTDdSWFh5UnRwNHNuYlZSS1cxR00tTnhJbEhuZWdVSWR3NVB4bXRQcmR2a0lSTjV4eXZvNXhVVm1B?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                Recalled Inclined Infant Sleepers Are Still in Use—and Still Dangerous - Consumer Reports
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">Recalled Inclined Infant Sleepers Are Still in Use—and Still Dangerous&nbsp;&nbsp;Consumer Reports</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: stroller car seat (海外リコール)</span>
+                <span>GNews: PR TIMES ベビー用品</span>
                 <span>·</span>
                 <span>2026-04-23</span>
                 <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇺🇸</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:2/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
             
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">car_safety</span>
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE4xWUxvaUtJcFU5YmJ3eHpVc1lQTzBFVEY1Y185VldZOWNEYXU2UUlSWmdZSTJEQktfcGN0TTVJTHctYnJWQS1jMDI5NkxHX3FZTGx5X0RDMnY1ZUJXLWtjUnZjMUc5UQ?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                【2026年5月第2週】プリン・ゼリー・カップデザートランキング1位はさくらミルクプリン！新商品・急上昇商品まとめ - もぐナビ
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 【2026年5月第2週】プリン・ゼリー・カップデザートランキング1位はさくらミルクプリン！新商品・急上昇商品まとめ&nbsp;&nbsp;もぐナビ</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: 哺乳瓶・授乳</span>
+                <span>·</span>
+                <span>2026-05-09</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">feeding</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9KeHFoWWlGUFZqdmJxX3BiMU5NazZvbl8weVVfbnZLY0t1V3BZZlpSRkpHSUw2WGV1bEdfcGh2RkE3cGdhSTZPXzQ0MS1pbDV2SVdBbHhaN0ZXZy1PRUxuc1JQUHB5WXlRR1E?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                【2026年5月発売】飲料・ドリンク新商品まとめ「珈琲所コメダ珈琲店 クラフトレモネード」「リプトン プリンミルクティー」など - えん食べ [グルメニュース]
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 【2026年5月発売】飲料・ドリンク新商品まとめ「珈琲所コメダ珈琲店 クラフトレモネード」「リプトン プリンミルクティー」など&nbsp;&nbsp;えん食べ [グルメニュース]</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: 哺乳瓶・授乳</span>
+                <span>·</span>
+                <span>2026-05-09</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">feeding</span>
             
           </div>
           
@@ -1099,29 +909,779 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFB3ZTViQWpqWmhkZy1abWNYWmlfWWgzR3JMSWVLMlpLN01fUFpxdFdqbFlsNjAwSDRCM0t5c0piTlJONWc1VmlsUGhiT1FJcktDRUZZazdFdzdleXFtM0dKWVlaVU9SdlJvMkE?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                暑い日の赤ちゃんとのおでかけを、もっと快適に。「Nクール」など2026年モデルのおでかけベビーアイテムが登場！ - PR TIMES
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9HekJUazhNY2dTTFJldmh1eVJtaHBTMnBJNkFQWHR2WktnTDctZWZwMGlVR01FaGZDUjdEYkVxZUNuQVk4a1NhOHRLQkNta1ViR3o4WG5UU2hkLXFZOVA1SWhOMndEQmphYUE?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                第61回ヴェネチア・ビエンナーレ国際美術展 日本館展示 - PR TIMES
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">暑い日の赤ちゃんとのおでかけを、もっと快適に。「Nクール」など2026年モデルのおでかけベビーアイテムが登場！&nbsp;&nbsp;PR TIMES</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 第61回ヴェネチア・ビエンナーレ国際美術展 日本館展示&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-07</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBDMnBWUllRd1lqTlRNSE1sTHlGU3NteEJUZGRhTnFCc2ZSaTVhMHprSlF6eXBKaGFPXzRhQXdaZ095enY2REQtV2FlcV9hczd4RUlWU2VnQjlNVEYwZEU2UmlJRXEwbnI1Y3c?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                福岡県粕屋町、令和8年全国広報コンクール「総務大臣賞」を受賞 - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 福岡県粕屋町、令和8年全国広報コンクール「総務大臣賞」を受賞&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-07</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxQZjFUQ2xmNWxfMVJKVkVDUEV3dVMzUGk2NDFNYU96cTZwUjdXdTNMbHpoZWgxazZqLVV2UV9NM3IxLVQ2REtsY0wwa2pONlVNQ1hUMzJLNlJPc2o2T0xJeTN2T1lEbUFDV3NqWFl5NGR1OTc3eEVUOTF0SnZrWnBYcWhR?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                メディア関係者の方のみご覧頂けます - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> メディア関係者の方のみご覧頂けます&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-08</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE50MWRzclNfSXZfLVlvVTBYY1hvay1rWWhvQTZETjBraVEwM2xEdGVaa2p0ZFhjZTRZN05mTmt1ak5SQW9IWkljR1JoTkZTMFItT2wxY29RcmtXTWw4VFhMSDhITjhwdmY1Nmc?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                子育て家庭の“時間不足”を解決 出張ケア アプリ「Celesmile（セレスマ）」を提供開始 - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 子育て家庭の“時間不足”を解決 出張ケア アプリ「Celesmile（セレスマ）」を提供開始&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-08</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9vekdtWjN6ZUVyMnpoMTQwNFR0SkRKZ0ZIMkktUDg0YnhuOFdVcnRqeXdUMlpWcVhuS3h5WGdQOTZBLUVNNllZWXdiUG1SUHpKSG1ocTNJMTBQWnFjbG02d2xCa0pBNXZyX2c?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ミラボ、茨城県 石岡市で 子育て支援のオンライン予約「mila-e 予約」提供開始 - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ミラボ、茨城県 石岡市で 子育て支援のオンライン予約「mila-e 予約」提供開始&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-07</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBjZTA2TlFBQVluM1lyNTZNeU9mVVhQUDVCaVZyY3FmUGVLNnBYdlZraUcwSmJaUWhHRmJTU2FacUZBeXRaT3VsSWlXc08zcHdpUzFrLVJNYnNkNDFWQUNLWXdQaGdNekNueVE?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ギフティ、京都府の子育て世帯向け「外出応援キット」配布事業に採択 子どもの月齢・シーンに合わせた6種のギフトキットを企画・提供 - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ギフティ、京都府の子育て世帯向け「外出応援キット」配布事業に採択 子どもの月齢・シーンに合わせた6種のギフトキットを企画・提供&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-08</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE01TWVXb1RvdWE2bzJKV3ktNXhpYUJ2bDJuNHdaamtVd2htSVpGenJ1aXRqQ1UtbmU0M3Rjc0gtN3J5QjVCQXNObExCNUpQajE4bzZaVU1qTVctZjVoSkM1YkJ0WWxIZVdLdWc?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ももクロが夏のお出かけ場所に神出鬼没に現れる？！スキンベープで夏の遊びをエネルギッシュに応援！新CM「みんなのムチューを応援！」篇が2026年5月8日(金)より放映開始 - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ももクロが夏のお出かけ場所に神出鬼没に現れる？！スキンベープで夏の遊びをエネルギッシュに応援！新CM「みんなのムチューを応援！」篇が2026年5月8日(金)より放映開始&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-07</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1RckVPRE1NUHVLcjJKN0FBS2ZSbHprY2prekk0Z0JfMnk5bXBjU2JicGthR0pUaV80Z0Z5dC1JTUpYdEd2M1Qyc252WUxiS3U1RTAzT3VIZEFyU1dnUjZPVDlCcVJSTjN0WEE?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                伊豆・城ヶ崎海岸のニューヨークランプミュージアムで「あじさいフェスティバル」を開催（2026.5/23～7/5）！ 自生種「城ケ崎」をはじめ200種以上の多彩な品種とアンブレラスカイが梅雨を彩る - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 伊豆・城ヶ崎海岸のニューヨークランプミュージアムで「あじさいフェスティバル」を開催（2026.5/23～7/5）！ 自生種「城ケ崎」をはじめ200種以上の多彩な品種とアンブレラスカイが梅雨を彩る&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-08</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9hZ2JPVXhWM3IwamZxd2hRWWF6VWN6MWR2am1zYTJXTnhmS1NQTGU3X280dmc5UkdtNVBHUzRLTmpwdnBLWkUzRUFROW00Z3BFbDdlQU9saEkwSFJjNUZaUzZSazF2Q1NQeFE?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                「伝染性紅斑（リンゴ病）」について詳しく知ろう！－健康ぷらざPlusの最新号が完成－ - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 「伝染性紅斑（リンゴ病）」について詳しく知ろう！－健康ぷらざPlusの最新号が完成－&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
+                <span>·</span>
+                <span>2026-05-07</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNaXBIV1phdVV3NHM5TmR3SGdJUkNWM3J0cmZLMlAzbWR1UUMzYWd1Q2d6TnIzUzJaZEFiOV9WYi1EOTJsc1JmQ3JBX0NkUU9JQkFXcjBUS3VicEI0MzQ3MDhOVXotNF9WazFYazVQLVExTDBUTl9XSXNhck0wQ3RoejVBbWk3c25lYUdPbWl3TTZrUGxXdEpTZTlvOHdiUnNaVmlVaHpSYW8ybDRnSXB2NTlaYUNzTWJtbjlKZWN5dmNXeWw1S3BabUh4UQ?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ベビーケア製品市場シェアと業界成長 [2034年] - Fortune Business Insights
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ベビーケア製品市場シェアと業界成長 [2034年]&nbsp;&nbsp;Fortune Business Insights</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
                 <span>GNews: ベビー用品全般</span>
                 <span>·</span>
-                <span>2026-04-30</span>
+                <span>2026-04-20</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
             
             <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxObzFJcWp2ZGU2MUhFZFJ5X1N4aGptMXdHcEdiLUhIWmd0SUh3YVFZcTJ0SzVfWVFXbUNuN3FLOTl5ZENfWklhZlNWN0IwNDZoUGU5b2o3NGtObDZhOG9mdWNaSExNUFh0em9ieWI1Y1dYZlBuWTN4SlM5RTZSWVUzSmFUWjhyZFNJNXJ0c05UY2tEeHdZQ2JpZ1c2NHBMcW03TXBsaWlSaG9QWVpjUHZjcTBiNFBfUllNQTZVMDZlV2hneVpZNUF4YmZoRQ?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ベビーアパレル市場規模、シェア | 分析レポート [2034年] - Fortune Business Insights
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ベビーアパレル市場規模、シェア | 分析レポート [2034年]&nbsp;&nbsp;Fortune Business Insights</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビー用品全般</span>
+                <span>·</span>
+                <span>2026-04-20</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxQd2tqenNMU2owb0dLdi05Xzd0Q2xrZXFoQXlXNnJtTzh6Vms4UnFqWEpfeDh3amtBZkJvbnd4c1doMHRkSGFPa3h4aDA4ZUlTVGNjMDdMNU8tUTAtbGJ3eDFTaVpNUXM3dEk2Y21PU01PdmNHbVRfazVfYk4wTzc1TkRselpaNjE3bFI5a3Q5SUx1QmloUG9NNy1tM1o5ZHNkRVNwU3AteDlBZGFtZWJMem52eUoyNExvdHhQOWRiTE1OVjEwRXJucUx1ckM4YVluVzRtSWMyRHdjOUFUQ3FYbXhnMmttZlU2X091dEo1bw?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                赤ちゃんのおしゃぶりの市場規模、シェア、トレンド、成長報告書、2034 - Fortune Business Insights
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 赤ちゃんのおしゃぶりの市場規模、シェア、トレンド、成長報告書、2034&nbsp;&nbsp;Fortune Business Insights</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビー用品全般</span>
+                <span>·</span>
+                <span>2026-04-13</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxNS1RVRUk3T2daTGs2X2M1TGt2c0RaZTRKUmRNb1lZQy1VV0VCTkg3T0N0bWhIUjkwN1NCNFpXM1lfaVZKZnVHd05kdERFQnVvcUpoTFBMcmdfTVhCX2RIRnljSndPZG43cEQxdVN1eFI3TUV1X24tNThmNE9ONERBMjg2OVFlUWNTd2xfSXJCd05LTDR6d1EyUWdaYVZOdG1UMUI5bnhVR2ZFTnJxQ2R1WFVrTXpWSXkxOW5pWnN2a2hqZ2l3WGhIUDlzVlNhSVFvWHBKazRWYjJZcDBsemt0a0NSX203TFpBRkVnNTZNQQ?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ベビーワイプ市場規模、業界シェア、成長分析、予測、2032 - Fortune Business Insights
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ベビーワイプ市場規模、業界シェア、成長分析、予測、2032&nbsp;&nbsp;Fortune Business Insights</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビー用品全般</span>
+                <span>·</span>
+                <span>2026-04-20</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOY0VxNUt3Mmp0UUxlclVUOWt2bl9zalBCdzdsc25WZk0xeGVoRWJXNFZySjR1dEVyN0U4a0JrV05jQ2wtWWtURmxwTmtnYnpNN3hYSFhMQkxYZjZLaWpEWE5PR2kya2pfSWVxQWJ5Ny1wRkQ0VHpQb091eVBhQW9uaGVSc1ZVbmYxMDNvdmZtblh3cXJ5QmV2RWtyeE9QV2lvLXRYNi1JRTEyZTRwdzBGMW9Mbw?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                北米の哺乳瓶の市場規模、共有|成長[2032] - Fortune Business Insights
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 北米の哺乳瓶の市場規模、共有|成長[2032]&nbsp;&nbsp;Fortune Business Insights</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビー用品全般</span>
+                <span>·</span>
+                <span>2026-04-13</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE5QemEtNG5ORlhsNzRYOWRhSmt5V1RKMFYyLTM3bDFaM2JiRjZoSVdRYVM5Q1hXeXU2TFpHM0Y2NEs3SUhJa3Y5SDNLblp3ZXBoa1FVa210YjRLMUdWQ3RkcDRXbnFOUk5zdWc?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                【 5月1日発売 】まるで “食べる絶景 ”！新作『 富士山かき氷 ブルーハワイミルク 』が登場！「築地銀だこ（一部限定店舗）」にて販売。 - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 【 5月1日発売 】まるで “食べる絶景 ”！新作『 富士山かき氷 ブルーハワイミルク 』が登場！「築地銀だこ（一部限定店舗）」にて販売。&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: 哺乳瓶・授乳</span>
+                <span>·</span>
+                <span>2026-04-30</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">feeding</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1QUGJMQ0xod0V2ZzF2XzRZQmtRek94SVhvcVlEOW9zcVVFZ3czT1F4U3VJXzc3YmJpbGRLUEtVQ0ZCcEl2Z2IwZjZ0WlM0blY2aHllQ3dPa1prY19MQXZQVmVWb2lsMk1YNnJCdjJscTRoNi0zWmM1STRraFBtT28?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                「きた～！新商品！」小枝・紅茶味〝まさかの見た目〟 新作ロイヤルミルクティーに「絶対うまい」（西日本新聞） - Yahoo!ニュース
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 「きた～！新商品！」小枝・紅茶味〝まさかの見た目〟 新作ロイヤルミルクティーに「絶対うまい」（西日本新聞）&nbsp;&nbsp;Yahoo!ニュース</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: 哺乳瓶・授乳</span>
+                <span>·</span>
+                <span>2026-04-17</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">feeding</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxNZ2ZUdHdOdVRiTXRfNFhSMEpubzVtbDRLaDMyY2ttdEQ1Vm5VcEtxdHdxWlhVMU9MRmJPS2w3eGNESVJ3WU1vbGpJRW1IVU51Y3NWeXJsRXpKWHBZM0hmZDV5Y1gxeVVrTUNCZ2xuWTBlNDlWeVFWcnpFQTV4c25ENW9vRmtma1NhMDZDb2V3?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                「東京ミルクチーズ工場」の新商品「ムーンケーキ」チーズのコク、なめらかなミルク風味のクリーム入り、東京駅で発売！ - Yahoo!ニュース
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 「東京ミルクチーズ工場」の新商品「ムーンケーキ」チーズのコク、なめらかなミルク風味のクリーム入り、東京駅で発売！&nbsp;&nbsp;Yahoo!ニュース</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: 哺乳瓶・授乳</span>
+                <span>·</span>
+                <span>2026-04-13</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">feeding</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNS3YtZ1RKTmJKeWVwbS14NW1aS1RnQXk4RGltVVpqa2F6UmZHLWpBZ2pieEVBY1JUTVRRcmh5VFVPNTNGLV8tMzdGT2czZXNBdXF3NTdaMXB4VjJnM0VfZko2eVktWVJfRzh5SzR3MUo0dXd1QzFFRlh6OG11Z25JVGs5ZnplQVZk?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                サイベックス、チャイルドシート新モデル「パラス G3」発売へ…インパクトシールドで首への負担25%軽減 - carview!
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> サイベックス、チャイルドシート新モデル「パラス G3」発売へ…インパクトシールドで首への負担25%軽減&nbsp;&nbsp;carview!</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビーカー・チャイルドシート</span>
+                <span>·</span>
+                <span>2026-04-15</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE5hSG9LMGl6bXVmZnBJMkw1eDVlNHRQVnpKdjZPbzRLSTMxSVViX1V2dkVud0VNQU9NS2RmNWJLV3UtQUF5Z3FGRjZsazItQnM?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                夏のおでかけを、FANFAN 快適に！ 赤ちゃんの暑さ対策をサポートするベビーカーファンシート 「COOL FAN FAN(クールファンファン)」新発売 - newscast.jp
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 夏のおでかけを、FANFAN 快適に！ 赤ちゃんの暑さ対策をサポートするベビーカーファンシート 「COOL FAN FAN(クールファンファン)」新発売&nbsp;&nbsp;newscast.jp</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビーカー・チャイルドシート</span>
+                <span>·</span>
+                <span>2026-04-14</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE10bjRNQVlOWm9XWXZSamZQSzBRd1JERE9vdDFSYkdCQm1rZXZERTBKTjZ6anB5cEI4M2VYdUFIN0JXZE5yMGNvYkxHbjJGX1ozVy1ybUVGQzAxMlA1?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                赤ちゃんの暑さ対策をサポートするベビーカーファンシートが発売 - マイナビニュース
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 赤ちゃんの暑さ対策をサポートするベビーカーファンシートが発売&nbsp;&nbsp;マイナビニュース</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビーカー・チャイルドシート</span>
+                <span>·</span>
+                <span>2026-04-16</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
             
           </div>
           
@@ -1129,24 +1689,33 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="diaper">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE1BODFpeGg4WGhUMW5YUWJGVWxIYWxQdU4tdC1PS3lfMTA1V3U1SDI5Z19CdUNiaWUzUS1GbjYwTm5kclc0SWtMUkxPQ21pYWd2STc1M1dwU0l2bDlqNHZ4ekhGcm40Y2R3RXVrSw?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                出産・子育てを応援する「えらべるおむつギフト」幅広いご要望にお応えして20,000円(相当)コースが新登場 - woman.excite.co.jp
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE5CX3owNElzTHJNbXFTclhQeFdOaENXdTlFSTgwdmVuVE44azM1a0FoVkd6Y19UVXVEUVNOXzdtVFFNUHhmOVpmaUZTX0NGcTQ?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                今週の売り物市場には年間売上100億ウォン規模の自動車部品メーカーが買収·合併(M&A)売却対象に登録された。 成人向けおむつメーカーや協同ロボットソリューション企業も、買収者を探していること.. - 매일경제
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">出産・子育てを応援する「えらべるおむつギフト」幅広いご要望にお応えして20,000円(相当)コースが新登場&nbsp;&nbsp;woman.excite.co.jp</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 今週の売り物市場には年間売上100億ウォン規模の自動車部品メーカーが買収·合併(M&amp;A)売却対象に登録された。 成人向けおむつメーカーや協同ロボットソリューション企業も、買収者を探していること..&nbsp;&nbsp;매일경제</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
                 <span>GNews: おむつ・おしりふき</span>
                 <span>·</span>
-                <span>2026-04-23</span>
+                <span>2026-04-27</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -1156,267 +1725,36 @@
           </div>
           
         </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNaXBIV1phdVV3NHM5TmR3SGdJUkNWM3J0cmZLMlAzbWR1UUMzYWd1Q2d6TnIzUzJaZEFiOV9WYi1EOTJsc1JmQ3JBX0NkUU9JQkFXcjBUS3VicEI0MzQ3MDhOVXotNF9WazFYazVQLVExTDBUTl9XSXNhck0wQ3RoejVBbWk3c25lYUdPbWl3TTZrUGxXdEpTZTlvOHdiUnNaVmlVaHpSYW8ybDRnSXB2NTlaYUNzTWJtbjlKZWN5dmNXeWw1S3BabUh4UQ?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ベビーケア製品市場シェアと業界成長 [2034年] - Fortune Business Insights
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ベビーケア製品市場シェアと業界成長 [2034年]&nbsp;&nbsp;Fortune Business Insights</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー用品リコール</span>
-                <span>·</span>
-                <span>2026-04-20</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBWUVhMNWgtRk5Ud2hyU19kVTRYM2R4UW1DdE5vckE5dWdHaFFhTVRHMHlxZXRpLTZZVWpYcFlMMzhtMmlXaFk0ak0xdEwyZGJxNDQxN25lZkIycHluZER1dHlhci1LZE9fM1E?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                我が子のためのお買い物が、ちいさく生まれた赤ちゃんの命をつなぐエールになる - PR TIMES
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">我が子のためのお買い物が、ちいさく生まれた赤ちゃんの命をつなぐエールになる&nbsp;&nbsp;PR TIMES</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 哺乳瓶・おむつメーカー</span>
-                <span>·</span>
-                <span>2026-04-17</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxObzFJcWp2ZGU2MUhFZFJ5X1N4aGptMXdHcEdiLUhIWmd0SUh3YVFZcTJ0SzVfWVFXbUNuN3FLOTl5ZENfWklhZlNWN0IwNDZoUGU5b2o3NGtObDZhOG9mdWNaSExNUFh0em9ieWI1Y1dYZlBuWTN4SlM5RTZSWVUzSmFUWjhyZFNJNXJ0c05UY2tEeHdZQ2JpZ1c2NHBMcW03TXBsaWlSaG9QWVpjUHZjcTBiNFBfUllNQTZVMDZlV2hneVpZNUF4YmZoRQ?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ベビーアパレル市場規模、シェア | 分析レポート [2034年] - Fortune Business Insights
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ベビーアパレル市場規模、シェア | 分析レポート [2034年]&nbsp;&nbsp;Fortune Business Insights</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 育児市場・EC動向</span>
-                <span>·</span>
-                <span>2026-04-13</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxQd2tqenNMU2owb0dLdi05Xzd0Q2xrZXFoQXlXNnJtTzh6Vms4UnFqWEpfeDh3amtBZkJvbnd4c1doMHRkSGFPa3h4aDA4ZUlTVGNjMDdMNU8tUTAtbGJ3eDFTaVpNUXM3dEk2Y21PU01PdmNHbVRfazVfYk4wTzc1TkRselpaNjE3bFI5a3Q5SUx1QmloUG9NNy1tM1o5ZHNkRVNwU3AteDlBZGFtZWJMem52eUoyNExvdHhQOWRiTE1OVjEwRXJucUx1ckM4YVluVzRtSWMyRHdjOUFUQ3FYbXhnMmttZlU2X091dEo1bw?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                赤ちゃんのおしゃぶりの市場規模、シェア、トレンド、成長報告書、2034 - Fortune Business Insights
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">赤ちゃんのおしゃぶりの市場規模、シェア、トレンド、成長報告書、2034&nbsp;&nbsp;Fortune Business Insights</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 育児市場・EC動向</span>
-                <span>·</span>
-                <span>2026-04-13</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOY0VxNUt3Mmp0UUxlclVUOWt2bl9zalBCdzdsc25WZk0xeGVoRWJXNFZySjR1dEVyN0U4a0JrV05jQ2wtWWtURmxwTmtnYnpNN3hYSFhMQkxYZjZLaWpEWE5PR2kya2pfSWVxQWJ5Ny1wRkQ0VHpQb091eVBhQW9uaGVSc1ZVbmYxMDNvdmZtblh3cXJ5QmV2RWtyeE9QV2lvLXRYNi1JRTEyZTRwdzBGMW9Mbw?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                北米の哺乳瓶の市場規模、共有|成長[2032] - Fortune Business Insights
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">北米の哺乳瓶の市場規模、共有|成長[2032]&nbsp;&nbsp;Fortune Business Insights</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 育児市場・EC動向</span>
-                <span>·</span>
-                <span>2026-04-13</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxNS1RVRUk3T2daTGs2X2M1TGt2c0RaZTRKUmRNb1lZQy1VV0VCTkg3T0N0bWhIUjkwN1NCNFpXM1lfaVZKZnVHd05kdERFQnVvcUpoTFBMcmdfTVhCX2RIRnljSndPZG43cEQxdVN1eFI3TUV1X24tNThmNE9ONERBMjg2OVFlUWNTd2xfSXJCd05LTDR6d1EyUWdaYVZOdG1UMUI5bnhVR2ZFTnJxQ2R1WFVrTXpWSXkxOW5pWnN2a2hqZ2l3WGhIUDlzVlNhSVFvWHBKazRWYjJZcDBsemt0a0NSX203TFpBRkVnNTZNQQ?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ベビーワイプ市場規模、業界シェア、成長分析、予測、2032 - Fortune Business Insights
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ベビーワイプ市場規模、業界シェア、成長分析、予測、2032&nbsp;&nbsp;Fortune Business Insights</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 育児市場・EC動向</span>
-                <span>·</span>
-                <span>2026-04-20</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPEFVX3lxTFBzZXJfVXpPRTIzdnNNRFIwX0xHdlFJMHV2WXpsNjRTSGpTME53cks0ZlJOQmM3dlE5ODJLWQ?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                哺乳瓶消毒・除菌グッズのおすすめ人気ランキング【レンジ・薬液タイプも｜2026年5月】 - マイベスト
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">哺乳瓶消毒・除菌グッズのおすすめ人気ランキング【レンジ・薬液タイプも｜2026年5月】&nbsp;&nbsp;マイベスト</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー用品全般</span>
-                <span>·</span>
-                <span>2026-05-03</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPEFVX3lxTE1uX3A1eVl3QTJtdFpXd1R3QTdmVTZBMm1BRlBNSFdKZ082d3A2eVlzQkRPT1Nud1A3WFJMMQ?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                赤ちゃん用くし・ヘアブラシのおすすめ人気ランキング【2026年5月】 - マイベスト
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">赤ちゃん用くし・ヘアブラシのおすすめ人気ランキング【2026年5月】&nbsp;&nbsp;マイベスト</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビー用品全般</span>
-                <span>·</span>
-                <span>2026-05-03</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPkFVX3lxTFBibjMweVVnaFZxVzBmYzNpeGpvM3RsWTNMZDVZR2JCTXpkRFJrUDFraVZZeWYwalJPZlEtQ1hn?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                液体ミルクのおすすめ人気ランキング【2026年5月】 - マイベスト
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE91OHdYT0M1WHB5Qkhld192bi1hSWExT1E4c0NXYnNCQjhZVnJJY296Z0E2NDllUEtBcERGM3kzVjR1SEkwSWNsX1YwMVlmcHRURlUtaQ?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                「組み合わせが最高」スタバ新作2種は“イチゴミルク”、コラボネイルにもファン歓喜 - Lmaga.jp
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">液体ミルクのおすすめ人気ランキング【2026年5月】&nbsp;&nbsp;マイベスト</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 「組み合わせが最高」スタバ新作2種は“イチゴミルク”、コラボネイルにもファン歓喜&nbsp;&nbsp;Lmaga.jp</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
                 <span>GNews: 哺乳瓶・授乳</span>
                 <span>·</span>
-                <span>2026-05-02</span>
+                <span>2026-05-08</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -1429,24 +1767,33 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="feeding">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPkFVX3lxTE90ZXNieWl2Wnd3YmxYSmdaTEhTZ0xlSDVEQjMtTGcxbVVHSFhpeWEtVlV2UzNoZWlCUkFsNEhB?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                かわいい哺乳瓶のおすすめ人気ランキング【2026年5月】 - マイベスト
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRzYzanFYR251TjU2M190ZzlSVzYtV3NYcHVidWVTZ29JTm1OYjVybmx5UVJTLURwMWM2MGwwak5nbzhnVG9Tc1BUbXhVUTFxUFpJR2M0UmVFbmFOb3JZUXZpOW1lVHBCYThCc29WTkI5UlJwZWVLQlpLYkotcEROSGh2N2ZNd3Vt?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ミスタードーナツ新作「サクぽふん」ってどんな食感？もっちゅりん超えなるか…ミルクシュガー味を実食 - Yahoo!ニュース
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">かわいい哺乳瓶のおすすめ人気ランキング【2026年5月】&nbsp;&nbsp;マイベスト</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ミスタードーナツ新作「サクぽふん」ってどんな食感？もっちゅりん超えなるか…ミルクシュガー味を実食&nbsp;&nbsp;Yahoo!ニュース</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
                 <span>GNews: 哺乳瓶・授乳</span>
                 <span>·</span>
-                <span>2026-05-03</span>
+                <span>2026-05-06</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -1459,114 +1806,33 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPkFVX3lxTFA0RzlDcG82N0RPQ2Iybm9DTGxPeDhPYzBRZkR5ekhUVlVPb0dQWHZjM2N4Sm5KR0NuVm5URG5B?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ベビーカー用暑さ対策シートのおすすめ人気ランキング【チャイルドシートにも！2026年5月】 - マイベスト
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE9LeGVJUnpCdERUa0JxZGxsbzkxZ21zUUplRmo3WThjVmNBb2JMMlhORTFqYnJfeXNoWm5fYjJTTWpJaXdUbDJKa0lENEpEbUhoaXFmZzJQQzgyR0k1M19OLWR1ZG8tUQ?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ユニ・チャームのおむつ戦略 元気な高齢者向けで独走 - 東洋経済オンライン
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ベビーカー用暑さ対策シートのおすすめ人気ランキング【チャイルドシートにも！2026年5月】&nbsp;&nbsp;マイベスト</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ユニ・チャームのおむつ戦略 元気な高齢者向けで独走&nbsp;&nbsp;東洋経済オンライン</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビーカー・チャイルドシート</span>
+                <span>GNews: ピジョン・ユニチャーム新商品</span>
                 <span>·</span>
-                <span>2026-05-03</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPkFVX3lxTE9lYW5kbmdFWlBLeWo4aXN6czVxYjFNalNoX2JDQkFZaTRhQTBtQUlNSVZrRHJQc0hzNWs3T1ZR?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                チャイルドシート遮熱カバーのおすすめ人気ランキング【2026年5月】 - マイベスト
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">チャイルドシート遮熱カバーのおすすめ人気ランキング【2026年5月】&nbsp;&nbsp;マイベスト</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビーカー・チャイルドシート</span>
-                <span>·</span>
-                <span>2026-05-02</span>
+                <span>2026-04-14</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPkFVX3lxTE5GZ0tmWU15NC1hLWx2dnNNRkplbFNveXE1eERnSGQzRTBtNTRZMm5MeWZZbXhkVWQ1bS02TFNB?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                サイベックスの新生児向けベビーカーのおすすめ人気ランキング【2026年5月】 - マイベスト
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">サイベックスの新生児向けベビーカーのおすすめ人気ランキング【2026年5月】&nbsp;&nbsp;マイベスト</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビーカー・チャイルドシート</span>
-                <span>·</span>
-                <span>2026-05-02</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE9uUmNxRGtlZmFBR1lXQTY0U3A0ZHJlNndpUUpHbWZqa1NKVkVlSS1jWlBHdjE3SE04Uk82U2JJdzFpaXpxNTRLcDl6dlRsUXhsWDdfWEVGUzBzMTQ?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ちいさな赤ちゃんたちへエールを送るピジョン「母乳バンク寄付キャンペーン」2026年も実施 - 共同通信PRワイヤー
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ちいさな赤ちゃんたちへエールを送るピジョン「母乳バンク寄付キャンペーン」2026年も実施&nbsp;&nbsp;共同通信PRワイヤー</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 哺乳瓶・おむつメーカー</span>
-                <span>·</span>
-                <span>2026-04-17</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
@@ -1579,89 +1845,272 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPkFVX3lxTE9vS0htS2d0Y0I1Tkx3NW4xOW1XeTJkRVdwRjJvZHZYRVhXam9vaWdFZHhaeUt4LUFONFl1Mkh3?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ピジョンの鼻吸い器のおすすめ人気ランキング【2026年5月】 - マイベスト
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1wTTI4bjRjVEc2V0FXMjF2b3JyVFNIZ1dZcXhZT05NRU5WdXY1U1BhRGs3elRXSG45aDlTZTR0ZkJ3R3ZKbzBrbGZEckVIdW5fM2YzdHJ6aDhlalA5TVdFd0JtbTA0bzZLRFlMUjdZN29aZFlMQ3FkOTVSVnZxTFE?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                SNS「アップリカのベビーカーは貧乏と笑われた」投稿が話題！「マウンティングくだらない」「私も使ってたけど」反響多数だけど“高価=いいもの”とは限らない!? マウント言動の背景とは（ファイナンシャルフィールド） - Yahoo!ニュース
               </a>
               
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ピジョンの鼻吸い器のおすすめ人気ランキング【2026年5月】&nbsp;&nbsp;マイベスト</p>
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> SNS「アップリカのベビーカーは貧乏と笑われた」投稿が話題！「マウンティングくだらない」「私も使ってたけど」反響多数だけど“高価=いいもの”とは限らない!? マウント言動の背景とは（ファイナンシャルフィールド）&nbsp;&nbsp;Yahoo!ニュース</p>
+              
+              
               
               <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: 哺乳瓶・おむつメーカー</span>
+                <span>GNews: コンビ・アップリカ・カトージ新商品</span>
+                <span>·</span>
+                <span>2026-04-24</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE44djFLR1JpYzJrc05vQWdFNjRCYUYwVi0yeE9HU0tVR19uOGZuXzJURTBfb09vTEZ4UjR6VXlnQk50ZGNqN2FMdU5BZ2hCanBqWHcwN1VZNExlMU9RMGtr?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                ベビー用品の西松屋､ヒット商品連発の舞台裏 大手電機のリストラ技術者が新風を吹き込んだ - 東洋経済オンライン
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> ベビー用品の西松屋､ヒット商品連発の舞台裏 大手電機のリストラ技術者が新風を吹き込んだ&nbsp;&nbsp;東洋経済オンライン</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビー専門小売動向</span>
+                <span>·</span>
+                <span>2026-04-14</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE1sRnBVZDhPMkl1X0s2T194ekpjbWdMLTZpdVVka0hlckdxaTZRaDJiUVZmcWZZb0pySUVEUjJJZkJZdzBRMElOVVJMYXZnODZhaTNUSkU3SGhoeHFtaFNmRA?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                アカチャンホンポでたまひよ雑誌を買うとポイント10倍【期間限定】 - たまひよ
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> アカチャンホンポでたまひよ雑誌を買うとポイント10倍【期間限定】&nbsp;&nbsp;たまひよ</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビー専門小売動向</span>
+                <span>·</span>
+                <span>2026-04-14</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTFAycTFzVHZZQ1RnSUluT3duc3pFYXFfOUNGRUJHS1lveXVtZUZUdV9BY1M2bnpCY084QjRxVWl5Z0t2NDZzTURoUV80TU83aFlnRWc?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                “4日間限定AR特典”が話題!? 店内がプリンで埋め尽くすバースデイ春コラボ - いこーよニュース
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> “4日間限定AR特典”が話題!? 店内がプリンで埋め尽くすバースデイ春コラボ&nbsp;&nbsp;いこーよニュース</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビー専門小売動向</span>
+                <span>·</span>
+                <span>2026-04-13</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBhd3hVQ0lFalg0WlNHN2MzVVBBVWlfNXlqcEZEZDZYU0lUOW5yRjZLbHY4SFROUXdOM0s0d0NuS3lDWi0xbjR2XzhvN3k4OEpsc2U5WXFYbmduMzltcEF5WEpVVGxKMFBHSXc?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                地域の皆さまに愛されるお店に！「アカチャンホンポ 西原シティ店」2026年4月24日（金）オープン！ - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 地域の皆さまに愛されるお店に！「アカチャンホンポ 西原シティ店」2026年4月24日（金）オープン！&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: ベビー専門小売動向</span>
+                <span>·</span>
+                <span>2026-04-10</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiPkFVX3lxTE9ENnpZeEJMb2d1V3cybW5jcnN2cjRXTk5zZjd5ZHI0UUQ4NGRwandEYWFBVTJhU1BWRVJnX2RR?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                カトージの2人乗りベビーカーのおすすめ人気ランキング【2026年5月】 - マイベスト
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> カトージの2人乗りベビーカーのおすすめ人気ランキング【2026年5月】&nbsp;&nbsp;マイベスト</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: コンビ・アップリカ・カトージ新商品</span>
+                <span>·</span>
+                <span>2026-05-03</span>
+                <span>·</span>
+                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:2/BR:2/A:1</span>
+                
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            
+            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
+            
+          </div>
+          
+        </div>
+        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              
+                
+                <span class="imp-badge badge-low">Low</span>
+                
+              
+              
+              <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE0xb0k3dzZ0Y3VKMXdyUFhsSERkVmI3QkFFYWRzVzQ1SGdDallZWnZVSW0zTXR1QURFeDBTYVpHOXo2RmtkNDIyNHNEZGVfNHVFUWNUb3p2YVRoenRJU3RCZlpkMFoxTk5tdFE?oc=5" target="_blank" rel="noopener"
+                 class="font-semibold text-indigo-700 hover:underline leading-snug">
+                全店で大好評！幼児無料の食べ放題に新提案！カプセルトイコイン付きおこさまメニューやベビーフードが1品無料で“待てない問題”を解決、家族の外食がもっと快適に | カッパ・クリエイト株式会社のプレスリリース - PR TIMES
+              </a>
+              
+              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> 全店で大好評！幼児無料の食べ放題に新提案！カプセルトイコイン付きおこさまメニューやベビーフードが1品無料で“待てない問題”を解決、家族の外食がもっと快適に | カッパ・クリエイト株式会社のプレスリリース&nbsp;&nbsp;PR TIMES</p>
+              
+              
+              
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
+                <span>GNews: PR TIMES ベビー用品</span>
                 <span>·</span>
                 <span>2026-05-01</span>
                 <span>·</span>
                 <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
+                
+                <span class="rubric-mini">SQ:3/BR:1/A:1</span>
+                
+                
               </div>
             </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
           </div>
           
           <div class="mt-2">
             
             <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">general</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPkFVX3lxTE9yZHh0blF4T1Z0Zm5XRFhIaEI0TDVURV9LSU1HQVh0Q2FVNDhYTE9LaUxuWkJZSHdfLTVoZGR3?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ベビーカー用ドリンクホルダーのおすすめ人気ランキング【2026年5月】 - マイベスト
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ベビーカー用ドリンクホルダーのおすすめ人気ランキング【2026年5月】&nbsp;&nbsp;マイベスト</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビーカー・カーシートメーカー</span>
-                <span>·</span>
-                <span>2026-05-03</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
-            
-          </div>
-          
-        </div>
-        <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="">
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex-1 min-w-0">
-              <a href="https://news.google.com/rss/articles/CBMiPkFVX3lxTE5xdGdTemprR0M0SjlycUpqam5zT3pjR25KNDJZU1RBaHBBalctWDhFdUJkOThwVWFEc21ndGl3?oc=5" target="_blank" rel="noopener"
-                 class="font-semibold text-indigo-700 hover:underline line-clamp-2 leading-snug">
-                ふたり乗りベビーカーのおすすめ人気ランキング【2026年5月】 - マイベスト
-              </a>
-              
-              <p class="text-gray-500 text-sm mt-1 line-clamp-2">ふたり乗りベビーカーのおすすめ人気ランキング【2026年5月】&nbsp;&nbsp;マイベスト</p>
-              
-              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-400">
-                <span>GNews: ベビーカー・カーシートメーカー</span>
-                <span>·</span>
-                <span>2026-05-05</span>
-                <span>·</span>
-                <span class="px-1.5 py-0.5 rounded bg-gray-100">🇯🇵</span>
-              </div>
-            </div>
-            
-            <span class="shrink-0 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">HOT</span>
-            
-          </div>
-          
-          <div class="mt-2">
-            
-            <span class="tag bg-indigo-50 text-indigo-600 border border-indigo-100">mobility</span>
             
           </div>
           
@@ -1673,12 +2122,11 @@
   </main>
 
   <footer class="text-center text-xs text-gray-400 py-6">
-    Baby News Aggregator — 自動生成レポート 2026年05月09日 18:32 JST
+    Baby News Aggregator — 業界動向版 · 2026年05月09日 20:10 JST
   </footer>
 
   <script>
-    // キーワード頻度棒グラフ
-    const kwData = {"car_safety": 17, "diaper": 4, "feeding": 5, "general": 52, "mobility": 19, "skincare": 6, "\u30ea\u30b3\u30fc\u30eb": 2};
+    const kwData = {"diaper": 5, "feeding": 14, "general": 59, "mobility": 20, "skincare": 3};
     const kwLabels = Object.keys(kwData);
     const kwValues = Object.values(kwData);
     new Chart(document.getElementById('keywordChart'), {
@@ -1702,8 +2150,7 @@
       }
     });
 
-    // カテゴリ別ドーナツグラフ
-    const catData = {"car_safety": 21, "diaper": 5, "feeding": 13, "general": 86, "mobility": 14, "skincare": 5, "wipes": 4};
+    const catData = {"car_safety": 8, "diaper": 11, "feeding": 19, "general": 61, "mobility": 14, "skincare": 2, "wipes": 4};
     const catLabels = Object.keys(catData);
     const catValues = Object.values(catData);
     const catColors = ['#6366f1','#f59e0b','#10b981','#3b82f6','#ec4899','#8b5cf6','#14b8a6'];
@@ -1725,7 +2172,6 @@
       }
     });
 
-    // カテゴリフィルター
     const filterBtns = document.querySelectorAll('.filter-btn');
     const articleItems = document.querySelectorAll('.article-item');
 
