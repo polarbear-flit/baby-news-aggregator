@@ -1,0 +1,29 @@
+name: CI Tests
+
+# PR を開く / push する / main に merge する各タイミングで自動でテスト実行。
+# PR ページに緑✓または赤×が表示され、壊れたコードのマージを防ぐ。
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run unittest
+        run: python -m unittest discover tests -v
