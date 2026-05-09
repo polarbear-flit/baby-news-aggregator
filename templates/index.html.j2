@@ -40,6 +40,38 @@
       </div>
     </section>
 
+    {% if analysis.safety_articles %}
+    <!-- 注目リコール・安全情報（具体記事リンク付き、サマリの根拠が明確になる） -->
+    <section>
+      <h2 class="text-xl font-semibold mb-3 border-b pb-2 text-red-700">⚠️ 注目リコール・安全情報</h2>
+      <div class="space-y-3">
+        {% for a in analysis.safety_articles %}
+        <div class="bg-red-50 border border-red-200 rounded-xl shadow card-hover p-4">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              <a href="{{ a.url }}" target="_blank" rel="noopener"
+                 class="font-semibold text-red-800 hover:underline line-clamp-2 leading-snug">
+                {{ a.title }}
+              </a>
+              {% if a.why_matters_jp %}
+              <p class="text-sm text-gray-700 mt-1">{{ a.why_matters_jp }}</p>
+              {% endif %}
+              {% if a.action_hint_jp %}
+              <p class="text-xs text-red-700 mt-1">▸ {{ a.action_hint_jp }}</p>
+              {% endif %}
+              <div class="flex flex-wrap items-center gap-2 mt-2 text-xs text-gray-500">
+                <span>{{ a.source_name }}</span>
+                {% if a.published %}<span>·</span><span>{{ a.published[:10] }}</span>{% endif %}
+                {% if a.ai_value_score %}<span>·</span><span class="font-bold">score {{ a.ai_value_score }}</span>{% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
     <!-- グラフセクション -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- キーワード頻度棒グラフ -->

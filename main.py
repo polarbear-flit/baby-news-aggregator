@@ -167,15 +167,14 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
     ) or "なし"
 
     hot = analysis.get("hot_articles", articles)[:5]
-    safety_articles = analysis.get("safety_articles", [])[:2]
 
-    def _format_article_line(idx: int, a: dict, with_axis: bool = True) -> str:
+    def _format_article_line(idx: int, a: dict) -> str:
         link = _article_link(a)
         why = a.get("why_matters_jp", "")
         axis = a.get("ai_value_axis", "")
         score = a.get("ai_value_score", a.get("score", ""))
         if why:
-            label = _esc(axis or a.get("source_name", "")) if with_axis else _esc(a.get("source_name", ""))
+            label = _esc(axis or a.get("source_name", ""))
             return f"{idx}. {link}\n   <i>{label}</i> · score {score} — {_esc(why)[:90]}"
         source = _esc(a.get("source_name", ""))
         return f"{idx}. {link}\n   <i>{source}</i> · score {score}"
@@ -185,20 +184,12 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
     else:
         highlights = "該当なし"
 
-    # 注目リコール・安全情報（独立セクション）
-    safety_section = ""
-    if safety_articles:
-        safety_lines = "\n".join(
-            _format_article_line(i, a) for i, a in enumerate(safety_articles, start=1)
-        )
-        safety_section = (
-            f"<b>⚠️ 注目リコール・安全情報</b>\n{safety_lines}\n\n"
-        )
+    # ⚠️ Telegramチャットにはリコール/安全情報を出さない方針（ユーザー要望）。
+    # safety_articles は HTMLレポートに独立セクションとして残す（renderer/template側）。
 
-    # 「今日のアクション」: 安全1件 + ハイライト2件 から最大3件
+    # 「今日のアクション」: ハイライト上位から最大3件
     action_lines = []
-    candidates_for_action = (safety_articles[:1] + list(hot))[:5]
-    for a in candidates_for_action:
+    for a in hot[:5]:
         if len(action_lines) >= 3:
             break
         hint = (a.get("action_hint_jp") or "").strip()
@@ -212,15 +203,6 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
     trending = analysis.get("trending", [])
     trend_text = "、".join(_esc(t["keyword"]) for t in trending[:3]) if trending else "なし"
 
-    recall_count = sum(
-        1 for a in articles
-        if any(
-            kw in (a.get("title", "") + a.get("summary", "")).lower()
-            for kw in ["リコール", "回収", "recall"]
-        )
-    )
-    recall_line = f"\n⚠️ リコール・回収関連: {recall_count}件" if recall_count else ""
-
     # AI実行ステータス（未実行の場合はTelegram末尾に明示）
     ai_status = ""
     if not analysis.get("ai_used", True):
@@ -231,11 +213,10 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
         f"━━━━━━━━━━━━━\n"
         f"<b>今日のハイライト</b>\n"
         f"{highlights}\n\n"
-        f"{safety_section}"
         f"{action_section}"
         f"<b>カテゴリ別</b>\n"
         f"{cat_lines}\n\n"
-        f"<b>急上昇</b>: {trend_text}{recall_line}\n\n"
+        f"<b>急上昇</b>: {trend_text}\n\n"
         f"合計 {len(articles)} 件{ai_status}\n"
         f"━━━━━━━━━━━━━\n"
         f'<a href="{_esc_attr(report_url)}">日次レポートを開く</a>'
@@ -287,10 +268,10 @@ def main() -> None:
     rule_rest = analysis["hot_articles"][MAX_CANDIDATES:MAX_ARTICLES_DISPLAY]
     ai_evaluated, ai_used = ai_rank_articles(rule_top)
 
-    # safety/regulation はメインハイライトから除外し、別セクションに切り出す。
-    # 「リコールが入るとノイズが大きい。重要なもの1-2件だけ別出し」というユーザー要望への対応。
-    # ただし score<80 の中位 safety/regulation も HTMLレポート/履歴には残すため、
-    # display_articles の末尾に追加する（main_highlightにだけ出さない）。
+    # safety/regulation はメインハイライトから除外し、HTML 上で別セクションに切り出す。
+    # ユーザー要望: 「リコールはTelegramチャットには不要。HTMLレポートでは重要1-2件を別だし」
+    # ただし score<80 の中位 safety/regulation も remaining_safety として保持し、
+    # HTMLレポート/履歴から消えないようにする（Codex指摘対応）。
     SAFETY_AXES = {"safety", "regulation"}
     SAFETY_MIN_SCORE = 80  # 別出しに昇格する基準（本当に重要なもの）
 
