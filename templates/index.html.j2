@@ -32,6 +32,16 @@
 
   <main class="max-w-6xl mx-auto px-4 py-8 space-y-10">
 
+    {% if analysis.daily_summary %}
+    <!-- 今日の業界動向サマリ（AI生成）-->
+    <section>
+      <h2 class="text-xl font-semibold mb-3 border-b pb-2">📌 今日の業界動向</h2>
+      <div class="bg-indigo-50 border-l-4 border-indigo-500 rounded-r-xl shadow p-5">
+        <p class="text-gray-800 leading-relaxed">{{ analysis.daily_summary }}</p>
+      </div>
+    </section>
+    {% endif %}
+
     <!-- エグゼクティブサマリー -->
     <section>
       <h2 class="text-xl font-semibold mb-3 border-b pb-2">📋 エグゼクティブサマリー</h2>

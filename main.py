@@ -16,7 +16,7 @@ from datetime import datetime, timezone, timedelta
 
 import requests
 
-from src.ai_ranker import ai_rank_articles
+from src.ai_ranker import ai_rank_articles, generate_daily_summary
 from src.analyzer import analyze
 from src.config import (
     DEFAULT_REPORT_URL, HISTORY_PATH, MAX_ARTICLES_DISPLAY,
@@ -191,6 +191,13 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
     else:
         highlights = "該当なし"
 
+    # 今日の業界動向サマリ（AI生成 2-3 文、冒頭に表示）
+    daily_summary = analysis.get("daily_summary", "")
+    summary_section = (
+        f"<b>📌 今日の業界動向</b>\n{_esc(daily_summary)}\n\n"
+        if daily_summary else ""
+    )
+
     # 「今日のアクション」（High優先で最大3件、Lowは除外）
     action_lines = []
     for a in sorted(hot, key=lambda x: 0 if x.get("importance") == "High" else 1):
@@ -216,6 +223,7 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
     message = (
         f"📰 <b>ベビー用品 業界動向</b> {today}\n"
         f"━━━━━━━━━━━━━\n"
+        f"{summary_section}"
         f"<b>今日のハイライト</b>\n\n"
         f"{highlights}\n\n"
         f"{action_section}"
@@ -289,6 +297,11 @@ def main() -> None:
 
     analysis["hot_articles"] = ai_evaluated
     analysis["ai_used"] = ai_used
+
+    # 今日の業界動向サマリ（AI生成、上位8件から 2-3 文）
+    print("今日の業界動向サマリ生成中...")
+    daily_summary = generate_daily_summary(ai_evaluated[:8])
+    analysis["daily_summary"] = daily_summary
 
     print("HTML生成中...")
     html_str = render(display_articles, analysis)

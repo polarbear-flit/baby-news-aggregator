@@ -58,18 +58,24 @@ class TestActionabilityScore(unittest.TestCase):
 
 
 class TestComputeImportance(unittest.TestCase):
+    """閾値: High >= 3.5 + relevance>=4 / Medium >= 2.5 / Low それ以外"""
+
     def test_high_combined(self):
         self.assertEqual(compute_importance(5, 5, 5), "High")
         self.assertEqual(compute_importance(4, 4, 4), "High")
+        # 業界焦点ソース追加で source_q=4, relevance=4, action=3 などが High に届く
+        self.assertEqual(compute_importance(4, 4, 3), "High")  # combined=3.67
 
     def test_medium_combined(self):
         self.assertEqual(compute_importance(3, 3, 3), "Medium")
+        self.assertEqual(compute_importance(2, 4, 3), "Medium")  # combined=3.0
 
     def test_low_combined(self):
         self.assertEqual(compute_importance(2, 1, 1), "Low")
+        self.assertEqual(compute_importance(1, 2, 2), "Low")  # combined=1.67
 
     def test_high_relevance_required(self):
-        """combined>=4 でも relevance<4 なら Medium 止まり"""
+        """combined>=3.5 でも relevance<4 なら Medium 止まり"""
         self.assertEqual(compute_importance(5, 3, 5), "Medium")
 
     def test_link_failed_forced_low(self):
@@ -83,7 +89,7 @@ class TestComputeImportance(unittest.TestCase):
     def test_no_safety_forced_high_rule(self):
         """旧版の「safety×80+ → 強制 High」は撤廃されている"""
         article = {"ai_value_axis": "manufacturer", "ai_value_score": 90}
-        # combined と relevance で素直に判定
+        # combined=2.0 < 2.5 なので Low
         result = compute_importance(2, 2, 2, article)
         self.assertEqual(result, "Low")
 

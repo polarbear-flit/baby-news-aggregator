@@ -53,6 +53,11 @@ RANK_TOOL = {
                             ],
                             "description": "記事の主軸",
                         },
+                        "fact_summary_jp": {
+                            "type": "string",
+                            "minLength": 10,
+                            "description": "記事の事実を1〜2文で要約（30〜120文字）。RSSの summary が薄い場合の代替。タイトルから推測ではなく、本文に基づくこと",
+                        },
                         "why_matters_jp": {
                             "type": "string",
                             "minLength": 5,
@@ -66,7 +71,7 @@ RANK_TOOL = {
                     },
                     "required": [
                         "article_id", "is_relevant", "value_score",
-                        "value_axis", "why_matters_jp", "action_hint_jp",
+                        "value_axis", "fact_summary_jp", "why_matters_jp", "action_hint_jp",
                     ],
                 },
             }
@@ -118,10 +123,13 @@ def _build_prompt(compact: list[dict]) -> str:
 【各項目の出力ルール】
 - article_id: 入力の id をそのまま文字列で返す
 - value_score: 0-100。85+は必読
+- fact_summary_jp: 記事の事実を1〜2文で要約（30〜120文字）。RSSの summary が薄い場合（タイトル繰り返しのみ等）に AI が推測した事実要約を入れる
+  良い例: 「ピジョンが新型哺乳瓶『MagicCap』を11/1発売、価格1,500円。授乳サポート機能を強化」
+  悪い例: 「ピジョン新型哺乳瓶発売 - PR TIMES」（タイトル+媒体名の繰り返し）
 - why_matters_jp: 事業/商品判断にどう効くかを1文（80文字以内・結論ファースト）
 - action_hint_jp: 商品担当が今日取るべき動作を動詞始まりで（10〜60文字）
   例: 「対象SKUの取扱有無を在庫確認」「西松屋の新PB商品と当社品の価格比較表を作成」「楽天のベビー特集ページの構成を確認」
-- ノイズ記事も items に含めて is_relevant=false にする。why と action は短くて構わない（5文字以上）
+- ノイズ記事も items に含めて is_relevant=false にする。fact/why/action は短くて構わない（5〜10文字以上）
 
 【記事リスト】
 {json.dumps(compact, ensure_ascii=False, indent=2)}
@@ -216,6 +224,7 @@ def ai_rank_articles(articles: list[dict]) -> tuple[list[dict], bool]:
             **a,
             "ai_value_score": ai.get("value_score", 0),
             "ai_value_axis": ai.get("value_axis", ""),
+            "ai_fact_summary": ai.get("fact_summary_jp", ""),
             "why_matters_jp": ai.get("why_matters_jp", ""),
             "action_hint_jp": ai.get("action_hint_jp", ""),
         }
@@ -228,3 +237,61 @@ def ai_rank_articles(articles: list[dict]) -> tuple[list[dict], bool]:
         f"{len(enriched)}件採用 / {dropped}件をノイズ除外"
     )
     return enriched, True
+
+
+def generate_daily_summary(top_articles: list[dict]) -> str:
+    """上位記事から「今日の業界動向 2-3 文」を生成。
+
+    Telegram 冒頭・HTML エグゼクティブサマリー先頭に表示する全体俯瞰。
+    AI 失敗時は空文字列を返す。
+    """
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key or not top_articles:
+        return ""
+
+    try:
+        from anthropic import Anthropic
+    except ImportError:
+        return ""
+
+    # 上位 8件のタイトル + fact + axis を渡す
+    compact = [
+        {
+            "title": (a.get("title") or "")[:120],
+            "axis": a.get("ai_value_axis", ""),
+            "fact": (a.get("ai_fact_summary") or a.get("summary") or "")[:150],
+        }
+        for a in top_articles[:8]
+    ]
+
+    prompt = f"""日本のベビー用品EC事業のカテゴリマネージャー向けに、
+今日の業界動向を **2〜3文・150〜250文字** でまとめてください。
+
+要件:
+- 「メーカー」「小売・EC」「市場」のいずれが今日の主軸かを明示
+- 主要企業・小売の動きを具体名で1〜2件入れる
+- 抽象的な「いろいろあった」のような文は禁止
+- カテゴリマネージャーが「今日は何を見るべきか」を一読で掴める内容
+
+【上位記事】
+{json.dumps(compact, ensure_ascii=False, indent=2)}
+
+サマリ本文のみを返してください（前置きや「以下が...」は不要）。
+"""
+
+    try:
+        client = Anthropic(api_key=api_key)
+        model = os.environ.get("ANTHROPIC_MODEL", DEFAULT_MODEL)
+        resp = client.messages.create(
+            model=model,
+            max_tokens=400,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        text_blocks = [b.text for b in resp.content if getattr(b, "type", None) == "text"]
+        summary = " ".join(text_blocks).strip()
+        if summary:
+            print(f"[OK] Daily summary 生成: {len(summary)} 文字")
+        return summary[:300]
+    except Exception as e:
+        print(f"[WARN] Daily summary 生成失敗: {e}")
+        return ""
