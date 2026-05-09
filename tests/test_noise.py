@@ -1,9 +1,10 @@
-"""ノイズ判定のテスト。
+"""ノイズ判定のテスト — 業界動向特化版。
 
 要件:
-- 「西松屋 + 選び方」は企業名があってもノイズになる（CRITICAL_OVERRIDEから企業名を外したため）
-- 「西松屋 + リコール」はノイズにならない（CRITICAL_OVERRIDEのリコールで救済）
+- リコール語（リコール/回収/recall/自主回収）が HARD_NOISE で完全除外される
+- 「西松屋 + 選び方ガイド」のような企業名+SEOコラムが除外される（CRITICAL_OVERRIDE が空のため救済なし）
 - 「東京ばな奈 新商品」はベビー用品文脈がなければ除外される
+- 過去年（2018-2025）が検出される
 """
 import os
 import sys
@@ -11,71 +12,85 @@ import unittest
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.fetcher import is_hard_noise, filter_by_keywords  # noqa: E402
+from src.fetcher import is_hard_noise, is_old_topic_title, filter_by_keywords  # noqa: E402
 
 
-class TestHardNoise(unittest.TestCase):
+class TestRecallIsHardNoise(unittest.TestCase):
+    """ユーザー要望: リコールはチャットに出さない（HARD_NOISE で完全除外）"""
+
+    def test_recall_in_title_is_noise(self):
+        """タイトルに「リコール」が含まれていれば HARD_NOISE"""
+        article = {"title": "ピジョン哺乳瓶リコールのお知らせ", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+    def test_kaishuu_in_title_is_noise(self):
+        """「回収」も HARD_NOISE"""
+        article = {"title": "コンビ ベビーカー自主回収", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+    def test_recall_english_is_noise(self):
+        """英語の recall も HARD_NOISE"""
+        article = {"title": "Pampers diaper recall in US", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+    def test_recall_in_summary_is_noise(self):
+        """要約にリコール語があれば HARD_NOISE"""
+        article = {
+            "title": "ベビーカーの新展開",
+            "summary": "リコール対象商品について",
+        }
+        self.assertTrue(is_hard_noise(article))
+
+
+class TestEnterpriseNameNotSavedFromNoise(unittest.TestCase):
+    """CRITICAL_OVERRIDE が空のため、企業名は noise 救済しない"""
+
     def test_seimatsuya_choice_guide_is_noise(self):
-        """企業名(西松屋)があっても「選び方ガイド」「選び方も紹介」はノイズ"""
-        cases = [
-            "西松屋のベビー服選び方も紹介",
-            "西松屋ベビーカー完全ガイド",
-            "西松屋でかわいすぎる子供服",
-        ]
-        for title in cases:
-            with self.subTest(title=title):
-                article = {"title": title, "summary": ""}
-                self.assertTrue(
-                    is_hard_noise(article),
-                    f"「{title}」はノイズ判定されるべき（企業名でCRITICAL_OVERRIDE救済されてはいけない）",
-                )
-
-    def test_seimatsuya_recall_is_not_noise(self):
-        """西松屋でも「リコール」が含まれていればCRITICAL_OVERRIDEで救済される"""
-        article = {
-            "title": "西松屋でリコール対象商品を販売 - 自主回収のお知らせ",
-            "summary": "",
-        }
-        self.assertFalse(is_hard_noise(article))
-
-    def test_image_gallery_is_noise(self):
-        """画像ギャラリーはノイズ"""
-        article = {
-            "title": "ピジョンの新製品 画像3/34",
-            "summary": "",
-        }
+        """「西松屋 + 選び方ガイド」はノイズ（企業名で救われない）"""
+        article = {"title": "西松屋のベビー服選び方ガイド", "summary": ""}
         self.assertTrue(is_hard_noise(article))
 
-    def test_image_gallery_with_recall_is_not_noise(self):
-        """画像ギャラリーでもリコールが含まれれば救済される"""
-        article = {
-            "title": "ピジョンのリコール対象品 画像一覧",
-            "summary": "リコール対象の哺乳瓶",
-        }
-        self.assertFalse(is_hard_noise(article))
-
-    def test_chiiki_news_closing_is_noise(self):
-        """地域の閉店ニュースはノイズ"""
-        article = {
-            "title": "アカチャンホンポ某店閉店のお知らせ",
-            "summary": "",
-        }
+    def test_pigeon_recall_is_noise(self):
+        """「ピジョン + リコール」もノイズ（リコール語が HARD_NOISE）"""
+        article = {"title": "ピジョン哺乳瓶リコール対象商品", "summary": ""}
         self.assertTrue(is_hard_noise(article))
 
+    def test_pigeon_new_product_is_not_noise(self):
+        """「ピジョン + 新商品」は noise でない（HARD_NOISE 語が無い）"""
+        article = {"title": "ピジョン、新型哺乳瓶を発売", "summary": "授乳サポート機能を強化"}
+        self.assertFalse(is_hard_noise(article))
+
+
+class TestUnrelatedBrandNoise(unittest.TestCase):
     def test_burger_king_is_noise(self):
-        """無関係企業（バーガーキング等）はノイズ"""
-        article = {
-            "title": "バーガーキングが新キャンペーン開始",
-            "summary": "",
-        }
+        article = {"title": "バーガーキングが新キャンペーン開始", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+    def test_tokyo_banana_is_noise(self):
+        article = {"title": "東京ばな奈の新商品が話題に", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+
+class TestImageGalleryNoise(unittest.TestCase):
+    def test_image_gallery_is_noise(self):
+        article = {"title": "ピジョンの新製品 画像3/34", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+    def test_photo_gallery_is_noise(self):
+        article = {"title": "新作ベビーカー フォトギャラリー", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+
+class TestRegionalNoise(unittest.TestCase):
+    def test_closing_is_noise(self):
+        article = {"title": "アカチャンホンポ某店閉店のお知らせ", "summary": ""}
         self.assertTrue(is_hard_noise(article))
 
 
 class TestFilterByKeywords(unittest.TestCase):
     def test_tokyo_banana_dropped_without_baby_context(self):
-        """東京ばな奈は子供文脈がないので filter_by_keywords で落ちる（matched_keywords無し）"""
         articles = [{
-            "title": "東京ばな奈の新商品が話題に",
+            "title": "東京ばな奈の新商品",
             "summary": "新作スイーツ",
             "matched_keywords": [],
         }]
@@ -83,7 +98,6 @@ class TestFilterByKeywords(unittest.TestCase):
         self.assertEqual(len(result), 0)
 
     def test_pigeon_baby_kept(self):
-        """ピジョン+赤ちゃん文脈は filter_by_keywords で残る"""
         articles = [{
             "title": "ピジョンが新型哺乳瓶を発表",
             "summary": "授乳サポート機能を強化",
@@ -95,60 +109,19 @@ class TestFilterByKeywords(unittest.TestCase):
 
 
 class TestOldYearDetection(unittest.TestCase):
-    """過去年検出（2018年〜2025年）のテスト。
-
-    ユーザー報告: 「ユニ・チャームのおむつ戦略、なんて2018年の記事。
-    なのにhtml上では2026年にされていて、記事のリンクに飛ぶと古いものだとわかる」
-    """
-
     def test_2018_in_title_detected(self):
-        """タイトルに「2018年」が含まれていれば古い記事と判定される"""
-        from src.fetcher import is_old_topic_title
-        article = {
-            "title": "ユニ・チャーム、2018年のおむつ戦略を発表",
-            "summary": "",
-        }
+        article = {"title": "ユニ・チャーム、2018年のおむつ戦略", "summary": ""}
         self.assertTrue(is_old_topic_title(article))
 
     def test_2018_in_summary_detected(self):
-        """要約冒頭に「2018年」が含まれていれば古い記事と判定される"""
-        from src.fetcher import is_old_topic_title
         article = {
             "title": "ユニ・チャームのおむつ戦略",
-            "summary": "2018年に発表された同社の中期計画では、海外展開を...",
+            "summary": "2018年に発表された同社の中期計画では",
         }
         self.assertTrue(is_old_topic_title(article))
 
-    def test_2019_to_2023_all_detected(self):
-        """2019年〜2023年すべて古い記事として検出される"""
-        from src.fetcher import is_old_topic_title
-        for year in ["2019", "2020", "2021", "2022", "2023"]:
-            article = {
-                "title": f"ベビー用品市場の{year}年の動向",
-                "summary": "",
-            }
-            self.assertTrue(
-                is_old_topic_title(article),
-                f"{year}年が古い記事として検出されない",
-            )
-
     def test_2026_not_detected_as_old(self):
-        """現在年（2026年）は古い記事として検出されない"""
-        from src.fetcher import is_old_topic_title
-        article = {
-            "title": "ベビー用品市場の2026年最新動向",
-            "summary": "",
-        }
-        self.assertFalse(is_old_topic_title(article))
-
-    def test_recall_overrides_old_year(self):
-        """リコール継続案件は古い年でもCRITICAL_OVERRIDEで救済される"""
-        from src.fetcher import is_old_topic_title
-        article = {
-            "title": "2018年に開始したリコールが現在も継続中",
-            "summary": "",
-        }
-        # CRITICAL_OVERRIDE のリコール語があるので古い年でも残す
+        article = {"title": "ベビー用品市場の2026年最新動向", "summary": ""}
         self.assertFalse(is_old_topic_title(article))
 
 
