@@ -299,8 +299,15 @@ def main() -> None:
     analysis["ai_used"] = ai_used
 
     # 今日の業界動向サマリ（AI生成、上位8件から 2-3 文）
+    # Codex指摘: importance=Low や link_status=failed の記事は配信されないので
+    # daily_summary の入力からも除外する（隠した記事をサマリで先頭にしない）
     print("今日の業界動向サマリ生成中...")
-    daily_summary = generate_daily_summary(ai_evaluated[:8])
+    summary_input = [
+        a for a in ai_evaluated
+        if a.get("importance") != "Low"
+        and a.get("link_status") != "failed"
+    ][:8]
+    daily_summary = generate_daily_summary(summary_input)
     analysis["daily_summary"] = daily_summary
 
     print("HTML生成中...")

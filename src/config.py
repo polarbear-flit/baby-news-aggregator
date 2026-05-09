@@ -16,11 +16,13 @@ RSS_FEEDS = [
     {"name": "GNews: ベビースキンケア",     "url": "https://news.google.com/rss/search?q=赤ちゃん+スキンケア+OR+ローション+OR+ベビーソープ+新商品&hl=ja&gl=JP&ceid=JP:ja", "category": "skincare", "language": "ja", "source_type": "google_news", "fetch_type": "rss"},
 
     # === メーカー公式（site: で公式IRページに絞る — source_type=brand_official）===
+    # ⚠️ site: のスコープは括弧で囲まないと OR が site 範囲外にマッチする（Codex指摘）。
+    # `(term1 OR term2)` の形にして site:domain 内のみ検索される。
     {"name": "Pigeon 公式",         "url": "https://news.google.com/rss/search?q=site:pigeon.co.jp&hl=ja&gl=JP&ceid=JP:ja",   "category": "general", "language": "ja", "source_type": "brand_official", "fetch_type": "rss"},
-    {"name": "ユニチャーム 公式",    "url": "https://news.google.com/rss/search?q=site:unicharm.co.jp+ベビー+OR+おむつ+OR+ムーニー&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "brand_official", "fetch_type": "rss"},
+    {"name": "ユニチャーム 公式",    "url": "https://news.google.com/rss/search?q=site:unicharm.co.jp+(ベビー+OR+おむつ+OR+ムーニー)&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "brand_official", "fetch_type": "rss"},
     {"name": "コンビ 公式",          "url": "https://news.google.com/rss/search?q=site:combi.co.jp&hl=ja&gl=JP&ceid=JP:ja",   "category": "mobility", "language": "ja", "source_type": "brand_official", "fetch_type": "rss"},
     {"name": "リッチェル 公式",      "url": "https://news.google.com/rss/search?q=site:richell.co.jp&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "brand_official", "fetch_type": "rss"},
-    {"name": "花王 ベビー関連",      "url": "https://news.google.com/rss/search?q=site:kao.com+ベビー+OR+メリーズ+OR+赤ちゃん&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "brand_official", "fetch_type": "rss"},
+    {"name": "花王 ベビー関連",      "url": "https://news.google.com/rss/search?q=site:kao.com+(ベビー+OR+メリーズ+OR+赤ちゃん)&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "brand_official", "fetch_type": "rss"},
 
     # === メーカー動向（ブランド名 × ベビー用品文脈で AND、Google News）===
     {"name": "GNews: 哺乳瓶・おむつメーカー", "url": "https://news.google.com/rss/search?q=ピジョン+OR+ユニチャーム+OR+花王+OR+ムーニー+赤ちゃん+OR+乳幼児+OR+おむつ+OR+授乳&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "google_news", "fetch_type": "rss"},
@@ -35,21 +37,21 @@ RSS_FEEDS = [
     {"name": "GNews: 量販・EC ベビー部門",  "url": "https://news.google.com/rss/search?q=トイザらス+OR+ベビーザらス+OR+ニトリ+OR+イオン+OR+楽天+OR+Amazon+ベビー用品+OR+乳幼児+OR+おむつ&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "google_news", "fetch_type": "rss"},
 
     # === 業界専門メディア（site: 検索 — source_type=trade_press）===
-    {"name": "Diamond Retail Media", "url": "https://news.google.com/rss/search?q=site:diamond-rm.net+ベビー+OR+育児+OR+乳幼児&hl=ja&gl=JP&ceid=JP:ja",   "category": "general", "language": "ja", "source_type": "trade_press", "fetch_type": "rss"},
-    {"name": "WWD Japan ベビー",      "url": "https://news.google.com/rss/search?q=site:wwdjapan.com+ベビー+OR+乳幼児+OR+ベビーカー&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "trade_press", "fetch_type": "rss"},
-    {"name": "通販新聞 ベビー",       "url": "https://news.google.com/rss/search?q=site:tsuhanshimbun.com+ベビー+OR+乳幼児+OR+おむつ&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "trade_press", "fetch_type": "rss"},
+    {"name": "Diamond Retail Media", "url": "https://news.google.com/rss/search?q=site:diamond-rm.net+(ベビー+OR+育児+OR+乳幼児)&hl=ja&gl=JP&ceid=JP:ja",   "category": "general", "language": "ja", "source_type": "trade_press", "fetch_type": "rss"},
+    {"name": "WWD Japan ベビー",      "url": "https://news.google.com/rss/search?q=site:wwdjapan.com+(ベビー+OR+乳幼児+OR+ベビーカー)&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "trade_press", "fetch_type": "rss"},
+    {"name": "通販新聞 ベビー",       "url": "https://news.google.com/rss/search?q=site:tsuhanshimbun.com+(ベビー+OR+乳幼児+OR+おむつ)&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "trade_press", "fetch_type": "rss"},
 
     # === 市場調査（site: 検索 — source_type=market_research）===
-    {"name": "矢野経済研究所 ベビー",   "url": "https://news.google.com/rss/search?q=site:yano.co.jp+ベビー+OR+育児+OR+乳幼児&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "market_research", "fetch_type": "rss"},
-    {"name": "富士経済 ベビー",        "url": "https://news.google.com/rss/search?q=site:fuji-keizai.co.jp+ベビー+OR+育児&hl=ja&gl=JP&ceid=JP:ja",     "category": "general", "language": "ja", "source_type": "market_research", "fetch_type": "rss"},
+    {"name": "矢野経済研究所 ベビー",   "url": "https://news.google.com/rss/search?q=site:yano.co.jp+(ベビー+OR+育児+OR+乳幼児)&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "market_research", "fetch_type": "rss"},
+    {"name": "富士経済 ベビー",        "url": "https://news.google.com/rss/search?q=site:fuji-keizai.co.jp+(ベビー+OR+育児)&hl=ja&gl=JP&ceid=JP:ja",     "category": "general", "language": "ja", "source_type": "market_research", "fetch_type": "rss"},
 
     # === 市場・EC動向（Google News）===
     {"name": "GNews: 育児市場・EC動向",     "url": "https://news.google.com/rss/search?q=ベビー用品+市場+OR+EC+OR+売上+OR+シェア+OR+販売&hl=ja&gl=JP&ceid=JP:ja",  "category": "general", "language": "ja", "source_type": "google_news", "fetch_type": "rss"},
     {"name": "GNews: 育児消費・トレンド",   "url": "https://news.google.com/rss/search?q=育児用品+OR+ベビー用品+消費+OR+トレンド+OR+流行+OR+ヒット商品&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "google_news", "fetch_type": "rss"},
 
     # === プレスリリース ===
-    {"name": "PR TIMES ベビー用品（GNews経由）", "url": "https://news.google.com/rss/search?q=site:prtimes.jp+ベビー用品+OR+乳幼児+OR+授乳+OR+おむつ&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "pr_wire", "fetch_type": "rss"},
-    {"name": "PR TIMES ベビーカー・カーシート",  "url": "https://news.google.com/rss/search?q=site:prtimes.jp+ベビーカー+OR+チャイルドシート+OR+抱っこ紐&hl=ja&gl=JP&ceid=JP:ja", "category": "mobility", "language": "ja", "source_type": "pr_wire", "fetch_type": "rss"},
+    {"name": "PR TIMES ベビー用品（GNews経由）", "url": "https://news.google.com/rss/search?q=site:prtimes.jp+(ベビー用品+OR+乳幼児+OR+授乳+OR+おむつ)&hl=ja&gl=JP&ceid=JP:ja", "category": "general", "language": "ja", "source_type": "pr_wire", "fetch_type": "rss"},
+    {"name": "PR TIMES ベビーカー・カーシート",  "url": "https://news.google.com/rss/search?q=site:prtimes.jp+(ベビーカー+OR+チャイルドシート+OR+抱っこ紐)&hl=ja&gl=JP&ceid=JP:ja", "category": "mobility", "language": "ja", "source_type": "pr_wire", "fetch_type": "rss"},
 ]
 
 KEYWORDS = {
