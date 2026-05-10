@@ -59,6 +59,33 @@ class TestAIRankerStrict(unittest.TestCase):
             "items の各オブジェクトに additionalProperties=false が無い",
         )
 
+    def test_no_unsupported_strict_constraints(self):
+        """Anthropic strict mode で不可なキーがスキーマに存在しないこと。
+
+        過去のリグレッション:
+        - PR #12: additionalProperties 抜け
+        - PR #16後: integer に minimum/maximum、string に minLength を残し 400 エラー
+
+        この test は recursive にスキーマ全体を走査して minimum/maximum/minLength を
+        検出した場合に fail する（リグレッション防止）。
+        """
+        UNSUPPORTED_KEYS = {"minimum", "maximum", "minLength", "maxLength", "pattern"}
+
+        def walk(node, path="schema"):
+            if isinstance(node, dict):
+                for key, value in node.items():
+                    if key in UNSUPPORTED_KEYS:
+                        self.fail(
+                            f"{path}.{key} は Anthropic strict mode で未サポート。"
+                            f"プロンプト側で文字数等を制約してください。"
+                        )
+                    walk(value, f"{path}.{key}")
+            elif isinstance(node, list):
+                for i, item in enumerate(node):
+                    walk(item, f"{path}[{i}]")
+
+        walk(RANK_TOOL["input_schema"])
+
 
 class TestAIRankerFallback(unittest.TestCase):
     def setUp(self):

@@ -39,9 +39,8 @@ RANK_TOOL = {
                         },
                         "value_score": {
                             "type": "integer",
-                            "minimum": 0,
-                            "maximum": 100,
-                            "description": "事業価値スコア。80+=必読、50+=チェック推奨、30未満=ノイズ",
+                            # Anthropic strict mode は minimum/maximum 不可 → プロンプトで0-100制約
+                            "description": "事業価値スコア（0-100の整数）。80+=必読、50+=チェック推奨、30未満=ノイズ",
                         },
                         "value_axis": {
                             "type": "string",
@@ -58,18 +57,16 @@ RANK_TOOL = {
                         },
                         "fact_summary_jp": {
                             "type": "string",
-                            "minLength": 10,
-                            "description": "記事の事実を1〜2文で要約（30〜120文字）。RSSの summary が薄い場合の代替。タイトルから推測ではなく、本文に基づくこと",
+                            # Anthropic strict mode は minLength 不可 → プロンプトで「30〜120文字」を指示
+                            "description": "記事の事実を1〜2文で要約（30〜120文字、空文字禁止）。RSSの summary が薄い場合の代替。タイトルから推測ではなく、本文に基づくこと",
                         },
                         "why_matters_jp": {
                             "type": "string",
-                            "minLength": 5,
-                            "description": "なぜ商品担当に重要か。80文字以内・日本語・結論ファースト",
+                            "description": "なぜ商品担当に重要か（10〜80文字、空文字禁止）。日本語・結論ファースト",
                         },
                         "action_hint_jp": {
                             "type": "string",
-                            "minLength": 5,
-                            "description": "今日取るべき次アクション。10〜60文字・日本語・動詞始まり",
+                            "description": "今日取るべき次アクション（10〜60文字、空文字禁止）。日本語・動詞始まり",
                         },
                     },
                     "required": [
