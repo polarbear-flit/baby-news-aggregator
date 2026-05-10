@@ -70,6 +70,46 @@ class TestUnrelatedBrandNoise(unittest.TestCase):
         article = {"title": "東京ばな奈の新商品が話題に", "summary": ""}
         self.assertTrue(is_hard_noise(article))
 
+    def test_starbucks_is_noise(self):
+        """ユーザー報告: スタバの新作が混入していた"""
+        article = {"title": "スターバックス、新作フラペチーノを発売", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+    def test_lifeguard_is_noise(self):
+        """ユーザー報告: ライフガードサワーが混入していた"""
+        article = {"title": "ライフガードサワー新発売", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+    def test_monteil_is_noise(self):
+        """ユーザー報告: モンテール5月新商品が混入していた"""
+        article = {"title": "モンテール、5月の新商品ラインナップ発表", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+
+class TestNonBabyAgeGroupNoise(unittest.TestCase):
+    """ユーザー要望: 対象は 0〜未就学児 まで。中学生以降は除外。"""
+
+    def test_high_school_student_is_noise(self):
+        """ユーザー報告: 高校生の支援問題が混入していた"""
+        article = {"title": "高校生の支援につながりにくい問題", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+    def test_middle_school_is_noise(self):
+        article = {"title": "中学生向けの新教材を発表", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+    def test_university_is_noise(self):
+        article = {"title": "大学生協が新サービス", "summary": ""}
+        self.assertTrue(is_hard_noise(article))
+
+    def test_baby_article_not_noise(self):
+        """同じ記事に「赤ちゃん」「乳幼児」があれば未就学児外語が無いので noise でない"""
+        article = {
+            "title": "ピジョン、新型哺乳瓶を発売",
+            "summary": "乳幼児向けの授乳サポート機能を強化",
+        }
+        self.assertFalse(is_hard_noise(article))
+
 
 class TestImageGalleryNoise(unittest.TestCase):
     def test_image_gallery_is_noise(self):
@@ -106,6 +146,26 @@ class TestFilterByKeywords(unittest.TestCase):
         result = filter_by_keywords(articles)
         self.assertEqual(len(result), 1)
         self.assertIn("哺乳瓶", result[0]["matched_keywords"])
+
+    def test_starbucks_uri_age_dropped(self):
+        """『市場』『売上』だけの記事はベビー特化語が無いので除外（KEYWORDS["general"] 厳格化）"""
+        articles = [{
+            "title": "スターバックス、新作で売上前年比20%増",
+            "summary": "市場シェアが拡大",
+            "matched_keywords": [],
+        }]
+        result = filter_by_keywords(articles)
+        self.assertEqual(len(result), 0)
+
+    def test_general_business_terms_alone_dropped(self):
+        """『新製品』『メーカー』『EC』単独ではベビー文脈と判定しない"""
+        articles = [{
+            "title": "あるメーカーの新製品が売上拡大",
+            "summary": "ECサイトで人気",
+            "matched_keywords": [],
+        }]
+        result = filter_by_keywords(articles)
+        self.assertEqual(len(result), 0)
 
 
 class TestOldYearDetection(unittest.TestCase):

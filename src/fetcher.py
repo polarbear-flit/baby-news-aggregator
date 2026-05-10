@@ -283,12 +283,13 @@ def fetch_all_feeds() -> list[dict]:
         url = feed_config.get("url", "")
         fetch_type = feed_config.get("fetch_type", "rss")
         if fetch_type != "rss":
-            kw_filtered = articles
-        elif "news.google.com" in url:
-            for a in articles:
-                a["matched_keywords"] = [feed_config["category"]]
+            # 公的ソース等は既に matched_keywords 付きの想定でスキップ
             kw_filtered = articles
         else:
+            # ⚠️ Google News含めすべての RSS に filter_by_keywords を適用。
+            # 過去版は Google News をスキップしていたが、検索クエリの曖昧さで
+            # 「Starbucks 売上」「ライフガード新商品」等が混入していたため。
+            # 結果記事の本文に baby-specific 語が含まれることを確認する。
             kw_filtered = filter_by_keywords(articles)
 
         filtered = [
