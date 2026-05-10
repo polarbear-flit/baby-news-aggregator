@@ -76,6 +76,34 @@ class TestFormatArticleBlock(unittest.TestCase):
         block = format_article_block(1, article)
         self.assertIn("URL: —", block)
 
+    def test_ai_fact_labeled_explicitly(self):
+        """fact_source='ai' のときは『Fact (AI要約):』と表示される"""
+        article = {
+            "title": "テスト", "url": "https://example.com",
+            "source_name": "PR TIMES",
+            "fact_summary": "AI が本文から推測した事実",
+            "fact_source": "ai",
+            "why_it_matters": "", "action_hint_jp": "",
+            "importance": "High", "ai_value_axis": "manufacturer",
+        }
+        block = format_article_block(1, article)
+        self.assertIn("Fact (AI要約):", block)
+        self.assertNotIn(" Fact: ", block)  # 単純な"Fact:" は出ない
+
+    def test_rss_fact_uses_plain_label(self):
+        """fact_source='rss' のときは通常の『Fact:』表示"""
+        article = {
+            "title": "テスト", "url": "https://example.com",
+            "source_name": "Pigeon 公式",
+            "fact_summary": "RSS の summary 本文",
+            "fact_source": "rss",
+            "why_it_matters": "", "action_hint_jp": "",
+            "importance": "High", "ai_value_axis": "manufacturer",
+        }
+        block = format_article_block(1, article)
+        self.assertIn("Fact: ", block)
+        self.assertNotIn("Fact (AI要約)", block)
+
 
 if __name__ == "__main__":
     unittest.main()

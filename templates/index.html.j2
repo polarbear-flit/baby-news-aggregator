@@ -138,7 +138,11 @@
                 {{ article.title }}
               </a>
               {% if article.fact_summary %}
-              <p class="text-gray-700 text-sm mt-1"><span class="font-semibold">Fact:</span> {{ article.fact_summary }}</p>
+              <p class="text-gray-700 text-sm mt-1">
+                <span class="font-semibold">Fact:</span>
+                {% if article.fact_source == "ai" %}<span class="text-xs px-1.5 py-0.5 rounded bg-purple-100 text-purple-700 mr-1">AI要約</span>{% endif %}
+                {{ article.fact_summary }}
+              </p>
               {% elif article.summary %}
               <p class="text-gray-500 text-sm mt-1 line-clamp-2">{{ article.summary }}</p>
               {% endif %}

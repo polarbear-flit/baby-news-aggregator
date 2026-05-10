@@ -135,7 +135,8 @@ class TestApplyRubric(unittest.TestCase):
         for field in [
             "source_quality_score", "business_relevance_score",
             "actionability_score", "importance",
-            "fact_summary", "business_implication", "why_it_matters",
+            "fact_summary", "fact_source",
+            "business_implication", "why_it_matters",
         ]:
             self.assertIn(field, article)
 
@@ -146,6 +147,57 @@ class TestApplyRubric(unittest.TestCase):
         ]
         result = apply_rubric_to_all(articles)
         self.assertEqual(len(result), 2)
+
+
+class TestFactSourceLabeling(unittest.TestCase):
+    """Implementation Quality Rubric §4 (Data Consistency):
+    AI 生成の事実要約と RSS 事実データを fact_source で区別する。
+
+    UIで「Fact (AI要約):」と「Fact:」を表示分けして、ユーザーが
+    AI推測と元記事の事実を判別できるようにする。
+    """
+
+    def test_fact_source_ai_when_ai_fact_present(self):
+        article = {
+            "title": "テスト",
+            "summary": "RSS本文",
+            "ai_fact_summary": "AIが本文から要約した事実",
+            "source_type": "google_news",
+        }
+        apply_rubric(article)
+        self.assertEqual(article["fact_source"], "ai")
+        self.assertIn("AIが本文から要約", article["fact_summary"])
+
+    def test_fact_source_rss_when_no_ai(self):
+        article = {
+            "title": "テスト",
+            "summary": "RSS本文",
+            "source_type": "google_news",
+        }
+        apply_rubric(article)
+        self.assertEqual(article["fact_source"], "rss")
+        self.assertEqual(article["fact_summary"], "RSS本文")
+
+    def test_fact_source_title_when_no_summary(self):
+        article = {
+            "title": "タイトルだけ",
+            "summary": "",
+            "source_type": "google_news",
+        }
+        apply_rubric(article)
+        self.assertEqual(article["fact_source"], "title")
+        self.assertEqual(article["fact_summary"], "タイトルだけ")
+
+    def test_empty_ai_fact_falls_back_to_rss(self):
+        """ai_fact_summary が空白だけの場合は RSS にフォールバック"""
+        article = {
+            "title": "T",
+            "summary": "RSS",
+            "ai_fact_summary": "   ",
+            "source_type": "google_news",
+        }
+        apply_rubric(article)
+        self.assertEqual(article["fact_source"], "rss")
 
 
 if __name__ == "__main__":
