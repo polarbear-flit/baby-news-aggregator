@@ -20,11 +20,14 @@ RANK_TOOL = {
     "strict": True,
     "input_schema": {
         "type": "object",
+        # Anthropic strict mode: 全 object 型に additionalProperties: false が必要
+        "additionalProperties": False,
         "properties": {
             "items": {
                 "type": "array",
                 "items": {
                     "type": "object",
+                    "additionalProperties": False,
                     "properties": {
                         "article_id": {
                             "type": "string",
