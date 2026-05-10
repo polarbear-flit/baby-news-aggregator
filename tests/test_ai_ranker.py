@@ -41,6 +41,24 @@ class TestAIRankerStrict(unittest.TestCase):
         required = RANK_TOOL["input_schema"]["properties"]["items"]["items"]["required"]
         self.assertIn("fact_summary_jp", required)
 
+    def test_additional_properties_false_on_all_objects(self):
+        """Anthropic strict mode 要件: 全 object 型に additionalProperties: false が必要。
+
+        過去のリグレッション: PR #12 で strict=True を入れたが additionalProperties を
+        付け忘れ、Anthropic API が 400 エラーで AI ランカーが完全失敗していた。
+        この設定が抜けていると AI が動かず Telegram に「AI未評価」が出る。
+        """
+        schema = RANK_TOOL["input_schema"]
+        self.assertEqual(
+            schema.get("additionalProperties"), False,
+            "outer object に additionalProperties=false が無い",
+        )
+        item_schema = schema["properties"]["items"]["items"]
+        self.assertEqual(
+            item_schema.get("additionalProperties"), False,
+            "items の各オブジェクトに additionalProperties=false が無い",
+        )
+
 
 class TestAIRankerFallback(unittest.TestCase):
     def setUp(self):
