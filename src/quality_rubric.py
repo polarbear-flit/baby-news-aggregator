@@ -113,14 +113,21 @@ def apply_rubric(article: dict) -> dict:
     importance = compute_importance(source_q, relevance, action, article)
 
     # fact_summary: AI生成 (ai_fact_summary) を優先、なければ RSS summary、最後にタイトル
+    # fact_source で「事実データ」と「AI推測要約」を区別する（Data Consistency 確保）。
+    # UI 側は fact_source="ai" の場合に「(AI要約)」と明示してユーザーに知らせる。
     ai_fact = (article.get("ai_fact_summary") or "").strip()
     if ai_fact:
         fact = " ".join(ai_fact.split())[:200]
+        fact_source = "ai"
     else:
-        fact = (article.get("summary") or "").strip()
-        fact = " ".join(fact.split())[:200]
-        if not fact:
+        rss_fact = (article.get("summary") or "").strip()
+        rss_fact = " ".join(rss_fact.split())[:200]
+        if rss_fact:
+            fact = rss_fact
+            fact_source = "rss"
+        else:
             fact = (article.get("title") or "")[:200]
+            fact_source = "title"
 
     why = (article.get("why_matters_jp") or "").strip()
 
@@ -130,6 +137,7 @@ def apply_rubric(article: dict) -> dict:
         "actionability_score": action,
         "importance": importance,
         "fact_summary": fact,
+        "fact_source": fact_source,
         "business_implication": why,
         "why_it_matters": why,
     })

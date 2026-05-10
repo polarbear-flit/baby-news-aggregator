@@ -139,6 +139,9 @@ def format_article_block(idx: int, a: dict) -> str:
     url = a.get("url", "")
     url_disp = f'<a href="{_esc_attr(url)}">記事を開く</a>' if url else "—"
     fact = _esc(a.get("fact_summary", ""))[:140]
+    fact_source = a.get("fact_source", "rss")
+    # AI 生成の事実要約は「Fact (AI要約):」と明示し、RSS 事実データと区別する
+    fact_label = "Fact (AI要約)" if fact_source == "ai" else "Fact"
     why = _esc(a.get("why_it_matters") or a.get("why_matters_jp") or "")[:140]
     hint = _esc(a.get("action_hint_jp", ""))[:80]
 
@@ -148,7 +151,7 @@ def format_article_block(idx: int, a: dict) -> str:
         f"  Source: {source}",
     ]
     if fact:
-        lines.append(f"  Fact: {fact}")
+        lines.append(f"  {fact_label}: {fact}")
     if why:
         lines.append(f"  Why: {why}")
     if hint:
