@@ -1,5 +1,31 @@
 [
   {
+    "date": "2026-06-08T08:11:48.244497+09:00",
+    "article_count": 36,
+    "keyword_freq": {
+      "赤ちゃん": 25,
+      "ベビーカー": 21,
+      "チャイルドシート": 9,
+      "ベビー用品": 7,
+      "幼児": 7,
+      "乳幼児": 7,
+      "紙おむつ": 7,
+      "育児": 7,
+      "おしりふき": 7,
+      "新生児": 6,
+      "粉ミルク": 4,
+      "マタニティ": 3,
+      "抱っこ紐": 3,
+      "baby": 3,
+      "抱っこひも": 3,
+      "母乳": 3,
+      "離乳食": 2,
+      "哺乳瓶": 2,
+      "授乳": 2,
+      "オムツ": 1
+    }
+  },
+  {
     "date": "2026-06-07T08:08:53.917057+09:00",
     "article_count": 38,
     "keyword_freq": {
@@ -897,45 +923,6 @@
       "general": 52,
       "mobility": 19,
       "car_safety": 17,
-      "skincare": 6,
-      "feeding": 5,
-      "diaper": 4,
-      "リコール": 2
-    }
-  },
-  {
-    "date": "2026-05-09T08:00:08.548791+09:00",
-    "article_count": 50,
-    "keyword_freq": {
-      "general": 47,
-      "mobility": 20,
-      "car_safety": 18,
-      "feeding": 6,
-      "skincare": 6,
-      "diaper": 4,
-      "リコール": 2
-    }
-  },
-  {
-    "date": "2026-05-08T14:38:31.607413+09:00",
-    "article_count": 50,
-    "keyword_freq": {
-      "general": 49,
-      "mobility": 19,
-      "car_safety": 18,
-      "skincare": 6,
-      "diaper": 4,
-      "feeding": 4,
-      "リコール": 2
-    }
-  },
-  {
-    "date": "2026-05-08T14:23:21.758779+09:00",
-    "article_count": 50,
-    "keyword_freq": {
-      "general": 48,
-      "car_safety": 18,
-      "mobility": 17,
       "skincare": 6,
       "feeding": 5,
       "diaper": 4,
