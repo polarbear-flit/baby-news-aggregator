@@ -6,24 +6,29 @@
 旧版にあった「安全 (+25) / 規制 (+20)」のボーナスは撤廃。
 業界動向（新商品・市場・売上等）のシグナルを代わりに加点する。
 """
+
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 
 from src.config import (
-    KEYWORDS, TREND_WINDOW_DAYS,
-    SOURCE_WEIGHTS, KEY_ENTITIES, INDUSTRY_TERMS,
-    SOFT_NOISE_TERMS, CRITICAL_OVERRIDE,
+    KEYWORDS,
+    TREND_WINDOW_DAYS,
+    SOURCE_WEIGHTS,
+    KEY_ENTITIES,
+    INDUSTRY_TERMS,
+    SOFT_NOISE_TERMS,
+    CRITICAL_OVERRIDE,
+    DOMAIN_ALLOWLIST_BONUS,
 )
 
-
 CATEGORY_LABEL = {
-    "feeding":    "🍼 授乳・哺乳瓶",
-    "mobility":   "👶 ベビーカー",
+    "feeding": "🍼 授乳・哺乳瓶",
+    "mobility": "👶 ベビーカー",
     "car_safety": "🚗 チャイルドシート",
-    "diaper":     "🧸 おむつ",
-    "wipes":      "💧 おしりふき",
-    "skincare":   "🌿 スキンケア",
-    "general":    "📰 一般",
+    "diaper": "🧸 おむつ",
+    "wipes": "💧 おしりふき",
+    "skincare": "🌿 スキンケア",
+    "general": "📰 一般",
 }
 
 
@@ -114,21 +119,33 @@ def score_articles(articles: list[dict]) -> list[dict]:
             if not (critical_lower and _contains_any(text, critical_lower)):
                 score -= 20
 
-        # 6) 鮮度
+        # 5.5) 信頼ソース加点（PR TIMES/流通ニュース/ダイヤモンドRM 等）。
+        # 記事URLはGoogle Newsリダイレクトなので、URL・媒体名・タイトル末尾で照合。
+        allow_blob = (
+            (a.get("url", "") or "")
+            + " "
+            + (a.get("source_name", "") or "")
+            + " "
+            + (a.get("title", "") or "")
+        ).lower()
+        for domain, bonus in DOMAIN_ALLOWLIST_BONUS.items():
+            if domain in allow_blob:
+                score += bonus
+                break
+
+        # 6) 鮮度（「今日の」日次ブリーフなので直近を強く優遇。2026-07-08 にカーブを詰めた）
         published_dt = a.get("published_dt")
         if published_dt:
             try:
                 age_hours = (now - published_dt).total_seconds() / 3600
                 if age_hours <= 24:
-                    score += 10
+                    score += 15
                 elif age_hours <= 72:
                     score += 5
                 elif age_hours <= 7 * 24:
                     score += 0
-                elif age_hours <= 30 * 24:
-                    score -= 15
                 else:
-                    score -= 50
+                    score -= 30
             except Exception:
                 score -= 25
         else:
@@ -140,7 +157,9 @@ def score_articles(articles: list[dict]) -> list[dict]:
     return scored
 
 
-def generate_category_insight(category: str, articles: list[dict], freq: Counter) -> str:
+def generate_category_insight(
+    category: str, articles: list[dict], freq: Counter
+) -> str:
     """カテゴリ別の示唆テキスト。リコール言及を撤廃し、業界動向に焦点。"""
     count = freq.get(category, 0)
     label = CATEGORY_LABEL.get(category, category)
@@ -182,8 +201,7 @@ def analyze(articles: list[dict], history: list[dict]) -> dict:
     trending = calc_trending_keywords(keyword_freq, history)
 
     category_insights = {
-        cat: generate_category_insight(cat, scored, category_freq)
-        for cat in KEYWORDS
+        cat: generate_category_insight(cat, scored, category_freq) for cat in KEYWORDS
     }
     overall_insights = generate_overall_insights(category_freq, trending, scored)
 

@@ -7,29 +7,29 @@ importance / fact_summary / business_implication / why_it_matters として付�
 旧版にあった「safety/regulation 強制 High」ルールは撤廃。
 リコール・規制系の記事は HARD_NOISE で入口排除済みのため、Rubric では考慮しない。
 """
-from typing import Optional
 
+from typing import Optional
 
 # === Source Quality（source_type → 1-5）===
 SOURCE_QUALITY_MAP: dict[str, int] = {
-    "brand_official":    5,
+    "brand_official": 5,
     "retailer_official": 5,
-    "market_research":   5,
-    "trade_press":       4,
-    "pr_wire":           3,
-    "google_news":       2,
-    "seo_media":         1,
+    "market_research": 5,
+    "trade_press": 4,
+    "pr_wire": 3,
+    "google_news": 2,
+    "seo_media": 1,
 }
 
 # value_axis → business_relevance（1-5）— 業界動向7軸
 VALUE_AXIS_RELEVANCE_MAP: dict[str, int] = {
-    "manufacturer":    5,
-    "retail":          5,
-    "product_launch":  4,
-    "market":          4,
-    "consumer_trend":  3,
-    "industry":        3,
-    "noise":           1,
+    "manufacturer": 5,
+    "retail": 5,
+    "product_launch": 4,
+    "market": 4,
+    "consumer_trend": 3,
+    "industry": 3,
+    "noise": 1,
 }
 
 # importance しきい値（旧 4.0/3.0 では Google News (source_q=2) が High に届きにくく
@@ -67,7 +67,18 @@ def derive_actionability_score(article: dict) -> int:
     if not hint or hint.lower() in ("特になし", "なし", "n/a", "none", "null"):
         return 1
     length = len(hint)
-    concrete_verbs = ("確認", "作成", "見直", "比較", "調査", "更新", "展開", "計画", "検討", "発注")
+    concrete_verbs = (
+        "確認",
+        "作成",
+        "見直",
+        "比較",
+        "調査",
+        "更新",
+        "展開",
+        "計画",
+        "検討",
+        "発注",
+    )
     has_concrete_verb = any(v in hint for v in concrete_verbs)
     if length >= 18 and has_concrete_verb:
         return 5
@@ -131,16 +142,18 @@ def apply_rubric(article: dict) -> dict:
 
     why = (article.get("why_matters_jp") or "").strip()
 
-    article.update({
-        "source_quality_score": source_q,
-        "business_relevance_score": relevance,
-        "actionability_score": action,
-        "importance": importance,
-        "fact_summary": fact,
-        "fact_source": fact_source,
-        "business_implication": why,
-        "why_it_matters": why,
-    })
+    article.update(
+        {
+            "source_quality_score": source_q,
+            "business_relevance_score": relevance,
+            "actionability_score": action,
+            "importance": importance,
+            "fact_summary": fact,
+            "fact_source": fact_source,
+            "business_implication": why,
+            "why_it_matters": why,
+        }
+    )
     return article
 
 

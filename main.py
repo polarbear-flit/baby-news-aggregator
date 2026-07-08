@@ -9,6 +9,7 @@
 6. send_telegram: 業界カテゴリ別ハイライト配信
 7. render: HTMLレポート生成
 """
+
 import html
 import json
 import os
@@ -16,15 +17,29 @@ from datetime import datetime, timezone, timedelta
 
 import requests
 
-from src.ai_ranker import ai_rank_articles, generate_daily_summary
+from src.ai_ranker import ai_rank_articles, dedupe_by_cluster, generate_daily_summary
 from src.analyzer import analyze
 from src.config import (
-    DEFAULT_REPORT_URL, HISTORY_PATH, MAX_ARTICLES_DISPLAY,
-    OUTPUT_PATH, TREND_WINDOW_DAYS,
+    DEFAULT_REPORT_URL,
+    HISTORY_PATH,
+    MAX_ARTICLES_DISPLAY,
+    OUTPUT_PATH,
+    TREND_WINDOW_DAYS,
+)
+from src.delivered import (
+    DELIVERED_PATH,
+    load_delivered,
+    prune_delivered,
+    save_delivered,
+    split_by_delivery,
+    upsert_delivered,
 )
 from src.fetcher import fetch_all_feeds, verify_links_batch
 from src.quality_rubric import apply_rubric_to_all
 from src.renderer import render
+
+# HTML の「既報」タイルとして末尾に載せる再配信記事の最大数
+MAX_REDELIVERED_DISPLAY = 15
 
 
 def load_history() -> list[dict]:
@@ -65,12 +80,12 @@ def save_history(history: list[dict], keyword_freq: dict, article_count: int) ->
 
 # === 業界カテゴリラベル（Telegram/HTML共通）===
 AXIS_LABELS = {
-    "manufacturer":   "🏭 メーカー",
-    "retail":         "🏬 小売・EC",
-    "market":         "📊 市場",
+    "manufacturer": "🏭 メーカー",
+    "retail": "🏬 小売・EC",
+    "market": "📊 市場",
     "consumer_trend": "👥 消費者トレンド",
     "product_launch": "🆕 新商品",
-    "industry":       "📰 業界横断",
+    "industry": "📰 業界横断",
 }
 
 
@@ -160,8 +175,13 @@ def format_article_block(idx: int, a: dict) -> str:
     return "\n".join(lines)
 
 
-def send_telegram(analysis: dict, articles: list[dict]) -> None:
+def send_telegram(
+    analysis: dict,
+    articles: list[dict],
+    redelivered: list[dict] | None = None,
+) -> None:
     """Telegram に業界動向サマリを送信。リコール/安全情報は完全除外。"""
+    redelivered = redelivered or []
     token = os.environ.get("BABY_NEWS_BOT_TOKEN")
     chat_id = os.environ.get("BABY_NEWS_CHAT_ID")
     if not token or not chat_id:
@@ -173,32 +193,48 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
     today = datetime.now(jst).strftime("%Y/%m/%d")
 
     cat_labels = {
-        "feeding": "🍼 授乳", "mobility": "👶 ベビーカー",
-        "car_safety": "🚗 チャイルドシート", "diaper": "🧸 おむつ",
-        "wipes": "💧 おしりふき", "skincare": "🌿 スキンケア",
+        "feeding": "🍼 授乳",
+        "mobility": "👶 ベビーカー",
+        "car_safety": "🚗 チャイルドシート",
+        "diaper": "🧸 おむつ",
+        "wipes": "💧 おしりふき",
+        "skincare": "🌿 スキンケア",
         "general": "📰 一般",
     }
-    cat_lines = " / ".join(
-        f"{cat_labels.get(k, _esc(k))}: {v}件"
-        for k, v in sorted(analysis["category_freq"].items(), key=lambda x: -x[1])
-        if v > 0
-    ) or "なし"
+    cat_lines = (
+        " / ".join(
+            f"{cat_labels.get(k, _esc(k))}: {v}件"
+            for k, v in sorted(analysis["category_freq"].items(), key=lambda x: -x[1])
+            if v > 0
+        )
+        or "なし"
+    )
 
     hot = analysis.get("hot_articles", articles)[:5]
 
-    if hot:
-        # importance=Low は配信から除外
-        visible = [a for a in hot if a.get("importance") != "Low"]
+    # importance=Low は配信から除外
+    visible = [a for a in hot if a.get("importance") != "Low"]
+    no_fresh_news = not visible
+
+    if visible:
         blocks = [format_article_block(i, a) for i, a in enumerate(visible, start=1)]
-        highlights = "\n\n".join(blocks) if blocks else "本日は High/Medium 該当なし"
+        highlights = "\n\n".join(blocks)
     else:
-        highlights = "該当なし"
+        # 新着ゼロの日は無理に埋めず正直に伝える。直近の既報を1〜2件ヒントとして添える。
+        hint_titles = []
+        for a in redelivered[:2]:
+            t = _esc((a.get("title") or "")[:50])
+            if t:
+                hint_titles.append(f"・{t}…")
+        hint = ("\n直近の既報:\n" + "\n".join(hint_titles)) if hint_titles else ""
+        highlights = (
+            "本日、新しい重要ニュースはありません（既報の再掲を除外済み）。" + hint
+        )
 
     # 今日の業界動向サマリ（AI生成 2-3 文、冒頭に表示）
     daily_summary = analysis.get("daily_summary", "")
     summary_section = (
-        f"<b>📌 今日の業界動向</b>\n{_esc(daily_summary)}\n\n"
-        if daily_summary else ""
+        f"<b>📌 今日の業界動向</b>\n{_esc(daily_summary)}\n\n" if daily_summary else ""
     )
 
     # 「今日のアクション」（High優先で最大3件、Lowは除外）
@@ -213,11 +249,14 @@ def send_telegram(analysis: dict, articles: list[dict]) -> None:
             action_lines.append(f"・{_esc(hint)[:60]}")
     action_section = (
         "<b>今日のアクション</b>\n" + "\n".join(action_lines) + "\n\n"
-        if action_lines else ""
+        if action_lines
+        else ""
     )
 
     trending = analysis.get("trending", [])
-    trend_text = "、".join(_esc(t["keyword"]) for t in trending[:3]) if trending else "なし"
+    trend_text = (
+        "、".join(_esc(t["keyword"]) for t in trending[:3]) if trending else "なし"
+    )
 
     ai_status = ""
     if not analysis.get("ai_used", True):
@@ -268,28 +307,52 @@ def main() -> None:
     if not articles:
         print("[WARN] 記事が0件です。HTMLは生成しますが内容は空になります。")
 
+    # 配信済み記事の記憶を読み込み、新着/既報に分割（cross-day dedup）
+    print("配信済み記憶を確認中...")
+    delivered_store = load_delivered(DELIVERED_PATH)
+    delivered_store = prune_delivered(delivered_store)
+    fresh_articles, redelivered_articles = split_by_delivery(articles, delivered_store)
+    print(
+        f"[OK] 新着: {len(fresh_articles)} 件 / "
+        f"既報(再掲除外): {len(redelivered_articles)} 件"
+    )
+
     history = load_history()
     print(f"履歴読み込み: {len(history)} レコード")
 
+    # 分析・スコアリングは全件で行う（キーワード頻度・トレンド・カテゴリ集計のため）。
+    # ハイライトとAI評価は「新着のみ」を対象にする。
     print("分析・スコアリング中...")
     analysis = analyze(articles, history)
+    all_scored = analysis["hot_articles"]
+    fresh_scored = [a for a in all_scored if not a.get("redelivery")]
+    redelivered_scored = [a for a in all_scored if a.get("redelivery")]
 
-    # AIリランカー
+    # AIリランカー（新着のみ）
     from src.ai_ranker import MAX_CANDIDATES
-    print("AI評価中...")
-    rule_top = analysis["hot_articles"][:MAX_CANDIDATES]
-    rule_rest = analysis["hot_articles"][MAX_CANDIDATES:MAX_ARTICLES_DISPLAY]
+
+    print("AI評価中（新着のみ）...")
+    rule_top = fresh_scored[:MAX_CANDIDATES]
+    rule_rest = fresh_scored[MAX_CANDIDATES:MAX_ARTICLES_DISPLAY]
     ai_evaluated, ai_used = ai_rank_articles(rule_top)
+
+    # 同一クラスタ（同じPRの別媒体版）の重複を除去 → 代表以外は Low へ
+    ai_evaluated = dedupe_by_cluster(ai_evaluated)
 
     # 多様性フィルター（同軸最大2件）
     ai_evaluated = diversify_top(ai_evaluated, top_n=5, max_per_axis=2)
 
-    display_articles = ai_evaluated + rule_rest
+    display_fresh = ai_evaluated + rule_rest
 
     # Quality Rubric 適用
     print("Quality Rubric 適用中...")
-    display_articles = apply_rubric_to_all(display_articles)
+    display_fresh = apply_rubric_to_all(display_fresh)
     ai_evaluated = apply_rubric_to_all(ai_evaluated)
+
+    # クラスタ重複はハイライト・アクションから確実に外す
+    for a in ai_evaluated:
+        if a.get("cluster_duplicate"):
+            a["importance"] = "Low"
 
     # 配信前リンク検証（上位7件のみ）
     print("リンク検証中（上位7件）...")
@@ -301,14 +364,20 @@ def main() -> None:
     analysis["hot_articles"] = ai_evaluated
     analysis["ai_used"] = ai_used
 
+    # HTML には新着に加えて「既報」を末尾タイルとして掲載（続報の見逃し防止）
+    redelivered_display = apply_rubric_to_all(
+        redelivered_scored[:MAX_REDELIVERED_DISPLAY]
+    )
+    display_articles = display_fresh + redelivered_display
+
     # 今日の業界動向サマリ（AI生成、上位8件から 2-3 文）
-    # Codex指摘: importance=Low や link_status=failed の記事は配信されないので
+    # importance=Low や link_status=failed の記事は配信されないので
     # daily_summary の入力からも除外する（隠した記事をサマリで先頭にしない）
     print("今日の業界動向サマリ生成中...")
     summary_input = [
-        a for a in ai_evaluated
-        if a.get("importance") != "Low"
-        and a.get("link_status") != "failed"
+        a
+        for a in ai_evaluated
+        if a.get("importance") != "Low" and a.get("link_status") != "failed"
     ][:8]
     daily_summary = generate_daily_summary(summary_input)
     analysis["daily_summary"] = daily_summary
@@ -320,7 +389,14 @@ def main() -> None:
         f.write(html_str)
     print(f"[OK] 出力: {OUTPUT_PATH}")
 
-    send_telegram(analysis, display_articles)
+    send_telegram(analysis, display_fresh, redelivered=redelivered_scored)
+
+    # 今回ハイライト対象になった新着を配信済み記憶へ登録（翌日以降の再配信を防ぐ）
+    delivered_today = [a for a in ai_evaluated if a.get("importance") != "Low"]
+    upsert_delivered(delivered_store, delivered_today)
+    save_delivered(delivered_store, DELIVERED_PATH)
+    print(f"[OK] 配信済み記憶を更新: {len(delivered_store['articles'])} 件")
+
     save_history(history, analysis["keyword_freq"], len(display_articles))
     print("=== 完了 ===")
 

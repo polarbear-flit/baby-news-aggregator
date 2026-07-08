@@ -6,13 +6,18 @@
 - 「東京ばな奈 新商品」はベビー用品文脈がなければ除外される
 - 過去年（2018-2025）が検出される
 """
+
 import os
 import sys
 import unittest
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.fetcher import is_hard_noise, is_old_topic_title, filter_by_keywords  # noqa: E402
+from src.fetcher import (
+    is_hard_noise,
+    is_old_topic_title,
+    filter_by_keywords,
+)  # noqa: E402
 
 
 class TestRecallIsHardNoise(unittest.TestCase):
@@ -57,7 +62,10 @@ class TestEnterpriseNameNotSavedFromNoise(unittest.TestCase):
 
     def test_pigeon_new_product_is_not_noise(self):
         """「ピジョン + 新商品」は noise でない（HARD_NOISE 語が無い）"""
-        article = {"title": "ピジョン、新型哺乳瓶を発売", "summary": "授乳サポート機能を強化"}
+        article = {
+            "title": "ピジョン、新型哺乳瓶を発売",
+            "summary": "授乳サポート機能を強化",
+        }
         self.assertFalse(is_hard_noise(article))
 
 
@@ -129,41 +137,49 @@ class TestRegionalNoise(unittest.TestCase):
 
 class TestFilterByKeywords(unittest.TestCase):
     def test_tokyo_banana_dropped_without_baby_context(self):
-        articles = [{
-            "title": "東京ばな奈の新商品",
-            "summary": "新作スイーツ",
-            "matched_keywords": [],
-        }]
+        articles = [
+            {
+                "title": "東京ばな奈の新商品",
+                "summary": "新作スイーツ",
+                "matched_keywords": [],
+            }
+        ]
         result = filter_by_keywords(articles)
         self.assertEqual(len(result), 0)
 
     def test_pigeon_baby_kept(self):
-        articles = [{
-            "title": "ピジョンが新型哺乳瓶を発表",
-            "summary": "授乳サポート機能を強化",
-            "matched_keywords": [],
-        }]
+        articles = [
+            {
+                "title": "ピジョンが新型哺乳瓶を発表",
+                "summary": "授乳サポート機能を強化",
+                "matched_keywords": [],
+            }
+        ]
         result = filter_by_keywords(articles)
         self.assertEqual(len(result), 1)
         self.assertIn("哺乳瓶", result[0]["matched_keywords"])
 
     def test_starbucks_uri_age_dropped(self):
         """『市場』『売上』だけの記事はベビー特化語が無いので除外（KEYWORDS["general"] 厳格化）"""
-        articles = [{
-            "title": "スターバックス、新作で売上前年比20%増",
-            "summary": "市場シェアが拡大",
-            "matched_keywords": [],
-        }]
+        articles = [
+            {
+                "title": "スターバックス、新作で売上前年比20%増",
+                "summary": "市場シェアが拡大",
+                "matched_keywords": [],
+            }
+        ]
         result = filter_by_keywords(articles)
         self.assertEqual(len(result), 0)
 
     def test_general_business_terms_alone_dropped(self):
         """『新製品』『メーカー』『EC』単独ではベビー文脈と判定しない"""
-        articles = [{
-            "title": "あるメーカーの新製品が売上拡大",
-            "summary": "ECサイトで人気",
-            "matched_keywords": [],
-        }]
+        articles = [
+            {
+                "title": "あるメーカーの新製品が売上拡大",
+                "summary": "ECサイトで人気",
+                "matched_keywords": [],
+            }
+        ]
         result = filter_by_keywords(articles)
         self.assertEqual(len(result), 0)
 

@@ -5,6 +5,7 @@
 - RANK_TOOL に "strict": True
 - value_axis enum が業界動向7軸（safety/regulation を含まない）
 """
+
 import os
 import sys
 import unittest
@@ -20,19 +21,35 @@ class TestAIRankerStrict(unittest.TestCase):
 
     def test_value_axis_industry_focused(self):
         """value_axis enum が業界動向7軸であること（safety/regulation を含まない）"""
-        item_props = RANK_TOOL["input_schema"]["properties"]["items"]["items"]["properties"]
+        item_props = RANK_TOOL["input_schema"]["properties"]["items"]["items"][
+            "properties"
+        ]
         axis_enum = item_props["value_axis"]["enum"]
-        for axis in ["manufacturer", "retail", "market", "consumer_trend",
-                     "product_launch", "industry", "noise"]:
+        for axis in [
+            "manufacturer",
+            "retail",
+            "market",
+            "consumer_trend",
+            "product_launch",
+            "industry",
+            "noise",
+        ]:
             self.assertIn(axis, axis_enum, f"{axis} が enum にない")
         self.assertNotIn("safety", axis_enum)
         self.assertNotIn("regulation", axis_enum)
 
     def test_required_fields_present(self):
-        item_props = RANK_TOOL["input_schema"]["properties"]["items"]["items"]["properties"]
+        item_props = RANK_TOOL["input_schema"]["properties"]["items"]["items"][
+            "properties"
+        ]
         for field in [
-            "article_id", "is_relevant", "value_score",
-            "value_axis", "fact_summary_jp", "why_matters_jp", "action_hint_jp",
+            "article_id",
+            "is_relevant",
+            "value_score",
+            "value_axis",
+            "fact_summary_jp",
+            "why_matters_jp",
+            "action_hint_jp",
         ]:
             self.assertIn(field, item_props)
 
@@ -50,12 +67,14 @@ class TestAIRankerStrict(unittest.TestCase):
         """
         schema = RANK_TOOL["input_schema"]
         self.assertEqual(
-            schema.get("additionalProperties"), False,
+            schema.get("additionalProperties"),
+            False,
             "outer object に additionalProperties=false が無い",
         )
         item_schema = schema["properties"]["items"]["items"]
         self.assertEqual(
-            item_schema.get("additionalProperties"), False,
+            item_schema.get("additionalProperties"),
+            False,
             "items の各オブジェクトに additionalProperties=false が無い",
         )
 
@@ -96,7 +115,9 @@ class TestAIRankerFallback(unittest.TestCase):
             os.environ["ANTHROPIC_API_KEY"] = self._saved_key
 
     def test_no_api_key_returns_input(self):
-        articles = [{"title": "テスト記事", "url": "https://example.com/1", "score": 50}]
+        articles = [
+            {"title": "テスト記事", "url": "https://example.com/1", "score": 50}
+        ]
         result, ai_used = ai_rank_articles(articles)
         self.assertEqual(result, articles)
         self.assertFalse(ai_used)
@@ -118,8 +139,13 @@ class TestDiversifyTop(unittest.TestCase):
     def test_manufacturer_dominated_input_diversifies(self):
         """主要動向が manufacturer 一色でも、他軸が混ざっていれば top5 に含まれる。"""
         from main import diversify_top
+
         articles = [
-            {"title": f"mfr_{i}", "ai_value_score": 90 - i, "ai_value_axis": "manufacturer"}
+            {
+                "title": f"mfr_{i}",
+                "ai_value_score": 90 - i,
+                "ai_value_axis": "manufacturer",
+            }
             for i in range(5)
         ] + [
             {"title": "retail_1", "ai_value_score": 70, "ai_value_axis": "retail"},
@@ -135,6 +161,7 @@ class TestDiversifyTop(unittest.TestCase):
 
     def test_no_change_when_already_diverse(self):
         from main import diversify_top
+
         articles = [
             {"title": "a", "ai_value_score": 90, "ai_value_axis": "manufacturer"},
             {"title": "b", "ai_value_score": 85, "ai_value_axis": "retail"},

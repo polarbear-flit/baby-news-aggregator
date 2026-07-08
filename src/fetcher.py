@@ -6,6 +6,7 @@
 - 重複除去は normalize_title + rapidfuzz の類似度ベース。
 - 配信前のリンク検証は verify_link()（Telegram上位のみ）。
 """
+
 import hashlib
 import re
 from datetime import datetime, timedelta, timezone
@@ -16,18 +17,27 @@ import requests
 
 try:
     from rapidfuzz import fuzz  # type: ignore
+
     HAS_RAPIDFUZZ = True
 except ImportError:  # pragma: no cover
     HAS_RAPIDFUZZ = False
 
 from src.config import (
-    RSS_FEEDS, KEYWORDS, HARD_NOISE_TERMS, CRITICAL_OVERRIDE,
+    RSS_FEEDS,
+    KEYWORDS,
+    HARD_NOISE_TERMS,
+    CRITICAL_OVERRIDE,
     PAST_YEAR_TITLE_PATTERNS,
-    MAX_ARTICLES_PER_FEED, FETCH_TIMEOUT_SEC, USER_AGENT,
+    DOMAIN_DENYLIST,
+    MAX_ARTICLES_PER_FEED,
+    FETCH_TIMEOUT_SEC,
+    USER_AGENT,
 )
 
-# 古すぎる記事は完全除外（日次Botに数年前のニュースは不要）
-MAX_ARTICLE_AGE_DAYS = 90
+# 古すぎる記事は完全除外（日次Botに数年前のニュースは不要）。
+# 2026-07-08: 90→14日。日次ブリーフに3ヶ月前のニュースは不要。Google News の
+# `when:7d` と併用してほぼ二重防御にする。
+MAX_ARTICLE_AGE_DAYS = 14
 # 重複判定の類似度しきい値（0-100）。88以上を重複扱いにする。
 DEDUP_SIMILARITY_THRESHOLD = 88
 
@@ -94,6 +104,7 @@ def _fetch_rss(feed_config: dict) -> list[dict]:
     articles: list[dict] = []
     expected_site = _extract_site_domain(feed_config.get("url", ""))
     base_source_type = feed_config.get("source_type", "google_news")
+    max_articles = feed_config.get("max_articles", MAX_ARTICLES_PER_FEED)
 
     try:
         resp = requests.get(
@@ -104,7 +115,7 @@ def _fetch_rss(feed_config: dict) -> list[dict]:
         resp.raise_for_status()
         fp = feedparser.parse(resp.content)
 
-        for entry in fp.entries[:MAX_ARTICLES_PER_FEED]:
+        for entry in fp.entries[:max_articles]:
             published_dt = _parse_dt(entry)
             summary = getattr(entry, "summary", "") or ""
             summary = re.sub(r"<[^>]+>", "", summary).strip()
@@ -116,18 +127,20 @@ def _fetch_rss(feed_config: dict) -> list[dict]:
                 if not _article_url_matches_site(article_url, expected_site):
                     source_type = "google_news"
 
-            articles.append({
-                "title": getattr(entry, "title", ""),
-                "url": article_url,
-                "summary": summary[:400],
-                "published": published_dt.isoformat() if published_dt else "",
-                "published_dt": published_dt,
-                "source_name": feed_config["name"],
-                "source_type": source_type,
-                "category": feed_config["category"],
-                "language": feed_config["language"],
-                "matched_keywords": [],
-            })
+            articles.append(
+                {
+                    "title": getattr(entry, "title", ""),
+                    "url": article_url,
+                    "summary": summary[:400],
+                    "published": published_dt.isoformat() if published_dt else "",
+                    "published_dt": published_dt,
+                    "source_name": feed_config["name"],
+                    "source_type": source_type,
+                    "category": feed_config["category"],
+                    "language": feed_config["language"],
+                    "matched_keywords": [],
+                }
+            )
     except Exception as e:
         print(f"[SKIP] {feed_config['name']}: {e}")
     return articles
@@ -172,6 +185,70 @@ def is_hard_noise(article: dict) -> bool:
     if CRITICAL_OVERRIDE and any(t.lower() in text for t in CRITICAL_OVERRIDE):
         return False
     return any(t.lower() in text for t in HARD_NOISE_TERMS)
+
+
+def is_denylisted(article: dict) -> bool:
+    """DOMAIN_DENYLIST に該当する記事を除外判定。
+
+    Google News のリダイレクトURLはドメインが news.google.com になるため、
+    「記事URL」に加えて「タイトル末尾の媒体名（ ` - 媒体名` ）」にも当てる。
+    """
+    url = (article.get("url", "") or "").lower()
+    title = (article.get("title", "") or "").lower()
+    source = (article.get("source_name", "") or "").lower()
+    # タイトル末尾の「 - 媒体名」を抽出（Google News の慣習）
+    trailing_media = ""
+    m = re.search(r"[-–—|｜]\s*([^-–—|｜]+)$", article.get("title", ""))
+    if m:
+        trailing_media = m.group(1).strip().lower()
+
+    blob = " ".join([url, title, source, trailing_media])
+    # スペースを除いた版も用意（媒体名「Fortune Business Insights」とドメイン
+    # 「fortunebusinessinsights.com」のような表記ゆれを吸収）
+    despaced = blob.replace(" ", "")
+    for term in DOMAIN_DENYLIST:
+        t = term.lower()
+        core = t.split(".")[0]  # ドメインのTLD前 or プレーン語
+        if t in blob or (core and core in despaced):
+            return True
+    return False
+
+
+# 2031年以降の未来年（機械翻訳SEO市場予測レポートの「〜2032年予測」等の signature）
+_FORECAST_YEAR = re.compile(r"20(?:3[1-9]|[4-9]\d)")
+# SEO市場予測レポート特有の語（百万米ドル・CAGR・調査会社名等）
+_SEO_MARKET_TERMS = [
+    "百万米ドル",
+    "million usd",
+    "usd million",
+    "qyresearch",
+    "cagr",
+    "世界市場予測",
+    "予測レポート",
+    "market research future",
+    "grand view",
+    "report ocean",
+    "imarc",
+    "market size",
+    "市場規模、シェア",
+]
+
+
+def is_seo_market_report(article: dict) -> bool:
+    """機械翻訳SEO市場予測レポートを除外判定。
+
+    「○○市場：2026年〜2032年 世界市場予測、CAGR、XX百万米ドル」型の記事。
+    日本のECカテゴリ担当には非実用（グローバル予測の羅列で actionability ゼロ）。
+    正規の国内調査（矢野経済「ベビー関連ビジネス市場に関する調査(2026年)」等）は
+    未来年レンジや百万米ドル表記を持たないため誤爆しない。
+    """
+    text = (article.get("title", "") + " " + article.get("summary", "")).lower()
+    has_market = "市場" in text or "market" in text
+    if has_market and _FORECAST_YEAR.search(text):
+        return True
+    if any(t in text for t in _SEO_MARKET_TERMS):
+        return True
+    return False
 
 
 def is_too_old(article: dict) -> bool:
@@ -248,7 +325,9 @@ def verify_link(url: str, timeout: int = 5) -> str:
         return "skipped"
     headers = {"User-Agent": USER_AGENT}
     try:
-        resp = requests.head(url, allow_redirects=True, timeout=timeout, headers=headers)
+        resp = requests.head(
+            url, allow_redirects=True, timeout=timeout, headers=headers
+        )
         if resp.status_code < 400:
             return "ok"
     except Exception:
@@ -293,8 +372,11 @@ def fetch_all_feeds() -> list[dict]:
             kw_filtered = filter_by_keywords(articles)
 
         filtered = [
-            a for a in kw_filtered
+            a
+            for a in kw_filtered
             if not is_hard_noise(a)
+            and not is_denylisted(a)
+            and not is_seo_market_report(a)
             and not is_too_old(a)
             and not is_old_topic_title(a)
         ]

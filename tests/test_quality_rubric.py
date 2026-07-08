@@ -1,4 +1,5 @@
 """Quality Rubric のテスト — 業界動向特化版。"""
+
 import os
 import sys
 import unittest
@@ -17,10 +18,14 @@ from src.quality_rubric import (  # noqa: E402
 
 class TestSourceQualityScore(unittest.TestCase):
     def test_brand_official_is_5(self):
-        self.assertEqual(derive_source_quality_score({"source_type": "brand_official"}), 5)
+        self.assertEqual(
+            derive_source_quality_score({"source_type": "brand_official"}), 5
+        )
 
     def test_market_research_is_5(self):
-        self.assertEqual(derive_source_quality_score({"source_type": "market_research"}), 5)
+        self.assertEqual(
+            derive_source_quality_score({"source_type": "market_research"}), 5
+        )
 
     def test_pr_wire_is_3(self):
         self.assertEqual(derive_source_quality_score({"source_type": "pr_wire"}), 3)
@@ -31,13 +36,19 @@ class TestSourceQualityScore(unittest.TestCase):
 
 class TestBusinessRelevanceScore(unittest.TestCase):
     def test_manufacturer_is_5(self):
-        self.assertEqual(derive_business_relevance_score({"ai_value_axis": "manufacturer"}), 5)
+        self.assertEqual(
+            derive_business_relevance_score({"ai_value_axis": "manufacturer"}), 5
+        )
 
     def test_retail_is_5(self):
-        self.assertEqual(derive_business_relevance_score({"ai_value_axis": "retail"}), 5)
+        self.assertEqual(
+            derive_business_relevance_score({"ai_value_axis": "retail"}), 5
+        )
 
     def test_market_is_4(self):
-        self.assertEqual(derive_business_relevance_score({"ai_value_axis": "market"}), 4)
+        self.assertEqual(
+            derive_business_relevance_score({"ai_value_axis": "market"}), 4
+        )
 
     def test_noise_is_1(self):
         self.assertEqual(derive_business_relevance_score({"ai_value_axis": "noise"}), 1)
@@ -133,10 +144,14 @@ class TestApplyRubric(unittest.TestCase):
         article = {"title": "テスト", "summary": "サマリ", "source_type": "google_news"}
         apply_rubric(article)
         for field in [
-            "source_quality_score", "business_relevance_score",
-            "actionability_score", "importance",
-            "fact_summary", "fact_source",
-            "business_implication", "why_it_matters",
+            "source_quality_score",
+            "business_relevance_score",
+            "actionability_score",
+            "importance",
+            "fact_summary",
+            "fact_source",
+            "business_implication",
+            "why_it_matters",
         ]:
             self.assertIn(field, article)
 

@@ -121,6 +121,9 @@
         <div class="article-item bg-white rounded-xl shadow card-hover p-4" data-cat-groups="{{ ns.cats | join(' ') }}">
           <div class="flex items-start justify-between gap-3">
             <div class="flex-1 min-w-0">
+              {% if article.redelivery %}
+              <span class="imp-badge" style="background:#e5e7eb;color:#6b7280;">既報</span>
+              {% endif %}
               {% if article.importance %}
                 {% if article.importance == "High" %}
                 <span class="imp-badge badge-high">High</span>

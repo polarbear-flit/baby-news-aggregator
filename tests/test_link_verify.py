@@ -1,4 +1,5 @@
 """リンク検証のテスト。"""
+
 import os
 import sys
 import unittest
@@ -41,7 +42,9 @@ class TestVerifyLink(unittest.TestCase):
     def test_head_405_get_200_returns_ok(self):
         with patch("src.fetcher.requests.head", return_value=_FakeResp(405)):
             with patch("src.fetcher.requests.get", return_value=_FakeResp(200)):
-                self.assertEqual(verify_link("https://news.google.com/articles/xyz"), "ok")
+                self.assertEqual(
+                    verify_link("https://news.google.com/articles/xyz"), "ok"
+                )
 
     def test_connection_error_returns_failed(self):
         with patch("src.fetcher.requests.head", side_effect=ConnectionError("boom")):
@@ -72,30 +75,44 @@ class TestSiteScopeValidation(unittest.TestCase):
 
     def test_extract_site_domain(self):
         from src.fetcher import _extract_site_domain
-        url = "https://news.google.com/rss/search?q=site:pigeon.co.jp+(ベビー+OR+おむつ)"
+
+        url = (
+            "https://news.google.com/rss/search?q=site:pigeon.co.jp+(ベビー+OR+おむつ)"
+        )
         self.assertEqual(_extract_site_domain(url), "pigeon.co.jp")
 
     def test_extract_site_domain_no_site(self):
         from src.fetcher import _extract_site_domain
+
         url = "https://news.google.com/rss/search?q=ベビー用品"
         self.assertIsNone(_extract_site_domain(url))
 
     def test_url_matches_site_direct(self):
         from src.fetcher import _article_url_matches_site
-        self.assertTrue(_article_url_matches_site(
-            "https://www.pigeon.co.jp/news/123", "pigeon.co.jp"))
+
+        self.assertTrue(
+            _article_url_matches_site(
+                "https://www.pigeon.co.jp/news/123", "pigeon.co.jp"
+            )
+        )
 
     def test_url_does_not_match_site(self):
         """期待ドメインと違う記事 → False"""
         from src.fetcher import _article_url_matches_site
-        self.assertFalse(_article_url_matches_site(
-            "https://www.example.com/article", "pigeon.co.jp"))
+
+        self.assertFalse(
+            _article_url_matches_site("https://www.example.com/article", "pigeon.co.jp")
+        )
 
     def test_google_news_redirect_allowed(self):
         """Google News redirect URLは判定不能のため True 扱い"""
         from src.fetcher import _article_url_matches_site
-        self.assertTrue(_article_url_matches_site(
-            "https://news.google.com/articles/xyz", "pigeon.co.jp"))
+
+        self.assertTrue(
+            _article_url_matches_site(
+                "https://news.google.com/articles/xyz", "pigeon.co.jp"
+            )
+        )
 
 
 if __name__ == "__main__":

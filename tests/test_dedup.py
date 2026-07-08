@@ -1,4 +1,5 @@
 """重複除去のテスト。"""
+
 import os
 import sys
 import unittest

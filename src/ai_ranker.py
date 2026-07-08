@@ -7,8 +7,11 @@
 - AI が is_relevant=False と判定した記事は除外。
 - ANTHROPIC_API_KEY 未設定/API失敗時はフォールバック動作。
 """
+
 import json
 import os
+
+from src.fetcher import normalize_title
 
 DEFAULT_MODEL = "claude-haiku-4-5-20251001"
 MAX_CANDIDATES = 30
@@ -45,15 +48,24 @@ RANK_TOOL = {
                         "value_axis": {
                             "type": "string",
                             "enum": [
-                                "manufacturer",     # メーカー動向（新商品・戦略・業績）
-                                "retail",           # 小売動向（西松屋・赤本・量販店・EC施策）
-                                "market",           # 市場規模・シェア・売上トレンド
-                                "consumer_trend",   # 消費者行動・ライフスタイル変化
-                                "product_launch",   # 新商品・新サービス発売
-                                "industry",         # その他業界動向（提携・買収・展示会等）
-                                "noise",            # ベビー用品EC事業に無関係
+                                "manufacturer",  # メーカー動向（新商品・戦略・業績）
+                                "retail",  # 小売動向（西松屋・赤本・量販店・EC施策）
+                                "market",  # 市場規模・シェア・売上トレンド
+                                "consumer_trend",  # 消費者行動・ライフスタイル変化
+                                "product_launch",  # 新商品・新サービス発売
+                                "industry",  # その他業界動向（提携・買収・展示会等）
+                                "noise",  # ベビー用品EC事業に無関係
                             ],
                             "description": "記事の主軸",
+                        },
+                        "cluster_id": {
+                            "type": "integer",
+                            "description": (
+                                "同一の出来事/プレスリリースを別媒体が報じた記事は"
+                                "同じ番号にする。単独記事は自分の article_id と同じ数値。"
+                                "同一クラスタ内では最も情報量が多い1件だけを高スコアにし、"
+                                "残りは value_score を 30 未満にすること。"
+                            ),
                         },
                         "fact_summary_jp": {
                             "type": "string",
@@ -70,8 +82,14 @@ RANK_TOOL = {
                         },
                     },
                     "required": [
-                        "article_id", "is_relevant", "value_score",
-                        "value_axis", "fact_summary_jp", "why_matters_jp", "action_hint_jp",
+                        "article_id",
+                        "is_relevant",
+                        "value_score",
+                        "value_axis",
+                        "cluster_id",
+                        "fact_summary_jp",
+                        "why_matters_jp",
+                        "action_hint_jp",
                     ],
                 },
             }
@@ -120,6 +138,12 @@ def _build_prompt(compact: list[dict]) -> str:
 - ベビー用品関連だが事業判断に直結しない記事は 30〜50
 - 同じ value_axis を5件以上 score 80+ にしない（多様性確保）
 
+【クラスタリング — 重要（同じ話が複数枠を占有するのを防ぐ）】
+- 同じ商品・同じ発表・同じプレスリリースを別媒体（PR TIMES / 共同通信PRワイヤー / 公式 / 転載）が
+  報じたものは **同一 cluster_id** にする（単独記事は article_id と同じ数値）。
+- 同一クラスタ内では、最も情報量が多い1件だけを高スコアにし、**残りは value_score を 30 未満**にする。
+  （例: 「ALOBABY無香」を3媒体が報じていたら、1件だけ高スコア・他2件は30未満）
+
 【各項目の出力ルール】
 - article_id: 入力の id をそのまま文字列で返す
 - value_score: 0-100。85+は必読
@@ -127,13 +151,56 @@ def _build_prompt(compact: list[dict]) -> str:
   良い例: 「ピジョンが新型哺乳瓶『MagicCap』を11/1発売、価格1,500円。授乳サポート機能を強化」
   悪い例: 「ピジョン新型哺乳瓶発売 - PR TIMES」（タイトル+媒体名の繰り返し）
 - why_matters_jp: 事業/商品判断にどう効くかを1文（80文字以内・結論ファースト）
+  ⚠️ **記事固有の固有名詞（企業名・商品名・数字）を必ず1つ以上含める**。
+  「主要メーカーの動向を確認」「市場トレンドを把握」のような、どの記事にも書ける一般文は禁止。
+  良い例:「アップリカの回転式CSが競合。自社取扱いの回転機構モデルと価格比較が必要」
+  悪い例:「主要メーカーの新商品・流通戦略を確認」（固有名詞なし・使い回し可能）
 - action_hint_jp: 商品担当が今日取るべき動作を動詞始まりで（10〜60文字）
-  例: 「対象SKUの取扱有無を在庫確認」「西松屋の新PB商品と当社品の価格比較表を作成」「楽天のベビー特集ページの構成を確認」
+  ⚠️ **「営業に確認」「担当に共有」は禁止**。カテゴリマネージャー本人が今日できる行動にする
+  （比較表作成・売場/ECページ確認・価格調査・仕様書取得・市場データ更新 等）。
+  例: 「アップリカ新型CSの価格・機能を自社取扱品と比較表に」「矢野経済の市場規模を予算前提に反映」
 - ノイズ記事も items に含めて is_relevant=false にする。fact/why/action は短くて構わない（5〜10文字以上）
 
 【記事リスト】
 {json.dumps(compact, ensure_ascii=False, indent=2)}
 """
+
+
+def _assign_cluster_keys(articles: list[dict]) -> None:
+    """各クラスタの代表（ai_value_score最大）の正規化タイトルを cluster_key に設定。"""
+    by_cluster: dict = {}
+    for a in articles:
+        cid = a.get("ai_cluster_id")
+        if cid is None:
+            continue
+        by_cluster.setdefault(cid, []).append(a)
+    for cid, members in by_cluster.items():
+        rep = max(members, key=lambda x: x.get("ai_value_score", 0))
+        rep_key = normalize_title(rep.get("title", ""))
+        for a in members:
+            a["cluster_key"] = rep_key
+
+
+def dedupe_by_cluster(articles: list[dict]) -> list[dict]:
+    """同一 cluster_id の記事はスコア最大の1件のみ残し、他は末尾へ降格する。
+
+    Telegram ハイライトで同じプレスリリースの別媒体版が複数枠を占有するのを防ぐ。
+    AI が cluster_id を付けている前提だが、無い場合は各記事を独立クラスタ扱い。
+    入力の並び順（スコア降順想定）を維持したまま代表→非代表の順に返す。
+    """
+    seen_clusters: set = set()
+    representatives: list[dict] = []
+    demoted: list[dict] = []
+    for a in articles:
+        cid = a.get("ai_cluster_id", id(a))
+        if cid in seen_clusters:
+            a["cluster_duplicate"] = True
+            demoted.append(a)
+        else:
+            seen_clusters.add(cid)
+            a["cluster_duplicate"] = False
+            representatives.append(a)
+    return representatives + demoted
 
 
 def ai_rank_articles(articles: list[dict]) -> tuple[list[dict], bool]:
@@ -152,7 +219,9 @@ def ai_rank_articles(articles: list[dict]) -> tuple[list[dict], bool]:
     try:
         from anthropic import Anthropic
     except ImportError:
-        print("[SKIP] AI ranker: anthropic パッケージ未インストール → ルールスコアのまま使用")
+        print(
+            "[SKIP] AI ranker: anthropic パッケージ未インストール → ルールスコアのまま使用"
+        )
         return articles, False
 
     candidates = articles[:MAX_CANDIDATES]
@@ -224,11 +293,17 @@ def ai_rank_articles(articles: list[dict]) -> tuple[list[dict], bool]:
             **a,
             "ai_value_score": ai.get("value_score", 0),
             "ai_value_axis": ai.get("value_axis", ""),
+            "ai_cluster_id": ai.get("cluster_id", i),
             "ai_fact_summary": ai.get("fact_summary_jp", ""),
             "why_matters_jp": ai.get("why_matters_jp", ""),
             "action_hint_jp": ai.get("action_hint_jp", ""),
         }
         enriched.append(merged)
+
+    # cluster_key を導出（クロスデイ再配信判定用）。
+    # 各クラスタの代表 = ai_value_score 最大の記事。その正規化タイトルを
+    # クラスタ全メンバーの cluster_key にする（翌日、別媒体版が来ても照合できる）。
+    _assign_cluster_keys(enriched)
 
     enriched.sort(key=lambda x: x.get("ai_value_score", -1), reverse=True)
 
@@ -287,7 +362,9 @@ def generate_daily_summary(top_articles: list[dict]) -> str:
             max_tokens=400,
             messages=[{"role": "user", "content": prompt}],
         )
-        text_blocks = [b.text for b in resp.content if getattr(b, "type", None) == "text"]
+        text_blocks = [
+            b.text for b in resp.content if getattr(b, "type", None) == "text"
+        ]
         summary = " ".join(text_blocks).strip()
         if summary:
             print(f"[OK] Daily summary 生成: {len(summary)} 文字")
