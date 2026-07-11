@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxtfbgdwhkndvgofu2smn1q180m2jhtzg2bzh6ohpkqtvqutnfykpkymi2r21ir01sskfnnunyvk9ss0lsoxjgwxfdcglkulc5nu4xnfpr?oc=5",
+      "title_norm": "調査レポート：a型ベビーカー市場調査2026",
+      "group_id": "78a3df51cb",
+      "cluster_key": "調査レポート：a型ベビーカー市場調査2026",
+      "first_seen": "2026-07-12",
+      "last_delivered": "2026-07-12",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxtfatwgt3nefnrfv1smrmrnjwewdmclm4x2vobwjieuzpcg5omdz6a1f5tgzabllzelf1rursbeezzdytylg1z0jlqmj1uc1odvvqyvraai1mqmh3sedoz2jjdtvvqmtqujvuc1zwdgrzbtfsqs00tvdtunnhx1fzdg8?oc=5",
+      "title_norm": "アフリカンサファリでシカのベビーラッシュ大分・宇佐市",
+      "group_id": "2498af0dd3",
+      "cluster_key": "アフリカンサファリでシカのベビーラッシュ大分・宇佐市",
+      "first_seen": "2026-07-12",
+      "last_delivered": "2026-07-12",
+      "delivered_count": 1
+    }
+  ]
+}
