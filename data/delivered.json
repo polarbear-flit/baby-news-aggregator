@@ -1016,6 +1016,42 @@
       "first_seen": "2026-08-06",
       "last_delivered": "2026-08-06",
       "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9kdtbkt0rhd2xfzvp3ck1rdjzvww95rmtowlbsagnzzxrllvywbek5adnkb0jhmne3rvnqotnaq0jvsujxswtsotzhnffuddrqtknvujhkvvk1vu5tbe5hzlyxndvqoty0aee?oc=5",
+      "title_norm": "粉末やフレークタイプのベビーフード素材ふりふり9月14日発売",
+      "group_id": "4b5282a895",
+      "cluster_key": "粉末やフレークタイプのベビーフード素材ふりふり9月14日発売",
+      "first_seen": "2026-08-07",
+      "last_delivered": "2026-08-07",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiq0fvx3lxte9pd0frqnnmejhwsnftexktcdlhrtzhadfuem9noe5yy0zuzlvcreq3t0xqx1jdatczdwoxvzbhvtlqv2s?oc=5",
+      "title_norm": "水だけで哺乳びんの除菌・乾燥からミルクや離乳食の温めまで1台でスチーム除菌・乾燥器除菌じょーず",
+      "group_id": "e837d63429",
+      "cluster_key": "水だけで哺乳びんの除菌・乾燥からミルクや離乳食の温めまで1台でスチーム除菌・乾燥器除菌じょーず",
+      "first_seen": "2026-08-07",
+      "last_delivered": "2026-08-07",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbnmnppsl9xsehkng54c0m0yjv6cnb5rmu3r2xosnlhvwy4azutcku0ctl3d2jhampma1nrmvi4cklzqxlzdnjnndcwb2lkskhym2lutxpkzvp4r2dtmhfrq1vqofb6ml96dwc?oc=5",
+      "title_norm": "乳幼児体動センサーによる異変の気づきに関する症例を学会で報告在宅見守りの重要性に注目",
+      "group_id": "d6aa21b5e4",
+      "cluster_key": "乳幼児体動センサーによる異変の気づきに関する症例を学会で報告在宅見守りの重要性に注目",
+      "first_seen": "2026-08-07",
+      "last_delivered": "2026-08-07",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte91nuf3atlsrzhum19iu2lfbuu2cfm1rxhpzexydhhzanjpq3phq0vyzwlsanlun1fnbgfoouxtnevhzy1tqmhpzzbqodm2y1ywvjbzbfvktk96zlo0evrkx0gya0j0elzjdgc?oc=5",
+      "title_norm": "かにファクトリー甲羅組に完全個室型ベビーケアルームmamaroを2台設置しました",
+      "group_id": "5a935e4e08",
+      "cluster_key": "かにファクトリー甲羅組に完全個室型ベビーケアルームmamaroを2台設置しました",
+      "first_seen": "2026-08-07",
+      "last_delivered": "2026-08-07",
+      "delivered_count": 1
     }
   ]
 }
