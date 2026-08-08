@@ -1097,6 +1097,24 @@
       "first_seen": "2026-08-08",
       "last_delivered": "2026-08-08",
       "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbkunjwtzzjdtjjrno2eljux1jtqu1ydzftrlzrewhizfhtm1pvv3prqwftaw56vhezs3lndjdndjdfotruvvhpyjnnn3jty1qzbvbovm9myupjq051ddvfvxpwukq0auztzke?oc=5",
+      "title_norm": "親子で楽しめるトミカ博intokyo2026にマミーポコパンツトミカプラレールデザインムーニー持って遊べるおしりふきが初出展",
+      "group_id": "158e44e56f",
+      "cluster_key": "親子で楽しめるトミカ博intokyo2026にマミーポコパンツトミカプラレールデザインムーニー持って遊べるおしりふきが初出展",
+      "first_seen": "2026-08-09",
+      "last_delivered": "2026-08-09",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmia0fvx3lxte5gwfvlvuzncklkte9jbzflyudpehzhmhjwm3bqvxlid3hxdvpkrhnscnrzsgntwetvn2fnykhnddy2wgximunkq3z4vjdzunjmullxvfa5utexr3hxsutjruprskjyvwxts2jb?oc=5",
+      "title_norm": "ビバモール寝屋川につくってたトイザらス・ベビーザらスがオープンしてるレジ大行列できてた",
+      "group_id": "f5cf35eb8b",
+      "cluster_key": "ビバモール寝屋川につくってたトイザらス・ベビーザらスがオープンしてるレジ大行列できてた",
+      "first_seen": "2026-08-09",
+      "last_delivered": "2026-08-09",
+      "delivered_count": 1
     }
   ]
 }
