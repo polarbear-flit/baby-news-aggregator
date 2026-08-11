@@ -1,24 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxtfbgdwhkndvgofu2smn1q180m2jhtzg2bzh6ohpkqtvqutnfykpkymi2r21ir01sskfnnunyvk9ss0lsoxjgwxfdcglkulc5nu4xnfpr?oc=5",
-      "title_norm": "調査レポート：a型ベビーカー市場調査2026",
-      "group_id": "78a3df51cb",
-      "cluster_key": "調査レポート：a型ベビーカー市場調査2026",
-      "first_seen": "2026-07-12",
-      "last_delivered": "2026-07-12",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxtfatwgt3nefnrfv1smrmrnjwewdmclm4x2vobwjieuzpcg5omdz6a1f5tgzabllzelf1rursbeezzdytylg1z0jlqmj1uc1odvvqyvraai1mqmh3sedoz2jjdtvvqmtqujvuc1zwdgrzbtfsqs00tvdtunnhx1fzdg8?oc=5",
-      "title_norm": "アフリカンサファリでシカのベビーラッシュ大分・宇佐市",
-      "group_id": "2498af0dd3",
-      "cluster_key": "アフリカンサファリでシカのベビーラッシュ大分・宇佐市",
-      "first_seen": "2026-07-12",
-      "last_delivered": "2026-07-12",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1xq05kegjxrniyq3q0sc1bovuwu1vpd2n3wuvhbk1eoxa4v0d6aupfsgvhnnm4u3lmnhzjmfhgttrawjlny0lmsflunlp2n09ka2gtwthudlzmeglev1lvovy2dlznum5sy2c?oc=5",
       "title_norm": "ベビー＆子供服ブランドpetitmainとコラボした書店限定アイテムを2026年7月17日新発売",
       "group_id": "d7c0121ada",
@@ -1177,6 +1159,51 @@
       "cluster_key": "トミカ博2026に育児ブランドが初登場消防車フォトブースや限定グッズで夏休みを満喫",
       "first_seen": "2026-08-11",
       "last_delivered": "2026-08-11",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxte5pahphehnwvxherlpbwtlobjrfegffb3hlnefqsew5zu1sb2tprfvzwnnjuedfdjzvslhjdnvgzw5pruzpyllgyunsbku2zxz3a2nxqs1la0g0zxmtrhhpywtowfhfa2jhu1y3djazz09szfnjdkjmx1vfennvzve?oc=5",
+      "title_norm": "罰金制度導入を前にチャイルドシート市場が活況を呈している",
+      "group_id": "41fb085cbc",
+      "cluster_key": "罰金制度導入を前にチャイルドシート市場が活況を呈している",
+      "first_seen": "2026-08-12",
+      "last_delivered": "2026-08-12",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbhtegxduvfmnhsedhlbgk5buvqsnpudlytx1hxu0txb3d6wjrnrgrhmvbleklovtfonxkztlhucfp3umhnvdjuvkp6nujhuvzyrv9aexrhtldbsepkamdnsxq4ec1ncdqzuhc?oc=5",
+      "title_norm": "出産準備から赤ちゃんとの新生活まで2026年秋冬ベビーアイテムを展開",
+      "group_id": "cbe3d77720",
+      "cluster_key": "出産準備から赤ちゃんとの新生活まで2026年秋冬ベビーアイテムを展開",
+      "first_seen": "2026-08-12",
+      "last_delivered": "2026-08-12",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte5nbmjosertu3pmuwlsr0ppqldathfydvfucvdhujhqbg4yynrjnvn0aujmlthvsnpdmupjsdlhmkw4bldhefzpadb1dfdjazn5cupr?oc=5",
+      "title_norm": "peanutsデザインuvシリーズが完売3年連続売上no.1*のママベビー..",
+      "group_id": "49aeed7425",
+      "cluster_key": "peanutsデザインuvシリーズが完売3年連続売上no.1*のママベビー..",
+      "first_seen": "2026-08-12",
+      "last_delivered": "2026-08-12",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmio0fvx3lxte1udtrrvdg4bljmyuxkc3nhynjpskdywmv0nnjzzmvzovzhagrxwgfadtrqakc2bwewrnfv?oc=5",
+      "title_norm": "これスリコで買えるのベビーグッズ新作に1,800いいねめっちゃ気になる",
+      "group_id": "6fa31637d4",
+      "cluster_key": "これスリコで買えるのベビーグッズ新作に1,800いいねめっちゃ気になる",
+      "first_seen": "2026-08-12",
+      "last_delivered": "2026-08-12",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxte9oqkktyufec1bgalk2shhiag5ennpjt3n6amn3cdb0uktmqvztz2jwa09frlotblnwc3jmajnfmu92au5yrflhm3rxx0d5bddqaxdxbmlgy2pjoelsqxrecfo1agzpn2s?oc=5",
+      "title_norm": "園田競馬場に新キッズルームがオープン年齢別エリアや授乳・おむつ交換室を設置",
+      "group_id": "c0255d04ad",
+      "cluster_key": "園田競馬場に新キッズルームがオープン年齢別エリアや授乳・おむつ交換室を設置",
+      "first_seen": "2026-08-12",
+      "last_delivered": "2026-08-12",
       "delivered_count": 1
     }
   ]
