@@ -1205,6 +1205,24 @@
       "first_seen": "2026-08-12",
       "last_delivered": "2026-08-12",
       "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiukfvx3lxte9kcnbkqjhuq0zpcwtad0dlovdebk15qut1ofkxam9xcundz2pav1o3d1cyt3j1zetdegrstfzwswp6mjzfx1bxtlvivng3suhoefe?oc=5",
+      "title_norm": "いよいよ明日オープン中央区本町通6番町シーナシーナ丸大新潟店内にベビー・キッズ・マタニティ用品専門店西松屋シーナシーナ丸大新潟店8月13日オープン",
+      "group_id": "e9f72761b6",
+      "cluster_key": "いよいよ明日オープン中央区本町通6番町シーナシーナ丸大新潟店内にベビー・キッズ・マタニティ用品専門店西松屋シーナシーナ丸大新潟店8月13日オープン",
+      "first_seen": "2026-08-13",
+      "last_delivered": "2026-08-13",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmio0fvx3lxte9hclply0jzrmzrqljinjhlcwllv2c1txfvogxiymxrburmxzjlcnbzvxn6r1n2lvnvugtn?oc=5",
+      "title_norm": "＼実質2,780円〜800円offクーポン☆彡／おむつオムツパンツ3個セット大容量ゲンキm150枚400枚l126枚378枚ビッグ108枚324枚ビッグより大きい72枚紙おむつgenkigbp-m50gbp-l42gbp-big36gbp-bigd24",
+      "group_id": "5ef5dc69a0",
+      "cluster_key": "＼実質2,780円〜800円offクーポン☆彡／おむつオムツパンツ3個セット大容量ゲンキm150枚400枚l126枚378枚ビッグ108枚324枚ビッグより大きい72枚紙おむつgenkigbp-m50gbp-l42gbp-big36gbp-bigd24",
+      "first_seen": "2026-08-13",
+      "last_delivered": "2026-08-13",
+      "delivered_count": 1
     }
   ]
 }
