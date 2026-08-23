@@ -1,42 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxte9denrydde3utnuenhncms4bdnhzdjftucxeuhoetnpz3jtzw12wup0yty4ywg2nvc5rm0wcejnteqtuhdycgowchfcquf4dum0z25cc0gzwq?oc=5",
-      "title_norm": "ピジョン東洋化学と共同開発の授乳による乳首のすり傷の痛みを軽減し治癒を促進する乳首キズパッドキュアニプルを発売",
-      "group_id": "49d19f2144",
-      "cluster_key": "ピジョン東洋化学と共同開発の授乳による乳首のすり傷の痛みを軽減し治癒を促進する乳首キズパッドキュアニプルを発売",
-      "first_seen": "2026-07-24",
-      "last_delivered": "2026-07-24",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1myv81thg1rnl0zxh6mdhvtlffwg9hs3bawee2xzfov2xxdwpoy1vgc3prak5cwvfrrfizwjkys0i3d2vfc1hpnwldde5hrwnmtktrnhcywwdvauxkx0fzt0fqrwhnsgfln0e?oc=5",
-      "title_norm": "ベビー・キッズブランドのcoluluより新発売日本初※の自転車チャイルドシート専用ファン付きシートlullairride",
-      "group_id": "b7b76208da",
-      "cluster_key": "ベビー・キッズブランドのcoluluより新発売日本初※の自転車チャイルドシート専用ファン付きシートlullairride",
-      "first_seen": "2026-07-24",
-      "last_delivered": "2026-07-24",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxtfb4mduyuhztylkzuehsruizdmutu2c5t194zgtwbtr4x0zdz2xiz1jjmtdwdmdwmdqtrelrt0u0xznknmtlci1hu0zjodqyal9hugjpeee5sq?oc=5",
-      "title_norm": "赤ちゃん本舗news｜店頭サイネージで｢実況ベイビー｣放映開始",
-      "group_id": "750e09f162",
-      "cluster_key": "赤ちゃん本舗news｜店頭サイネージで｢実況ベイビー｣放映開始",
-      "first_seen": "2026-07-24",
-      "last_delivered": "2026-07-24",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5xcnhtvvvputzqskpkvuj3svcys3nnchjvvgzoqwply3v3uznkm180vgv6x3oyzhjtu1q0tuvfaup5ajdklxpdas1qwev6n1z0efr2ufdzv1nhwfvmwdh2mdjkograajhfrle?oc=5",
-      "title_norm": "離乳食の乗せ降ろし・食事サポートをもっとスムーズに360°回転する6wayベビーチェアswris360を発売",
-      "group_id": "618532598b",
-      "cluster_key": "離乳食の乗せ降ろし・食事サポートをもっとスムーズに360°回転する6wayベビーチェアswris360を発売",
-      "first_seen": "2026-07-24",
-      "last_delivered": "2026-07-24",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmivefvx3lxte82txi4ehkws2nurw80nhnhvhlwceftmfqwdmfrnffiwkdpdkhoznbruwhzytzldve2um9yufjzrhzpwdhqaxc4r2lnq1iztmnqenvinq?oc=5",
       "title_norm": "ピジョン授乳期の乳首の傷・痛みをケアする乳首キズパッドキュアニプル発売-はがれにくく肌にやさしい",
       "group_id": "f44db05980",
@@ -1285,6 +1249,15 @@
       "cluster_key": "赤ちゃん本舗アカチャンホンポこそだてバルで小池百合子東京都知事清家愛港区長大久保朋果江東区長森澤恭子品川区長が力説官民共創で挑む子育てインフラ構築の最前線",
       "first_seen": "2026-08-23",
       "last_delivered": "2026-08-23",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxte9iekvlvffomgqwbgytczrmr08ycdf6mhjfog1pwwrnbhzvutfbzk9ulvjfafbndvnfx2ctsmdztvb1em1xujjyrgzfcefouxhgb19oouddnhvoznrztkvpqjgxanhknve?oc=5",
+      "title_norm": "出産準備おまとめフェア",
+      "group_id": "3b5dad0ff1",
+      "cluster_key": "出産準備おまとめフェア",
+      "first_seen": "2026-08-24",
+      "last_delivered": "2026-08-24",
       "delivered_count": 1
     }
   ]
