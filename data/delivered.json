@@ -1,51 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmir0fvx3lxte9rshdoa2zodgrlngg4mdvnvwf3ckqwznfyrzlpbxrzzvjurnk2dkpjakoysdhqzuvkt2hqwevvevflttf1ttlv?oc=5",
-      "title_norm": "nuna初の機内持ち込み対応ベビーカーviaa™cabn9月1日発売快適な移動を実現",
-      "group_id": "128700dc89",
-      "cluster_key": "nuna初の機内持ち込み対応ベビーカーviaa™cabn9月1日発売快適な移動を実現",
-      "first_seen": "2026-07-29",
-      "last_delivered": "2026-07-29",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbls1hwszvsu1pudlpku0c3ttnxzdfqlxlstmfvazbwc2k3sddzt21pvmrvc0ctx1b1wvlaeu4wenhjczlgzknwag54zlnlzgnks2g4lulssjjhz2jheu1oczatb1nqrnhxmke?oc=5",
-      "title_norm": "はじめての世界をやさしく整えるrefababy誕生2026年8月18日新発売|株式会社mtgのプレスリリース",
-      "group_id": "402d8d4d05",
-      "cluster_key": "はじめての世界をやさしく整えるrefababy誕生2026年8月18日新発売|株式会社mtgのプレスリリース",
-      "first_seen": "2026-07-29",
-      "last_delivered": "2026-07-29",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiukfvx3lxte55t0h3mei3x3fnew9wqwywzmdanvixc2tpwnncymhjejrwwklqawpirfo3ely2mfbhu3liz1bwswzjwdrywndqb1rpofbydhuxlue?oc=5",
-      "title_norm": "ベビーカーとベッドガード新安全マークで何が変わる",
-      "group_id": "72fe00077a",
-      "cluster_key": "ベビーカーとベッドガード新安全マークで何が変わる",
-      "first_seen": "2026-07-29",
-      "last_delivered": "2026-07-29",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiaefvx3lxte1zvy16svfkbw44c3hjnjbuslhqakx5zmp2ynu4c0zuceztnejqx3ztwul0s1nhbxoyohv4zvl5ze9cttncb05mm3zgqzdtymq2rnywejl6vedlvefyylzyazfonk1dwndx?oc=5",
-      "title_norm": "育児をもっと軽やかにコクヨのノウハウが詰まった未就学児向け収納用品4アイテムを発売",
-      "group_id": "dcec9eb264",
-      "cluster_key": "育児をもっと軽やかにコクヨのノウハウが詰まった未就学児向け収納用品4アイテムを発売",
-      "first_seen": "2026-07-29",
-      "last_delivered": "2026-07-29",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5qy20zqzhdaddmtkhvc0qtunr1uwpfr2p5zex6zmqyt21hqzzux1nut015njrleevnvmpgdmncx25cvkrozzfrrfplbgfvbxbyofvravftttd0rkviq2lvywhebzdjrtfyqle?oc=5",
-      "title_norm": "レオ・レオニ初の赤ちゃん向けことばずかんレオ・レオニのはじめてのことば1007月23日発売",
-      "group_id": "46fe5d3810",
-      "cluster_key": "レオ・レオニ初の赤ちゃん向けことばずかんレオ・レオニのはじめてのことば1007月23日発売",
-      "first_seen": "2026-07-29",
-      "last_delivered": "2026-07-29",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmixkfvx3lxte5fbtlkszzkyvfube1lvnvaufhioepkrjm3mkk3cuitmvdzr3vwuejdudk2z0hjr0jemlzxbdlvr0fzcwx4auxdwudqce1dogvfwktyshu1axrzv0lnnfe?oc=5",
       "title_norm": "月額2400円で紙おむつ・おしりふき使い放題奇跡の町奈義町でおむつのサブスク開始保育士も感じるメリットとは",
       "group_id": "902416488c",
@@ -1303,6 +1258,78 @@
       "cluster_key": "赤ちゃんの皮脂に似た植物由来のうるおい成分配合アラウ.ベビーミルキーローションリニューアルのお知らせ1年中これ１本でもちもち肌へ",
       "first_seen": "2026-08-28",
       "last_delivered": "2026-08-28",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmit0fvx3lxte4ws2gyy19vduhybeluwwpleunusgr0mxliujdhszboa3frvk9oy2lmqtrrngjwtldsawjybmpmnxf5qkf0y0f5cgxrbgtrazg?oc=5",
+      "title_norm": "ヤマハとベビーカーメーカーが電動アシストお散歩カーを共同開発保育士の負担軽減に貢献する電動モビリティ登場",
+      "group_id": "e02e8bcc41",
+      "cluster_key": "ヤマハとベビーカーメーカーが電動アシストお散歩カーを共同開発保育士の負担軽減に貢献する電動モビリティ登場",
+      "first_seen": "2026-08-29",
+      "last_delivered": "2026-08-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfa5c2xncuotcdrjeutuoe1brxlstkm5os1et2zizxvhqvdjx1htcwwzqmxqrljbv2hxbwdxwnjitkvqsmjaohvkwm5iugnqc2pbtnbres1id19adfvabmvreuvfdl9uzlhzmue?oc=5",
+      "title_norm": "肌へのやさしさにこだわった&hugtimeの無添加バスボールにコジコジベビーが登場8月28日より全国のアカチャンホンポにて先行発売開始",
+      "group_id": "f389ecb1a9",
+      "cluster_key": "肌へのやさしさにこだわった&hugtimeの無添加バスボールにコジコジベビーが登場8月28日より全国のアカチャンホンポにて先行発売開始",
+      "first_seen": "2026-08-29",
+      "last_delivered": "2026-08-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmix0fvx3lxtfbiyzh4v09ny1hhc21jcwvtekiztugtrmdva2hysgzlz0hqvtvud2niqwdimxfmef9meutplvpwltfhodjhmnhkx0tkzknfmg9yv3u0zjfnv2hywmjat3lz?oc=5",
+      "title_norm": "赤ちゃん本舗ナチュラルサイエンスのママ＆キッズベビーミルキーローションを先行販売",
+      "group_id": "4ea776ab34",
+      "cluster_key": "赤ちゃん本舗ナチュラルサイエンスのママ＆キッズベビーミルキーローションを先行販売",
+      "first_seen": "2026-08-29",
+      "last_delivered": "2026-08-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfb5x1fur3p2b1hqtwg1zuh6y0fudk4zmznnweuzu0lgylrhcm14njazz3hwm3ptuet4qkcylxzpwkl0rjzrrju2v0ryqw5hnv9tckcxcuiyshrtd2jermdjai1rtm1kynq0owc?oc=5",
+      "title_norm": "アカチャンホンポでのエリエール商品の売上の一部を産後ケアの普及に取り組む認定npo法人マドレボニータへ寄付エリエールえがおにタッチproject第3弾",
+      "group_id": "f9fe078c88",
+      "cluster_key": "アカチャンホンポでのエリエール商品の売上の一部を産後ケアの普及に取り組む認定npo法人マドレボニータへ寄付エリエールえがおにタッチproject第3弾",
+      "first_seen": "2026-08-29",
+      "last_delivered": "2026-08-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmihwfbvv95cuxox2pld0zcnlhhumrntmrubutqrmfyotkwv3zwmvv0clrwlu9naktuq1baluhwu0xln3yytgy1dmfewxbqwu9tqwewszgwsmnscwfry004rdl6yutdwghjsgtnqvzudkzhruz4bmhurvzfmvlvotfiddjmmmtonvjqcfy4u05mn3c?oc=5",
+      "title_norm": "ピジョン---ベビー用品メーカー",
+      "group_id": "5e19701e9e",
+      "cluster_key": "ピジョン---ベビー用品メーカー",
+      "first_seen": "2026-08-29",
+      "last_delivered": "2026-08-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxtfbxwfj4dzldmejrzkjsrwfmvupvedznx2dzru5srxzpvkk4d1jvamu4tjbnchfyrkm5emw2d0vangz6beh6ouz3bfvklwn1ajhpltlb?oc=5",
+      "title_norm": "赤ちゃん本舗news｜｢家事分担｣が食生活満足を左右/｢育児世帯の困り事｣調査",
+      "group_id": "b13383b66f",
+      "cluster_key": "赤ちゃん本舗news｜｢家事分担｣が食生活満足を左右/｢育児世帯の困り事｣調査",
+      "first_seen": "2026-08-29",
+      "last_delivered": "2026-08-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmia0fvx3lxte4wudlpwwfezjjxuefjzuhycutfmupoukyxn2n5wgswnfvtzfvlefneyuz1vhn4dwjebvuttdlpsm40mgcznfpfa1vmnhdau0rmcvpvntfmr3bxahjms2jatuhuxzfastjwwkdj0gfwqvvfexfmtnmtvnmznm5qewpnrxpes3bwv2zusdgwukqybdrws2hontvydfhwmdjnneh2vndfsu1ty3rirkjobu5zyklrrlhiohpwynq1yks4ahnsr01trwdox0r6nwzvnfa5bjfrrhvicfrubwytaq?oc=5",
+      "title_norm": "夫婦兼用で使えますノースフェイスの抱っこひもになるバッグが好評収納力も抜群カバンとしても優秀",
+      "group_id": "160bfc36f3",
+      "cluster_key": "夫婦兼用で使えますノースフェイスの抱っこひもになるバッグが好評収納力も抜群カバンとしても優秀",
+      "first_seen": "2026-08-29",
+      "last_delivered": "2026-08-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte93znfnv2hynvfztvz2avi1c0tcddfiylfhrdv3twq1metzvddouetku2g2wxbhrvrxwkhebzlhvwn1oth1rw9ksl91ni1yx1nwnxb1ujfpczvzugzvnmdsm281edyzz3etm2c?oc=5",
+      "title_norm": "拭き取りミストと撥水クリームの併用ケアが赤ちゃんのおむつ部の皮膚状態の改善と健やかな肌状態の維持に役立つ可能性を示唆",
+      "group_id": "41a0ab239b",
+      "cluster_key": "拭き取りミストと撥水クリームの併用ケアが赤ちゃんのおむつ部の皮膚状態の改善と健やかな肌状態の維持に役立つ可能性を示唆",
+      "first_seen": "2026-08-29",
+      "last_delivered": "2026-08-29",
       "delivered_count": 1
     }
   ]
