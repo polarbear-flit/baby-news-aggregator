@@ -1,96 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxtfblrzrerc1vr0tzrdjomkfnvmizc3dhwmhhlxltnxzkwhhcchvzre5ed3nzzgh5vtl6uzh3nk51v3otnkddrnhobjruukhonjbxlxzvn1k3n3bjuwxlatzzq1boylo4t29zluv0b3gxwlffswrlr3hmngvidlq3qtg?oc=5",
-      "title_norm": "チャイルドシートの蓄熱問題夏場の表面温度は車内より7.6度高い…コンビが調査",
-      "group_id": "c7fabe73b5",
-      "cluster_key": "チャイルドシートの蓄熱問題夏場の表面温度は車内より7.6度高い…コンビが調査",
-      "first_seen": "2026-07-31",
-      "last_delivered": "2026-07-31",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5rtxjwmfdxb2y2retnev9xvmtpbndaoxcyd0vvshhzcf9lteqtdml2wfu4dm5fwg15vkzxstvymehsqlhzthnyetfinzj1t1phehbmoux3mv94dfz1uhc3awxwsvzor0tfoxc?oc=5",
-      "title_norm": "alobabyの成功事例に学ぶd2cブランドが売れ続ける仕組みと顧客対応戦略セミナーを開催",
-      "group_id": "d6d15fecc4",
-      "cluster_key": "alobabyの成功事例に学ぶd2cブランドが売れ続ける仕組みと顧客対応戦略セミナーを開催",
-      "first_seen": "2026-07-31",
-      "last_delivered": "2026-07-31",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxtfa5dflhlxlta2pcs2dqukfrn053utnpognuay16d1hqrev2rzrjvhhavetpbxdwmzlunnp1qzvtukdgb1n1oxjywm1fb1vex1b6t1bpdexjwf9iewm?oc=5",
-      "title_norm": "住友精化紙おむつ資源循環高吸水性樹脂を再生",
-      "group_id": "0e50582995",
-      "cluster_key": "住友精化紙おむつ資源循環高吸水性樹脂を再生",
-      "first_seen": "2026-07-31",
-      "last_delivered": "2026-07-31",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5dytdnuxp1azzjv3vftdrfewdfrku0elhwekrxvgppzs0trwvzbkfkehfpoe5xunvssdfnourdy2frn2ryt0tmlxj5nxlkmlzadja2ytjoofkwymzft19mwhvvrtnpzmnnshc?oc=5",
-      "title_norm": "多機能ベビーケアソファmamarosofaをheyworldに設置しました",
-      "group_id": "10cb38a440",
-      "cluster_key": "多機能ベビーケアソファmamarosofaをheyworldに設置しました",
-      "first_seen": "2026-07-31",
-      "last_delivered": "2026-07-31",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1mcva5y1kzweo1rwlxmkvuctdfewzewnvcc0lfulh2akf1dji0emfwuvldzfkzmkfymtk2d1llnlhonwj5nldcawfmu2rrmudhteldsuc0mvy0me9kvtliclboa0xaatvqnnc?oc=5",
-      "title_norm": "8月3日より駒込駅の有人改札でベビーカーと車いすのレンタルを開始します",
-      "group_id": "ac400ddca2",
-      "cluster_key": "8月3日より駒込駅の有人改札でベビーカーと車いすのレンタルを開始します",
-      "first_seen": "2026-07-31",
-      "last_delivered": "2026-07-31",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiiwfbvv95cuxpc3binunaei1udu9gufb1twlbcnpvrwtxzgtza3jvthzimzbmovvwzxriemf2tve1menlzldgn09oxzvpetjtzg9eofjfr2prx25pakltwwhetm8wbtbjnxdvtfzlnki3mgxhtdzxstg0z3k2vvo0uuticjg5duviuk14rtvmafzuzkfj?oc=5",
-      "title_norm": "パタゴニア吉祥寺と二子玉川の店舗でキッズ＆ベビーの中古ウェアを販売",
-      "group_id": "b3687ad158",
-      "cluster_key": "パタゴニア吉祥寺と二子玉川の店舗でキッズ＆ベビーの中古ウェアを販売",
-      "first_seen": "2026-07-31",
-      "last_delivered": "2026-07-31",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1wntzpeg1aawh4cmlvcm9osgncn3n6cnzmx1otx3u4ykjernfdcktjbulxm0ytx3nknkm2zxc5adzvc0xnv3pornh6oexnmfgzedjzttnpn0fcodd5m0rywvnfbm5wzkhlqle?oc=5",
-      "title_norm": "2026年上半期赤ちゃんの名前ランキング発表男の子1位朝陽女の子1位澪/babystory",
-      "group_id": "6befce56ec",
-      "cluster_key": "2026年上半期赤ちゃんの名前ランキング発表男の子1位朝陽女の子1位澪/babystory",
-      "first_seen": "2026-07-31",
-      "last_delivered": "2026-07-31",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte15dkllmu4tsvzqvzlgumstrvq3m0lctxjkbjfamxbyqvlrulhnchjgbvvxehzgss1koxhvwmt2bf9vsv84djb2mgvwtuj4uzrycddcz1phv0myu3pmrennajrlznf4du5arve?oc=5",
-      "title_norm": "岸和田市で初設置型ベビーケアルームmamaroを愛彩ランドに設置しました",
-      "group_id": "4c232a56db",
-      "cluster_key": "岸和田市で初設置型ベビーケアルームmamaroを愛彩ランドに設置しました",
-      "first_seen": "2026-07-31",
-      "last_delivered": "2026-07-31",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbradhwrmo2sfvvdvpkbmzwdkfyzdnbyzdkcerlttfzedrkd0hqemz4skriovb2x1vfuehqwjjqchezsfdfejfxlu10dwkyylhjng9makvtqxj5uwfvnmjztwj3m25cbepgx2c?oc=5",
-      "title_norm": "屋外設置型ベビーケアルームmamarosolana™を東武動物公園に設置しました",
-      "group_id": "e3b36b32a7",
-      "cluster_key": "屋外設置型ベビーケアルームmamarosolana™を東武動物公園に設置しました",
-      "first_seen": "2026-07-31",
-      "last_delivered": "2026-07-31",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxte1ommt6wjktbdvozmxzb0nsshhzvg0xcnp5sluyrlhrreu4sknsdtlwsldlndj4d0fnexzcmkrhv0y0axr5y3fir09xv1vcywrkcvbqvkfbdjhqekn6sexgbet1aljudnzjm3hsmwn2tlfnyl9ycuxvdejjrvzbcta?oc=5",
-      "title_norm": "アマゾンランキング1位3秒で付けられるチャイルドシート遮熱カバーで酷暑から子供を守れ",
-      "group_id": "d0b60a4d86",
-      "cluster_key": "アマゾンランキング1位3秒で付けられるチャイルドシート遮熱カバーで酷暑から子供を守れ",
-      "first_seen": "2026-07-31",
-      "last_delivered": "2026-07-31",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfa4r2xssndly0kxz2pwm21faghibfl1dwnxshdyt1brredln19zogvrrnfumzbrrvpiqjvvqzhnuwfurlv2redma25zvg9wvfzrlws2djftotrhuhy4m0vkqur0x0wtwghiz2c?oc=5",
       "title_norm": "赤ちゃんの一番近くでいっしょに寝られる安心を大人のベッドにつなげて安全に添い寝ができるベビーベッドそいねーるadプラス2026年7月31日発売",
       "group_id": "28f6042745",
@@ -1312,6 +1222,60 @@
       "cluster_key": "バースデイ×セサミストリートエルモ＆クッキーモンスターのボーダーtが1419円キッズ＆ベビーで展開中",
       "first_seen": "2026-08-30",
       "last_delivered": "2026-08-30",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmibefvx3lxtfbzdk9kcvnmclhqzvktcfo3snpgn2tfb2teeuhls2dqbvr2x1bjvfoxtlffwnllujz5sgzkuhdzt2q5b2thafm1zmhkb0rpmjdcywjzvfj5zu5uvtzzadk0vxhqsek4bvpfdlhsoa?oc=5",
+      "title_norm": "アカチャンホンポの水99％superシリーズさらに新しい仲間ふんわり仕上げおしりふき新登場:共同通信prワイヤー",
+      "group_id": "1139f316e0",
+      "cluster_key": "アカチャンホンポの水99％superシリーズさらに新しい仲間ふんわり仕上げおしりふき新登場:共同通信prワイヤー",
+      "first_seen": "2026-08-31",
+      "last_delivered": "2026-08-31",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte10mxlesfjtvmvedutosdrlmzk5zwzsr1rerxqwtdddt2t3zdlacg5xazfhwe9eutnis1lybmnvmurbn0k0rnz3uuv4chfndhphnjuw?oc=5",
+      "title_norm": "出産率反騰とプレミアム製品選好輸出増加などに力づけられ国内乳業界の粉ミルク·乳児食事業が回復傾向を見せている粉ミルクの売上が先に反騰したのに続き子供の成長段階によって消費が続く幼児食市場にも温..",
+      "group_id": "42787847fe",
+      "cluster_key": "出産率反騰とプレミアム製品選好輸出増加などに力づけられ国内乳業界の粉ミルク·乳児食事業が回復傾向を見せている粉ミルクの売上が先に反騰したのに続き子供の成長段階によって消費が続く幼児食市場にも温..",
+      "first_seen": "2026-08-31",
+      "last_delivered": "2026-08-31",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiykfvx3lxtfbyzknsr0dnowg1cjutx0iwt1pcm1heehy0swninkllzggzugrmnvzgvvl0durqu2wwmfctt1zlsndhng4wlwx2eejju1y4t1n1bxeyvdz5cg9icfrux2jfb09n?oc=5",
+      "title_norm": "チャイルドシートの蓄熱問題夏場の表面温度は車内より7.6度高い…コンビが調査",
+      "group_id": "c7fabe73b5",
+      "cluster_key": "チャイルドシートの蓄熱問題夏場の表面温度は車内より7.6度高い…コンビが調査",
+      "first_seen": "2026-08-31",
+      "last_delivered": "2026-08-31",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxte95dwhxrnhwsmjwekdzzuhiul83ckvorvreqvvbwvlnsu5tn1nkske3yw9bvg9kx0zbq2n4a2z5qk9yzektx3m0tjfuwv83wnbsbvjhzwdqajawoee?oc=5",
+      "title_norm": "5つの無添加バスボールにコジコジベビーが登場",
+      "group_id": "87a057240d",
+      "cluster_key": "5つの無添加バスボールにコジコジベビーが登場",
+      "first_seen": "2026-08-31",
+      "last_delivered": "2026-08-31",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmivkfvx3lxte00tndkswrnt01tuurxutz6ujvhunj3s0zrneg5vnjrnkt3vwcycephsfrtutf0eg8tr1hyv3n0ul9vzznmd0dsovlizndxtm5vc1ppwnpb0gfbqvvfexfmtw9mc0t2rznjclzza3djq09duvvzehjadwfnt1jwddbab21nbme5lwk1y0s2t0jzcje5atzsznk3sjmzr29tempkb1vkzhq2uluynuyymetbqmhtvq?oc=5",
+      "title_norm": "六本木ヒルズで最新ベビーカーの無料レンタルがスタート子育て世代の快適なおでかけを支援",
+      "group_id": "82409a844b",
+      "cluster_key": "六本木ヒルズで最新ベビーカーの無料レンタルがスタート子育て世代の快適なおでかけを支援",
+      "first_seen": "2026-08-31",
+      "last_delivered": "2026-08-31",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiigfbvv95cuxpwe12qvhdowljbklyuepzotnxaxfnejrqd0eyder0ludct0qzlxzjbtmxr01kunrjatbutmrpdu9lrxfwzvddmmo3zc1ktm8wovjosmfmm1lpdvuyefhtnnc4c3nuvllxnty2qnz2zkjtmtzrbhd6ylvkww9tbgeynkpsb29nwmdrsmfsay8bqvvfexfmuhhoztbwzg44ckrpbtz5mhlxeedtb2rmsmn2al8zwhl2wefzzlpflurlx0jvx05wdkzpvnvnwe5gr2nfr1hdwmvhnditthy2u3n5wkxtqundu1ftstnqcdy5n29msmvzvxfmc2mwzlvkvkhrbzltufdttehqdxpizwrzcvjlwln1qlh6resxafu?oc=5",
+      "title_norm": "ジェラピケキッズ＆ベビーラインに新コレクション登場親子でおそろいが楽しめるアニマルブレッドシリーズ",
+      "group_id": "6392ac7f3b",
+      "cluster_key": "ジェラピケキッズ＆ベビーラインに新コレクション登場親子でおそろいが楽しめるアニマルブレッドシリーズ",
+      "first_seen": "2026-08-31",
+      "last_delivered": "2026-08-31",
       "delivered_count": 1
     }
   ]
