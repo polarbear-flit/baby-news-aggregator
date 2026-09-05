@@ -1,60 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmirefvx3lxte1mwktbz2t3snlit2f1zgzlowexlxfonzfhs1p6czdmu3hbzvewmuptcuv1buywdellvjdtvejum0ezei1h?oc=5",
-      "title_norm": "店頭で手に取られる育児用品は2～3種類までーー育児用品の店頭実物確認市場調査2026",
-      "group_id": "dd03483257",
-      "cluster_key": "店頭で手に取られる育児用品は2～3種類までーー育児用品の店頭実物確認市場調査2026",
-      "first_seen": "2026-08-06",
-      "last_delivered": "2026-08-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmisefvx3lxtfb3zk5mshhnwflfohozt3njuf83exnxmvdoqnviufvovlpjvthkculwddnruhi4lxz2q3e0rjhpbehotm1vyvu3qq?oc=5",
-      "title_norm": "雪印メグミルク粉ミルク値上げと賞味期限延長-logi",
-      "group_id": "beee70be88",
-      "cluster_key": "雪印メグミルク粉ミルク値上げと賞味期限延長-logi",
-      "first_seen": "2026-08-06",
-      "last_delivered": "2026-08-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5bexjzcgotefu5aerduktcefflve56zgtoeurzwutsz3j6uvpkz0xivlnkejloz2nhwhjiejuzrxnnognpbffxztvqzwpvtjr2s2djvnfkcmzyb0hxuflzc2tcqxd1tmzqm3c?oc=5",
-      "title_norm": "育児中のお出かけをもっと身軽にcoluluのマザーズリュックが収納力と使いやすさを見直してリニューアル",
-      "group_id": "42164d40d5",
-      "cluster_key": "育児中のお出かけをもっと身軽にcoluluのマザーズリュックが収納力と使いやすさを見直してリニューアル",
-      "first_seen": "2026-08-06",
-      "last_delivered": "2026-08-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbeujbyuwjor3i0b0vnwmhoz05ivzzrqwjmtjd6efrvr2lut3lqsnkya3dbnkfheel4oduyyjitaededhj3agxaberjwm40ce1tnudfrunomgf0txzkv19ythjvbzzwqmxvanc?oc=5",
-      "title_norm": "ピジョン・神奈川県・日本母乳バンク協会・日本財団母乳バンクの4団体で母乳バンク普及啓発に関する連携協定を官民連携で締結",
-      "group_id": "49a95015e7",
-      "cluster_key": "ピジョン・神奈川県・日本母乳バンク協会・日本財団母乳バンクの4団体で母乳バンク普及啓発に関する連携協定を官民連携で締結",
-      "first_seen": "2026-08-06",
-      "last_delivered": "2026-08-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5zz0dysnnisgt5bzg5mui3sklpz0vjqllvsle5ukmyeujoudfmsu1tzzjjc3vhrdlqtvvldexjrhnwq2tzcexcrvn4ynn0au1um0ffnxhqdjhovvhqqnjutjq0svdlne1ptee?oc=5",
-      "title_norm": "clas×audiobook.jpが初の子育て応援コラボベビーアイテムを展開するclasの利用特典とオーディオブック聴き放題の初回30日間無料体験を提供",
-      "group_id": "b4ce8663c1",
-      "cluster_key": "clas×audiobook.jpが初の子育て応援コラボベビーアイテムを展開するclasの利用特典とオーディオブック聴き放題の初回30日間無料体験を提供",
-      "first_seen": "2026-08-06",
-      "last_delivered": "2026-08-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmit0fvx3lxte1deetsejzhdhlyczhzckt3uxltqxdpv3vhbufcnjlznehqm1lhwkvlckx6q3hlywk4s3hjwgzpuu9gwwpfegnsn1jry1p6uk0?oc=5",
-      "title_norm": "なぜボルボは4歳まで後ろ向きチャイルドシートを推奨するのか子どもは小さな大人ではないの哲学が導く安全思想と最新テクノロジー",
-      "group_id": "1b5148154a",
-      "cluster_key": "なぜボルボは4歳まで後ろ向きチャイルドシートを推奨するのか子どもは小さな大人ではないの哲学が導く安全思想と最新テクノロジー",
-      "first_seen": "2026-08-06",
-      "last_delivered": "2026-08-06",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9kdtbkt0rhd2xfzvp3ck1rdjzvww95rmtowlbsagnzzxrllvywbek5adnkb0jhmne3rvnqotnaq0jvsujxswtsotzhnffuddrqtknvujhkvvk1vu5tbe5hzlyxndvqoty0aee?oc=5",
       "title_norm": "粉末やフレークタイプのベビーフード素材ふりふり9月14日発売",
       "group_id": "4b5282a895",
@@ -1474,6 +1420,60 @@
       "cluster_key": "ベビーカー暑さ対策に関するプレスリリース一覧",
       "first_seen": "2026-09-05",
       "last_delivered": "2026-09-05",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiy0fvx3lxte1pngkxd3l6v1z1ugfjtdytszzpn0zurfljamp1zfj1bg5obhpflun2mjlquwwtznh0bwluzeowrg0zwkrtu2ppz1lvn3ptqmhcbeeydw5sddnnstdbegdfvnhkqq?oc=5",
+      "title_norm": "日本トイザらス東京・東久留米市に新店オープンベビー用品から大人向け玩具まで展開最大60％オフの3日間セールも",
+      "group_id": "3efb4e28c2",
+      "cluster_key": "日本トイザらス東京・東久留米市に新店オープンベビー用品から大人向け玩具まで展開最大60％オフの3日間セールも",
+      "first_seen": "2026-09-06",
+      "last_delivered": "2026-09-06",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiykfvx3lxte9ydtnkslu2uhnyn3c4ctlkqxi5us1izu9uszzkqlv0y2q1yk82qvnvtjjsstjsdxbdt29avu5hv25wumhtevfpm3pjekthsf84x2rpudhat2texzznb1huy0tn?oc=5",
+      "title_norm": "年内で生産終了ピジョンのベビーカーに惜しむ声タイヤに込めた赤ちゃん思い16年間の事業に幕",
+      "group_id": "ffe37d3b7d",
+      "cluster_key": "年内で生産終了ピジョンのベビーカーに惜しむ声タイヤに込めた赤ちゃん思い16年間の事業に幕",
+      "first_seen": "2026-09-06",
+      "last_delivered": "2026-09-06",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxte9vukrwmlzxmjrsqtvjb3a5lu1wckrfbmixwwo4bkpkrjljuxzkukvmsvvid21hbujelvpaddnyzdrcb1ixmdh6c3nwqmhesnptuxbysvd1zwjom1u?oc=5",
+      "title_norm": "ストーケの新型ベビーカーヨーヨー5一手で折りたたみ可能な便利さ",
+      "group_id": "6c221760f0",
+      "cluster_key": "ストーケの新型ベビーカーヨーヨー5一手で折りたたみ可能な便利さ",
+      "first_seen": "2026-09-06",
+      "last_delivered": "2026-09-06",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmivkfvx3lxte02zvfnejf5zgljdjutcgzhrjb6dg5hv0s1cldfzejiyzdcyzjgalhtoflfy21uevhnymg3oencc1zcsvbmwwr5d3p1mgn3v2vhx2o2utbn0gfbqvvfexfmtmvpq3c3ogjxtfphsmvzq2vmwlgya3y5mw9rbfe5ow01wkhutlbuofh1znfkd0fnzudxs2lqyks3d0fewmriugotalprdjfwm3pysw1ywjlomwhfzw?oc=5",
+      "title_norm": "旅行も普段使いもこれ1台でnunaから機内持ち込みベビーカーviaacabnが登場",
+      "group_id": "0c7944663c",
+      "cluster_key": "旅行も普段使いもこれ1台でnunaから機内持ち込みベビーカーviaacabnが登場",
+      "first_seen": "2026-09-06",
+      "last_delivered": "2026-09-06",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmixefvx3lxtfb6reflannvrxl4umwwd24xv2jpuk9lqld3adleeg40egdzrljknuczt3m3egtabghqcktnaxduwxctzdvxvdbstf9yafrbs2rztjl6sdn6znfizkrr?oc=5",
+      "title_norm": "マタニティ・ベビー・子ども用品の専⾨店西松屋シーナシーナ丸大新潟店が8月13日にオープン秋物＆おでかけグッズなどおすすめ商品をチェック♪",
+      "group_id": "228ac3963a",
+      "cluster_key": "マタニティ・ベビー・子ども用品の専⾨店西松屋シーナシーナ丸大新潟店が8月13日にオープン秋物＆おでかけグッズなどおすすめ商品をチェック♪",
+      "first_seen": "2026-09-06",
+      "last_delivered": "2026-09-06",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte55ds1dstbdmgtuudixwmtob0xubi1wnmj4etfmt0d0dwxxrez3edlzdmi4ai1vdtlwcnnrthzpcmfwrlbcq0o4azzuddhxbwnwadbzdde5qko5y3i3am96lxjrwue4nhvjm2c?oc=5",
+      "title_norm": "ベビー枕ランキング1位のユニースリープが楽天スーパーsaleの対象に",
+      "group_id": "d8918dcc26",
+      "cluster_key": "ベビー枕ランキング1位のユニースリープが楽天スーパーsaleの対象に",
+      "first_seen": "2026-09-06",
+      "last_delivered": "2026-09-06",
       "delivered_count": 1
     }
   ]
