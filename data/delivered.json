@@ -1,51 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxte1zvmrwehvqyjmtetq5btbtdui3b1l0qjdfsdk2bdhkcxpobkfyeve0twjra2dxlxbxt2m0mgmxzxzlaex2vflsoes5rfjoafzvzmz1mdnjwehgsnlftkj3vurvddbiqkk?oc=5",
-      "title_norm": "ユニ・チャーム中東情勢で原材料費255億円増紙おむつ包装7色→4色に",
-      "group_id": "040c4f376d",
-      "cluster_key": "ユニ・チャーム中東情勢で原材料費255億円増紙おむつ包装7色→4色に",
-      "first_seen": "2026-08-08",
-      "last_delivered": "2026-08-08",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmivefvx3lxte1ingxnb2xnmzrtz3djd3hzahvebwrftm52rk9wnufgwxfvdmpesnbldfduy3cza1fuwtvoxzbrvmntbzrmuugtwdytsy1xqwj6engyvq?oc=5",
-      "title_norm": "日本トイザらス／トイザらス・ベビーザらスビバモール寝屋川店グランドオープン",
-      "group_id": "ef1de4727f",
-      "cluster_key": "日本トイザらス／トイザらス・ベビーザらスビバモール寝屋川店グランドオープン",
-      "first_seen": "2026-08-08",
-      "last_delivered": "2026-08-08",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9puutltnf4ww1vdtbfyu9lb2vjtxeza3zzx2xsrffivejcqvranhlswwzlt0qzouxscjfqmznoew9ct1rnne9xslbstnzps1hdbvc3nlritetxauv2dnrrsuhaci1pbm8zlwc?oc=5",
-      "title_norm": "チャイルドシート85.0%が日本製自社工場生産最新の安全基準r129に適合が購入の決め手になると回答安全性への関心が浮き彫りに",
-      "group_id": "b35862bcf2",
-      "cluster_key": "チャイルドシート85.0%が日本製自社工場生産最新の安全基準r129に適合が購入の決め手になると回答安全性への関心が浮き彫りに",
-      "first_seen": "2026-08-08",
-      "last_delivered": "2026-08-08",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmidkfvx3lxtfbsx0nzz3pcbnloei1qznllzwndohvavxpbbfrfls1suhr5y3r0d3g5rwhavk1lawnbdgj6dmprcdjom3f2uwlnbdvqtmpix2fsr3zarw9tm1k2vg92mwz4ckvyqjbpzzruexpvzmlvxy04ow5wd1e?oc=5",
-      "title_norm": "離乳初期から使えるレトルトおかゆお米を味わう離乳食9月28日発売",
-      "group_id": "6e038d7138",
-      "cluster_key": "離乳初期から使えるレトルトおかゆお米を味わう離乳食9月28日発売",
-      "first_seen": "2026-08-08",
-      "last_delivered": "2026-08-08",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbqrunlotdymdncufl0dnneas16mhfdtfm1afotsedlz3bdcw8xr3lfrzn5qudiqvrjlucynkx3c1z3dkdvtvbtohq5qlriykctrxzqwm5ybvdzemhyowq4zvbqogzoy2ytcve?oc=5",
-      "title_norm": "育休の取りづらさ復職時の離職の課題に切り込むベビー＆マタニティの10moisを展開するフィセルが職場の産休・育休サポートを応援する法人向け福利厚生サービスをスタート",
-      "group_id": "233faefdee",
-      "cluster_key": "育休の取りづらさ復職時の離職の課題に切り込むベビー＆マタニティの10moisを展開するフィセルが職場の産休・育休サポートを応援する法人向け福利厚生サービスをスタート",
-      "first_seen": "2026-08-08",
-      "last_delivered": "2026-08-08",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbkunjwtzzjdtjjrno2eljux1jtqu1ydzftrlzrewhizfhtm1pvv3prqwftaw56vhezs3lndjdndjdfotruvvhpyjnnn3jty1qzbvbovm9myupjq051ddvfvxpwukq0auztzke?oc=5",
       "title_norm": "親子で楽しめるトミカ博intokyo2026にマミーポコパンツトミカプラレールデザインムーニー持って遊べるおしりふきが初出展",
       "group_id": "158e44e56f",
@@ -1447,6 +1402,51 @@
       "cluster_key": "ふるさと納税でもらえるベビーカーの還元率ランキングを発表",
       "first_seen": "2026-09-07",
       "last_delivered": "2026-09-07",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1jatlslwl0yks1cennlwxrv3vdretkztbvou5hs1vty1i2otfeedrqrldkadzrtte4mmnyc1mtqmp1y0vpeukyyxdmcfbwnxrvmf9ezklyvl9etc1wsg5eswx3s1nowtbfnxc?oc=5",
+      "title_norm": "国内の販売においてミリオンセラーのベビーカップmunchkinミラクルカップよりnewcollectionが9月4日発売米国本社がこの10年余りで最大の進化と位置づけるデザイン刷新",
+      "group_id": "285766e477",
+      "cluster_key": "国内の販売においてミリオンセラーのベビーカップmunchkinミラクルカップよりnewcollectionが9月4日発売米国本社がこの10年余りで最大の進化と位置づけるデザイン刷新",
+      "first_seen": "2026-09-08",
+      "last_delivered": "2026-09-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte0wtkpyvudxze9iodzquhdiuxhhwgruwko5rhrewkxnqtjwrm55yuc1r095agfptxrqszjudzvsnky2agrselddqtbuc2huyzllaeuzru1jawriulq2ogdvdue3vmhzovi5wve?oc=5",
+      "title_norm": "ベビーシューズブランドattipas2026年秋冬新作が9月8日に発売",
+      "group_id": "f5f60a3677",
+      "cluster_key": "ベビーシューズブランドattipas2026年秋冬新作が9月8日に発売",
+      "first_seen": "2026-09-08",
+      "last_delivered": "2026-09-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte40mlv6avc1tvlecfnvemvpevdbnmzdblzga0jqdth3snpzvf9wohpus0pfmw5qmjvibkxly0y0udjzx0rdr1nftwheauwtofvdqnhlwnndzmfwstjamk9luvp6vkf1u1nlmxc?oc=5",
+      "title_norm": "韓国発ベビー・キッズ服ブランドモイモルン9/5三井アウトレットパーク木更津に新店舗をオープン首都圏の多くのファミリーが訪れる日本最大級のアウトレットに期間限定ショップが登場",
+      "group_id": "cb2cd13124",
+      "cluster_key": "韓国発ベビー・キッズ服ブランドモイモルン9/5三井アウトレットパーク木更津に新店舗をオープン首都圏の多くのファミリーが訪れる日本最大級のアウトレットに期間限定ショップが登場",
+      "first_seen": "2026-09-08",
+      "last_delivered": "2026-09-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte56ztb2mthkr3lfanj6u1jsduvvexftzhgzadzqrvrwrevpclrptfcyvtdvbhleanh4a3lmvk5imkg1vgxhs2pwtwvpzwxobknwbwuxn0lttu54dnpnsfrcrmhjdmtoymxncke?oc=5",
+      "title_norm": "ベビーカレンダー×nttドコモのブランドcomottoが初コラボ親子で楽しめるオリジナルしかけ絵本を共同制作子育て家庭へ無料プレゼント",
+      "group_id": "400697f2b4",
+      "cluster_key": "ベビーカレンダー×nttドコモのブランドcomottoが初コラボ親子で楽しめるオリジナルしかけ絵本を共同制作子育て家庭へ無料プレゼント",
+      "first_seen": "2026-09-08",
+      "last_delivered": "2026-09-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxtfbwdeg0wwdmmzfsruh3bujiug5ltklnd2fonndrzg1vzzlbwf8tv2twawxby3ptawhiaedcovy2m1mwszhqrkh2lxm4shq5bdrvnxbovjbla0hsakx5bzjur0k3wk13q2uzn0x3tfvtqvddekxod1dwalpsbktkntq?oc=5",
+      "title_norm": "ランボルギーニデザインのベビーカーリーフalジャッロが世界限定500台で登場",
+      "group_id": "c96ac2db33",
+      "cluster_key": "ランボルギーニデザインのベビーカーリーフalジャッロが世界限定500台で登場",
+      "first_seen": "2026-09-08",
+      "last_delivered": "2026-09-08",
       "delivered_count": 1
     }
   ]
