@@ -1,33 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxtfbiuetjsc1eqje1dhzoevbzc01iyzlozlpgeldpv09scgf0efrjztvkujdam3j0zlzcm3vyvl9db1n3vmfuc25pqvvtmfpxyv9sqmff?oc=5",
-      "title_norm": "ソウルに住む30代ワーキングママのイ·ジニョンさんは子供の育児用品を購入する際検索窓の代わりに人工知能チャットボットを先につける以前は育児コミュニティと各種ショッピングモール",
-      "group_id": "e5366f04f6",
-      "cluster_key": "ソウルに住む30代ワーキングママのイ·ジニョンさんは子供の育児用品を購入する際検索窓の代わりに人工知能チャットボットを先につける以前は育児コミュニティと各種ショッピングモール",
-      "first_seen": "2026-08-14",
-      "last_delivered": "2026-08-14",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmibkfvx3lxte4wvuvyvunhtedly0pptgpvtwtizfd0dhnsqjrkcxu5agw5ndlimdzwnlfdnuk4qzbntek5cklzctazsmlsq3l1rezyymhoskrzemzsc3nus0phwhbxy0zty0jqdfronwdpsw1pxzbb?oc=5",
-      "title_norm": "我が子を守りたい人気ライター・ヨッピー父親目線で開発した幼児用熱中症対策ベストべビエア開発秘話",
-      "group_id": "ec2b691aa2",
-      "cluster_key": "我が子を守りたい人気ライター・ヨッピー父親目線で開発した幼児用熱中症対策ベストべビエア開発秘話",
-      "first_seen": "2026-08-14",
-      "last_delivered": "2026-08-14",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbnawxgdmtdx1bevi1bumiyawzqcej6t3lhqkuwyxprtdv1vmvjogtvweowrg5palrxxzixa0vovzbva1pvelj3qtfic05gwtnju2dgn0lwzxnma3foeex2uhvcve1wx1o0b2c?oc=5",
-      "title_norm": "ふわふわきらきら指でさわって目で見ていろいろな感触を楽しめる赤ちゃん絵本にゃんにゃんさわってごらんちいちゃなねこちゃん8/14発売",
-      "group_id": "539d6779b9",
-      "cluster_key": "ふわふわきらきら指でさわって目で見ていろいろな感触を楽しめる赤ちゃん絵本にゃんにゃんさわってごらんちいちゃなねこちゃん8/14発売",
-      "first_seen": "2026-08-14",
-      "last_delivered": "2026-08-14",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxte12sw9wwda2a3y1d0rqb0fuwjj5wv9jr3vkyxmxbetyuxcxs1mzcehprfnnvgtkudbymxjlrxzqtkfxovc4v0j0shbmqm5psmv5exjxyzdxynnfsnc?oc=5",
       "title_norm": "待望の無香タイプが新登場alobabyベビーソープ2026年6月26日よりアカチャンホンポで先行販売",
       "group_id": "dcb949fccd",
@@ -1564,6 +1537,15 @@
       "cluster_key": "ベビージョガーシティーセレクト2人乗り用シートのみベビーカーベビーカー・バギー｜aupayマーケット",
       "first_seen": "2026-09-13",
       "last_delivered": "2026-09-13",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmizefvx3lxte4xr2txewflq0hwcmw0qtc5bxjzumnoy1vxzxrxvwzlu1i3tfldwuxhmkfhdwrvqvy0tuxxvhpmcedrexlkef9oa3ljlxp4a19sbddqtfbpwdhlugdvr0v3ume0szi?oc=5",
+      "title_norm": "横浜ポルタ完全個室ベビーケアルームを設置授乳やおむつ替えの場を求める声受け",
+      "group_id": "d59de6baa7",
+      "cluster_key": "横浜ポルタ完全個室ベビーケアルームを設置授乳やおむつ替えの場を求める声受け",
+      "first_seen": "2026-09-14",
+      "last_delivered": "2026-09-14",
       "delivered_count": 1
     }
   ]
