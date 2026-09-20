@@ -1,87 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbjzwhfefh4bgdetkjsnu5rx3c5clrquwtnsuvud3fzs3bxlupidu45vdryrhviutduz1zccurvn3lfqncxclnsv1bfni13uw52qzbundjqnfjjcwv3snjmbhdayzzqzlz6s2c?oc=5",
-      "title_norm": "エルゴベビー心地よい抱っこを科学的根拠から伝える新たなブランドコミュニケーションを始動",
-      "group_id": "5eff343533",
-      "cluster_key": "エルゴベビー心地よい抱っこを科学的根拠から伝える新たなブランドコミュニケーションを始動",
-      "first_seen": "2026-08-21",
-      "last_delivered": "2026-08-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxte5xmvb1s1hcenj5etlqtg1johlfaw90ufategvcd0rjzwdswhu4m3hib0pqzgh5yxhvsxj5unrkuhhes3dnwdhsc1d2zm5irgnxrjrvbtjpzw45vhrfrnpxzunsvmhoae9uy1jmthr6c0frudu5oethsdf0zthms3c?oc=5",
-      "title_norm": "ヤマハの系列企業が保育園のお散歩カーを電動化坂道ラクラク10分の1の力で押せるベビーカーの老舗と共同開発",
-      "group_id": "70c163fbf0",
-      "cluster_key": "ヤマハの系列企業が保育園のお散歩カーを電動化坂道ラクラク10分の1の力で押せるベビーカーの老舗と共同開発",
-      "first_seen": "2026-08-21",
-      "last_delivered": "2026-08-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbcz2hccdjidwnrmm9kne5jtgvhyzhusjnkzmdtutqwzvvswmdnnu4xmkfwt3lxb3pcn0numl8zc2hgshnyndiwwwd1y1fttm1xmwozbjrxamzwrgplwudcvdc0c2zlev9quee?oc=5",
-      "title_norm": "0〜3歳児ママ300人調査｜添い寝で気にかけるのは赤ちゃんの安全と自分の睡眠4割がわが身にも不安〜7〜9月の出生ピークに母親の睡眠負担が浮き彫り",
-      "group_id": "6e5973396a",
-      "cluster_key": "0〜3歳児ママ300人調査｜添い寝で気にかけるのは赤ちゃんの安全と自分の睡眠4割がわが身にも不安〜7〜9月の出生ピークに母親の睡眠負担が浮き彫り",
-      "first_seen": "2026-08-21",
-      "last_delivered": "2026-08-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte5htvdms2q5rvpvvmfbz1ncrdh1m05tvvywx25hajhsrwowuuvludlscefmz0v2z2drrhewog53zw1fenfdd19msjfywwhhbxi1ejvb?oc=5",
-      "title_norm": "チャイルドシートにまさかの機能♪リモコンで送風・リクライニングも操作可能nunaの新機能搭載モデルが登場",
-      "group_id": "e09ce172f1",
-      "cluster_key": "チャイルドシートにまさかの機能♪リモコンで送風・リクライニングも操作可能nunaの新機能搭載モデルが登場",
-      "first_seen": "2026-08-21",
-      "last_delivered": "2026-08-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte8xuwgxawtyawllv3bxmdlfewtfstvsvfnkzwfkcvvsckf1tnptufpqvezpukwwr19hczzrngxhoem1ulvanevfumlfavfquxf2uvp4cjfrvjlotxfjcnfkvmczqtayuk1kbnc?oc=5",
-      "title_norm": "keiyoのベビーワイヤレスモニターミマモ2が第20回キッズデザイン賞を受賞",
-      "group_id": "243a7c70ba",
-      "cluster_key": "keiyoのベビーワイヤレスモニターミマモ2が第20回キッズデザイン賞を受賞",
-      "first_seen": "2026-08-21",
-      "last_delivered": "2026-08-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1uetq3b3dlbxrssnzdejbvtzz6z1vubdnuwuw4ndvivi1olwwxulflrneyx1jstlzhodloy1dvvs0zudvqs2xuqujdzmtzd0fjbxbhrm9artfxc04ttevhagd1qllibkttd2c?oc=5",
-      "title_norm": "ベビーピンクのふわふわな髪の毛がチャームポイントマイスウィートピアノと初のコラボレーション冬に毎日使いたくなるような全8型のアイテムが登場",
-      "group_id": "5275fdcc10",
-      "cluster_key": "ベビーピンクのふわふわな髪の毛がチャームポイントマイスウィートピアノと初のコラボレーション冬に毎日使いたくなるような全8型のアイテムが登場",
-      "first_seen": "2026-08-21",
-      "last_delivered": "2026-08-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiyefvx3lxte9jcdq0btrpumzyt3fbqwjmluzodkdvajq4d3nkenm0zzznb0zhcktrzxbnrunnrmn4z29lzhpazzb1dhvzovjkdlq2exj1a00znm1zu3pududwsha4odjjba?oc=5",
-      "title_norm": "neomamaismのおしりふきが第20回キッズデザイン賞安全・安心向上部門を受賞",
-      "group_id": "3c4f1a1ed5",
-      "cluster_key": "neomamaismのおしりふきが第20回キッズデザイン賞安全・安心向上部門を受賞",
-      "first_seen": "2026-08-21",
-      "last_delivered": "2026-08-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1tvk44y1rkzzdtdtbgcjbgx0nyuzy0aem0otu4ewc3zjvyqmdntkntdxg2nmm4d2xtcenlrtlnwdhxvufqtmtxzhzumvfqnwpoodg5qu9petftmtffb196tzc5b3f4dkrdmee?oc=5",
-      "title_norm": "第35回日本外来小児科学会年次集会に頭蓋形状矯正ヘルメットベビーバンドのブースを出展",
-      "group_id": "7ff63483be",
-      "cluster_key": "第35回日本外来小児科学会年次集会に頭蓋形状矯正ヘルメットベビーバンドのブースを出展",
-      "first_seen": "2026-08-21",
-      "last_delivered": "2026-08-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmijgfbvv95cuxptl8ztk0zwm1kunmydfngt09kb2jqclrtdw1pohhnqm1lefjjnepjqxhny1ytqjhtmxfxowrsqwxtwmphuxzeow1csxrdzfq2ytbtdklfrdvoetzjzwm4mxpvrgd5rhqtd2nnegxmanh0vtawshnvznr3b3g5bglbdvj5y0dwue1qeghfvmxr?oc=5",
-      "title_norm": "離乳食と赤ちゃんに向き合い続けます",
-      "group_id": "d37fde7278",
-      "cluster_key": "離乳食と赤ちゃんに向き合い続けます",
-      "first_seen": "2026-08-21",
-      "last_delivered": "2026-08-21",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1jq0r3zhp4cmt2yjzhoeitaknfdzqtq01udjhrnvc5nmzyvdbur1rzvu1lb1nlqwfauff6em5vr2hhdxrmbhflz21hevj6r0fsr21mbni3mkk0uuzneue3uf9syv90r0lsq1e?oc=5",
       "title_norm": "おむつにつけるタイプの乳児用体動センサベビーアラームがリニューアル背面クリップを改良し取り付けやすさアップ",
       "group_id": "d13e0d594a",
@@ -1636,6 +1555,60 @@
       "cluster_key": "韓国発ベビー・キッズ服ブランドモイモルン9/18二子玉川ライズs.c.にpopupstoreをオープン過去にも期間限定ショップを開催した同施設に再び登場",
       "first_seen": "2026-09-20",
       "last_delivered": "2026-09-20",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxte1mvwqtutvpcklkvvjocjbqsflmztrmmtlrrlngewt5us0wufzmedb1sdjhqvrpdjblqut2ttncnlbyx3vuzv9sludkr25mrkwtzwpjn19iaw?oc=5",
+      "title_norm": "チャイルドシート使用８４％-saitama",
+      "group_id": "9b164195fb",
+      "cluster_key": "チャイルドシート使用８４％-saitama",
+      "first_seen": "2026-09-21",
+      "last_delivered": "2026-09-21",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiwkfvx3lxte5mbkzez0jksdfrtdhtz041yultntv4buztcvb4vjblqkzltnvirwh0btlmbxdfcm9dqwtdmdlsc0hlanrlwthprdl2ck0zlvnyzegxynverwi1uq?oc=5",
+      "title_norm": "世界の高齢者人口乳幼児の数を上回る想定を超える速度で逆転現象が進行",
+      "group_id": "54568c0137",
+      "cluster_key": "世界の高齢者人口乳幼児の数を上回る想定を超える速度で逆転現象が進行",
+      "first_seen": "2026-09-21",
+      "last_delivered": "2026-09-21",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxtfbtbkzflupqukrhlvpvvhn0nw9ouelqswvvngptytv1dtb0c2visktbc1dvtujlsuq0dhrrqkzrqxvnnxbiajv1wmvwazzktmvsmjj6ugqtaei5bddovvzqvepsr0jurzz4mw9ta2pcdkzhdfljbw9aakxwofhvsk0?oc=5",
+      "title_norm": "価格2倍でも飛ぶように売れる水の正体育児用ミルク技術から犬猫用粉ミルクを開発した老舗が明かすヒットの裏側",
+      "group_id": "1001b48193",
+      "cluster_key": "価格2倍でも飛ぶように売れる水の正体育児用ミルク技術から犬猫用粉ミルクを開発した老舗が明かすヒットの裏側",
+      "first_seen": "2026-09-21",
+      "last_delivered": "2026-09-21",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5dlxotvznnb3pbehf4u1a4tfqyrwviltnyzxq3nlzuefrfbwhbcevvv291ow4wrxlpc2dxudzvy29uadfqwdzamelrd2twwmdmamxpc0v4sgc2vln1x0utwfjmdtgznxjnmve?oc=5",
+      "title_norm": "国際ngoセーブ・ザ・チルドレン9月17日正午から応募受付開始ハローベビーボックス2026年秋",
+      "group_id": "fb3894a1a8",
+      "cluster_key": "国際ngoセーブ・ザ・チルドレン9月17日正午から応募受付開始ハローベビーボックス2026年秋",
+      "first_seen": "2026-09-21",
+      "last_delivered": "2026-09-21",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1msgzfdy1dc016ehfod1oxmhy0rkr6x0jov0i3vlhxx0tkdhl3zvvcn2zfafpod1jhynnbwmhuulrjtg9kzddzsxntzxrtzgftt1c0egxpuuswttr2ylvqm1noalvkuhg1vhc?oc=5",
+      "title_norm": "ちいさな赤ちゃんたちへエールを母乳バンク寄付キャンペーンを9月25日から開催",
+      "group_id": "371e264588",
+      "cluster_key": "ちいさな赤ちゃんたちへエールを母乳バンク寄付キャンペーンを9月25日から開催",
+      "first_seen": "2026-09-21",
+      "last_delivered": "2026-09-21",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfb6z2vbazfzzvytmzm1dwj2m3vry0x6uzvynljzt3vqy2rkbg5cehczck5rzjrurljwykf1tln4r05kbgy3svbzc0xqagrndvbywnnda1vmwgoteu9admvpdviyzepfclhiqke?oc=5",
+      "title_norm": "設置型ベビーケアルームmamaroを横浜駅東口地下街ポルタに設置しました",
+      "group_id": "c99d1a6c5f",
+      "cluster_key": "設置型ベビーケアルームmamaroを横浜駅東口地下街ポルタに設置しました",
+      "first_seen": "2026-09-21",
+      "last_delivered": "2026-09-21",
       "delivered_count": 1
     }
   ]
