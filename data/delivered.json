@@ -1,33 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxtfa0v296zkvecgvrzw5fa0tyy21qrux4wku3n3k3nmrmwhzwcghfxzkwd3dezhjhczz1c3pyuggtwgforkxhufpuwfu2dehecmxurmrj?oc=5",
-      "title_norm": "味覚から感性を育むベビーフードで市場に挑戦…3児の父でもあるmil杉岡侑也さん",
-      "group_id": "dcd635e80a",
-      "cluster_key": "味覚から感性を育むベビーフードで市場に挑戦…3児の父でもあるmil杉岡侑也さん",
-      "first_seen": "2026-08-23",
-      "last_delivered": "2026-08-23",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5uvmpuqxbwylz6t3dqelldmup5unh5tkytzxruqzfddjzkbwitq1hxvmcybffjchy3njbku0ljsnnwrzh3mlnxqjbwwxlqsmvsv0nxuet6tthvlwy1eerid2phltzeeju3bmc?oc=5",
-      "title_norm": "先輩ママの約6割が陣痛・入院バッグを分別準備負担を4分の1に減らすおまかせ里帰りパックに新プラン登場",
-      "group_id": "62612c873c",
-      "cluster_key": "先輩ママの約6割が陣痛・入院バッグを分別準備負担を4分の1に減らすおまかせ里帰りパックに新プラン登場",
-      "first_seen": "2026-08-23",
-      "last_delivered": "2026-08-23",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmigwfbvv95cuxoc3nymgx1cefbzwd4ymnjx0v2wc03oezkzm1wbnq4yxrkm056ognjakx6mm9zahizq0hntnvnew43cg5pbzzpt0p4wxltqvk5tvvfs2xst0xnbei0ykxscmvrmznntnnosgtzruy5ckfqu056nuo0tthwtxzizgzrtjjusdibgwfbvv95cuxoc3nymgx1cefbzwd4ymnjx0v2wc03oezkzm1wbnq4yxrkm056ognjakx6mm9zahizq0hntnvnew43cg5pbzzpt0p4wxltqvk5tvvfs2xst0xnbei0ykxscmvrmznntnnosgtzruy5ckfqu056nuo0tthwtxzizgzrtjjusq?oc=5",
-      "title_norm": "赤ちゃん本舗アカチャンホンポこそだてバルで小池百合子東京都知事清家愛港区長大久保朋果江東区長森澤恭子品川区長が力説官民共創で挑む子育てインフラ構築の最前線",
-      "group_id": "ea50e46288",
-      "cluster_key": "赤ちゃん本舗アカチャンホンポこそだてバルで小池百合子東京都知事清家愛港区長大久保朋果江東区長森澤恭子品川区長が力説官民共創で挑む子育てインフラ構築の最前線",
-      "first_seen": "2026-08-23",
-      "last_delivered": "2026-08-23",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxte9iekvlvffomgqwbgytczrmr08ycdf6mhjfog1pwwrnbhzvutfbzk9ulvjfafbndvnfx2ctsmdztvb1em1xujjyrgzfcefouxhgb19oouddnhvoznrztkvpqjgxanhknve?oc=5",
       "title_norm": "出産準備おまとめフェア",
       "group_id": "3b5dad0ff1",
@@ -1591,6 +1564,15 @@
       "cluster_key": "チャイルドシート使用８４％",
       "first_seen": "2026-09-22",
       "last_delivered": "2026-09-22",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmis0fvx3lxte1uctu2umz6aduzv2i0egrlwenwenlfbzlqehhxcwnkcm1lculqwhp4zmddthoyumczn1dwwxrrawpmrg5tt3pav0e1rq?oc=5",
+      "title_norm": "授乳期だからこそバストラインを諦めない株式会社jubileeノンワイヤーでもしっかり支える特許構造を採用したyvesjuの授乳ブラを9月6日発売",
+      "group_id": "3986aa33dc",
+      "cluster_key": "授乳期だからこそバストラインを諦めない株式会社jubileeノンワイヤーでもしっかり支える特許構造を採用したyvesjuの授乳ブラを9月6日発売",
+      "first_seen": "2026-09-23",
+      "last_delivered": "2026-09-23",
       "delivered_count": 1
     }
   ]
