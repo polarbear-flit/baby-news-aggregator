@@ -1,15 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxte9iekvlvffomgqwbgytczrmr08ycdf6mhjfog1pwwrnbhzvutfbzk9ulvjfafbndvnfx2ctsmdztvb1em1xujjyrgzfcefouxhgb19oouddnhvoznrztkvpqjgxanhknve?oc=5",
-      "title_norm": "出産準備おまとめフェア",
-      "group_id": "3b5dad0ff1",
-      "cluster_key": "出産準備おまとめフェア",
-      "first_seen": "2026-08-24",
-      "last_delivered": "2026-08-24",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5ynv9quldxowr2wmnxzdjonm1tcljvbzzrvgc1smj6zfzaszmwdukxm21tuldfnktqn2e1nujut3nrv2dqodzuv0rpmfdweu1sbtvyc0jvzxfrnkdteu1uqk0za3d0og9reke?oc=5",
       "title_norm": "企業の人的資本経営を支える従業員の育児と仕事の両立領域にピジョンが参入8月24日より子育てエンゲージメントカードを発売開始",
       "group_id": "8785746bd4",
@@ -1573,6 +1564,24 @@
       "cluster_key": "授乳期だからこそバストラインを諦めない株式会社jubileeノンワイヤーでもしっかり支える特許構造を採用したyvesjuの授乳ブラを9月6日発売",
       "first_seen": "2026-09-23",
       "last_delivered": "2026-09-23",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiskfvx3lxte1rve5tcjjum25dx01sn3b6dujuuudndndmvkhqm2htovrhwxddwe1mvi1sq3e0nxfzbxv4z01jndria1y4dfdwtwhr?oc=5",
+      "title_norm": "赤ちゃん用紙おむつ市場の詳細レビュー：市場規模セグメンテーションそして13.1％の年",
+      "group_id": "cba68082de",
+      "cluster_key": "赤ちゃん用紙おむつ市場の詳細レビュー：市場規模セグメンテーションそして13.1％の年",
+      "first_seen": "2026-09-24",
+      "last_delivered": "2026-09-24",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1ba2wtc2tzmdr4qmlmdhztv3rkowddx1kwamfwx2lbdzfjvkytyupnquzwbxhkm25gchlxndmzvf8zovnevs1emlnucfzwrwy4ufz5ui1rd1pwm0zar0ixy2v0v0xkmja3qxc?oc=5",
+      "title_norm": "10月10日は赤ちゃんの日ペンギンのよちよち歩きが開会宣言アドベンチャーワールド＆アカチャンホンポハイハイレース初開催～アニマルウェアを着た赤ちゃん25組が大奮闘～",
+      "group_id": "526c279298",
+      "cluster_key": "10月10日は赤ちゃんの日ペンギンのよちよち歩きが開会宣言アドベンチャーワールド＆アカチャンホンポハイハイレース初開催～アニマルウェアを着た赤ちゃん25組が大奮闘～",
+      "first_seen": "2026-09-24",
+      "last_delivered": "2026-09-24",
       "delivered_count": 1
     }
   ]
