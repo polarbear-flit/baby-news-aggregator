@@ -1,33 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5ynv9quldxowr2wmnxzdjonm1tcljvbzzrvgc1smj6zfzaszmwdukxm21tuldfnktqn2e1nujut3nrv2dqodzuv0rpmfdweu1sbtvyc0jvzxfrnkdteu1uqk0za3d0og9reke?oc=5",
-      "title_norm": "企業の人的資本経営を支える従業員の育児と仕事の両立領域にピジョンが参入8月24日より子育てエンゲージメントカードを発売開始",
-      "group_id": "8785746bd4",
-      "cluster_key": "企業の人的資本経営を支える従業員の育児と仕事の両立領域にピジョンが参入8月24日より子育てエンゲージメントカードを発売開始",
-      "first_seen": "2026-08-25",
-      "last_delivered": "2026-08-25",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfb3zddmnjuzavvjcthmsgptcdznsflmdgnxaegxzwewcwl0v2rsckndntk4m05ucy1na1hjcfdjtgw5awhautq3qlvit1kzmgfmx1uysemyuke3yndlb2xdvgdrvw9flxhfm1e?oc=5",
-      "title_norm": "赤ちゃんが夢中になる感覚絵本新装改訂版しゃりしゃりもぐもぐたべものたっちミニ色紙つきで発売決定",
-      "group_id": "930cbfb838",
-      "cluster_key": "赤ちゃんが夢中になる感覚絵本新装改訂版しゃりしゃりもぐもぐたべものたっちミニ色紙つきで発売決定",
-      "first_seen": "2026-08-25",
-      "last_delivered": "2026-08-25",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmit0fvx3lxtfbydtqxevrvcdngm3nkywu3wvzwq2jdcxlvsjvbcjnvn20xwjy4ewzzevpfelz1q3zyawv5emnostizanplv2ctuzjkblgtcmm?oc=5",
-      "title_norm": "ふるさと納税でもらえるチャイルドシートの還元率ランキングを発表",
-      "group_id": "4c0f630fc3",
-      "cluster_key": "ふるさと納税でもらえるチャイルドシートの還元率ランキングを発表",
-      "first_seen": "2026-08-25",
-      "last_delivered": "2026-08-25",
-      "delivered_count": 2
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmia0fvx3lxtfbfdxrzrvjouvnby0h4tevbm3y3ajndltbmck9inmrqvwq4lxbsannyr1ezbee1sgziyl9slxrpagdlds13ektyqw11vhyyv19im2xuwe9fznhswtb3ournzi10ngqyckhnmuk4?oc=5",
       "title_norm": "亀田製菓ハイハイン白がゆ発売ベビーフード市場に参入",
       "group_id": "845719d2ce",
@@ -1582,6 +1555,60 @@
       "cluster_key": "10月10日は赤ちゃんの日ペンギンのよちよち歩きが開会宣言アドベンチャーワールド＆アカチャンホンポハイハイレース初開催～アニマルウェアを着た赤ちゃん25組が大奮闘～",
       "first_seen": "2026-09-24",
       "last_delivered": "2026-09-24",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5xq3rwcdkydkfhm3pnsc1qwgdqmy1kymm0nnl4zwp0nmsyskp0z3pirgi1thz3azljwme2wff0bvfptehlcwuytdlbmgvgslvmwfpsdxzdvdfdbjngnla3yvfxcuvvx3pmzee?oc=5",
+      "title_norm": "アカチャンホンポ限定品を含む2商品がベビーワセリンシリーズより新登場2026年9月25日より販売開始",
+      "group_id": "797d081017",
+      "cluster_key": "アカチャンホンポ限定品を含む2商品がベビーワセリンシリーズより新登場2026年9月25日より販売開始",
+      "first_seen": "2026-09-25",
+      "last_delivered": "2026-09-25",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmio0fvx3lxtfbis2vneha0y1vua3pium14t3pocwlxcu45ntvdsvdjz2xobg40ndzvrehscdmtzlratzfz?oc=5",
+      "title_norm": "ながらさく乳ができる電動さく乳器babysmileが5,478円で新発売",
+      "group_id": "aa9e3d9048",
+      "cluster_key": "ながらさく乳ができる電動さく乳器babysmileが5,478円で新発売",
+      "first_seen": "2026-09-25",
+      "last_delivered": "2026-09-25",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiskfvx3lxte1hzm5jmvrnbzrxr3mztdlbmtlizkhrz3jsujrmx2lsymloqxzqv0xzz1bfblvnn25ycuu2qlj4t29yb2fnwxpidlbr?oc=5",
+      "title_norm": "日本のベビーおむつ市場規模と動向",
+      "group_id": "d3a2d19da4",
+      "cluster_key": "日本のベビーおむつ市場規模と動向",
+      "first_seen": "2026-09-25",
+      "last_delivered": "2026-09-25",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1yqm1zove1smpdmutqegrrve5bcm5su29st09znxzodtdhykviy01gzvbcn3r0z1fzzxy1vmxymxg1qu5sz3h6etewvejky2vwlvv2awo1u3bubkzfmtbnbnm0mk9twjfjagc?oc=5",
+      "title_norm": "アカチャンホンポでディズニーベビーフェア開催ベビー・キッズウエアや子育てに役立つかわいいアイテムをお届けします",
+      "group_id": "5fcc7dbb81",
+      "cluster_key": "アカチャンホンポでディズニーベビーフェア開催ベビー・キッズウエアや子育てに役立つかわいいアイテムをお届けします",
+      "first_seen": "2026-09-25",
+      "last_delivered": "2026-09-25",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbtt2ezovy2oxzbdktqejdtzddlx2joeuvhazj6wgptwu5fegtonhlfunzaufrcaklvy0dxturywkxtlxizehrketnqumrpq190mkrjmxp2m1vmu2jovkfvb2p6yzzpcwq3lwc?oc=5",
+      "title_norm": "赤ちゃんのものだからこそ確かなものを選びたい方へ韓国発プレミアムスキンケアimnotababy銀座三越にてフェアを開催",
+      "group_id": "26ebac5964",
+      "cluster_key": "赤ちゃんのものだからこそ確かなものを選びたい方へ韓国発プレミアムスキンケアimnotababy銀座三越にてフェアを開催",
+      "first_seen": "2026-09-25",
+      "last_delivered": "2026-09-25",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmihwfbvv95cuxpv2i0rflyvu13nglkwwppwkpzmxjiouvzcs1icgxfve1swg5yelmxm1zgufpjsvvkzzvwnxvfehfuy0l1vzdgejvrnflcsgtkcelnce9lmjddvzlzzdhsaxg5zxzvyk1myw0wsddkng5qdw0yx21vmfjxdhhizxlkzklwwhffntg?oc=5",
+      "title_norm": "サンリオキャラクターズチャイルドシートチャーム11月より登場",
+      "group_id": "b5a75d849e",
+      "cluster_key": "サンリオキャラクターズチャイルドシートチャーム11月より登場",
+      "first_seen": "2026-09-25",
+      "last_delivered": "2026-09-25",
       "delivered_count": 1
     }
   ]
