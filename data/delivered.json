@@ -1,69 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmia0fvx3lxtfbfdxrzrvjouvnby0h4tevbm3y3ajndltbmck9inmrqvwq4lxbsannyr1ezbee1sgziyl9slxrpagdlds13ektyqw11vhyyv19im2xuwe9fznhswtb3ournzi10ngqyckhnmuk4?oc=5",
-      "title_norm": "亀田製菓ハイハイン白がゆ発売ベビーフード市場に参入",
-      "group_id": "845719d2ce",
-      "cluster_key": "亀田製菓ハイハイン白がゆ発売ベビーフード市場に参入",
-      "first_seen": "2026-08-26",
-      "last_delivered": "2026-08-26",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmifkfvx3lxte1it3ywb1bys251v0hzlu1rvkn4udrzmurfaudim2ryluqwntcxajd4rjjzyji5z09gtwdyrxhowc1vq2nzouxkr0letk5ddgywtlpkyvvduvjyemxlekriq1jwekxpu0trbxnmztzlcfzkt3zdmethsk4yuvdwz9ibgwfbvv95cuxndkhpalrpnmgwnfnswm9zrun6lv9vyxzjsmq5us1nbeviowfyt0lur2hywvbfqmrbmmt0zte2odlarunvcu0wvgyztktyvwzkvnvfbze5m2xbt1zmdfl2mwffdfpxdhjhzglumuhjrc1sdevmvhh6qm5pcmvsowrwauy5uq?oc=5",
-      "title_norm": "赤ちゃん本舗アカチャンホンポこそだてバルで小池百合子東京都知事東京から全国へ広がる子育て支援の未来語る行政の施策×民間の現場力でバリア解消新たな子育てインフラ構築へ",
-      "group_id": "ce7cb9fdbb",
-      "cluster_key": "赤ちゃん本舗アカチャンホンポこそだてバルで小池百合子東京都知事東京から全国へ広がる子育て支援の未来語る行政の施策×民間の現場力でバリア解消新たな子育てインフラ構築へ",
-      "first_seen": "2026-08-26",
-      "last_delivered": "2026-08-26",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxtfbwvuhlyw8zegzxnvbiewp6lwhky0h3sffisnlsddditc13dkpeczu5tllhswdvtmx0tmtzuud1r3fytzf0aeqwa2i3r3jemunmsvn2qupqbc1paf9hdmrhwtbnq2hqn0vfdumtykrtawu0smdsrm1ryu5fsdzovjq?oc=5",
-      "title_norm": "8枚増量で78枚→実は70枚だった紙おむつの表示が分かりにくいp＆gの見解は",
-      "group_id": "6ccbed9c9f",
-      "cluster_key": "8枚増量で78枚→実は70枚だった紙おむつの表示が分かりにくいp＆gの見解は",
-      "first_seen": "2026-08-26",
-      "last_delivered": "2026-08-26",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte8ytluwtenpcxd4rlzjyultcdheclhgyklqsmm4ztlkmvbieuhlau5ebg1dv0wwrvhpngxjc2daeg9nvgk5r2znexzzslnxyvl5zernz1hjakhpou9zseo4wmm4s3feds1yqke?oc=5",
-      "title_norm": "猛暑から赤ちゃんを守る遮熱率45％のキャリフリー木陰ケープ",
-      "group_id": "6fdb192007",
-      "cluster_key": "猛暑から赤ちゃんを守る遮熱率45％のキャリフリー木陰ケープ",
-      "first_seen": "2026-08-26",
-      "last_delivered": "2026-08-26",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmivefvx3lxtfbqqtrpofbhuejirnjor2x2zle0vk9vs045cmvdy1vdmu5nzum0m3jht1dvwlj3zkfjnlvmce9tthlyqmzubtblvveyofv6odlualvncg?oc=5",
-      "title_norm": "広がる赤ちゃん連れ旅行宿泊施設がベビー用品レンタルや設備導入",
-      "group_id": "ca012edbec",
-      "cluster_key": "広がる赤ちゃん連れ旅行宿泊施設がベビー用品レンタルや設備導入",
-      "first_seen": "2026-08-26",
-      "last_delivered": "2026-08-26",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbzd0vjrgxpqm9xwkntm1ittuj2tvlkvnzcdzhmuklla3nxlxlvtm44auvnsg4wugxht2dftlzgbuxqzwq5tnjgawxuoxjtadvwczzvm1e2lul3tkvgcmhfug9guulqbu5vbgc?oc=5",
-      "title_norm": "赤ちゃんを迎える準備をもっと心地よく━ママ・パパと赤ちゃんの毎日に寄り添う出産準備企画ページを8月25日開設",
-      "group_id": "7854ba6fa9",
-      "cluster_key": "赤ちゃんを迎える準備をもっと心地よく━ママ・パパと赤ちゃんの毎日に寄り添う出産準備企画ページを8月25日開設",
-      "first_seen": "2026-08-26",
-      "last_delivered": "2026-08-26",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte8tv0pjcmjvlxnsde1mc1dpufdwyl92ykhfthu3nnfwwxrlc3l6zlhvs0dgv0niugw4vexyv3zmve16uuvua181wjn6cfrvuefhsk9rtl9ruetgznnswgxivgexevzfq01hr2c?oc=5",
-      "title_norm": "fotowa赤ちゃんの誕生を記念するオリジナル命名書を新発売お名前・出生日時・身長・体重を添えられる木製フォトパネル",
-      "group_id": "06f2f5eba5",
-      "cluster_key": "fotowa赤ちゃんの誕生を記念するオリジナル命名書を新発売お名前・出生日時・身長・体重を添えられる木製フォトパネル",
-      "first_seen": "2026-08-26",
-      "last_delivered": "2026-08-26",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1mvtvmalhkndvbr2vauhc2cxgywjrwylfyqwitxzkzb0pqtvg2ekdurfffa1zesva4qjzwtm4xunbxlxdiegjqvwvpsmxoz2y5d1vzsvqwtxnfdk9ine0xvmdatexjytzaqmc?oc=5",
       "title_norm": "ママ＆キッズベビーミルキーローションが新登場8月28日よりアカチャンホンポ全店舗で先行発売ナチュラルサイエンス公式オンラインショップ直営店は10月21日より",
       "group_id": "f5d422e347",
@@ -1609,6 +1546,51 @@
       "cluster_key": "サンリオキャラクターズチャイルドシートチャーム11月より登場",
       "first_seen": "2026-09-25",
       "last_delivered": "2026-09-25",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1zckdyn1zvcde5ykjfdv9xve41ddrkdjlkwnj0nddlrehfrnvqytdowjboyxbusgfjnvnhafzqz0jvbehlyxnpb3a1mjjdnfhcsl9dc0l2zgxydxhja29vn1lrrwewzhuzunc?oc=5",
+      "title_norm": "過去最高売上を更新したbrunoカタログギフトシリーズに出産祝い向けカタログギフトベビーが新登場",
+      "group_id": "f8f9bbcd83",
+      "cluster_key": "過去最高売上を更新したbrunoカタログギフトシリーズに出産祝い向けカタログギフトベビーが新登場",
+      "first_seen": "2026-09-26",
+      "last_delivered": "2026-09-26",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmidefvx3lxte1fvuzscjnxoeh5qktywvvrttktmnptwenvuzrnwvl4zwpounbidtvfrejoltlftm1jmus4yjm1qkzvadrhz2dzsuvdntbpvkkzwfb1ve05luk0q2lxdlvtm01ecjjiz1vqcwfaudhkcv9hsm9g?oc=5",
+      "title_norm": "安特羅のエンテロウイルスワクチンタイに進出biogenetechと提携し300万人の乳幼児市場を開拓",
+      "group_id": "05f3d67757",
+      "cluster_key": "安特羅のエンテロウイルスワクチンタイに進出biogenetechと提携し300万人の乳幼児市場を開拓",
+      "first_seen": "2026-09-26",
+      "last_delivered": "2026-09-26",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmis0fvx3lxte1pumfuzxi1uvb3dg45r2i2c3hizvnrs3bprzetsu1fzwp0mujqmhe0duh6wvdzm0fcyxbkyjn3mhbbv2zqvvd5avk3uq?oc=5",
+      "title_norm": "韓国ベビー用品ブランドkonnyがinapsquareとのコラボ第二弾を発売親子コーデも",
+      "group_id": "13aa27d070",
+      "cluster_key": "韓国ベビー用品ブランドkonnyがinapsquareとのコラボ第二弾を発売親子コーデも",
+      "first_seen": "2026-09-26",
+      "last_delivered": "2026-09-26",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxtfbqmje4vwpgymu2odrqbfvjeu9wnjdzvc1jenj6d1p0mldhtunluwjxaujss2vmnmrovlnravnxtu5fcwrlwmzxzw9zwf94dtbizkz3?oc=5",
+      "title_norm": "ゼビオアリーナ仙台でアイリスオーヤマ様の赤ちゃん用紙おむつを無料配布",
+      "group_id": "94b35c8511",
+      "cluster_key": "ゼビオアリーナ仙台でアイリスオーヤマ様の赤ちゃん用紙おむつを無料配布",
+      "first_seen": "2026-09-26",
+      "last_delivered": "2026-09-26",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiy0fvx3lxte5hujnmwhrgmv9xzhq4uwh3wwnjy3fiohawdehunv9elvffqvbvtgc2rjgxb1horfpoc0xyohp1bmtmz2hybeh6rv9iquvprkv4enrjduizm0rlugxntzy4nxpcsdiby0fvx3lxte5hujnmwhrgmv9xzhq4uwh3wwnjy3fiohawdehunv9elvffqvbvtgc2rjgxb1horfpoc0xyohp1bmtmz2hybeh6rv9iquvprkv4enrjduizm0rlugxntzy4nxpcsq?oc=5",
+      "title_norm": "岡山県のチャイルドシート使用率6歳未満90％行楽シーズンを前に使用呼び掛けjaf岡山支部",
+      "group_id": "afd6644266",
+      "cluster_key": "岡山県のチャイルドシート使用率6歳未満90％行楽シーズンを前に使用呼び掛けjaf岡山支部",
+      "first_seen": "2026-09-26",
+      "last_delivered": "2026-09-26",
       "delivered_count": 1
     }
   ]
