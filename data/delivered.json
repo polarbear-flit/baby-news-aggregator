@@ -1,60 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte02bdbftkrxohnxwxp2uunizhzyzjuyykkwx0x6cweyutvhuvdiugjqv2rvwnfwylaywgg3qmpmr2o4vndpbghks1ftekfqq2z3ze5oeeu0zvjdd21wskxnodzlexfmazlmvwc?oc=5",
-      "title_norm": "ファンケルの発芽米がピジョンのベビーおやつに初採用素材にこだわりふわっと溶ける新商品げんまいまんま2品を9月7日から新発売",
-      "group_id": "456b48ef07",
-      "cluster_key": "ファンケルの発芽米がピジョンのベビーおやつに初採用素材にこだわりふわっと溶ける新商品げんまいまんま2品を9月7日から新発売",
-      "first_seen": "2026-09-01",
-      "last_delivered": "2026-09-01",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfb0mujlu0lsa1vutnlbdvzfbxvdb0lyaufnehn2ukjyc2o5qxf5s3dqdnb5mupzcetawuliww5yvgxsewhltlpsnjdnq0x4v1dtutbzbdloqwfjnfb5s29lvhhpcmj5r1lrcmc?oc=5",
-      "title_norm": "石井食品ベビーフード市場へ本格参入2027年度中の商品発売へ無添加調理※¹食物アレルギー考慮食育を軸に展開",
-      "group_id": "2b2a5e4e3b",
-      "cluster_key": "石井食品ベビーフード市場へ本格参入2027年度中の商品発売へ無添加調理※¹食物アレルギー考慮食育を軸に展開",
-      "first_seen": "2026-09-01",
-      "last_delivered": "2026-09-01",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmivkfvx3lxte5bmfr1b3dcr3zgzkpkqmrkotnnuzdrzdlmcxjzdnnkdk5trjewwjnuuwtqeglir2lorlvkc2lsvzlomgrrzkq0ngr4nxjumhvpv01vnxbr0gfbqvvfexfmuhlrbw40eujyytytwglkwfjlbdjfbzq1c0r6dkp3a0zuyzjptzdzskzlb2zfa0vfn3zgv1j4mdn4d0pmr1nyevhlofr5uxvtoecwas1meg9nn1l3dw?oc=5",
-      "title_norm": "アメリカ発のスマート育児家電ブランドbabybrezzaのミルクメーカーが日本に上陸共働き世帯の強い味方に",
-      "group_id": "e472e2a07a",
-      "cluster_key": "アメリカ発のスマート育児家電ブランドbabybrezzaのミルクメーカーが日本に上陸共働き世帯の強い味方に",
-      "first_seen": "2026-09-01",
-      "last_delivered": "2026-09-01",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmidefvx3lxte1gwlvbbw9ragncchnpu0l1lxrrzjlnz21crupwsdrmt0hzdgl5alyyem1gu1rpy1vhznhldut6ew12cmnizfdlvuxurudxz2v0whzaog9smwvgb2tytwi3s1zzqwhzunpzc0ppvuqyvxz3aznb?oc=5",
-      "title_norm": "時短育児のmilkmagicシリーズからボタンを押すだけで99.9999%除菌milkmagicスチーム消毒＆乾燥機が新登場",
-      "group_id": "88131bb592",
-      "cluster_key": "時短育児のmilkmagicシリーズからボタンを押すだけで99.9999%除菌milkmagicスチーム消毒＆乾燥機が新登場",
-      "first_seen": "2026-09-01",
-      "last_delivered": "2026-09-01",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmirkfvx3lxte9yuncymgtutkv2engwyjvlzuuxng0wv2q1agh1mkjomexwtkr6axfitvrglulzbdm1wgz3y2plvzu5q2jpvee?oc=5",
-      "title_norm": "コンビ最新ベビーカーモニタープレゼント",
-      "group_id": "c8e7adc0c3",
-      "cluster_key": "コンビ最新ベビーカーモニタープレゼント",
-      "first_seen": "2026-09-01",
-      "last_delivered": "2026-09-01",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiwefvx3lxte5pwxlfwwt0n29scewtbwrzehplvxczrke4vdn5mnczevpxb3lfshrax1l6bvkxcenxs0j3al8yednwm2fvuhvvqlbmbm5frg42y05kotjhuhy?oc=5",
-      "title_norm": "ベビーカーを預けない車内でも快適にnunaが提案する子どもとの移動をもっと自由にする新しいベビーギア",
-      "group_id": "6f074b6dd5",
-      "cluster_key": "ベビーカーを預けない車内でも快適にnunaが提案する子どもとの移動をもっと自由にする新しいベビーギア",
-      "first_seen": "2026-09-01",
-      "last_delivered": "2026-09-01",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiuefvx3lxte9asnrtbzrlvlvcv3zevgfwv2r5chdrb1ktvuhfuu9segctvv9un2pktlvjzg1wy2xwbgxzckttbtjeqjjtru00buducdbvmy1h?oc=5",
       "title_norm": "ピジョン哺乳瓶値上げ",
       "group_id": "9f8e90d100",
@@ -1483,6 +1429,60 @@
       "cluster_key": "０歳児を育てる世帯に紙おむつなど無償で届ける支援宮城・利府町",
       "first_seen": "2026-10-01",
       "last_delivered": "2026-10-01",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmihwfbvv95cuxqrvnpwxc4rdfmsnzoeknis1lyywyxazdmuutdu19yrtder01rc3ffa21oy3hnvkhpaxy3rthtbulwy0ewvjfzclfqc2r2vvbsd3dyzmtnujjgmi02rl9fvuh0ruftvzm2wexqm2dvmgpiotnptk9lagjwrxrbsza5thnuelz0c03saycbqvvfexfmuevtavl3oeqxzkp2ahpdsetzcmfmmws3zlflq1nfweu3rednuxnxx2tttmn4z1ziawl2n0u4u21jvmnbmfyxc3jruhnkdlvqund3cmzrtviyrjitnkzfx1videvbu1cznlhmajnnbzbqsdkzt05ps2hivkv0quswouxzbnpwdhnn?oc=5",
+      "title_norm": "パン・パシフィック・インターナショナルhd＜7532＞日本トイザらスの玩具・子供用品販売事業を取得",
+      "group_id": "c6d8e11919",
+      "cluster_key": "パン・パシフィック・インターナショナルhd＜7532＞日本トイザらスの玩具・子供用品販売事業を取得",
+      "first_seen": "2026-10-02",
+      "last_delivered": "2026-10-02",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte93m3llm25jwvpknkg3amtmtmvjngrrbvqtakdsb0rmsi1ymwmwuhv6nlhctnzruwh0vwpcr0n1x2tlqmhnrzjkbufxvehtvjnlnndhlungbwx2qurvyxdgn2xjz21htmdkeve?oc=5",
+      "title_norm": "アカチャンホンポのおしりふき水99％superシリーズがミニポーチになってカプセルトイに登場10月1日から販売開始",
+      "group_id": "833f97ff71",
+      "cluster_key": "アカチャンホンポのおしりふき水99％superシリーズがミニポーチになってカプセルトイに登場10月1日から販売開始",
+      "first_seen": "2026-10-02",
+      "last_delivered": "2026-10-02",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmivkfvx3lxtfbdewlpegfqay1zrgfusvravhkymgnfc0zqx0zud295qi1amwptbmliawj0bg15z003rmrjrk8ydus5ew1gul93egdcatjvn2dhdvgwtl9r?oc=5",
+      "title_norm": "蒸気で除菌の哺乳瓶乾燥器コンビ||全国のニュース-saga",
+      "group_id": "7e78091e3b",
+      "cluster_key": "蒸気で除菌の哺乳瓶乾燥器コンビ||全国のニュース-saga",
+      "first_seen": "2026-10-02",
+      "last_delivered": "2026-10-02",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmijgfbvv95cuxpohjpb1azexeyrknccllydc1qunmzyjb5owxyue9kq0flzm1dn25gxzfhq3gxsnznuhpsmkqyblpob0m3ckvta3rannq4vhq4ohr6qu5ydhl2n1hzlvb2c0pauko0awvnc0d1y0nxahzbdtvvwfnzduutvwhumndwyuv3m19xvuj4qtnkt2n3?oc=5",
+      "title_norm": "リピーター増韓国発ベビー・キッズkonnyが愛されるワケ",
+      "group_id": "9525661696",
+      "cluster_key": "リピーター増韓国発ベビー・キッズkonnyが愛されるワケ",
+      "first_seen": "2026-10-02",
+      "last_delivered": "2026-10-02",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxtfbqyvz4v2tjtlllmgstzhz4elyyx0hywgnxefjgyxrlt2qyx2nxslvvn2vbzgtutwutbvzhrhhcbw9cm2pxvtzqt29icte4y2dlu1fnvu51rdjeem5tu3hkzvlolxrxakj6z09ya2dpq0ixrg5fa1hzehjou3vstuu?oc=5",
+      "title_norm": "しまむら系列バースデイで発見スヌーピーデザインのキルトベビー服秋冬アイテムが1089円から登場",
+      "group_id": "32f7d09769",
+      "cluster_key": "しまむら系列バースデイで発見スヌーピーデザインのキルトベビー服秋冬アイテムが1089円から登場",
+      "first_seen": "2026-10-02",
+      "last_delivered": "2026-10-02",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1ua2r0zjittmxuwlhzvdbkterat2r4m0jzb2dcmutet1gwnep3wtzzagy0c2r1mkjfd2tzz0xldvhxql9jrkj1mdbqwg1pazngufpfa1vfutmtrlvkzfrxczbzqmhju3m0axc?oc=5",
+      "title_norm": "いつものお買い物から脱炭素につながる選択をアカチャンホンポの商品がかながわco2co2ポイント+の対象に2026年10月1日より実施|株式会社赤ちゃん本舗のプレスリリース",
+      "group_id": "2aa7e396ea",
+      "cluster_key": "いつものお買い物から脱炭素につながる選択をアカチャンホンポの商品がかながわco2co2ポイント+の対象に2026年10月1日より実施|株式会社赤ちゃん本舗のプレスリリース",
+      "first_seen": "2026-10-02",
+      "last_delivered": "2026-10-02",
       "delivered_count": 1
     }
   ]
