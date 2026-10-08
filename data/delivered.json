@@ -1,69 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiy0fvx3lxte1pngkxd3l6v1z1ugfjtdytszzpn0zurfljamp1zfj1bg5obhpflun2mjlquwwtznh0bwluzeowrg0zwkrtu2ppz1lvn3ptqmhcbeeydw5sddnnstdbegdfvnhkqq?oc=5",
-      "title_norm": "日本トイザらス東京・東久留米市に新店オープンベビー用品から大人向け玩具まで展開最大60％オフの3日間セールも",
-      "group_id": "3efb4e28c2",
-      "cluster_key": "日本トイザらス東京・東久留米市に新店オープンベビー用品から大人向け玩具まで展開最大60％オフの3日間セールも",
-      "first_seen": "2026-09-06",
-      "last_delivered": "2026-09-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiykfvx3lxte9ydtnkslu2uhnyn3c4ctlkqxi5us1izu9uszzkqlv0y2q1yk82qvnvtjjsstjsdxbdt29avu5hv25wumhtevfpm3pjekthsf84x2rpudhat2texzznb1huy0tn?oc=5",
-      "title_norm": "年内で生産終了ピジョンのベビーカーに惜しむ声タイヤに込めた赤ちゃん思い16年間の事業に幕",
-      "group_id": "ffe37d3b7d",
-      "cluster_key": "年内で生産終了ピジョンのベビーカーに惜しむ声タイヤに込めた赤ちゃん思い16年間の事業に幕",
-      "first_seen": "2026-09-06",
-      "last_delivered": "2026-09-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxte9vukrwmlzxmjrsqtvjb3a5lu1wckrfbmixwwo4bkpkrjljuxzkukvmsvvid21hbujelvpaddnyzdrcb1ixmdh6c3nwqmhesnptuxbysvd1zwjom1u?oc=5",
-      "title_norm": "ストーケの新型ベビーカーヨーヨー5一手で折りたたみ可能な便利さ",
-      "group_id": "6c221760f0",
-      "cluster_key": "ストーケの新型ベビーカーヨーヨー5一手で折りたたみ可能な便利さ",
-      "first_seen": "2026-09-06",
-      "last_delivered": "2026-09-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmivkfvx3lxte02zvfnejf5zgljdjutcgzhrjb6dg5hv0s1cldfzejiyzdcyzjgalhtoflfy21uevhnymg3oencc1zcsvbmwwr5d3p1mgn3v2vhx2o2utbn0gfbqvvfexfmtmvpq3c3ogjxtfphsmvzq2vmwlgya3y5mw9rbfe5ow01wkhutlbuofh1znfkd0fnzudxs2lqyks3d0fewmriugotalprdjfwm3pysw1ywjlomwhfzw?oc=5",
-      "title_norm": "旅行も普段使いもこれ1台でnunaから機内持ち込みベビーカーviaacabnが登場",
-      "group_id": "0c7944663c",
-      "cluster_key": "旅行も普段使いもこれ1台でnunaから機内持ち込みベビーカーviaacabnが登場",
-      "first_seen": "2026-09-06",
-      "last_delivered": "2026-09-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmixefvx3lxtfb6reflannvrxl4umwwd24xv2jpuk9lqld3adleeg40egdzrljknuczt3m3egtabghqcktnaxduwxctzdvxvdbstf9yafrbs2rztjl6sdn6znfizkrr?oc=5",
-      "title_norm": "マタニティ・ベビー・子ども用品の専⾨店西松屋シーナシーナ丸大新潟店が8月13日にオープン秋物＆おでかけグッズなどおすすめ商品をチェック♪",
-      "group_id": "228ac3963a",
-      "cluster_key": "マタニティ・ベビー・子ども用品の専⾨店西松屋シーナシーナ丸大新潟店が8月13日にオープン秋物＆おでかけグッズなどおすすめ商品をチェック♪",
-      "first_seen": "2026-09-06",
-      "last_delivered": "2026-09-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte55ds1dstbdmgtuudixwmtob0xubi1wnmj4etfmt0d0dwxxrez3edlzdmi4ai1vdtlwcnnrthzpcmfwrlbcq0o4azzuddhxbwnwadbzdde5qko5y3i3am96lxjrwue4nhvjm2c?oc=5",
-      "title_norm": "ベビー枕ランキング1位のユニースリープが楽天スーパーsaleの対象に",
-      "group_id": "d8918dcc26",
-      "cluster_key": "ベビー枕ランキング1位のユニースリープが楽天スーパーsaleの対象に",
-      "first_seen": "2026-09-06",
-      "last_delivered": "2026-09-06",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmir0fvx3lxte52mmtzodfir29vltewc0y0tznquwdia3hndxpzcgfrexphs3ngejr4tujhswe4y0sxdjlibw5krtvza2zxwedr?oc=5",
-      "title_norm": "ふるさと納税でもらえるベビーカーの還元率ランキングを発表",
-      "group_id": "bc2dbed3a5",
-      "cluster_key": "ふるさと納税でもらえるベビーカーの還元率ランキングを発表",
-      "first_seen": "2026-09-07",
-      "last_delivered": "2026-09-07",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1jatlslwl0yks1cennlwxrv3vdretkztbvou5hs1vty1i2otfeedrqrldkadzrtte4mmnyc1mtqmp1y0vpeukyyxdmcfbwnxrvmf9ezklyvl9etc1wsg5eswx3s1nowtbfnxc?oc=5",
       "title_norm": "国内の販売においてミリオンセラーのベビーカップmunchkinミラクルカップよりnewcollectionが9月4日発売米国本社がこの10年余りで最大の進化と位置づけるデザイン刷新",
       "group_id": "285766e477",
@@ -1213,6 +1150,60 @@
       "cluster_key": "魅力的な価格コンビクルムーヴスマートisofixエッグショックjlチャイルドシートチャイルドシート｜aupayマーケット",
       "first_seen": "2026-10-06",
       "last_delivered": "2026-10-06",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte9pdjmzvkhgn3z3emzncjvbndrpu3lxr0dwahrfq2pjzg1lbdv6og5mcgxvouzvzeppbxh4ugfws1bznhloawljqm5cnwvylxlankgw?oc=5",
+      "title_norm": "出生児数が2年連続で増加し国内の乳幼児食市場にも回復への期待が高まっている特に一人の子供に投資が集中するゴールドキッズ現象が拡散し山羊乳などを原料とした国内プレミアム粉ミルク製品の成長傾向..",
+      "group_id": "38f10fb977",
+      "cluster_key": "出生児数が2年連続で増加し国内の乳幼児食市場にも回復への期待が高まっている特に一人の子供に投資が集中するゴールドキッズ現象が拡散し山羊乳などを原料とした国内プレミアム粉ミルク製品の成長傾向..",
+      "first_seen": "2026-10-08",
+      "last_delivered": "2026-10-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmixkfvx3lxte9tekluzdvvejm5zedrmnr6rtf0qunlv0u0tdvxq1h5dllwcgu0dzcxswjmdxrctlgxz09mzhz2tvzotkrar0k0dli2aukymzzcnkktcutmwmd4uhjovwc?oc=5",
+      "title_norm": "イオン子育て支援自販機を実験的に設置必要なベビー用品を気軽に購入できる提案",
+      "group_id": "71c3b05469",
+      "cluster_key": "イオン子育て支援自販機を実験的に設置必要なベビー用品を気軽に購入できる提案",
+      "first_seen": "2026-10-08",
+      "last_delivered": "2026-10-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbrshlovzflai1sbtu4reotvkhtrtrqbkjha19urfnxemzqz3bpzhrwrlzxblowdvveynnqnettrwttbzjvdvm1em4tevppq0dsrmhanve0ng9qamcxngkzynywqkhurglxqle?oc=5",
+      "title_norm": "沖縄県の商業施設で初設置型ベビーケアルームmamaroを那覇オーパに設置しました",
+      "group_id": "4ea6f717c0",
+      "cluster_key": "沖縄県の商業施設で初設置型ベビーケアルームmamaroを那覇オーパに設置しました",
+      "first_seen": "2026-10-08",
+      "last_delivered": "2026-10-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9yadu2rmzovljwwnrgzfblau5yzzrzy2fomnjiodvfqurynezjde0zzerdbxzosw5wrdvqrunotus4nlc1d0tkdwjjn19vmzbmv2pjmxfrruprmde5yvbvcnppwwl2ltrjm2c?oc=5",
+      "title_norm": "ミルクの温度これでいいに目安をtoday&alwaysの哺乳瓶用温度チェッカーみるぴた",
+      "group_id": "44d74e1aa4",
+      "cluster_key": "ミルクの温度これでいいに目安をtoday&alwaysの哺乳瓶用温度チェッカーみるぴた",
+      "first_seen": "2026-10-08",
+      "last_delivered": "2026-10-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9pdm8wvtq1c3g4qlrmotfowmpznghisg1cq3y2u3lidxvcrda1de1juthyogjsexqxc2dpythsa0xplum4s0tttlrhdxjsdg5kx2tsyudkduk3c3nhvnbrcs1idfhewm9gbve?oc=5",
+      "title_norm": "jr名古屋タカシマヤベビー＆キッズフェアpopup出店",
+      "group_id": "bf269151d5",
+      "cluster_key": "jr名古屋タカシマヤベビー＆キッズフェアpopup出店",
+      "first_seen": "2026-10-08",
+      "last_delivered": "2026-10-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmitkfvx3lxte1ndvnbml81ythqdg1vr3fdwuo5nexydkl5rjhgdjhjejzcevbsbs1reexnmu9tzk5lzwlqqlpmbdrktdfiwjc4mko4tddkqq?oc=5",
+      "title_norm": "バイクにも使える背負うエアコンcoolbagこの涼しさをベビーカー・車椅子ペットカートに活用",
+      "group_id": "0294fad24f",
+      "cluster_key": "バイクにも使える背負うエアコンcoolbagこの涼しさをベビーカー・車椅子ペットカートに活用",
+      "first_seen": "2026-10-08",
+      "last_delivered": "2026-10-08",
       "delivered_count": 1
     }
   ]
