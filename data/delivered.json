@@ -1,60 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiwefvx3lxte04zhlcwdnobenov3zxvukzdxdvag5dbnbkcujfrdlwzuc2vju2enc0x2ffvjngvfmxludor0tnq1liefvgx0djqu9hngjeaze0shd5qmdny2s?oc=5",
-      "title_norm": "さらっと使えるお尻ふき赤ちゃん本舗｜全国のニュース｜web東奥",
-      "group_id": "c9326b4199",
-      "cluster_key": "さらっと使えるお尻ふき赤ちゃん本舗｜全国のニュース｜web東奥",
-      "first_seen": "2026-09-10",
-      "last_delivered": "2026-09-10",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiuefvx3lxte81b3vwtnlgmwj0lvnxtdvasetoewd0zvfxwtbsztdoee5wdfz3cfjjogtinejyejczne1unmo5d1rqui1sveletuw1s3ruvy1w?oc=5",
-      "title_norm": "韓国のベビー・育児用品ブランドコニーが急成長2年連続売上高60％増",
-      "group_id": "e510065b50",
-      "cluster_key": "韓国のベビー・育児用品ブランドコニーが急成長2年連続売上高60％増",
-      "first_seen": "2026-09-10",
-      "last_delivered": "2026-09-10",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte1yalvrruhmqi1it2zfzxbuaet1zzg3yldfs3uwvtg4rv9eqwsxqkprv04zt2rfoujmcdhztuf6mu1lqjbyvxpvquqwswl6vmktzhdj?oc=5",
-      "title_norm": "育児用品ブランドバガブーとステラマッカートニーがカプセルコレクションを発売",
-      "group_id": "518c770fba",
-      "cluster_key": "育児用品ブランドバガブーとステラマッカートニーがカプセルコレクションを発売",
-      "first_seen": "2026-09-10",
-      "last_delivered": "2026-09-10",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmickfvx3lxte1lc2g3snj3njnvthazsllpctjlrjzpshoxamhmtklhredjoutxzuvwnfryukjcoevkymrtbxbnadjbdc1pmncxz3nvzetadlvzne9xos1erhvrc1zicm5mowpkvjfhvdjwckdvuuu3v1bjuq?oc=5",
-      "title_norm": "育児を支えてきたリッチェルの人気ベビー用品がガシャポンに登場｜infoseekニュース",
-      "group_id": "c3a8fccd68",
-      "cluster_key": "育児を支えてきたリッチェルの人気ベビー用品がガシャポンに登場｜infoseekニュース",
-      "first_seen": "2026-09-10",
-      "last_delivered": "2026-09-10",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxtfa2sdrfc2lwenoxzgpqrdfumxpzeenpdjk4rlb2lulumzbwzfg3u2fsbhppwnowoxnscy1gavjkx0q0svvgndjcdelwztziqvjfrmnvbhlfsjb6zef1nwfrdzf3r0vqttntbkdmdms4c05vltvfaktndw9tmkpwv1e?oc=5",
-      "title_norm": "しまむら・バースデイでちいかわアイテムがオンライン販売クッションやトートバッグ母子手帳ケースといったマタニティグッズも",
-      "group_id": "2d374b07f3",
-      "cluster_key": "しまむら・バースデイでちいかわアイテムがオンライン販売クッションやトートバッグ母子手帳ケースといったマタニティグッズも",
-      "first_seen": "2026-09-10",
-      "last_delivered": "2026-09-10",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiuefvx3lxte1zrnfjbkjldvzlbkrssllvqv9uz083mxpxtlgtaddxtm1geezxvgw0tvjbzi1yejfhq0zuvkcwauu3q0kxqxfbvjvxvf83dknv?oc=5",
-      "title_norm": "combiのベビー用品を再現したガシャポンチャームがガシャポンバンダイオフィシャルショップ限定で再販定番アイテムから懐かしのアイテムまでミニチュア化して収録",
-      "group_id": "2c928cac26",
-      "cluster_key": "combiのベビー用品を再現したガシャポンチャームがガシャポンバンダイオフィシャルショップ限定で再販定番アイテムから懐かしのアイテムまでミニチュア化して収録",
-      "first_seen": "2026-09-10",
-      "last_delivered": "2026-09-10",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxte0ztk9soxitvm5vqxvyq3hdemx2q0jqyktpcu43edm4swxquvzlbgjocnywdmfazjdjnvbpskffuzdma2ngdutty0jldnuxbkdyekdwuv95sq?oc=5",
       "title_norm": "コンビシングルタイヤ×オート4キャスで軽量5.6kgのファーストベビーカースゴカルrエッグショックzaを発売",
       "group_id": "d7bbee31c1",
@@ -1222,6 +1168,60 @@
       "cluster_key": "手のひらでとろける冬の乾燥肌をやさしく包むエルバビーバの秋冬限定ベビーバターが今年も登場",
       "first_seen": "2026-10-10",
       "last_delivered": "2026-10-10",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxte9vdtrxbg5wrwhfc0e3ynnndfdfannnmmj4tfg3ruviluwzry1zutlhcfpzrnm0odawngvcanpnzmp1t2w3yzjncwrsvxdcuwnryk4wbjqyv2tam00?oc=5",
+      "title_norm": "新生児から使えるチャイルドシートthesロッタzhの新色をアカチャンホンポで発売",
+      "group_id": "6cb3fdc979",
+      "cluster_key": "新生児から使えるチャイルドシートthesロッタzhの新色をアカチャンホンポで発売",
+      "first_seen": "2026-10-11",
+      "last_delivered": "2026-10-11",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1kx2rrrhhoce5vetffaxfdajhznjdmv0i4we1moez1tdvzcnh3qlrvquyzowx2rthhq29pdunvzy1nvjcyutnksllywdfqv1fim0dedutqcvjtdwxjbxg5whlytud4cnlvove?oc=5",
+      "title_norm": "日本発の人気ベビー・キッズブランドpetitmain台湾・香港での展開を基盤に中国大陸市場へ進出―アジア市場での成長をさらに加速―",
+      "group_id": "7c69f8b2f4",
+      "cluster_key": "日本発の人気ベビー・キッズブランドpetitmain台湾・香港での展開を基盤に中国大陸市場へ進出―アジア市場での成長をさらに加速―",
+      "first_seen": "2026-10-11",
+      "last_delivered": "2026-10-11",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5oml9dauiysktcouzptkn3yxo0ow9onhaxexryywf6am9xodljv0fiwxvwajjnexe1c2dfbm94z3y1zknonfvxy29qmet5avg3ymhmsxotd0ztnzlpd3cysej5thfxcwuzzhc?oc=5",
+      "title_norm": "生まれてきてくれてありがとう１０月１０日赤ちゃんの日にアカチャンホンポ＆アドベンチャーワールド初のコラボイベントハイハイレースを開催しました★",
+      "group_id": "f6b4f6c2b7",
+      "cluster_key": "生まれてきてくれてありがとう１０月１０日赤ちゃんの日にアカチャンホンポ＆アドベンチャーワールド初のコラボイベントハイハイレースを開催しました★",
+      "first_seen": "2026-10-11",
+      "last_delivered": "2026-10-11",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxte9sm21yu2rtbla1cujsx01vcgj0skngsgvvnzfmoxjfsm41os1tn2ria2tix25umejkndvnx1jzdfhevjdqugz3m1dwlxywdm9mcwr6v1foenbobfb6lw9fbdlrwxptsnm?oc=5",
+      "title_norm": "燃やすほかなかった紙おむつを資源に...ナガセケムテックスdenagreenが描く新たな循環",
+      "group_id": "4261f14d9c",
+      "cluster_key": "燃やすほかなかった紙おむつを資源に...ナガセケムテックスdenagreenが描く新たな循環",
+      "first_seen": "2026-10-11",
+      "last_delivered": "2026-10-11",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbzvvh6tgnzetctm3rhofpkejjyvfftajjzb2ppmdbirjhma2jxsjl2tdmxwtzktmnany1myza0efjwcu9rrjuwv1qybxzmejj1ql9zbtveafp1skp2ctz6tg1wtue0ykg4q3c?oc=5",
+      "title_norm": "頭蓋形状矯正ヘルメットベビーバンドドイツ・デュッセルドルフの国際医療機器見本市medica2026に出展",
+      "group_id": "b34aa354dc",
+      "cluster_key": "頭蓋形状矯正ヘルメットベビーバンドドイツ・デュッセルドルフの国際医療機器見本市medica2026に出展",
+      "first_seen": "2026-10-11",
+      "last_delivered": "2026-10-11",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte0yb2zqr3fjvndum2njaudxdm9lnejrujdlsghsq0d3azrtzdletwjqsxe3aujkodvxqmlovluxefezdks3mw1uc2hcdw04b2k3mvlxvdd4wc11tthqvnd6mgtxq2rtbm1esve?oc=5",
+      "title_norm": "洗濯物を分けてまとめてスッと運べるランドリー3段ワゴンやベビーバスを浮かせて省スペースに収納できるフックなど新商品が発売になりました",
+      "group_id": "75a5267f08",
+      "cluster_key": "洗濯物を分けてまとめてスッと運べるランドリー3段ワゴンやベビーバスを浮かせて省スペースに収納できるフックなど新商品が発売になりました",
+      "first_seen": "2026-10-11",
+      "last_delivered": "2026-10-11",
       "delivered_count": 1
     }
   ]
