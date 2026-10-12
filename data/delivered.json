@@ -1,60 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxte0ztk9soxitvm5vqxvyq3hdemx2q0jqyktpcu43edm4swxquvzlbgjocnywdmfazjdjnvbpskffuzdma2ngdutty0jldnuxbkdyekdwuv95sq?oc=5",
-      "title_norm": "コンビシングルタイヤ×オート4キャスで軽量5.6kgのファーストベビーカースゴカルrエッグショックzaを発売",
-      "group_id": "d7bbee31c1",
-      "cluster_key": "コンビシングルタイヤ×オート4キャスで軽量5.6kgのファーストベビーカースゴカルrエッグショックzaを発売",
-      "first_seen": "2026-09-11",
-      "last_delivered": "2026-09-11",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1mq3dxt3dergfhagthc3hdbkd3v3pkzvhuzunksetpwdn2z0vmnudvcg94rzlqzwfyswzlwdv2yljimvznq1pqujjquuxxvmpncultvfv4cufdtknhcm5ybufxmlj1c3q1dve?oc=5",
-      "title_norm": "11年ぶりの5連休どう遊ぶトイザらス・ベビーザらスシルバーウィークsale開催",
-      "group_id": "805cd58cac",
-      "cluster_key": "11年ぶりの5連休どう遊ぶトイザらス・ベビーザらスシルバーウィークsale開催",
-      "first_seen": "2026-09-11",
-      "last_delivered": "2026-09-11",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9xtvrgmwn0lxhlodiwvumzytlsc2t3dwm4qmd1rffna2hmzxjfv1fucgfyzllvdmlqrkrurnvlv2vgetbmnww2mmvfszhxzhfcdnljytvwzkluadjiu1n2djr1dfzsnlpyc1e?oc=5",
-      "title_norm": "foodstylejapan2026〈東京〉に赤ちゃん本舗allumyが出展～特定原材料９品目不使用外食向け冷凍お子さまランチキットを展示～",
-      "group_id": "1ab2e3db5b",
-      "cluster_key": "foodstylejapan2026〈東京〉に赤ちゃん本舗allumyが出展～特定原材料９品目不使用外食向け冷凍お子さまランチキットを展示～",
-      "first_seen": "2026-09-11",
-      "last_delivered": "2026-09-11",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiqgfbvv95cuxpvevld3c3ww9paflqegi0ctnomtdywmjiody3sxlsewrgn2lqqtbobjfuaenpuzhgtvoyzgztalo3dklsujdsy2tiqunlqvpsd1feeutkcktra1z6azryb2ffag0tnwxvqmfod3f3vu9vrfn0rxbotffvctfxt1rimfhmnnp3tmmzuf9ncm42vflsatr5s1l6meprzfdma0tpawzxme9cvmhwdw?oc=5",
-      "title_norm": "niqの調査により時間信頼サポートが米国のマザー＆ベビー市場をどのように再構築しているかが明らかになりました",
-      "group_id": "77e993783e",
-      "cluster_key": "niqの調査により時間信頼サポートが米国のマザー＆ベビー市場をどのように再構築しているかが明らかになりました",
-      "first_seen": "2026-09-11",
-      "last_delivered": "2026-09-11",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxte5zsuuxaxlbejjlwjf1qmo4ulfsvwxvm3pjcw9dnxpiwhl0elk0oulazzlkannsshuzsku0bjywwfdtrtj2lwc3uenfrhg2m19hv2hxqznbcw?oc=5",
-      "title_norm": "ユニ・チャームマミーポコパンツムーニーおしりふきがトミカ・プラレールデザインでラインアップを拡充",
-      "group_id": "a9b58436fc",
-      "cluster_key": "ユニ・チャームマミーポコパンツムーニーおしりふきがトミカ・プラレールデザインでラインアップを拡充",
-      "first_seen": "2026-09-11",
-      "last_delivered": "2026-09-11",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiiafbvv95cuxosxrrdzfysc1iq0ltvzz6mkrkvvrnvwpqz0y1sxmwvkt2n0dyntj5tzbzdudtzu96z3ruvurvb293ewjba1ngde01mndhcuj5u0luznbqmjzjdwnqtmi4q2dptnhhwhrktejqtvhkxznmoepjx2tzbndrzgg3cdluvy1xrm4zeg15?oc=5",
-      "title_norm": "さらっと使えるお尻ふき赤ちゃん本舗",
-      "group_id": "bf9d828529",
-      "cluster_key": "さらっと使えるお尻ふき赤ちゃん本舗",
-      "first_seen": "2026-09-11",
-      "last_delivered": "2026-09-11",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9kog55x2fuuu9vclr4sl9ryxfod3buczk2zhvieurpy3m3v25uqk5owmzit1nbrhh4ofhqbzv1ztvhcuw0qxf0neoxazg4n0z2ykrsykmzznnlaxhkrflmcgfhmvprevg0z0e?oc=5",
       "title_norm": "くまのプーさん原作デビュー100周年を記念したベビー用紙おむつが登場グーンぐんぐん吸収パンツくまのプーさん限定デザイン10月1日数量限定発売",
       "group_id": "80f3633534",
@@ -1222,6 +1168,24 @@
       "cluster_key": "洗濯物を分けてまとめてスッと運べるランドリー3段ワゴンやベビーバスを浮かせて省スペースに収納できるフックなど新商品が発売になりました",
       "first_seen": "2026-10-11",
       "last_delivered": "2026-10-11",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte4yaupfz0ttrwnumfvgoxljynfnuwwtemfergxeluxedw9fbv9pymh2uuc5dtfhtnczotjdalffufpuzfv4rmpvzgpmwdhqcdvsx3jz?oc=5",
+      "title_norm": "ベビー服市場調査2026",
+      "group_id": "5101da81c4",
+      "cluster_key": "ベビー服市場調査2026",
+      "first_seen": "2026-10-12",
+      "last_delivered": "2026-10-12",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte01bevxq25zumnsae9avgtjddnuqwd6vtfpwnjyq0ytd3d5nxlqbtlorflqunrnzff4ac1zvthmvmjwv2nkdtm3szfma3dtdhzytxf6qwnumwhasdltvuntaeo0ofloa200mhc?oc=5",
+      "title_norm": "お子様が生まれるとアレルギーを意識する保護者は約6割母乳成分ポリアミンへの関心研究情報の提示後に約9割の保護者で上昇",
+      "group_id": "785b58c684",
+      "cluster_key": "お子様が生まれるとアレルギーを意識する保護者は約6割母乳成分ポリアミンへの関心研究情報の提示後に約9割の保護者で上昇",
+      "first_seen": "2026-10-12",
+      "last_delivered": "2026-10-12",
       "delivered_count": 1
     }
   ]
