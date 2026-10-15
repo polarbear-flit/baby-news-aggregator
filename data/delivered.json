@@ -1,15 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmizefvx3lxte4xr2txewflq0hwcmw0qtc5bxjzumnoy1vxzxrxvwzlu1i3tfldwuxhmkfhdwrvqvy0tuxxvhpmcedrexlkef9oa3ljlxp4a19sbddqtfbpwdhlugdvr0v3ume0szi?oc=5",
-      "title_norm": "横浜ポルタ完全個室ベビーケアルームを設置授乳やおむつ替えの場を求める声受け",
-      "group_id": "d59de6baa7",
-      "cluster_key": "横浜ポルタ完全個室ベビーケアルームを設置授乳やおむつ替えの場を求める声受け",
-      "first_seen": "2026-09-14",
-      "last_delivered": "2026-09-14",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbsbg9zrk41zuh0emo4atfvenphngryd3diy2vod054y3rkemjtythtr0cylvbkslvhwwq0al9hzwrsrgkwdnb3sgi5vwizytrvykgywuphs0faqtrvzzjmrhntytlizmnzvke?oc=5",
       "title_norm": "大人気ドラクエベビー＆キッズ秋冬コレクション9月18日よりベビーザらスで販売開始",
       "group_id": "1d818086cf",
@@ -1132,6 +1123,105 @@
       "cluster_key": "中国発ベビーケアブランドbcbabycareが日本展開を加速育児のタイパをかなえる",
       "first_seen": "2026-10-14",
       "last_delivered": "2026-10-14",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5xmlpxwwzyshlovwi0n0fxzxj1avqxn21jqtr0vnzzltd6dun1emlgc1fzu3fctxrhn2w5m1fczddlx1lnquhsq2t5ve1wremxvu9nlxhmoufqqwlcvfdddvlnlwhys1z5lue?oc=5",
+      "title_norm": "赤ちゃん本舗btob事業を本格強化今秋関西・九州の大型展示会３展へ連続出展",
+      "group_id": "bd51ad4d07",
+      "cluster_key": "赤ちゃん本舗btob事業を本格強化今秋関西・九州の大型展示会３展へ連続出展",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmivefvx3lxte1yq2jeujdsnvvnbjc3ywe1ugiyvlzwmxfsz3rvzdz3efpkaei1uhdzdzfttzf3vtf4zkhjutnyn3bzderimdjjy2fqqutreknoel82mq?oc=5",
+      "title_norm": "軽量ベビーカー＝コンビ",
+      "group_id": "fcd0635234",
+      "cluster_key": "軽量ベビーカー＝コンビ",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1usfhqttbdexl4c0jzmelpze1pu0jqlxrms1vqyxpzthftvfh3ywhxrjyxs1czzhvrvwg0ddvjbmjmrlbbzvy3svlyskdxvwf2dc15s3ltblk5akdcv2phy1rbdvfgclbllxc?oc=5",
+      "title_norm": "友利新が代表を務める赤ちゃんから使えるスキンケアブランドメディスキンが伊勢丹新宿店に初出店10月28日よりpopupshopを開催",
+      "group_id": "4df7c4e186",
+      "cluster_key": "友利新が代表を務める赤ちゃんから使えるスキンケアブランドメディスキンが伊勢丹新宿店に初出店10月28日よりpopupshopを開催",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5xvk8tamzostnylxjdcdrlbi1ubjq2a3m2bgjvtzrws0zebufqd1j0egfsamvrz1bdv3pnbwo2ogzrwnp2nmnibuvbc3jxali3oxpzsnvmv1qzq1dvawtfbziycgpbwkcyd2c?oc=5",
+      "title_norm": "赤ちゃんとの毎日にやさしい肌ざわりを今治謹製organictowelからオーガニックコットンを使用したベビーアイテムが発売中",
+      "group_id": "2947bf9f9e",
+      "cluster_key": "赤ちゃんとの毎日にやさしい肌ざわりを今治謹製organictowelからオーガニックコットンを使用したベビーアイテムが発売中",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmijgfbvv95cuxnctbfckxmv093thbmsffsmwrwsfo3rvpotwrhzgx3qjlbtw9zduvcnnc3bw5obzvnqmnxekj2dlz5c2hswnr5ctvfnnv5cvuwsmxcvhgzqvp3ltd4uutxckhkvfhpmvbfsznbykjzvdlnv2lxmxfraxvfwl9utflrvhc3vddinlzxwurxqnln?oc=5",
+      "title_norm": "出生率上昇も育児費高騰",
+      "group_id": "fee102c8ed",
+      "cluster_key": "出生率上昇も育児費高騰",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfatcvm2cjrfyjztbzfqc25twefnavmxnwptv19nv2m1vfntsxlytg5rtxzbn182ddy4t2nfuwsxcu5ccwhasg40tfzbafrdotdmsvnvslpkegotb0utmvpbnhm2dncyundysnc?oc=5",
+      "title_norm": "チャイルドシート搭載可能モデルmatego+の2027年度の入園を見据えた先行受注会を開催",
+      "group_id": "4ad02057b8",
+      "cluster_key": "チャイルドシート搭載可能モデルmatego+の2027年度の入園を見据えた先行受注会を開催",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9vui1vvujmnhzuzlfpwurpb2vstf9fx2liev92el83z2iysddntxvyejnuylb4xzfxsmjjzfnhdetooexoufbwykfhujflsfb6ctluvw92b1zsuvo3rxnmvw9snhromwo1c1e?oc=5",
+      "title_norm": "韓国発ベビー＆キッズスキンケアimnotababy伊勢丹新宿店へ各地の百貨店で好評をいただき10月14日よりフェア開催10月下旬から三越伊勢丹オンラインストアでも発売",
+      "group_id": "013a15c6b0",
+      "cluster_key": "韓国発ベビー＆キッズスキンケアimnotababy伊勢丹新宿店へ各地の百貨店で好評をいただき10月14日よりフェア開催10月下旬から三越伊勢丹オンラインストアでも発売",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5yrkninfpls0vsetzlukp2ewhou0gtskruceq5qwtnbhu2nhhnuuhunvdvu01ynvlad2rkrflocfqtrurywhflqxzbylllrfficvvpwgcwavhmdflpt1p5merpq0lfmgdpuhc?oc=5",
+      "title_norm": "バースデイ10/2425にインテックス大阪にて開催のマタニティ＆ベビーフェスタ大阪2026に出展決定",
+      "group_id": "a4fc0d742e",
+      "cluster_key": "バースデイ10/2425にインテックス大阪にて開催のマタニティ＆ベビーフェスタ大阪2026に出展決定",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte00a0m2oertmkn6t0k4avjhu2r2mxlpbdzhmno3ewrsoupqvdvubffyys1zsduzuvzomhfldzz4mfpmugxauwzvnf9ss3ppwtutnlhnx0vfz292afloa3lkwhpdatdgrfnpmnc?oc=5",
+      "title_norm": "韓国発ベビー・キッズ服ブランドモイモルン10/14大丸神戸店に初出店秋冬の新作コレクションを揃えたpopupstoreがオープン",
+      "group_id": "6cf691ff05",
+      "cluster_key": "韓国発ベビー・キッズ服ブランドモイモルン10/14大丸神戸店に初出店秋冬の新作コレクションを揃えたpopupstoreがオープン",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte1fautunkfpmkvwnjbrbnflug5mbhnpvwtmag9ftwpfa3fxrlrnltram1fuwljzvm16zmzdrzg5bmfvegvqbffhbulkt1hwnku4afew?oc=5",
+      "title_norm": "フェラーリの代表モデルをデザインしてきたイタリアのデザインハウスピニンファリーナが幼児家具のデザインに乗り出したイタリアのプレミアム幼児家具ブランドであるポパフェドレッティ(foppapedre..",
+      "group_id": "6a12192c49",
+      "cluster_key": "フェラーリの代表モデルをデザインしてきたイタリアのデザインハウスピニンファリーナが幼児家具のデザインに乗り出したイタリアのプレミアム幼児家具ブランドであるポパフェドレッティ(foppapedre..",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1od3p0nkjduevoegytc3fszmk2nuvxdjlhlw0yuduxunz1tenrum8tquq5zzjwt3l1m195vjrhsjvlsuvwtvrex1d5tmo1u2vwovp0bfbsvelqz1jymdvvvwe0nmtyug5luee?oc=5",
+      "title_norm": "ロンハーマンキッズで揃える大切なあの子へ送るベビーギフト",
+      "group_id": "629288d61e",
+      "cluster_key": "ロンハーマンキッズで揃える大切なあの子へ送るベビーギフト",
+      "first_seen": "2026-10-15",
+      "last_delivered": "2026-10-15",
       "delivered_count": 1
     }
   ]
