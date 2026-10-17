@@ -1,60 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte1peerzz1ozu1zcwuxov1lwofryaujmbk1gdnb3uha3wnbswtfpcs0wqnzmugh2zec2v0fyatvsn0jab3l4zzhnofjkn3b1zfi0n0xb?oc=5",
-      "title_norm": "調査レポート：哺乳瓶スチーム除菌乾燥機市場調査",
-      "group_id": "6bb4d80ac5",
-      "cluster_key": "調査レポート：哺乳瓶スチーム除菌乾燥機市場調査",
-      "first_seen": "2026-09-17",
-      "last_delivered": "2026-09-17",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmihafbvv95cuxpenp4bkzdv1lorm5pyw9tztnxcerdlw1kltiznv9rec1lt2nulu5lu2nsmmrocjfhr3brevrpddyxou95sm9kytlrx2lnnvlqzeringzpr2zun05ucggwblpgmjl3b2zqulb3r1zkmnpbmlhmdwnusla4c0pkn051rtbbmwe?oc=5",
-      "title_norm": "ドラクエベビー＆キッズ向け秋冬コレクションが9月18日発売幅広い年齢でも楽しめるほかマタニティやギフトボックス入りアイテムなどが初登場",
-      "group_id": "4f3941cf5b",
-      "cluster_key": "ドラクエベビー＆キッズ向け秋冬コレクションが9月18日発売幅広い年齢でも楽しめるほかマタニティやギフトボックス入りアイテムなどが初登場",
-      "first_seen": "2026-09-17",
-      "last_delivered": "2026-09-17",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9zzhhhyxb1tkdazi02szvbmg9ytezonws3s0ktwvnztc0zenj5ujrdnziwberazg5pu2k2akjkovlvb1dmsdvfwtzqmnhbmmc3dnpxyjfybzczdkc5detmvjvvzhvgluhjt3c?oc=5",
-      "title_norm": "しまむらとバースデイにてズートピアベイマックスグッズが発売それぞれカーグッズマタニティアイテムを用意",
-      "group_id": "ec417f732d",
-      "cluster_key": "しまむらとバースデイにてズートピアベイマックスグッズが発売それぞれカーグッズマタニティアイテムを用意",
-      "first_seen": "2026-09-17",
-      "last_delivered": "2026-09-17",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5wruztzwjprtnlwkpzwu5srwjktnkwv2qtqnfmz1f2cfhuq3rqt05nalq1bzcxckrknhozsg0tnulbdxnfa1nxb2q4tme1a2tkenrvm29bavhurwvcyzzrcfutdtd2avkxz2c?oc=5",
-      "title_norm": "避難所・bcp対策の新たなインフラへ設置型ベビーケアルームmamaro™危機管理産業展2026にて実機を展示",
-      "group_id": "da857bb31c",
-      "cluster_key": "避難所・bcp対策の新たなインフラへ設置型ベビーケアルームmamaro™危機管理産業展2026にて実機を展示",
-      "first_seen": "2026-09-17",
-      "last_delivered": "2026-09-17",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmibkfvx3lxtfbrdglsdexauk1an28tr0vavvu1emzzuurjafgwcnvvqjfoohmyu2e4wdllrgzywkhzu3jyrkzznfa4r1z0cnd4x1k3z1bvcfhosvpksmhwmwlvchvvzvdwzhlry2znwmzcuejntvj3?oc=5",
-      "title_norm": "インドネシア最大級のベビー用品・玩具展示会ibte2026がジャカルタで開催|ビジネス短信",
-      "group_id": "2c05288cfc",
-      "cluster_key": "インドネシア最大級のベビー用品・玩具展示会ibte2026がジャカルタで開催|ビジネス短信",
-      "first_seen": "2026-09-17",
-      "last_delivered": "2026-09-17",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9idhp5ejfzv2djvfbrnkdkcdhlelhpqjfwnzc2zeffrzb0dfjzbfqxetzqltjrztvtb3fbctv1ofg4duneaxd3zexcaxzhdtjgrxvprmk1nlh6ykxybul3uzd3zgtfdlhntxc?oc=5",
-      "title_norm": "子育て世帯の66％が住む地域を見直し妊娠中から検討が始まり3歳までに住み替えが進む傾向",
-      "group_id": "b6fa2c7680",
-      "cluster_key": "子育て世帯の66％が住む地域を見直し妊娠中から検討が始まり3歳までに住み替えが進む傾向",
-      "first_seen": "2026-09-17",
-      "last_delivered": "2026-09-17",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmibkfvx3lxte9tvwfzdlznaxbqvvzlunhlykl5qmcyv1hmegx1btzywnzqsmfioexqr3f6n3pprth2ck1zs05uttrjaeh4elf1cg15mv9abetwdgpnt09dmgrhv01fs0lqadlebm5cmwl1vwjrstjb?oc=5",
       "title_norm": "紙おむつの定額使い放題サブスクサービス岡山市でスタート利用者にも園側にも好評",
       "group_id": "d4d923e25e",
@@ -1222,6 +1168,69 @@
       "cluster_key": "韓国発ベビー＆キッズスキンケアimnotababyが新宿に期間限定で登場-kidswell",
       "first_seen": "2026-10-17",
       "last_delivered": "2026-10-17",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5ysze1detgazk3ue9jde5yagxpavdhz2vsb3hwb1diztlxul9urgtqbwvvrvr5ovd2d3joslv4c1fwy0vozvj4qvvesmy4a0tjdgw2bvrodjc1bzduwfdyluhldmy1dwntyke?oc=5",
+      "title_norm": "ママ＆キッズベビーミルキークリームの大容量200gチューブタイプが登場10月23日よりアカチャンホンポ全店舗で先行発売ナチュラルサイエンス公式オンラインショップ直営店は12月4日より",
+      "group_id": "3490dd51a4",
+      "cluster_key": "ママ＆キッズベビーミルキークリームの大容量200gチューブタイプが登場10月23日よりアカチャンホンポ全店舗で先行発売ナチュラルサイエンス公式オンラインショップ直営店は12月4日より",
+      "first_seen": "2026-10-18",
+      "last_delivered": "2026-10-18",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmirkfvx3lxte91wkxywvvkshpknhl3y1rudgrlzvmymxk3rlfvvnvxs3zyn09od3rka1lretvimeljqv8tvzzrstmzzjrpn3c?oc=5",
+      "title_norm": "日本製紙クレシア共創型紙おむつ開発でグッドデザイン賞受賞",
+      "group_id": "04343be720",
+      "cluster_key": "日本製紙クレシア共創型紙おむつ開発でグッドデザイン賞受賞",
+      "first_seen": "2026-10-18",
+      "last_delivered": "2026-10-18",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmipwfbvv95cuxqv2p6cdq2vgprujvnuwv3vepwcgp1dw1tthp3bk10zunvy200ym4yzno2rlfqafpkmjr2bu5xsvlhbjdjntzowep5mnjqtvbic1jzyu9wslhqzufamzdnb1g0swyzytj0wm5stnrhaws4bzjvvfq4t3vhr1poa3bmvjfbvkvud3htquljngviqkhfegnvmhhnqwhjn1itau9aeu9xswn5tq?oc=5",
+      "title_norm": "vietbaby2026国際展示会：マタニティ＆ベビー市場における新たな消費トレンド",
+      "group_id": "27a01d5ac5",
+      "cluster_key": "vietbaby2026国際展示会：マタニティ＆ベビー市場における新たな消費トレンド",
+      "first_seen": "2026-10-18",
+      "last_delivered": "2026-10-18",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxte9ts2pya1jlevnqcmxnztdawtzktm1jt3nrqjhkcdjhndv3mgy0dnliagl1efdxmevzovbpr2xmds1krfpouvayug9fqxoxul9bymp1s1vkwhawnlu?oc=5",
+      "title_norm": "世界早産児デー啓発イベント330名が来場アカチャンホンポちいさな手と手をつなぐ日に協力企業として参加～ちいさく生まれた赤ちゃんとご家族への支援の輪を広げるためリトルベビーサポートを啓発",
+      "group_id": "9beaf37d29",
+      "cluster_key": "世界早産児デー啓発イベント330名が来場アカチャンホンポちいさな手と手をつなぐ日に協力企業として参加～ちいさく生まれた赤ちゃんとご家族への支援の輪を広げるためリトルベビーサポートを啓発",
+      "first_seen": "2026-10-18",
+      "last_delivered": "2026-10-18",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte56swxjcjdsze42ve9qsu1ytuhzavb6azzrm3gzdentrzrvywqtczrnajd5lwtnm05hngxpbfottex1y0rgaghdlwfiz05wdljootbrofawyudmy1vtemljzf8xd1vitfmtcue?oc=5",
+      "title_norm": "ベビー・子ども関連企業のファミリアが開催する子どものアイデアをカタチにするモノづくりの体験型教育プログラム子ども企画会議が2026年度グッドデザイン賞を受賞",
+      "group_id": "c6d9c2772f",
+      "cluster_key": "ベビー・子ども関連企業のファミリアが開催する子どものアイデアをカタチにするモノづくりの体験型教育プログラム子ども企画会議が2026年度グッドデザイン賞を受賞",
+      "first_seen": "2026-10-18",
+      "last_delivered": "2026-10-18",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmivkfvx3lxte00tndkswrnt01tuurxutz6ujvhunj3s0zrneg5vnjrnkt3vwcycephsfrtutf0eg8tr1hyv3n0ul9vzznmd0dsovlizndxtm5vc1ppwnpb0gfbqvvfexfmtw9mc0t2rznjclzza3djq09duvvzehjadwfnt1jwddbab21nbme5lwk1y0s2t0jzcje5atzsznk3sjmzr29tempkb1vkzhq2uluynuyymetbqmhtvq?oc=5",
+      "title_norm": "六本木ヒルズで最新ベビーカーの無料レンタルがスタート子育て世代の快適なおでかけを支援",
+      "group_id": "82409a844b",
+      "cluster_key": "六本木ヒルズで最新ベビーカーの無料レンタルがスタート子育て世代の快適なおでかけを支援",
+      "first_seen": "2026-10-18",
+      "last_delivered": "2026-10-18",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxtfb0uwvft3zwznjzshhiulp1cjfanetqzmtedjg2amrqqxjsbmjrqkp3nwvdnw9gemdyqjfvd25dx2c5vgfcr0ezzllqngtpwtd3cu1ncelytktkszjitlfldfvmrufwmza?oc=5",
+      "title_norm": "中国紙おむつホルムアミド検出されず当局が調査結果を発表",
+      "group_id": "c035a9c3be",
+      "cluster_key": "中国紙おむつホルムアミド検出されず当局が調査結果を発表",
+      "first_seen": "2026-10-18",
+      "last_delivered": "2026-10-18",
       "delivered_count": 1
     }
   ]
