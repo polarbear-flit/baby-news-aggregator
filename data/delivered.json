@@ -1,60 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5zuxk2nzvod0mzq19zb2dotlrylxjnrvi1tmt4uhzec2u1lu8wwedgyukwudffsghmaefnauzjrzdhrjvoaxrsvg93thhlrxc3vzfzsg5llvzjwkvdauu1m3rroe9qterpvue?oc=5",
-      "title_norm": "ポケモン公式ベビーブランドmonpokéとのスペシャルアイテム第2弾を発売",
-      "group_id": "4d71c4f093",
-      "cluster_key": "ポケモン公式ベビーブランドmonpokéとのスペシャルアイテム第2弾を発売",
-      "first_seen": "2026-09-19",
-      "last_delivered": "2026-09-19",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfb1m184sni4snmzndlkodfsy2tic0pwthfxqnnfc1mzswy1uudubxljmwhda21rrgnsbmzkelvqzddatu1javz4og01vvboqljnsg9pzkr0bepmztvvv21sz0zhqzd2d3hjtmc?oc=5",
-      "title_norm": "チャイルドシート使用８４％過去最高座り方に課題も",
-      "group_id": "b6bdd5c28e",
-      "cluster_key": "チャイルドシート使用８４％過去最高座り方に課題も",
-      "first_seen": "2026-09-19",
-      "last_delivered": "2026-09-19",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmixkfvx3lxte1wrvdqnnezc3pws3zttfj2nw1trezfc1vfam5auld3nvcxmufdy0z4nlm3m0i3d0j3bi1odwnjdzfpc20wys1iv3dkumrxvedickxiuuvoz3doce9lmgc?oc=5",
-      "title_norm": "赤ちゃん本舗news｜｢ニシキヤキッチン｣のレトルト幼児食2品9/17新登場",
-      "group_id": "3b3b3c7df3",
-      "cluster_key": "赤ちゃん本舗news｜｢ニシキヤキッチン｣のレトルト幼児食2品9/17新登場",
-      "first_seen": "2026-09-19",
-      "last_delivered": "2026-09-19",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte51xznxzfrgzhvtbkrvdmlqnhozvunjmwu0vksyahbnuwewakvan1pewkh0ewhctvlbze4wy1zpdy1janu2bxrvu2iwy3rts3nnqupncgtbsujuculsalo1y3lpwfr6b0pmz2c?oc=5",
-      "title_norm": "冷媒式で直接冷やす熱中症対策シリーズアイスレフベビーカー・ペットカート向けなど新ラインナップを第1回猛暑テック第1回猛暑対策グッズexpoで公開",
-      "group_id": "a422eab009",
-      "cluster_key": "冷媒式で直接冷やす熱中症対策シリーズアイスレフベビーカー・ペットカート向けなど新ラインナップを第1回猛暑テック第1回猛暑対策グッズexpoで公開",
-      "first_seen": "2026-09-19",
-      "last_delivered": "2026-09-19",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxte8tykuxbdd1bediwkpet0czrhr0ofhpy0zjmluzzgnwsvzkmfbraej3ttzjttjwnktiuxfeb3hcs3jfr0xwwtrpvvdisnoza1dowfzizmfdufuyqlk?oc=5",
-      "title_norm": "アレルギー配慮のハンバーグ試食も赤ちゃん本舗allumy観光·ホテル·外食産業展hokkaido2026に出展",
-      "group_id": "ba20ece4a4",
-      "cluster_key": "アレルギー配慮のハンバーグ試食も赤ちゃん本舗allumy観光·ホテル·外食産業展hokkaido2026に出展",
-      "first_seen": "2026-09-19",
-      "last_delivered": "2026-09-19",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmirkfvx3lxte5fympvzlbxbzlwzjvkm28wwlzxyudmmhl2efhvnvdvzmfquez3y2k0wki1cndymwnmmhlvsdhjbzbhoutqr2c?oc=5",
-      "title_norm": "手ぶらで叶う赤ちゃん連れ旅行ホテルカターラresort＆spa×ユニ・チャーム×yogibo×アルガルバイオの強力タッグによる最強リフレッシュステイプラン",
-      "group_id": "62996c84f5",
-      "cluster_key": "手ぶらで叶う赤ちゃん連れ旅行ホテルカターラresort＆spa×ユニ・チャーム×yogibo×アルガルバイオの強力タッグによる最強リフレッシュステイプラン",
-      "first_seen": "2026-09-19",
-      "last_delivered": "2026-09-19",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmizkfvx3lxte9potfvn3jfrvduyxrfsnvfwectnxg2wgvfruvzvejob2g4ehvtrw9xodzhulzpsfb1wxpwanlxdlznulzsv0npu1dqzxjkmmxkrmrxdfdgylhkzmnjyw1hmji1re1rdw?oc=5",
       "title_norm": "10/16にベビー用品・子ども服の《西松屋》がthemarketplace所沢北原の2fにopenすることが分かりました",
       "group_id": "a1ce1512bb",
@@ -1168,6 +1114,51 @@
       "cluster_key": "ママ＆キッズベビーミルキークリーム200g10月23日よりアカチャンホンポで先行販売開始株式会社赤ちゃん本舗",
       "first_seen": "2026-10-19",
       "last_delivered": "2026-10-19",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmio0fvx3lxtfbkdkdlq3bxnzjkcy1zzzn4a19rofy3szbvctuxd09tagg4m2zqnnfxv1jnzk9lodcttvhr?oc=5",
+      "title_norm": "エルゴベビーの抱っこ紐に限定色バークブラウンアカチャンホンポで発売",
+      "group_id": "b51bcd4752",
+      "cluster_key": "エルゴベビーの抱っこ紐に限定色バークブラウンアカチャンホンポで発売",
+      "first_seen": "2026-10-20",
+      "last_delivered": "2026-10-20",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte5pnfe3n3vxs05iexvyz2vtruvcdfz1nkg1z0w3cfuta1b1dhr1axe0atvdshjczuvzdwfzewo0c01gden0sdlyqkvvmk51uzfsae5b?oc=5",
+      "title_norm": "赤ちゃん本舗news｜｢cototoki｣関東初進出/宇都宮｢ベルモール｣に11/13開業",
+      "group_id": "cd2a6347d8",
+      "cluster_key": "赤ちゃん本舗news｜｢cototoki｣関東初進出/宇都宮｢ベルモール｣に11/13開業",
+      "first_seen": "2026-10-20",
+      "last_delivered": "2026-10-20",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxte9qy3loemhhm1y3vdvwchcxyljpn0myae53ymtautnhtjlhzc1hyvbooeppwg5jntjlsu5mb1uzrhbzbtvpyxleodrhodlunxfymxnzt0gtcu1eq1nazthwy3lgdgyxee0?oc=5",
+      "title_norm": "自動ブレーキ付き電動ベビーカー子供抱っこ中は自動追従",
+      "group_id": "1f687bb7fa",
+      "cluster_key": "自動ブレーキ付き電動ベビーカー子供抱っこ中は自動追従",
+      "first_seen": "2026-10-20",
+      "last_delivered": "2026-10-20",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmivefvx3lxtfbyd1n2dndivjlfm1pkb0hgdu04exb4rgjirw9rbdvndzn2qu81eetfsmlxrelnruvunvhntg05d19omglfy3vdeljbsmnxmklyvmpquq?oc=5",
+      "title_norm": "韓国発ベビー＆キッズスキンケアimnotababy",
+      "group_id": "bff3d4be0d",
+      "cluster_key": "韓国発ベビー＆キッズスキンケアimnotababy",
+      "first_seen": "2026-10-20",
+      "last_delivered": "2026-10-20",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmirefvx3lxte12axfjmwhuc3pvslferxvlofgxm2rxcdc0mufjukxax05qt2vwszzfsthpzhfszwpyvwfrnnrrdty5x2jo?oc=5",
+      "title_norm": "タイ初開催日本の子育てイベントで見えたアラウ.ベビーへの信頼",
+      "group_id": "29acb38e47",
+      "cluster_key": "タイ初開催日本の子育てイベントで見えたアラウ.ベビーへの信頼",
+      "first_seen": "2026-10-20",
+      "last_delivered": "2026-10-20",
       "delivered_count": 1
     }
   ]
