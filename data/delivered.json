@@ -1,33 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmizkfvx3lxte9potfvn3jfrvduyxrfsnvfwectnxg2wgvfruvzvejob2g4ehvtrw9xodzhulzpsfb1wxpwanlxdlznulzsv0npu1dqzxjkmmxkrmrxdfdgylhkzmnjyw1hmji1re1rdw?oc=5",
-      "title_norm": "10/16にベビー用品・子ども服の《西松屋》がthemarketplace所沢北原の2fにopenすることが分かりました",
-      "group_id": "a1ce1512bb",
-      "cluster_key": "10/16にベビー用品・子ども服の《西松屋》がthemarketplace所沢北原の2fにopenすることが分かりました",
-      "first_seen": "2026-09-20",
-      "last_delivered": "2026-09-20",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiwkfvx3lxte5lnne2z3fwefyxqtvryw5huc0wy2lkuvrqx1uzzlytuexvb1jtb25ose9nak5zewfhv1jsy1zfyle1rzbzoutssnruskfvtzvby2lpwxdtrfbpdw?oc=5",
-      "title_norm": "めっちゃ便利ニトリコーヒー用のドリップカップが好評哺乳瓶のお湯注ぎにも便利",
-      "group_id": "2890af3924",
-      "cluster_key": "めっちゃ便利ニトリコーヒー用のドリップカップが好評哺乳瓶のお湯注ぎにも便利",
-      "first_seen": "2026-09-20",
-      "last_delivered": "2026-09-20",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9zvghlsewwa24xak9pogzsnfnjuff5txzerelcrnvpwkpux2dhu3pmqm1hsejjs0zcvdjrv1bimkdzcmvkrvdlm3btx19nmjjtnhnmufrwbkruqjbtqkvfawtia0s1dlbgdmc?oc=5",
-      "title_norm": "韓国発ベビー・キッズ服ブランドモイモルン9/18二子玉川ライズs.c.にpopupstoreをオープン過去にも期間限定ショップを開催した同施設に再び登場",
-      "group_id": "e35d69aa4e",
-      "cluster_key": "韓国発ベビー・キッズ服ブランドモイモルン9/18二子玉川ライズs.c.にpopupstoreをオープン過去にも期間限定ショップを開催した同施設に再び登場",
-      "first_seen": "2026-09-20",
-      "last_delivered": "2026-09-20",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxte1mvwqtutvpcklkvvjocjbqsflmztrmmtlrrlngewt5us0wufzmedb1sdjhqvrpdjblqut2ttncnlbyx3vuzv9sludkr25mrkwtzwpjn19iaw?oc=5",
       "title_norm": "チャイルドシート使用８４％-saitama",
       "group_id": "9b164195fb",
@@ -1159,6 +1132,42 @@
       "cluster_key": "タイ初開催日本の子育てイベントで見えたアラウ.ベビーへの信頼",
       "first_seen": "2026-10-20",
       "last_delivered": "2026-10-20",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiwkfvx3lxtfb3y0flm3owd29yc1g0skpumfhytmnua25hlxpfluxjqvzhrdflwdnowuppevjwcwfjs1hhzmg3qzjnv2jmn2druzjgaez4ajzxakj3dk1nqwdyuq?oc=5",
+      "title_norm": "哺乳瓶のピジョンが好決算…中国頼みからの脱却へ北米を第2の柱にする新たな戦略",
+      "group_id": "faa9d3cdba",
+      "cluster_key": "哺乳瓶のピジョンが好決算…中国頼みからの脱却へ北米を第2の柱にする新たな戦略",
+      "first_seen": "2026-10-21",
+      "last_delivered": "2026-10-21",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5yog0ydnq3blz0ck5telrpt0f5cujkb0j4akztv05orketevrxs1lus0dfcefys2xhrznfynnfue5vtmdmeg40aenammctsu8xyu9actlrehbrml9uowywqmrtbwrvntvxz1e?oc=5",
+      "title_norm": "bétta｜ドクターベッタ哺乳びんブレイン広口doodlebottle240ml/数量限定〈2027年未年の干支ボトル〉",
+      "group_id": "1026fda3ac",
+      "cluster_key": "bétta｜ドクターベッタ哺乳びんブレイン広口doodlebottle240ml/数量限定〈2027年未年の干支ボトル〉",
+      "first_seen": "2026-10-21",
+      "last_delivered": "2026-10-21",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte44rwpwujbpsnd3d3djnhr3r3hunuhyx0cymgutsc1svgfyoglwnm9ou1rqenzwewtnahk1nffozvdmmzhlz3v4nlpeclbprgzkmflpy2hxnhpaevh0ofnashpvwwjuwunzt1e?oc=5",
+      "title_norm": "赤ちゃん本舗とiiba子どもの預かりサービス検索・予約プラットフォームの事業共創を開始",
+      "group_id": "fb8a85b008",
+      "cluster_key": "赤ちゃん本舗とiiba子どもの預かりサービス検索・予約プラットフォームの事業共創を開始",
+      "first_seen": "2026-10-21",
+      "last_delivered": "2026-10-21",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmie0fvx3lxte9vmxhxm3l0whblsgvuttdra0v0ovy2vtrvv1bfeexqwl9rdwzwbwu1v2xlevnaqle5wve2avkwqv8xuxr5wlcwzzdswklsbkzycmdlahnjzvzyc0puwxz0u1debungtkvowenmv1hzz1e4ahjitk5swu44vdibgafbvv95cuxpwe1isupyefhqr0zfclp1skhlzf82ddnpunfdnxqynmztng9onffswwl6sfgzbevvzu84c2l0rzrebvvxrxpkrjhju2wtdxbreegtwjftwjzsagjiatblq1h2cjl3devnm21szm16svbqbe9kvtvlm3lhv1hdv25qmw?oc=5",
+      "title_norm": "県内のチャイルドシート使用率は75.5％全国平均の84％を下回る秋田",
+      "group_id": "ea18245abb",
+      "cluster_key": "県内のチャイルドシート使用率は75.5％全国平均の84％を下回る秋田",
+      "first_seen": "2026-10-21",
+      "last_delivered": "2026-10-21",
       "delivered_count": 1
     }
   ]
