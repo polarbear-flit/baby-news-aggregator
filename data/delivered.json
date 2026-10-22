@@ -1,60 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxte1mvwqtutvpcklkvvjocjbqsflmztrmmtlrrlngewt5us0wufzmedb1sdjhqvrpdjblqut2ttncnlbyx3vuzv9sludkr25mrkwtzwpjn19iaw?oc=5",
-      "title_norm": "チャイルドシート使用８４％-saitama",
-      "group_id": "9b164195fb",
-      "cluster_key": "チャイルドシート使用８４％-saitama",
-      "first_seen": "2026-09-21",
-      "last_delivered": "2026-09-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiwkfvx3lxte5mbkzez0jksdfrtdhtz041yultntv4buztcvb4vjblqkzltnvirwh0btlmbxdfcm9dqwtdmdlsc0hlanrlwthprdl2ck0zlvnyzegxynverwi1uq?oc=5",
-      "title_norm": "世界の高齢者人口乳幼児の数を上回る想定を超える速度で逆転現象が進行",
-      "group_id": "54568c0137",
-      "cluster_key": "世界の高齢者人口乳幼児の数を上回る想定を超える速度で逆転現象が進行",
-      "first_seen": "2026-09-21",
-      "last_delivered": "2026-09-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxtfbtbkzflupqukrhlvpvvhn0nw9ouelqswvvngptytv1dtb0c2visktbc1dvtujlsuq0dhrrqkzrqxvnnxbiajv1wmvwazzktmvsmjj6ugqtaei5bddovvzqvepsr0jurzz4mw9ta2pcdkzhdfljbw9aakxwofhvsk0?oc=5",
-      "title_norm": "価格2倍でも飛ぶように売れる水の正体育児用ミルク技術から犬猫用粉ミルクを開発した老舗が明かすヒットの裏側",
-      "group_id": "1001b48193",
-      "cluster_key": "価格2倍でも飛ぶように売れる水の正体育児用ミルク技術から犬猫用粉ミルクを開発した老舗が明かすヒットの裏側",
-      "first_seen": "2026-09-21",
-      "last_delivered": "2026-09-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5dlxotvznnb3pbehf4u1a4tfqyrwviltnyzxq3nlzuefrfbwhbcevvv291ow4wrxlpc2dxudzvy29uadfqwdzamelrd2twwmdmamxpc0v4sgc2vln1x0utwfjmdtgznxjnmve?oc=5",
-      "title_norm": "国際ngoセーブ・ザ・チルドレン9月17日正午から応募受付開始ハローベビーボックス2026年秋",
-      "group_id": "fb3894a1a8",
-      "cluster_key": "国際ngoセーブ・ザ・チルドレン9月17日正午から応募受付開始ハローベビーボックス2026年秋",
-      "first_seen": "2026-09-21",
-      "last_delivered": "2026-09-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1msgzfdy1dc016ehfod1oxmhy0rkr6x0jov0i3vlhxx0tkdhl3zvvcn2zfafpod1jhynnbwmhuulrjtg9kzddzsxntzxrtzgftt1c0egxpuuswttr2ylvqm1noalvkuhg1vhc?oc=5",
-      "title_norm": "ちいさな赤ちゃんたちへエールを母乳バンク寄付キャンペーンを9月25日から開催",
-      "group_id": "371e264588",
-      "cluster_key": "ちいさな赤ちゃんたちへエールを母乳バンク寄付キャンペーンを9月25日から開催",
-      "first_seen": "2026-09-21",
-      "last_delivered": "2026-09-21",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfb6z2vbazfzzvytmzm1dwj2m3vry0x6uzvynljzt3vqy2rkbg5cehczck5rzjrurljwykf1tln4r05kbgy3svbzc0xqagrndvbywnnda1vmwgoteu9admvpdviyzepfclhiqke?oc=5",
-      "title_norm": "設置型ベビーケアルームmamaroを横浜駅東口地下街ポルタに設置しました",
-      "group_id": "c99d1a6c5f",
-      "cluster_key": "設置型ベビーケアルームmamaroを横浜駅東口地下街ポルタに設置しました",
-      "first_seen": "2026-09-21",
-      "last_delivered": "2026-09-21",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte1rdhllzeg4lwxcckxjsvzcu3hzxzvrymtnwuc4dgfhvxlpq2vrogvjwufqmjbvyutvwljrnmpmdlmznxvvcuhdcty4tghfx3vrwtrb?oc=5",
       "title_norm": "ローリーズファームのベビー服がかわいいベビーザらス限定コレクション第2弾が登場",
       "group_id": "c2b42faf6c",
@@ -1168,6 +1114,69 @@
       "cluster_key": "県内のチャイルドシート使用率は75.5％全国平均の84％を下回る秋田",
       "first_seen": "2026-10-21",
       "last_delivered": "2026-10-21",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1id0pfukrfr2jtzdz6uflzq3v2wnjpyze4ry1wrhb1evztbjhjlu1otwvrmzv1snzjvs1jymw0d1vxwjn3dw1jotdremgwqxzst1jrww43anfpskrcvlnqvmvjwwxltta0emc?oc=5",
+      "title_norm": "チャイルドシート選びの常識が変わるplatinums-line誕生",
+      "group_id": "b2cbd976a5",
+      "cluster_key": "チャイルドシート選びの常識が変わるplatinums-line誕生",
+      "first_seen": "2026-10-22",
+      "last_delivered": "2026-10-22",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbnb0yyqvvhsvi5t3dny0rqvkk5nla0zkp3ohrla0z2ahnwag8zc0o3dw04vfnqshk1ugxud2nbyv81zgxuc2xwt1bfsghezmlaagjbqnpjrzjfulbhls1yamnpawkyyzhnzmc?oc=5",
+      "title_norm": "テレビ東京系の乳幼児番組シナぷしゅデザインのatsude超厚手おしりふき10月20日発売",
+      "group_id": "bcc4faafd8",
+      "cluster_key": "テレビ東京系の乳幼児番組シナぷしゅデザインのatsude超厚手おしりふき10月20日発売",
+      "first_seen": "2026-10-22",
+      "last_delivered": "2026-10-22",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxtfbicwvyvhzsbm1xbvmtrljtxzh6ektztvdkwg5uuelxbw0xm0jyctbgbjg0zvvfnuneuvbjrwfzd0l1vvrlmgdiexfndjhzcgpnc0dgexnkzfatr2c?oc=5",
+      "title_norm": "赤ちゃん本舗・江崎グリコが大阪・東京の2会場で冷凍幼児食cotote試食イベントを実施",
+      "group_id": "ac489c1703",
+      "cluster_key": "赤ちゃん本舗・江崎グリコが大阪・東京の2会場で冷凍幼児食cotote試食イベントを実施",
+      "first_seen": "2026-10-22",
+      "last_delivered": "2026-10-22",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmirkfvx3lxte9jtjrzctbhuvdctvrlc3nzr291uk9ptlfnvzzpr1jatw9qnlzzuky5lvdwcdlnukyxtlewynzid3vnoxzlrgc?oc=5",
+      "title_norm": "アカチャンホンポママ＆キッズベビーミルキークリーム大容量を先行販売へ",
+      "group_id": "c00be7a1b3",
+      "cluster_key": "アカチャンホンポママ＆キッズベビーミルキークリーム大容量を先行販売へ",
+      "first_seen": "2026-10-22",
+      "last_delivered": "2026-10-22",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiaefvx3lxte1ethjsqmvmte5nowtslxn4ujhkszleulc5setobxzrt05amkzptdnls0rxlwwxvgrqt1awlvfrdvbhrmjdnnv1refsmefmznjzq1jnzerhc0fdb0foauv1wujsawzhcfzw?oc=5",
+      "title_norm": "明治の赤ちゃん相談室が26年10月に50周年へ累計相談は約51万件",
+      "group_id": "ee7a5ddfb9",
+      "cluster_key": "明治の赤ちゃん相談室が26年10月に50周年へ累計相談は約51万件",
+      "first_seen": "2026-10-22",
+      "last_delivered": "2026-10-22",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9yaudfb0u4mul6bzvfuxzsmlhemuljrwx1azlgqthic1pkqutabgd0chrzau1svu85durkn3lgsgdiegxstfluzuhyovzdchj3mdzjawliehjtemlhwnlqdkcynhfndzvwwmc?oc=5",
+      "title_norm": "とくに乾燥しやすい敏感な赤ちゃんの肌にママ＆キッズベビーラインにとてもしっとりタイプの2品が登場この新発売を記念して初めての方にお得に購入いただけるセットを公式通販限定で発売",
+      "group_id": "995118941f",
+      "cluster_key": "とくに乾燥しやすい敏感な赤ちゃんの肌にママ＆キッズベビーラインにとてもしっとりタイプの2品が登場この新発売を記念して初めての方にお得に購入いただけるセットを公式通販限定で発売",
+      "first_seen": "2026-10-22",
+      "last_delivered": "2026-10-22",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxte1usjmxwjh6rwdfwthlaxzpqzn0dk4yvldamhnim2nhulbfmy1ymxrwmjjkwnvtte96tkppdkngagvhnzm0wux5z0o3uv80rmyzsudyzzvhbw?oc=5",
+      "title_norm": "赤ちゃん本舗news｜iibaと｢子どもの預かりサービス検索･予約｣事業共創を開始",
+      "group_id": "b367280d9f",
+      "cluster_key": "赤ちゃん本舗news｜iibaと｢子どもの預かりサービス検索･予約｣事業共創を開始",
+      "first_seen": "2026-10-22",
+      "last_delivered": "2026-10-22",
       "delivered_count": 1
     }
   ]
