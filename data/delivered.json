@@ -1,24 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiskfvx3lxte1rve5tcjjum25dx01sn3b6dujuuudndndmvkhqm2htovrhwxddwe1mvi1sq3e0nxfzbxv4z01jndria1y4dfdwtwhr?oc=5",
-      "title_norm": "赤ちゃん用紙おむつ市場の詳細レビュー：市場規模セグメンテーションそして13.1％の年",
-      "group_id": "cba68082de",
-      "cluster_key": "赤ちゃん用紙おむつ市場の詳細レビュー：市場規模セグメンテーションそして13.1％の年",
-      "first_seen": "2026-09-24",
-      "last_delivered": "2026-09-24",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1ba2wtc2tzmdr4qmlmdhztv3rkowddx1kwamfwx2lbdzfjvkytyupnquzwbxhkm25gchlxndmzvf8zovnevs1emlnucfzwrwy4ufz5ui1rd1pwm0zar0ixy2v0v0xkmja3qxc?oc=5",
-      "title_norm": "10月10日は赤ちゃんの日ペンギンのよちよち歩きが開会宣言アドベンチャーワールド＆アカチャンホンポハイハイレース初開催～アニマルウェアを着た赤ちゃん25組が大奮闘～",
-      "group_id": "526c279298",
-      "cluster_key": "10月10日は赤ちゃんの日ペンギンのよちよち歩きが開会宣言アドベンチャーワールド＆アカチャンホンポハイハイレース初開催～アニマルウェアを着た赤ちゃん25組が大奮闘～",
-      "first_seen": "2026-09-24",
-      "last_delivered": "2026-09-24",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5xq3rwcdkydkfhm3pnsc1qwgdqmy1kymm0nnl4zwp0nmsyskp0z3pirgi1thz3azljwme2wff0bvfptehlcwuytdlbmgvgslvmwfpsdxzdvdfdbjngnla3yvfxcuvvx3pmzee?oc=5",
       "title_norm": "アカチャンホンポ限定品を含む2商品がベビーワセリンシリーズより新登場2026年9月25日より販売開始",
       "group_id": "797d081017",
@@ -1330,6 +1312,51 @@
       "cluster_key": "育児品メーカー雪印ビーンスタークが作った葉酸サプリはなえみモニターを100名募集",
       "first_seen": "2026-10-24",
       "last_delivered": "2026-10-24",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiukfvx3lxte0xnwflvndovtf2nnriakxnvngwqwvlddlxmu5xdjvbslfvmdvludu2egpeei10umrxmwzlognlemrjwxfssuh1sdhrq0zszefssgc?oc=5",
+      "title_norm": "エルゴベビー新モデルomniliteは手元の操作だけで着脱できる抱っこひも",
+      "group_id": "117b42c300",
+      "cluster_key": "エルゴベビー新モデルomniliteは手元の操作だけで着脱できる抱っこひも",
+      "first_seen": "2026-10-25",
+      "last_delivered": "2026-10-25",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmilafbvv95cuxpsflyege4outlsi0zmwpnmg5qrezjoefkofvktgfuqwtrx0trd3jxzudozxluwkcycg45ru9szjnedu5kzutvrfrbodlhnhbxugnvqndkuvaxr2teb3fkm2mtdgrhq0njtwxbmuhym0nyalvqmflcowlmsenwmvznshk4vtn6nzuwmmu1zlzoazjszjlk?oc=5",
+      "title_norm": "高級ベビー用品市場は景気後退にもかかわらず成長を続けている",
+      "group_id": "89808f3bfe",
+      "cluster_key": "高級ベビー用品市場は景気後退にもかかわらず成長を続けている",
+      "first_seen": "2026-10-25",
+      "last_delivered": "2026-10-25",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiskfvx3lxte1wduo5sjrcevi1rkl0s2fiutnhswxktudmdwnfbfrvvs1yugjvykjtu01mz2lodfrbnzjzvu54yvhnluvnmjjwmejn?oc=5",
+      "title_norm": "ベビーケア製品国内シェアと参入企業",
+      "group_id": "9856c9b8b3",
+      "cluster_key": "ベビーケア製品国内シェアと参入企業",
+      "first_seen": "2026-10-25",
+      "last_delivered": "2026-10-25",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmisefvx3lxte1yz1vkqthxctbvq3prcejbsfzbz3y5bdzusxzsdgzewffnawd4sxjudfjszkd5awzedllky2jdwkd4mlrnenrqwq?oc=5",
+      "title_norm": "マルナカ平島店にベビー子供用品西松屋チェーンマルナカ平島店とponbyガチャガチャの森ができるみたい",
+      "group_id": "4937ae808f",
+      "cluster_key": "マルナカ平島店にベビー子供用品西松屋チェーンマルナカ平島店とponbyガチャガチャの森ができるみたい",
+      "first_seen": "2026-10-25",
+      "last_delivered": "2026-10-25",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxtfbcd2pps3fsrdfiqwkwcnplvxftces3dlf1ztrksldudvyws1dcdxfwmzrjd3fnyjm0zjbvtuwtuxzwsuizsmsylxhicurjnxvsx0pnzel0a2rruknusmhgzhbqslkxsve?oc=5",
+      "title_norm": "エルゴベビーのプレスリリース",
+      "group_id": "5380804326",
+      "cluster_key": "エルゴベビーのプレスリリース",
+      "first_seen": "2026-10-25",
+      "last_delivered": "2026-10-25",
       "delivered_count": 1
     }
   ]
