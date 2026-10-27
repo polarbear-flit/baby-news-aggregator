@@ -1,51 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1zckdyn1zvcde5ykjfdv9xve41ddrkdjlkwnj0nddlrehfrnvqytdowjboyxbusgfjnvnhafzqz0jvbehlyxnpb3a1mjjdnfhcsl9dc0l2zgxydxhja29vn1lrrwewzhuzunc?oc=5",
-      "title_norm": "過去最高売上を更新したbrunoカタログギフトシリーズに出産祝い向けカタログギフトベビーが新登場",
-      "group_id": "f8f9bbcd83",
-      "cluster_key": "過去最高売上を更新したbrunoカタログギフトシリーズに出産祝い向けカタログギフトベビーが新登場",
-      "first_seen": "2026-09-26",
-      "last_delivered": "2026-09-26",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmidefvx3lxte1fvuzscjnxoeh5qktywvvrttktmnptwenvuzrnwvl4zwpounbidtvfrejoltlftm1jmus4yjm1qkzvadrhz2dzsuvdntbpvkkzwfb1ve05luk0q2lxdlvtm01ecjjiz1vqcwfaudhkcv9hsm9g?oc=5",
-      "title_norm": "安特羅のエンテロウイルスワクチンタイに進出biogenetechと提携し300万人の乳幼児市場を開拓",
-      "group_id": "05f3d67757",
-      "cluster_key": "安特羅のエンテロウイルスワクチンタイに進出biogenetechと提携し300万人の乳幼児市場を開拓",
-      "first_seen": "2026-09-26",
-      "last_delivered": "2026-09-26",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmis0fvx3lxte1pumfuzxi1uvb3dg45r2i2c3hizvnrs3bprzetsu1fzwp0mujqmhe0duh6wvdzm0fcyxbkyjn3mhbbv2zqvvd5avk3uq?oc=5",
-      "title_norm": "韓国ベビー用品ブランドkonnyがinapsquareとのコラボ第二弾を発売親子コーデも",
-      "group_id": "13aa27d070",
-      "cluster_key": "韓国ベビー用品ブランドkonnyがinapsquareとのコラボ第二弾を発売親子コーデも",
-      "first_seen": "2026-09-26",
-      "last_delivered": "2026-09-26",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxtfbqmje4vwpgymu2odrqbfvjeu9wnjdzvc1jenj6d1p0mldhtunluwjxaujss2vmnmrovlnravnxtu5fcwrlwmzxzw9zwf94dtbizkz3?oc=5",
-      "title_norm": "ゼビオアリーナ仙台でアイリスオーヤマ様の赤ちゃん用紙おむつを無料配布",
-      "group_id": "94b35c8511",
-      "cluster_key": "ゼビオアリーナ仙台でアイリスオーヤマ様の赤ちゃん用紙おむつを無料配布",
-      "first_seen": "2026-09-26",
-      "last_delivered": "2026-09-26",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiy0fvx3lxte5hujnmwhrgmv9xzhq4uwh3wwnjy3fiohawdehunv9elvffqvbvtgc2rjgxb1horfpoc0xyohp1bmtmz2hybeh6rv9iquvprkv4enrjduizm0rlugxntzy4nxpcsdiby0fvx3lxte5hujnmwhrgmv9xzhq4uwh3wwnjy3fiohawdehunv9elvffqvbvtgc2rjgxb1horfpoc0xyohp1bmtmz2hybeh6rv9iquvprkv4enrjduizm0rlugxntzy4nxpcsq?oc=5",
-      "title_norm": "岡山県のチャイルドシート使用率6歳未満90％行楽シーズンを前に使用呼び掛けjaf岡山支部",
-      "group_id": "afd6644266",
-      "cluster_key": "岡山県のチャイルドシート使用率6歳未満90％行楽シーズンを前に使用呼び掛けjaf岡山支部",
-      "first_seen": "2026-09-26",
-      "last_delivered": "2026-09-26",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxte1rdze5dudwc1pxrlrplvi3uwttqlazddlvq0vwvfhhzuftemvjzxh2agzru29haexosurws0twmffivhdvr0szzulhyudzbu9qzuvletbotlbgylvyodjpnwlflvnlwvk?oc=5",
       "title_norm": "アカチャンホンポでディズニーベビーフェア開催",
       "group_id": "5f4923e6d1",
@@ -1321,6 +1276,78 @@
       "cluster_key": "ママ＆キッズベビーミルキーローション8月28日よりアカチャンホンポで先行販売開始",
       "first_seen": "2026-10-26",
       "last_delivered": "2026-10-26",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9gellxszl0nhiyufjsz2vyq1blre1jwukxb1zurfzozf81cvdfq1zlskpkrdffa0l2q05hqtrjtha4vktfmde3mty0m2n2uu9qawxkbjzft3hsu3pvr1m5rms4amj0ynz6tue?oc=5",
+      "title_norm": "設置型ベビーケアルームmamaroをビックカメラ3店舗にて運用開始しました",
+      "group_id": "275f4181d9",
+      "cluster_key": "設置型ベビーケアルームmamaroをビックカメラ3店舗にて運用開始しました",
+      "first_seen": "2026-10-27",
+      "last_delivered": "2026-10-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmit0fvx3lxte5zntmyb1zjnff1akrfche2nws1rdnim2ffcfg4emzgtknka21lqk93ctvwy1ixq1d1luhpqu5ht1rimjrktjfdshjcuzhtogm?oc=5",
+      "title_norm": "2026年キッズデザイン賞受賞お風呂場に縛られない新しい沐浴スタイルを提案沐浴サポートマットbabybathloungesofa10月30日発売",
+      "group_id": "0caa2a1e45",
+      "cluster_key": "2026年キッズデザイン賞受賞お風呂場に縛られない新しい沐浴スタイルを提案沐浴サポートマットbabybathloungesofa10月30日発売",
+      "first_seen": "2026-10-27",
+      "last_delivered": "2026-10-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxte1vws10ce9uagvbcnjwctbvm0frd1vhvw8wq2r5di1owv9smzhaowv0qllqoxu0rdzpyut3a2rqadvuakx1ywd6sge2ckfxuxbucxgtwjhkejlqqnc?oc=5",
+      "title_norm": "チャイルドシート着用義務低身長含め拡大検討へ最新の社会ニュース",
+      "group_id": "19b77a8c04",
+      "cluster_key": "チャイルドシート着用義務低身長含め拡大検討へ最新の社会ニュース",
+      "first_seen": "2026-10-27",
+      "last_delivered": "2026-10-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmix0fvx3lxte1xujfzanl6ejboodvsbu91mg5zylvssjnxc2jfy1bmd003tlp2ewjdqnzsaunzb2nkmhmzos1ouxraedfhmfvisdlotkz6r0jfd3e3mju5znfht2rmtznj?oc=5",
+      "title_norm": "育児用品のお試しから食育・交通安全まで家族で体験accellinkマタニティ＆ベビーフェスタ大阪2026",
+      "group_id": "20b820073c",
+      "cluster_key": "育児用品のお試しから食育・交通安全まで家族で体験accellinkマタニティ＆ベビーフェスタ大阪2026",
+      "first_seen": "2026-10-27",
+      "last_delivered": "2026-10-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxtfbmudj5lvborfppn1virnzgtdnpnu1wuu1xzwrczklxbg13rdvntuvobtayywjedlnnlu16d3zbwllgsnbozudjnwtbwtbpuhzwwgfnru9jas12qjhttg5arln2a2zbqku?oc=5",
+      "title_norm": "コンビの軽いベビーカースゴカル5.6kgで階段もラクに持ち運び",
+      "group_id": "fd4f61ef4c",
+      "cluster_key": "コンビの軽いベビーカースゴカル5.6kgで階段もラクに持ち運び",
+      "first_seen": "2026-10-27",
+      "last_delivered": "2026-10-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmio0fvx3lxte5na01bqu9lwnzpnevkwmnwmvv3zhe2yljiagnncwxfcvfves1sq3bfwluxzdhvd3fxec0w?oc=5",
+      "title_norm": "＼レビュー☆4.7／おむつオムツm150枚l126枚ビッグ108枚ビッグより大きい72枚パンツふわもちタッチ肌に優しい横モレ最長12hさらさら紙おむつgenkiあんしんgenki",
+      "group_id": "83f75480f0",
+      "cluster_key": "＼レビュー☆4.7／おむつオムツm150枚l126枚ビッグ108枚ビッグより大きい72枚パンツふわもちタッチ肌に優しい横モレ最長12hさらさら紙おむつgenkiあんしんgenki",
+      "first_seen": "2026-10-27",
+      "last_delivered": "2026-10-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiaefvx3lxte0tdknhwxhxnmpuwkn4c25htvg4cvvhmxzxbhfpcgfau0pxzljxbm5tywo4ywrmelzotuzvumtyx3pquuhlvg5tnkiyaw5wb3fecvf4qkg0aznfa0zhd3lbauraufzsyutc?oc=5",
+      "title_norm": "カヨトイズのリラックマベビーアイテムが公式オンラインストアで発売中",
+      "group_id": "0112f64428",
+      "cluster_key": "カヨトイズのリラックマベビーアイテムが公式オンラインストアで発売中",
+      "first_seen": "2026-10-27",
+      "last_delivered": "2026-10-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbolwrhegiwek1mzucwukn3y1bnu2tmrlfhr0hxd1fnrmfon2zpru14thnxn3hxlwncmlvkdxrnvlbhcy1kmum2rwxwujlicdztoxjrdjd0x25etwdda29yys1nn2folwjoave?oc=5",
+      "title_norm": "琵琶湖博物館にベビーケアルームを２台新設しました",
+      "group_id": "dfddaac1b5",
+      "cluster_key": "琵琶湖博物館にベビーケアルームを２台新設しました",
+      "first_seen": "2026-10-27",
+      "last_delivered": "2026-10-27",
       "delivered_count": 1
     }
   ]
