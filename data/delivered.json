@@ -1,15 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxte1rdze5dudwc1pxrlrplvi3uwttqlazddlvq0vwvfhhzuftemvjzxh2agzru29haexosurws0twmffivhdvr0szzulhyudzbu9qzuvletbotlbgylvyodjpnwlflvnlwvk?oc=5",
-      "title_norm": "アカチャンホンポでディズニーベビーフェア開催",
-      "group_id": "5f4923e6d1",
-      "cluster_key": "アカチャンホンポでディズニーベビーフェア開催",
-      "first_seen": "2026-09-27",
-      "last_delivered": "2026-09-27",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmigwfbvv95cuxqzurkqmlxuzlpluzgexhzs3bnamzxbedwy0pavddnn1dkmew2cnuxvknkm1lrv1dzeutjm1lwbkz2vk1snvv6tfnhdwvkdzhnujzsvegxsmlyc29gmgt3anbsqknkawholtzuzjbjt0dtcuvpvupwz25fwvjxzhlvtutowq?oc=5",
       "title_norm": "チャイルドシート使用率84.0％で過去最高も4割超が正しく着座できずjaf身長150cm未満の子どもにチャイルドシートの使用を",
       "group_id": "83f1f8178d",
@@ -1348,6 +1339,69 @@
       "cluster_key": "琵琶湖博物館にベビーケアルームを２台新設しました",
       "first_seen": "2026-10-27",
       "last_delivered": "2026-10-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmivefvx3lxtfazywnjaxaymg1ianjuntjywvvibwi2muvrruc3uzlwtvh3clo1zvf0nefcc05szzktzuznwtjubdjpu0vts0zydzk0nenhdzvysg0zlq?oc=5",
+      "title_norm": "アカチャンホンポでdポイントがたまるつかえる10月27日より38店舗でd..",
+      "group_id": "8e5369cae9",
+      "cluster_key": "アカチャンホンポでdポイントがたまるつかえる10月27日より38店舗でd..",
+      "first_seen": "2026-10-28",
+      "last_delivered": "2026-10-28",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmif0fvx3lxte9asmzxwer3zxkztdvruextcnjlv3bjrejrz056t2vqb3h2zut6bgxpnjdex0wzy3nwskftbul1u0lyrullthzmodhmtzjjdgdjc2jhbm9wr08ztlftyxlscuxxyvpsexjashz4cgdwqvbwbvdwq056skdgbehozdg?oc=5",
+      "title_norm": "チャイルドシート6歳以上も義務化を検討へ低身長のシートベルト着用は危険も有識者会議を近く設置する方針",
+      "group_id": "5cb54f5cad",
+      "cluster_key": "チャイルドシート6歳以上も義務化を検討へ低身長のシートベルト着用は危険も有識者会議を近く設置する方針",
+      "first_seen": "2026-10-28",
+      "last_delivered": "2026-10-28",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiwkfvx3lxte5lzvpmrge2m3zbztnzujm4wfdjq003mmfpy1j4v3fpc04xburrqxfvohzjv08wxzdvy2pnls16zzb6ddjwsefhck04ejl4vtu0swprzgduyldydw?oc=5",
+      "title_norm": "バリューファインダーポレッドベビー用品市場の成長・海外進出で業績拡大を期待",
+      "group_id": "8b8baab256",
+      "cluster_key": "バリューファインダーポレッドベビー用品市場の成長・海外進出で業績拡大を期待",
+      "first_seen": "2026-10-28",
+      "last_delivered": "2026-10-28",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfblutdxn2lvdzv5nevpufvytzkymtjuwfjmsnflakxhcdm3rty4nupmsurjtde5wk9rowtgmjnsuwxywkvzn2njnnpdze50rxdpuwfqeml4anrgcen2wtljbghlchrtzdlpvnc?oc=5",
+      "title_norm": "森永乳業が世界保健機関が推奨する70℃以上の調乳条件下においてもビフィズス菌m-63が生きて乳児の腸まで届くことを確認",
+      "group_id": "0a0fa01338",
+      "cluster_key": "森永乳業が世界保健機関が推奨する70℃以上の調乳条件下においてもビフィズス菌m-63が生きて乳児の腸まで届くことを確認",
+      "first_seen": "2026-10-28",
+      "last_delivered": "2026-10-28",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5funvmzejpm0ziv1otmvrjr2dfmgrqqtazrhnjlujxnzhmqjhfzgvumzrhohu0vke5y2nsbxjpynfvuupkt1pynfjoqxvor1bmzetgdnphrw1nneg1a29jdgddqk5wdkfkr3c?oc=5",
+      "title_norm": "いとう教材社東京都港区・大王製紙と紙おむつ等の災害時支援に関する2つの協定を締結",
+      "group_id": "3734d90b5c",
+      "cluster_key": "いとう教材社東京都港区・大王製紙と紙おむつ等の災害時支援に関する2つの協定を締結",
+      "first_seen": "2026-10-28",
+      "last_delivered": "2026-10-28",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9kcxrfazlelwf2nnbytnhomuzvbedtndvjy05jtjdlb3lns0veawznchpuuflotuppyxlnn2vux0jpbmnzr2rnvvfky1z4tkzyem5bmk1prkzvc3a3z25haktvwnrace9vahc?oc=5",
+      "title_norm": "あなたの贈り物で笑顔がもうひとつベビーギフト専門ecmiharugiftshopが乳児院へのギフト寄贈キャンペーンを実施",
+      "group_id": "0ded3d247b",
+      "cluster_key": "あなたの贈り物で笑顔がもうひとつベビーギフト専門ecmiharugiftshopが乳児院へのギフト寄贈キャンペーンを実施",
+      "first_seen": "2026-10-28",
+      "last_delivered": "2026-10-28",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte01uufcnmq5ytk0t0u3vlbimutzzly0qknpnm9zvlptwhjkmnp1x3zyt1v0odjjd3nczjjwt0rrtfi2rzi3ofzqyw1ayu4zoe9zclvkm25ynw9cckxncndevvdca2tex0dsrle?oc=5",
+      "title_norm": "株式会社mil大阪府泉大津市とベビーフレンドリーなまちづくりに関する包括連携協定を締結",
+      "group_id": "7f55f2f3ef",
+      "cluster_key": "株式会社mil大阪府泉大津市とベビーフレンドリーなまちづくりに関する包括連携協定を締結",
+      "first_seen": "2026-10-28",
+      "last_delivered": "2026-10-28",
       "delivered_count": 1
     }
   ]
