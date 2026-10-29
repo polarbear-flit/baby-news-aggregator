@@ -1,33 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmigwfbvv95cuxqzurkqmlxuzlpluzgexhzs3bnamzxbedwy0pavddnn1dkmew2cnuxvknkm1lrv1dzeutjm1lwbkz2vk1snvv6tfnhdwvkdzhnujzsvegxsmlyc29gmgt3anbsqknkawholtzuzjbjt0dtcuvpvupwz25fwvjxzhlvtutowq?oc=5",
-      "title_norm": "チャイルドシート使用率84.0％で過去最高も4割超が正しく着座できずjaf身長150cm未満の子どもにチャイルドシートの使用を",
-      "group_id": "83f1f8178d",
-      "cluster_key": "チャイルドシート使用率84.0％で過去最高も4割超が正しく着座できずjaf身長150cm未満の子どもにチャイルドシートの使用を",
-      "first_seen": "2026-09-28",
-      "last_delivered": "2026-09-28",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmibkfvx3lxte1ibmvqbfbmmhm0qux3afnns0haovlgcxjswldjy1hntzjtsexdmfbsb0lwowjhm2t3znn6sezkadbfuudrymfsui15vxjmyzbxnudqzzd2rvdbsddnadzxblntqthubwzsqnzqmknn?oc=5",
-      "title_norm": "チャイルドシートの使用率過去最高の93.6%",
-      "group_id": "c5adcb3408",
-      "cluster_key": "チャイルドシートの使用率過去最高の93.6%",
-      "first_seen": "2026-09-28",
-      "last_delivered": "2026-09-28",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmirkfvx3lxtfbwmg1adhe4xzvlvnb1sec2q0vnddf1zwxybk1qtzjrazqyuwctvmrhzm1csfzttxh5n052t1ywagzruvbpcke?oc=5",
-      "title_norm": "壁紙プレゼントもベビー・キッズ用品が勢ぞろいアカチャンホンポディズニーベビーフェア",
-      "group_id": "240e1f8c1e",
-      "cluster_key": "壁紙プレゼントもベビー・キッズ用品が勢ぞろいアカチャンホンポディズニーベビーフェア",
-      "first_seen": "2026-09-28",
-      "last_delivered": "2026-09-28",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiskfvx3lxtfbky0vrlwtirxficfmwwdh1sxbmdu9hskc0bzrnvfvwwdbietnunnfqvkhpqw5bztetmge3nvcyrhm5yvzpwkhdyvvn?oc=5",
       "title_norm": "petチャイルドシートメーカー上位企業2026",
       "group_id": "cd476770b1",
@@ -1402,6 +1375,96 @@
       "cluster_key": "株式会社mil大阪府泉大津市とベビーフレンドリーなまちづくりに関する包括連携協定を締結",
       "first_seen": "2026-10-28",
       "last_delivered": "2026-10-28",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbwt2twa2tjd2l3ymzntlzftustq1y2vnc4cw1ndnvnm3f4tfjlbvzxbe9edg5rz1reedvmt3vqzhbotm5sdjj0zzb6m2pqtkq3bw4ycxjaww42dkn4c0j0alzqntfieelmahc?oc=5",
+      "title_norm": "ベビーカーひとつで旅に出られる5秒でスーツケースに変わるトラベルベビーカーternxcarryon10月31日よりmakuakeにて販売開始",
+      "group_id": "8995b9be80",
+      "cluster_key": "ベビーカーひとつで旅に出られる5秒でスーツケースに変わるトラベルベビーカーternxcarryon10月31日よりmakuakeにて販売開始",
+      "first_seen": "2026-10-29",
+      "last_delivered": "2026-10-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiaefvx3lxte9uq2dnn0pkbfc0dehttlphmg9snvrnddbwmfjjq3lrbkpprknyzfnhmunxvddnukfptdbbs1ewvuvwmhryng44nlvdx0dtcgxdmtlxzdrcaflys0hpy0pnnc1paunjbxlb?oc=5",
+      "title_norm": "アカチャンホンポブラックならぬレッドフライデー10月30日から出産準備・育児用品が最大60％オフ",
+      "group_id": "f86968167a",
+      "cluster_key": "アカチャンホンポブラックならぬレッドフライデー10月30日から出産準備・育児用品が最大60％オフ",
+      "first_seen": "2026-10-29",
+      "last_delivered": "2026-10-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5ju1vznjnxrej6q05xu3f1vzzmanrkemvptfg0yvdetzzguu50yvg5rzvhqmpgulhkemrkodgxx1ltr0itr1h3ykdqbldurflrng1qellmzhbowenca2fzumjssmhxz2lvwxc?oc=5",
+      "title_norm": "これ授乳服なの世代やライフステージを超えて着たいの声eneuがfemarchéに出展10月30日から実店舗でも販売へ|株式会社rethinkのプレスリリース",
+      "group_id": "3c3084e8f3",
+      "cluster_key": "これ授乳服なの世代やライフステージを超えて着たいの声eneuがfemarchéに出展10月30日から実店舗でも販売へ|株式会社rethinkのプレスリリース",
+      "first_seen": "2026-10-29",
+      "last_delivered": "2026-10-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbaeunwtfv5sxrsszjmv21wausxvfn6ukq2dghamgtpv0pwa0vvwulxenvtzl9ra2fhctvcsvvzae1pv1bubzitauo4tut6ztzxdflvy2jrwnmtdzhht2ftdhbjoehdrwxuvue?oc=5",
+      "title_norm": "2日間で1,900名以上がブースへ来場アカチャンホンポがマタニティ＆ベビーフェスタ大阪2026に出展足の計測会や出産準備相談会など子育てファミリーをサポート|株式会社赤ちゃん本舗のプレスリリース",
+      "group_id": "4b6025260d",
+      "cluster_key": "2日間で1,900名以上がブースへ来場アカチャンホンポがマタニティ＆ベビーフェスタ大阪2026に出展足の計測会や出産準備相談会など子育てファミリーをサポート|株式会社赤ちゃん本舗のプレスリリース",
+      "first_seen": "2026-10-29",
+      "last_delivered": "2026-10-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9xwho3yjczt1nxagtloehyytffdg9lbgrzmxzwzgj3nfrjufzhsfpkzzlcvnnmdhlmbxrmy3plmi1frgtxyjbimddymkzmb09mnnr1ddr0nlfssk0xnjlkegy1x1ltxzuwree?oc=5",
+      "title_norm": "ベビーギフトブランドamanoppoの米国進出を加速するtowastela子会社towastelaamerica,inc.設立",
+      "group_id": "f12b32f594",
+      "cluster_key": "ベビーギフトブランドamanoppoの米国進出を加速するtowastela子会社towastelaamerica,inc.設立",
+      "first_seen": "2026-10-29",
+      "last_delivered": "2026-10-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9zwk11sml3nu1tekn5qulwvvo2mhn6ahnkce1rnelwt1oyuzgxzxlozffqcurxovdna3zcsu1ndfbndxbvm1dhzwjjewzgevbnaxmxrkhtwnvizgvernf3tw5dcuvgdxdmsee?oc=5",
+      "title_norm": "とくに乾燥しやすい敏感な赤ちゃんの肌に新発売のとてもしっとりタイプの全身シャンプー＆乳状ローションが入った秋冬に嬉しいトライアルセットが新登場",
+      "group_id": "82c28e76ac",
+      "cluster_key": "とくに乾燥しやすい敏感な赤ちゃんの肌に新発売のとてもしっとりタイプの全身シャンプー＆乳状ローションが入った秋冬に嬉しいトライアルセットが新登場",
+      "first_seen": "2026-10-29",
+      "last_delivered": "2026-10-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiskfvx3lxte5rczj6agfor0fmotezbu5svzhxsgmyyxdnd3plbmdwdtuwyvblyvhwnunhymoxqs1rt3mzlw5xyloyzjk3u2tkwjvb?oc=5",
+      "title_norm": "ベビーケア製品市場をリードする10社",
+      "group_id": "d6030408ca",
+      "cluster_key": "ベビーケア製品市場をリードする10社",
+      "first_seen": "2026-10-29",
+      "last_delivered": "2026-10-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1omvfdls13smj4nnpuswi5dvjsy29wsnfmqv9mywhobkrcn2zic19fbujbthrss2yxsegyuzvmnwzrue85rhv1z0x2dvlhv3gtszzxvnbvvmm1afzrbtloagpbltd0v2jcy3c?oc=5",
+      "title_norm": "育児中のママ・パパに寄り添うホワイトノイズスピーカーlullmeが2026年度グッドデザイン賞を受賞",
+      "group_id": "aabcd40319",
+      "cluster_key": "育児中のママ・パパに寄り添うホワイトノイズスピーカーlullmeが2026年度グッドデザイン賞を受賞",
+      "first_seen": "2026-10-29",
+      "last_delivered": "2026-10-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9ylvitmmzvulnmszitynyytuffvf9ky0znm042vmfaludewfrxu0llnvkxzgrgnxexmwl0awtfrvewzjvgc2r4vg1fbwptqzu1tvfqd0prdvjxvu5ec3v4zlz2tvhatdl4bfe?oc=5",
+      "title_norm": "頭蓋形状矯正ヘルメットベビーバンド第44回日本頭蓋顎顔面外科学会学術集会にブースを出展",
+      "group_id": "8c45e25834",
+      "cluster_key": "頭蓋形状矯正ヘルメットベビーバンド第44回日本頭蓋顎顔面外科学会学術集会にブースを出展",
+      "first_seen": "2026-10-29",
+      "last_delivered": "2026-10-29",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmihwfbvv95cuxpq2vxb0xkwv9fvmvfmxrdd3jwlulvq0ngai1ky3rqrehsrtr4n2lxvkxrnfblqlvpa2pmmlvus3v1qnpcdnpnvvhvzg9xr0nkvnrkagdidujmlufuve91uznqbdmwzdyyykfkvkpevdjha280bupkvnews3pua0wzn1lssxlvdzg?oc=5",
+      "title_norm": "県内のチャイルドシート適正使用88.6％で過去最高｜jrtnewsnnn",
+      "group_id": "7dbde1287b",
+      "cluster_key": "県内のチャイルドシート適正使用88.6％で過去最高｜jrtnewsnnn",
+      "first_seen": "2026-10-29",
+      "last_delivered": "2026-10-29",
       "delivered_count": 1
     }
   ]
