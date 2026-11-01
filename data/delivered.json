@@ -1,51 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmio0fvx3lxte5nc182afnuwtnnevl4v0drumxteuvwdudib2x5ywdltef0efb1t1h6qjrioxffz2fxune0?oc=5",
-      "title_norm": "明治ほほえみやムーニーのパッケージがベビー服に10月2日発売",
-      "group_id": "58842e1fd0",
-      "cluster_key": "明治ほほえみやムーニーのパッケージがベビー服に10月2日発売",
-      "first_seen": "2026-10-01",
-      "last_delivered": "2026-10-01",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmigafbvv95cuxpc1bfqzrvr1nkn2y3ofzmeejuqldfaxlsvm9qaezsc2j2sw82szd6qjaxeklvq2jwm0lzbtjbyl9qul9lnvfvmu5uefnwdlzhz1pbs3p3sgu0uw93bwnrtzb6ufrea2nzsumzafrzvjvdedh1mmprev9vsmdfvc1yoa?oc=5",
-      "title_norm": "蒸気で除菌の哺乳瓶乾燥器コンビ",
-      "group_id": "45bb3e2649",
-      "cluster_key": "蒸気で除菌の哺乳瓶乾燥器コンビ",
-      "first_seen": "2026-10-01",
-      "last_delivered": "2026-10-01",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiskfvx3lxte1vse91owpyrw45odztvi1tazbytdvpwne5vvgtowd4qkuwaek3yufkd01hn2xzbm9tb3pzaucxuxdtrmctzgnkb0zn?oc=5",
-      "title_norm": "ベビーおむつ市場トップ10企業",
-      "group_id": "3db4095dda",
-      "cluster_key": "ベビーおむつ市場トップ10企業",
-      "first_seen": "2026-10-01",
-      "last_delivered": "2026-10-01",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5ztjcyrjlwz1zetxh2sxppmxp6dnc4whdxmjbznlk0zgz6cu1wvvn0txk3b1ptcgjkowhytvbja2fisl9rzw1jcmi0owrsnu1llv84ntjfbnj5zfdhbe5mtdzjzvjwwliyuhc?oc=5",
-      "title_norm": "腸内環境データ×保育園×ベビー用品メーカーによる共同プロジェクトを始動",
-      "group_id": "ccaf96ea13",
-      "cluster_key": "腸内環境データ×保育園×ベビー用品メーカーによる共同プロジェクトを始動",
-      "first_seen": "2026-10-01",
-      "last_delivered": "2026-10-01",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmit0fvx3lxte0xzldka29mzvixmdzetgptcnbrqzm0rf8xzxptytrvtui1wvjlexdzqkdoaw1pngy2x1rlze1mwxbxykrsutm3smpvqkf2ags?oc=5",
-      "title_norm": "０歳児を育てる世帯に紙おむつなど無償で届ける支援宮城・利府町",
-      "group_id": "9801edd2ee",
-      "cluster_key": "０歳児を育てる世帯に紙おむつなど無償で届ける支援宮城・利府町",
-      "first_seen": "2026-10-01",
-      "last_delivered": "2026-10-01",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmihwfbvv95cuxqrvnpwxc4rdfmsnzoeknis1lyywyxazdmuutdu19yrtder01rc3ffa21oy3hnvkhpaxy3rthtbulwy0ewvjfzclfqc2r2vvbsd3dyzmtnujjgmi02rl9fvuh0ruftvzm2wexqm2dvmgpiotnptk9lagjwrxrbsza5thnuelz0c03saycbqvvfexfmuevtavl3oeqxzkp2ahpdsetzcmfmmws3zlflq1nfweu3rednuxnxx2tttmn4z1ziawl2n0u4u21jvmnbmfyxc3jruhnkdlvqund3cmzrtviyrjitnkzfx1videvbu1cznlhmajnnbzbqsdkzt05ps2hivkv0quswouxzbnpwdhnn?oc=5",
       "title_norm": "パン・パシフィック・インターナショナルhd＜7532＞日本トイザらスの玩具・子供用品販売事業を取得",
       "group_id": "c6d8e11919",
