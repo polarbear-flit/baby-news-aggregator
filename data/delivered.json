@@ -1466,6 +1466,33 @@
       "first_seen": "2026-11-03",
       "last_delivered": "2026-11-03",
       "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5on0lrb3bzzddwefitsmm1bw1ed0xhwgrxvmx1eunfznnua2vxnmtznu03mzrpegrrbxpuv0dumtq4ykvpq1vkatzuodu3dgdpekpgwnrfd01ty3o4ne52c2fmsjrcrnc3nee?oc=5",
+      "title_norm": "日々の育児に彩りと上質さをpeanutsbabyの新作ベビーアイテムを赤ちゃん本舗で販売開始",
+      "group_id": "6af68b0327",
+      "cluster_key": "日々の育児に彩りと上質さをpeanutsbabyの新作ベビーアイテムを赤ちゃん本舗で販売開始",
+      "first_seen": "2026-11-04",
+      "last_delivered": "2026-11-04",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte5kdme5bfrbvwfluudimu5gy2pzlvf1lwnwmf9wmwm0lwfzyjk5bf9xv1l0nxfsaxvzyvvnwklasi1qu3dmcgdnzwwtsuqwqxlgzxzz?oc=5",
+      "title_norm": "スタイが100円に抱っこ紐やベビー服もお得なコニー感謝祭が11/5から",
+      "group_id": "c91b0b0ac2",
+      "cluster_key": "スタイが100円に抱っこ紐やベビー服もお得なコニー感謝祭が11/5から",
+      "first_seen": "2026-11-04",
+      "last_delivered": "2026-11-04",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte83s2pwymsywlfmyljntkprc2npogfhovayzjrabu9ebl9rb043etnsmjfjrgtmn3lubfjjb1hkrmhmqkdlqnhoq1dxvfbdt01xcgpkbzvcczjtemr1x0f4tm5nyljqmfdnule?oc=5",
+      "title_norm": "冬の乾燥シーズン到来子育て中の約2人に1人が赤ちゃんの乾燥・カサカサを経験冬本番を前に聞いたスキンケア選びの実態",
+      "group_id": "6cb0a44394",
+      "cluster_key": "冬の乾燥シーズン到来子育て中の約2人に1人が赤ちゃんの乾燥・カサカサを経験冬本番を前に聞いたスキンケア選びの実態",
+      "first_seen": "2026-11-04",
+      "last_delivered": "2026-11-04",
+      "delivered_count": 1
     }
   ]
 }
