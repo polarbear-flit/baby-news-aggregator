@@ -1,60 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte9pdjmzvkhgn3z3emzncjvbndrpu3lxr0dwahrfq2pjzg1lbdv6og5mcgxvouzvzeppbxh4ugfws1bznhloawljqm5cnwvylxlankgw?oc=5",
-      "title_norm": "出生児数が2年連続で増加し国内の乳幼児食市場にも回復への期待が高まっている特に一人の子供に投資が集中するゴールドキッズ現象が拡散し山羊乳などを原料とした国内プレミアム粉ミルク製品の成長傾向..",
-      "group_id": "38f10fb977",
-      "cluster_key": "出生児数が2年連続で増加し国内の乳幼児食市場にも回復への期待が高まっている特に一人の子供に投資が集中するゴールドキッズ現象が拡散し山羊乳などを原料とした国内プレミアム粉ミルク製品の成長傾向..",
-      "first_seen": "2026-10-08",
-      "last_delivered": "2026-10-08",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmixkfvx3lxte9tekluzdvvejm5zedrmnr6rtf0qunlv0u0tdvxq1h5dllwcgu0dzcxswjmdxrctlgxz09mzhz2tvzotkrar0k0dli2aukymzzcnkktcutmwmd4uhjovwc?oc=5",
-      "title_norm": "イオン子育て支援自販機を実験的に設置必要なベビー用品を気軽に購入できる提案",
-      "group_id": "71c3b05469",
-      "cluster_key": "イオン子育て支援自販機を実験的に設置必要なベビー用品を気軽に購入できる提案",
-      "first_seen": "2026-10-08",
-      "last_delivered": "2026-10-08",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbrshlovzflai1sbtu4reotvkhtrtrqbkjha19urfnxemzqz3bpzhrwrlzxblowdvveynnqnettrwttbzjvdvm1em4tevppq0dsrmhanve0ng9qamcxngkzynywqkhurglxqle?oc=5",
-      "title_norm": "沖縄県の商業施設で初設置型ベビーケアルームmamaroを那覇オーパに設置しました",
-      "group_id": "4ea6f717c0",
-      "cluster_key": "沖縄県の商業施設で初設置型ベビーケアルームmamaroを那覇オーパに設置しました",
-      "first_seen": "2026-10-08",
-      "last_delivered": "2026-10-08",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9yadu2rmzovljwwnrgzfblau5yzzrzy2fomnjiodvfqurynezjde0zzerdbxzosw5wrdvqrunotus4nlc1d0tkdwjjn19vmzbmv2pjmxfrruprmde5yvbvcnppwwl2ltrjm2c?oc=5",
-      "title_norm": "ミルクの温度これでいいに目安をtoday&alwaysの哺乳瓶用温度チェッカーみるぴた",
-      "group_id": "44d74e1aa4",
-      "cluster_key": "ミルクの温度これでいいに目安をtoday&alwaysの哺乳瓶用温度チェッカーみるぴた",
-      "first_seen": "2026-10-08",
-      "last_delivered": "2026-10-08",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9pdm8wvtq1c3g4qlrmotfowmpznghisg1cq3y2u3lidxvcrda1de1juthyogjsexqxc2dpythsa0xplum4s0tttlrhdxjsdg5kx2tsyudkduk3c3nhvnbrcs1idfhewm9gbve?oc=5",
-      "title_norm": "jr名古屋タカシマヤベビー＆キッズフェアpopup出店",
-      "group_id": "bf269151d5",
-      "cluster_key": "jr名古屋タカシマヤベビー＆キッズフェアpopup出店",
-      "first_seen": "2026-10-08",
-      "last_delivered": "2026-10-08",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmitkfvx3lxte1ndvnbml81ythqdg1vr3fdwuo5nexydkl5rjhgdjhjejzcevbsbs1reexnmu9tzk5lzwlqqlpmbdrktdfiwjc4mko4tddkqq?oc=5",
-      "title_norm": "バイクにも使える背負うエアコンcoolbagこの涼しさをベビーカー・車椅子ペットカートに活用",
-      "group_id": "0294fad24f",
-      "cluster_key": "バイクにも使える背負うエアコンcoolbagこの涼しさをベビーカー・車椅子ペットカートに活用",
-      "first_seen": "2026-10-08",
-      "last_delivered": "2026-10-08",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5boxhxtxdrmddxww9etvbeadjpmjvqa2favmjwzzblyzgxre8ybtruaudbrlfhaejrr2tsyudfulvuqmvxwedms25qtmzkm0xwa013t29alwluyunuwxp2mvzwtjhntkzyvxc?oc=5",
       "title_norm": "新生児から使えるチャイルドシートthesロッタzhの新色1500台限定で2026年10月23日よりアカチャンホンポで発売",
       "group_id": "71034a0889",
@@ -1762,6 +1708,60 @@
       "cluster_key": "サンリオキャラクターズよりベビーエンジェルシリーズがむにゅぐるみパティオ公式ecサイト＆店頭にて販売決定",
       "first_seen": "2026-11-07",
       "last_delivered": "2026-11-07",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmizkfvx3lxte10tvbyehzhqlzzqmxystlfaxbkuee4cwdmnznrahhhttm2eklonzfjzhnybhhisdhqn1nfx3vcc0w3bgxzsjzrt0hyc1bvz2wwsmvfchzudm1om0itt24xmkjzzktxdw?oc=5",
+      "title_norm": "人気急上昇のcombiisofix回転式チャイルドシートネイビーno.18041チャイルドシート｜aupayマーケット",
+      "group_id": "19ce5a7471",
+      "cluster_key": "人気急上昇のcombiisofix回転式チャイルドシートネイビーno.18041チャイルドシート｜aupayマーケット",
+      "first_seen": "2026-11-08",
+      "last_delivered": "2026-11-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmivkfvx3lxte9rwk9oejzvqnn2mezcum80bgzyvhdetxq3skztamhitnnvluotyxrtduczwmvpmzu0sknzc1ptoddovkriajflejvxzhcxmllvqvjnwgn30gfbqvvfexfmtms5dhfuaurqbxjqvudzmtdzau11cfbgrg9nmvlnekwta1focjzpddvcsjnua1lrejf4ehrneljyywryzkhwbex4s3ltm3ixu0rqstjjmdv6sulvcw?oc=5",
+      "title_norm": "トーマスの乳幼児用パジャマがユニクロから登場あったかキルトで寒い夜も安心",
+      "group_id": "0ac75c7170",
+      "cluster_key": "トーマスの乳幼児用パジャマがユニクロから登場あったかキルトで寒い夜も安心",
+      "first_seen": "2026-11-08",
+      "last_delivered": "2026-11-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte14ejf2nvayuzryuzr6tmpochlyyvhuauzguuldtuvsoffjs2z4n1jnc1jls3cxajbjckfzumtowedkq01mbxf2y1kxwxbksunvskt5nfv2wu9sq0zsbwjyre9vyjk4vtq1s2c?oc=5",
+      "title_norm": "妊娠・出産・授乳とともに変化するバストを段階的にサポートマタニティ＆ママ向けインナー3ステップシリーズ販売開始",
+      "group_id": "268cc101d8",
+      "cluster_key": "妊娠・出産・授乳とともに変化するバストを段階的にサポートマタニティ＆ママ向けインナー3ステップシリーズ販売開始",
+      "first_seen": "2026-11-08",
+      "last_delivered": "2026-11-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmibefvx3lxte1ys2tnahrhx2k0thrhenrkq3v2vtdvzdjjefryqln6uhp6ag9qbtvqdg5dc29ttgpic3pgrv82u2tyc3phtwrdrwvuttfjdgdhmdutqthdwni5rjryd3nrakvorddstc15wffreq?oc=5",
+      "title_norm": "オムツやベビー用品代に♪毎日ハウジングのweb見学予約でquoカードpay&西松屋ギフトカードが最大5,000円分もらえる",
+      "group_id": "73c75df13e",
+      "cluster_key": "オムツやベビー用品代に♪毎日ハウジングのweb見学予約でquoカードpay&西松屋ギフトカードが最大5,000円分もらえる",
+      "first_seen": "2026-11-08",
+      "last_delivered": "2026-11-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxte41uehtszk1dghfvxpmofplctytoer0bhn0ruxpd1zuegnoaxmyyzdltejpbvhyugjyynlhvxz6bc1im1fzu2pfalrrn2s1ovjft0pwadjrrq?oc=5",
+      "title_norm": "チャイルドシート基準見直しへ",
+      "group_id": "d008cf74b9",
+      "cluster_key": "チャイルドシート基準見直しへ",
+      "first_seen": "2026-11-08",
+      "last_delivered": "2026-11-08",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiukfvx3lxtfbjr0zfcm1kzvkwbk5udvjgd2fttu1nz2poadbzb3h0q0lkae5wmc15rfntcmtuajvcugrxq1pwrjnayjf2cu96vnfdb196qwxlz3c?oc=5",
+      "title_norm": "幼い子供を育てる家庭で必要な育児用品を貸与するある地方自治体の事業が大きな人気を集めている",
+      "group_id": "bebaff5a81",
+      "cluster_key": "幼い子供を育てる家庭で必要な育児用品を貸与するある地方自治体の事業が大きな人気を集めている",
+      "first_seen": "2026-11-08",
+      "last_delivered": "2026-11-08",
       "delivered_count": 1
     }
   ]
