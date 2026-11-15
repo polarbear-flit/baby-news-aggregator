@@ -1,105 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5xmlpxwwzyshlovwi0n0fxzxj1avqxn21jqtr0vnzzltd6dun1emlgc1fzu3fctxrhn2w5m1fczddlx1lnquhsq2t5ve1wremxvu9nlxhmoufqqwlcvfdddvlnlwhys1z5lue?oc=5",
-      "title_norm": "赤ちゃん本舗btob事業を本格強化今秋関西・九州の大型展示会３展へ連続出展",
-      "group_id": "bd51ad4d07",
-      "cluster_key": "赤ちゃん本舗btob事業を本格強化今秋関西・九州の大型展示会３展へ連続出展",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmivefvx3lxte1yq2jeujdsnvvnbjc3ywe1ugiyvlzwmxfsz3rvzdz3efpkaei1uhdzdzfttzf3vtf4zkhjutnyn3bzderimdjjy2fqqutreknoel82mq?oc=5",
-      "title_norm": "軽量ベビーカー＝コンビ",
-      "group_id": "fcd0635234",
-      "cluster_key": "軽量ベビーカー＝コンビ",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1usfhqttbdexl4c0jzmelpze1pu0jqlxrms1vqyxpzthftvfh3ywhxrjyxs1czzhvrvwg0ddvjbmjmrlbbzvy3svlyskdxvwf2dc15s3ltblk5akdcv2phy1rbdvfgclbllxc?oc=5",
-      "title_norm": "友利新が代表を務める赤ちゃんから使えるスキンケアブランドメディスキンが伊勢丹新宿店に初出店10月28日よりpopupshopを開催",
-      "group_id": "4df7c4e186",
-      "cluster_key": "友利新が代表を務める赤ちゃんから使えるスキンケアブランドメディスキンが伊勢丹新宿店に初出店10月28日よりpopupshopを開催",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5xvk8tamzostnylxjdcdrlbi1ubjq2a3m2bgjvtzrws0zebufqd1j0egfsamvrz1bdv3pnbwo2ogzrwnp2nmnibuvbc3jxali3oxpzsnvmv1qzq1dvawtfbziycgpbwkcyd2c?oc=5",
-      "title_norm": "赤ちゃんとの毎日にやさしい肌ざわりを今治謹製organictowelからオーガニックコットンを使用したベビーアイテムが発売中",
-      "group_id": "2947bf9f9e",
-      "cluster_key": "赤ちゃんとの毎日にやさしい肌ざわりを今治謹製organictowelからオーガニックコットンを使用したベビーアイテムが発売中",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmijgfbvv95cuxnctbfckxmv093thbmsffsmwrwsfo3rvpotwrhzgx3qjlbtw9zduvcnnc3bw5obzvnqmnxekj2dlz5c2hswnr5ctvfnnv5cvuwsmxcvhgzqvp3ltd4uutxckhkvfhpmvbfsznbykjzvdlnv2lxmxfraxvfwl9utflrvhc3vddinlzxwurxqnln?oc=5",
-      "title_norm": "出生率上昇も育児費高騰",
-      "group_id": "fee102c8ed",
-      "cluster_key": "出生率上昇も育児費高騰",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfatcvm2cjrfyjztbzfqc25twefnavmxnwptv19nv2m1vfntsxlytg5rtxzbn182ddy4t2nfuwsxcu5ccwhasg40tfzbafrdotdmsvnvslpkegotb0utmvpbnhm2dncyundysnc?oc=5",
-      "title_norm": "チャイルドシート搭載可能モデルmatego+の2027年度の入園を見据えた先行受注会を開催",
-      "group_id": "4ad02057b8",
-      "cluster_key": "チャイルドシート搭載可能モデルmatego+の2027年度の入園を見据えた先行受注会を開催",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9vui1vvujmnhzuzlfpwurpb2vstf9fx2liev92el83z2iysddntxvyejnuylb4xzfxsmjjzfnhdetooexoufbwykfhujflsfb6ctluvw92b1zsuvo3rxnmvw9snhromwo1c1e?oc=5",
-      "title_norm": "韓国発ベビー＆キッズスキンケアimnotababy伊勢丹新宿店へ各地の百貨店で好評をいただき10月14日よりフェア開催10月下旬から三越伊勢丹オンラインストアでも発売",
-      "group_id": "013a15c6b0",
-      "cluster_key": "韓国発ベビー＆キッズスキンケアimnotababy伊勢丹新宿店へ各地の百貨店で好評をいただき10月14日よりフェア開催10月下旬から三越伊勢丹オンラインストアでも発売",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5yrkninfpls0vsetzlukp2ewhou0gtskruceq5qwtnbhu2nhhnuuhunvdvu01ynvlad2rkrflocfqtrurywhflqxzbylllrfficvvpwgcwavhmdflpt1p5merpq0lfmgdpuhc?oc=5",
-      "title_norm": "バースデイ10/2425にインテックス大阪にて開催のマタニティ＆ベビーフェスタ大阪2026に出展決定",
-      "group_id": "a4fc0d742e",
-      "cluster_key": "バースデイ10/2425にインテックス大阪にて開催のマタニティ＆ベビーフェスタ大阪2026に出展決定",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte00a0m2oertmkn6t0k4avjhu2r2mxlpbdzhmno3ewrsoupqvdvubffyys1zsduzuvzomhfldzz4mfpmugxauwzvnf9ss3ppwtutnlhnx0vfz292afloa3lkwhpdatdgrfnpmnc?oc=5",
-      "title_norm": "韓国発ベビー・キッズ服ブランドモイモルン10/14大丸神戸店に初出店秋冬の新作コレクションを揃えたpopupstoreがオープン",
-      "group_id": "6cf691ff05",
-      "cluster_key": "韓国発ベビー・キッズ服ブランドモイモルン10/14大丸神戸店に初出店秋冬の新作コレクションを揃えたpopupstoreがオープン",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiu0fvx3lxte1fautunkfpmkvwnjbrbnflug5mbhnpvwtmag9ftwpfa3fxrlrnltram1fuwljzvm16zmzdrzg5bmfvegvqbffhbulkt1hwnku4afew?oc=5",
-      "title_norm": "フェラーリの代表モデルをデザインしてきたイタリアのデザインハウスピニンファリーナが幼児家具のデザインに乗り出したイタリアのプレミアム幼児家具ブランドであるポパフェドレッティ(foppapedre..",
-      "group_id": "6a12192c49",
-      "cluster_key": "フェラーリの代表モデルをデザインしてきたイタリアのデザインハウスピニンファリーナが幼児家具のデザインに乗り出したイタリアのプレミアム幼児家具ブランドであるポパフェドレッティ(foppapedre..",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1od3p0nkjduevoegytc3fszmk2nuvxdjlhlw0yuduxunz1tenrum8tquq5zzjwt3l1m195vjrhsjvlsuvwtvrex1d5tmo1u2vwovp0bfbsvelqz1jymdvvvwe0nmtyug5luee?oc=5",
-      "title_norm": "ロンハーマンキッズで揃える大切なあの子へ送るベビーギフト",
-      "group_id": "629288d61e",
-      "cluster_key": "ロンハーマンキッズで揃える大切なあの子へ送るベビーギフト",
-      "first_seen": "2026-10-15",
-      "last_delivered": "2026-10-15",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmibefvx3lxte9km3o3dy1ndv9kctzdbmptofj0rfbnelmty2hhyvj0qm5wmhb5vtltsfvieuq1vuzwogyxvxzqdljpykmwzlazzhnsa2hzvnkzue5ttfllcfpyzvr0tuqwvexssmfvm3hfqvduza?oc=5",
       "title_norm": "コンビ新生児から7才頃まで使えるチャイルドシートtheslongr129エッグショックvbを発売",
       "group_id": "f31c05ab7e",
@@ -1933,6 +1834,24 @@
       "cluster_key": "産後ママが悩む腰の負担をケア創業63年の医療用品メーカーが開発したサイズに悩まない骨盤ベルト",
       "first_seen": "2026-11-14",
       "last_delivered": "2026-11-14",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiiafbvv95cuxqv2rssuftmgpic25codzmdvf5z0ryqmfuyxlqnjf2nunictf5zvvhzeryedj1qulfqklizdvkswnsqujycupza3pxzkd6vgxkznhdrnpod3jludblewetluq2qzjab3bvrxvtrk4yqnl5ls14zdhqcwk1nxbmufatsdjzv2dfzzk4?oc=5",
+      "title_norm": "初めてでも迷いにくい新生児から使えるチャイルドシートthesロッタzhに新色1500台限定で2026年10月23日よりアカチャンホンポで発売",
+      "group_id": "6f499d2e2e",
+      "cluster_key": "初めてでも迷いにくい新生児から使えるチャイルドシートthesロッタzhに新色1500台限定で2026年10月23日よりアカチャンホンポで発売",
+      "first_seen": "2026-11-15",
+      "last_delivered": "2026-11-15",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmibefvx3lxte5vsg0xbkk0stnss0hmthhly21knjddtwjjrvfgvvn4tvnjbvp2q0tdbdm2dujeyvniouxysjfntmhbugg1vm1idxvizwp5dff4bmxwqljjt1lcuurjdedxvtjusnozaglqdvlvcg?oc=5",
+      "title_norm": "チャイルドシート議論初会合使用基準見直しへ警察庁",
+      "group_id": "35ef55e1aa",
+      "cluster_key": "チャイルドシート議論初会合使用基準見直しへ警察庁",
+      "first_seen": "2026-11-15",
+      "last_delivered": "2026-11-15",
       "delivered_count": 1
     }
   ]
