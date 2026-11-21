@@ -1,69 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1id0pfukrfr2jtzdz6uflzq3v2wnjpyze4ry1wrhb1evztbjhjlu1otwvrmzv1snzjvs1jymw0d1vxwjn3dw1jotdremgwqxzst1jrww43anfpskrcvlnqvmvjwwxltta0emc?oc=5",
-      "title_norm": "チャイルドシート選びの常識が変わるplatinums-line誕生",
-      "group_id": "b2cbd976a5",
-      "cluster_key": "チャイルドシート選びの常識が変わるplatinums-line誕生",
-      "first_seen": "2026-10-22",
-      "last_delivered": "2026-10-22",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbnb0yyqvvhsvi5t3dny0rqvkk5nla0zkp3ohrla0z2ahnwag8zc0o3dw04vfnqshk1ugxud2nbyv81zgxuc2xwt1bfsghezmlaagjbqnpjrzjfulbhls1yamnpawkyyzhnzmc?oc=5",
-      "title_norm": "テレビ東京系の乳幼児番組シナぷしゅデザインのatsude超厚手おしりふき10月20日発売",
-      "group_id": "bcc4faafd8",
-      "cluster_key": "テレビ東京系の乳幼児番組シナぷしゅデザインのatsude超厚手おしりふき10月20日発売",
-      "first_seen": "2026-10-22",
-      "last_delivered": "2026-10-22",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxtfbicwvyvhzsbm1xbvmtrljtxzh6ektztvdkwg5uuelxbw0xm0jyctbgbjg0zvvfnuneuvbjrwfzd0l1vvrlmgdiexfndjhzcgpnc0dgexnkzfatr2c?oc=5",
-      "title_norm": "赤ちゃん本舗・江崎グリコが大阪・東京の2会場で冷凍幼児食cotote試食イベントを実施",
-      "group_id": "ac489c1703",
-      "cluster_key": "赤ちゃん本舗・江崎グリコが大阪・東京の2会場で冷凍幼児食cotote試食イベントを実施",
-      "first_seen": "2026-10-22",
-      "last_delivered": "2026-10-22",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmirkfvx3lxte9jtjrzctbhuvdctvrlc3nzr291uk9ptlfnvzzpr1jatw9qnlzzuky5lvdwcdlnukyxtlewynzid3vnoxzlrgc?oc=5",
-      "title_norm": "アカチャンホンポママ＆キッズベビーミルキークリーム大容量を先行販売へ",
-      "group_id": "c00be7a1b3",
-      "cluster_key": "アカチャンホンポママ＆キッズベビーミルキークリーム大容量を先行販売へ",
-      "first_seen": "2026-10-22",
-      "last_delivered": "2026-10-22",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiaefvx3lxte1ethjsqmvmte5nowtslxn4ujhkszleulc5setobxzrt05amkzptdnls0rxlwwxvgrqt1awlvfrdvbhrmjdnnv1refsmefmznjzq1jnzerhc0fdb0foauv1wujsawzhcfzw?oc=5",
-      "title_norm": "明治の赤ちゃん相談室が26年10月に50周年へ累計相談は約51万件",
-      "group_id": "ee7a5ddfb9",
-      "cluster_key": "明治の赤ちゃん相談室が26年10月に50周年へ累計相談は約51万件",
-      "first_seen": "2026-10-22",
-      "last_delivered": "2026-10-22",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9yaudfb0u4mul6bzvfuxzsmlhemuljrwx1azlgqthic1pkqutabgd0chrzau1svu85durkn3lgsgdiegxstfluzuhyovzdchj3mdzjawliehjtemlhwnlqdkcynhfndzvwwmc?oc=5",
-      "title_norm": "とくに乾燥しやすい敏感な赤ちゃんの肌にママ＆キッズベビーラインにとてもしっとりタイプの2品が登場この新発売を記念して初めての方にお得に購入いただけるセットを公式通販限定で発売",
-      "group_id": "995118941f",
-      "cluster_key": "とくに乾燥しやすい敏感な赤ちゃんの肌にママ＆キッズベビーラインにとてもしっとりタイプの2品が登場この新発売を記念して初めての方にお得に購入いただけるセットを公式通販限定で発売",
-      "first_seen": "2026-10-22",
-      "last_delivered": "2026-10-22",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiv0fvx3lxte1usjmxwjh6rwdfwthlaxzpqzn0dk4yvldamhnim2nhulbfmy1ymxrwmjjkwnvtte96tkppdkngagvhnzm0wux5z0o3uv80rmyzsudyzzvhbw?oc=5",
-      "title_norm": "赤ちゃん本舗news｜iibaと｢子どもの預かりサービス検索･予約｣事業共創を開始",
-      "group_id": "b367280d9f",
-      "cluster_key": "赤ちゃん本舗news｜iibaと｢子どもの預かりサービス検索･予約｣事業共創を開始",
-      "first_seen": "2026-10-22",
-      "last_delivered": "2026-10-22",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmivefvx3lxte5lulnnenbbwgtsujrlri1qm3h3avjtuktknkpqmgvqyxuwwe5bav9arl9qvu4tvgllltn0ynvoa1h2btnqrwnuowzbnkzbckvnwxdlvw?oc=5",
       "title_norm": "betta｜ドクターベッタ哺乳びんブレイン広口doodlebottle240ml",
       "group_id": "45fd810190",
@@ -1888,6 +1825,33 @@
       "cluster_key": "なにわパパの会・藤崎マーケット田崎＆アキナ秋山がケラッタとヒョウ柄のベビースリング開発最初の育児グッズってスリングちゃう発売はいい育児の11月19日から",
       "first_seen": "2026-11-21",
       "last_delivered": "2026-11-21",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmib0fvx3lxte5psnliluezthrrslhotkzjnhvknvhwnnawsg10sffybmjkdg1vzxlnqjy5mhi2ddbkrw5twlnqrhznc003xzbiowjyq0s1efrhalbxnfbgnjl2zevytfhcaklmzmnna0j0x3rtdlbona?oc=5",
+      "title_norm": "ベビーから大人まで家族で保湿♪uruasミルクローションが11月22日からmakuakeで先行販売100%天然由来成分・8つの無添加",
+      "group_id": "486877a29f",
+      "cluster_key": "ベビーから大人まで家族で保湿♪uruasミルクローションが11月22日からmakuakeで先行販売100%天然由来成分・8つの無添加",
+      "first_seen": "2026-11-22",
+      "last_delivered": "2026-11-22",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmitefvx3lxte1vsejynkn2eljhulpfngxib0h6ai1kznrxz1zrlw14rzlmnujkaw1esg9bnvzmou1owxvry0yzrzm2rxn5uhnvsdntngo?oc=5",
+      "title_norm": "ハローキティやマイメロディがチャイルドシートにちょこんと乗る全5種のマスコット",
+      "group_id": "633738e630",
+      "cluster_key": "ハローキティやマイメロディがチャイルドシートにちょこんと乗る全5種のマスコット",
+      "first_seen": "2026-11-22",
+      "last_delivered": "2026-11-22",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmisafbvv95cuxot2lmyxjmytq3m3zuz0xksgl2bldltmvqvetjqzveqmd3eufynzn6tzljnxbvmna3qnvvdhrmbkvstktpdum4ugrjdhfpcv9ieuzkqtlduxjxotdzzvnyahnaqmnntwtfbhzeukvxuldyz1druhzjy3zgy0fiodnmvgnumulobudfzezrshe2mgtyefdiddg1n3z6u2f4ykfvr1jetutxmdl2a3fax1lxbq?oc=5",
+      "title_norm": "momcozyは母親と赤ちゃんをサポートする初のショールームをベトナムに正式にオープンしました",
+      "group_id": "dc4ed39de8",
+      "cluster_key": "momcozyは母親と赤ちゃんをサポートする初のショールームをベトナムに正式にオープンしました",
+      "first_seen": "2026-11-22",
+      "last_delivered": "2026-11-22",
       "delivered_count": 1
     }
   ]
