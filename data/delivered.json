@@ -1,78 +1,6 @@
 {
   "articles": [
     {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9gellxszl0nhiyufjsz2vyq1blre1jwukxb1zurfzozf81cvdfq1zlskpkrdffa0l2q05hqtrjtha4vktfmde3mty0m2n2uu9qawxkbjzft3hsu3pvr1m5rms4amj0ynz6tue?oc=5",
-      "title_norm": "設置型ベビーケアルームmamaroをビックカメラ3店舗にて運用開始しました",
-      "group_id": "275f4181d9",
-      "cluster_key": "設置型ベビーケアルームmamaroをビックカメラ3店舗にて運用開始しました",
-      "first_seen": "2026-10-27",
-      "last_delivered": "2026-10-27",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmit0fvx3lxte5zntmyb1zjnff1akrfche2nws1rdnim2ffcfg4emzgtknka21lqk93ctvwy1ixq1d1luhpqu5ht1rimjrktjfdshjcuzhtogm?oc=5",
-      "title_norm": "2026年キッズデザイン賞受賞お風呂場に縛られない新しい沐浴スタイルを提案沐浴サポートマットbabybathloungesofa10月30日発売",
-      "group_id": "0caa2a1e45",
-      "cluster_key": "2026年キッズデザイン賞受賞お風呂場に縛られない新しい沐浴スタイルを提案沐浴サポートマットbabybathloungesofa10月30日発売",
-      "first_seen": "2026-10-27",
-      "last_delivered": "2026-10-27",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiw0fvx3lxte1vws10ce9uagvbcnjwctbvm0frd1vhvw8wq2r5di1owv9smzhaowv0qllqoxu0rdzpyut3a2rqadvuakx1ywd6sge2ckfxuxbucxgtwjhkejlqqnc?oc=5",
-      "title_norm": "チャイルドシート着用義務低身長含め拡大検討へ最新の社会ニュース",
-      "group_id": "19b77a8c04",
-      "cluster_key": "チャイルドシート着用義務低身長含め拡大検討へ最新の社会ニュース",
-      "first_seen": "2026-10-27",
-      "last_delivered": "2026-10-27",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmix0fvx3lxte1xujfzanl6ejboodvsbu91mg5zylvssjnxc2jfy1bmd003tlp2ewjdqnzsaunzb2nkmhmzos1ouxraedfhmfvisdlotkz6r0jfd3e3mju5znfht2rmtznj?oc=5",
-      "title_norm": "育児用品のお試しから食育・交通安全まで家族で体験accellinkマタニティ＆ベビーフェスタ大阪2026",
-      "group_id": "20b820073c",
-      "cluster_key": "育児用品のお試しから食育・交通安全まで家族で体験accellinkマタニティ＆ベビーフェスタ大阪2026",
-      "first_seen": "2026-10-27",
-      "last_delivered": "2026-10-27",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiz0fvx3lxtfbmudj5lvborfppn1virnzgtdnpnu1wuu1xzwrczklxbg13rdvntuvobtayywjedlnnlu16d3zbwllgsnbozudjnwtbwtbpuhzwwgfnru9jas12qjhttg5arln2a2zbqku?oc=5",
-      "title_norm": "コンビの軽いベビーカースゴカル5.6kgで階段もラクに持ち運び",
-      "group_id": "fd4f61ef4c",
-      "cluster_key": "コンビの軽いベビーカースゴカル5.6kgで階段もラクに持ち運び",
-      "first_seen": "2026-10-27",
-      "last_delivered": "2026-10-27",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmio0fvx3lxte5na01bqu9lwnzpnevkwmnwmvv3zhe2yljiagnncwxfcvfves1sq3bfwluxzdhvd3fxec0w?oc=5",
-      "title_norm": "＼レビュー☆4.7／おむつオムツm150枚l126枚ビッグ108枚ビッグより大きい72枚パンツふわもちタッチ肌に優しい横モレ最長12hさらさら紙おむつgenkiあんしんgenki",
-      "group_id": "83f75480f0",
-      "cluster_key": "＼レビュー☆4.7／おむつオムツm150枚l126枚ビッグ108枚ビッグより大きい72枚パンツふわもちタッチ肌に優しい横モレ最長12hさらさら紙おむつgenkiあんしんgenki",
-      "first_seen": "2026-10-27",
-      "last_delivered": "2026-10-27",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiaefvx3lxte0tdknhwxhxnmpuwkn4c25htvg4cvvhmxzxbhfpcgfau0pxzljxbm5tywo4ywrmelzotuzvumtyx3pquuhlvg5tnkiyaw5wb3fecvf4qkg0aznfa0zhd3lbauraufzsyutc?oc=5",
-      "title_norm": "カヨトイズのリラックマベビーアイテムが公式オンラインストアで発売中",
-      "group_id": "0112f64428",
-      "cluster_key": "カヨトイズのリラックマベビーアイテムが公式オンラインストアで発売中",
-      "first_seen": "2026-10-27",
-      "last_delivered": "2026-10-27",
-      "delivered_count": 1
-    },
-    {
-      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbolwrhegiwek1mzucwukn3y1bnu2tmrlfhr0hxd1fnrmfon2zpru14thnxn3hxlwncmlvkdxrnvlbhcy1kmum2rwxwujlicdztoxjrdjd0x25etwdda29yys1nn2folwjoave?oc=5",
-      "title_norm": "琵琶湖博物館にベビーケアルームを２台新設しました",
-      "group_id": "dfddaac1b5",
-      "cluster_key": "琵琶湖博物館にベビーケアルームを２台新設しました",
-      "first_seen": "2026-10-27",
-      "last_delivered": "2026-10-27",
-      "delivered_count": 1
-    },
-    {
       "url_norm": "https://news.google.com/rss/articles/cbmivefvx3lxtfazywnjaxaymg1ianjuntjywvvibwi2muvrruc3uzlwtvh3clo1zvf0nefcc05szzktzuznwtjubdjpu0vts0zydzk0nenhdzvysg0zlq?oc=5",
       "title_norm": "アカチャンホンポでdポイントがたまるつかえる10月27日より38店舗でd..",
       "group_id": "8e5369cae9",
@@ -1798,6 +1726,114 @@
       "cluster_key": "amazonブラックフライデー第2弾ai泣き声検知機能を搭載したベビー向けホワイト",
       "first_seen": "2026-11-26",
       "last_delivered": "2026-11-26",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxtfbcs2l2vnjbdtblm3lcrghjcnqwuuzfztbqztvuwui4xzz1tnnhzhm2u3fjbulaeehobgu3zelfbmtidzzsukdrmy1heellwwlvy1pmrmh2clv1ltlwbuhbqwlpbi1rlw51r0e?oc=5",
+      "title_norm": "ヘラルボニーザ・ノース・フェイスと初のコラボレーション作家2名のアートを起用したベビー・キッズ向け全4型を12月10日に発売",
+      "group_id": "3f358ee44b",
+      "cluster_key": "ヘラルボニーザ・ノース・フェイスと初のコラボレーション作家2名のアートを起用したベビー・キッズ向け全4型を12月10日に発売",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmio0fvx3lxtfbxmgxszzj5u0tsbvh1zxjrvtd1ml9pu05eef9cdmpimzaxm1y0au1oa1c5zzvryzfptzfz?oc=5",
+      "title_norm": "アカチャンホンポレッドフライデー最終弾は11月27日から出産準備用品も",
+      "group_id": "bebbb45bc7",
+      "cluster_key": "アカチャンホンポレッドフライデー最終弾は11月27日から出産準備用品も",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte9wuzywqvzwn1npefe3swrbnhfrdxm0a2f4q0rlb1z2cdlzdfzdcm5imk5ib0juehbewdi5vldybdn5wmttvjzhz19clxexd2vbtktqvtu5su9lz1pubfg0thy4b1vltlvwofe?oc=5",
+      "title_norm": "ねんね期からあんよ期まで木のぬくもりに包まれる2wayはじめてのおもちゃベビージム＆ウォーカー11月27日発売",
+      "group_id": "4e7afaf6a4",
+      "cluster_key": "ねんね期からあんよ期まで木のぬくもりに包まれる2wayはじめてのおもちゃベビージム＆ウォーカー11月27日発売",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmir0fvx3lxtfbqsnhybultquzzvxznmgvqtgfos3lhd3d5u2m3vupiulo0b1jmzmeywtzyswxlbhroq2vwsmsyz2thtmfqvwe4?oc=5",
+      "title_norm": "チャイルドシート親の52.0％が買い替えか検討を経験",
+      "group_id": "7dd31fa88d",
+      "cluster_key": "チャイルドシート親の52.0％が買い替えか検討を経験",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmilgfbvv95cuxqwelnuu1lefrobdrhvfnpcjlkoefgzlfgt05qnjb3zu14x2m3ymnmb0tomgnudu44bv9ws1nkwwpjmlo2b1p5njrtdvfhqnpab050zxzdwmf0u2thyw52b1r3edfgtdd1zwd1r0xgb0w2nvzoem0wujjvy2fjcmi3qzi4d052bmn6t3lra3fsy1rzoulmmle?oc=5",
+      "title_norm": "韓国で一人っ子向けの高級ベビー用品の需要が拡大",
+      "group_id": "6f05b39e09",
+      "cluster_key": "韓国で一人っ子向けの高級ベビー用品の需要が拡大",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5jeehqtdgzvw1rrejhrvfwuxrzwfk3bzvodm9zm2l6v3hfa1vkm2vvsgdlnvzwwnjwwmrpztvzd0zemuzotkvzaxhyqjlvx2zimlott0rqums3ywtmvhbjsej0v0fzq3dbs1e?oc=5",
+      "title_norm": "アラウ.ベビー泡ストローマグ洗いが第19回ペアレンティングアワードモノ・サービス部門を受賞",
+      "group_id": "0c94aceec7",
+      "cluster_key": "アラウ.ベビー泡ストローマグ洗いが第19回ペアレンティングアワードモノ・サービス部門を受賞",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiy0fvx3lxte5zs2vkrdrqc1zibnb6ykvkoe5uwuhxzuhjskjrbgzay0lcmulfcvlnrkpkc0y3wgpjbjjtmzvfddzaam9idksxqzzgtwfqofvvzgp5y2zcdwi2tnn3zhzovjnxna?oc=5",
+      "title_norm": "赤ちゃんの反応は想像の斜め上タカラトミーベビーの開発者に見えている世界",
+      "group_id": "c34bc750f5",
+      "cluster_key": "赤ちゃんの反応は想像の斜め上タカラトミーベビーの開発者に見えている世界",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmihafbvv95cuxowfvstjbxc2mtszvfmenrmlc3rghot0lfzg9lali5nhjivzhhtvlytkjctxjrqkeyenfsyvhfyllkajdmos1yyxfyekl6emhvnurlt3ljme11off4ewttvw5hagltzy02ndvmsgs3a2zas3blrzvwumm0y1dlmgm3emfhnvpsayqbqvvfexfmtlhvbe4wv3njlus1rtbdazjxn0roae9jrwrvzwpsotryylc4yu1zck5cqk1ya0jbmnpxumfyrwjzzgo3tdktwgfxcnpjenpovtvezu95stbndthrehlrbvvur2hpbwctnjq1tehrn2tmwktws0c1cfjjngnxztbjn3phrzvt?oc=5",
+      "title_norm": "ベビー・マタニティブランドケラッタ吉本芸人なにわパパの会コラボ限定ヒョウ柄ベビースリングを発売",
+      "group_id": "dca74255e5",
+      "cluster_key": "ベビー・マタニティブランドケラッタ吉本芸人なにわパパの会コラボ限定ヒョウ柄ベビースリングを発売",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5kzf9ndgxkbes3qvi4ejl1ti1gsxfpekdeahpjykrwvjnhenhsahzfuwnhelbpbwmydu5lzgnodnfvdmplovvsbk1wnvv6cgrxnlzwoglauji3wldoskxou3dgrmv3m18wdfe?oc=5",
+      "title_norm": "赤ちゃんのおくるみを大人のリラックスタイムに米国の人気ブランドswaddeliniの全身を包む3dニットの大人のおくるみが日本初上陸",
+      "group_id": "bef506637c",
+      "cluster_key": "赤ちゃんのおくるみを大人のリラックスタイムに米国の人気ブランドswaddeliniの全身を包む3dニットの大人のおくるみが日本初上陸",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmixkfvx3lxte5ux2gyt1lvugfys3lhuhzvz2ndvm1roflanvlknvczamjrnm1tvxnkvjczltvsb3jsedbmufo3u1ffefh1enroaknyszf6anhlanbcu1vrm0j6uup3que?oc=5",
+      "title_norm": "サンリオキャラがチャイルドシートに座るガチャ11月発売",
+      "group_id": "c24cb76a50",
+      "cluster_key": "サンリオキャラがチャイルドシートに座るガチャ11月発売",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte1hztazbi1ra2lsbw5avkf2zxvyas1sy1rywlfkmnpjnfdbbi1mstfhmkfgdg54ahdjegpvsflqwmuytgrhslotsezpcjfvq3q4y2qtofjfadmxqugwntrjtmj4vhbzedrddgc?oc=5",
+      "title_norm": "果物の王様になる前を美容液に日本初＊ベビードリアン由来エキス配合refineserum",
+      "group_id": "6a4df70683",
+      "cluster_key": "果物の王様になる前を美容液に日本初＊ベビードリアン由来エキス配合refineserum",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
+      "delivered_count": 1
+    },
+    {
+      "url_norm": "https://news.google.com/rss/articles/cbmiakfvx3lxte5fsjrdvdrlr0vhzhhka1dnr3pqztjstlzzbwpdmvbzd3d4mk55ruuxsdd1bthhug5kazdrsnktcdntmxn6bfzaz3r2tjjmyvitrm1da1rqduvodnzpmmw0m3hoaeflmfhbowc?oc=5",
+      "title_norm": "ベビーグッズ値上げの今こそ買って後悔しないために2026babiewベストベビーグッズアワード全35部門発表",
+      "group_id": "8574ff8be5",
+      "cluster_key": "ベビーグッズ値上げの今こそ買って後悔しないために2026babiewベストベビーグッズアワード全35部門発表",
+      "first_seen": "2026-11-27",
+      "last_delivered": "2026-11-27",
       "delivered_count": 1
     }
   ]
